@@ -1,0 +1,167 @@
+@import '../global/vars';
+
+.wpcf7-form {
+
+  p {
+    margin-bottom: 25px !important;
+
+
+    input, textarea {
+      @include input-field(0,0,13px);
+    }
+
+    input[type="submit"] {
+      font:600 15px open sans !important;
+      background-color: $primary-color;
+      color: $sub-white;
+      border: 1px solid #fff;
+
+      &:hover {
+        background-color: $sub-white;
+        color: $primary-color;
+        border: 1px solid $divider-color;
+      }
+    }
+
+    textarea {height: 117px;}
+
+    > span:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url(../sprites.png) !important;
+      bottom: 0em;
+      right: 1em;
+    }
+
+    .your-name:after {
+      background-position:  -39px 0;
+      width: 14px;
+      height: 16px;    
+    }
+    .your-email:after {
+      background-position:   -58px 0;
+      width: 16px;
+      height: 11px;    
+    }
+    .tel-910:after {
+      background-position:  -21px 0;
+      width: 12px;
+      height: 16px;    
+    }
+  }
+}
+
+.contact-main-container {
+  position: relative;
+  clear:both;
+  // height: 7em;
+  height: auto;
+  margin-bottom: 30px;
+
+  .contact-icon {
+    background-image: url(../sprites.png) !important;
+    position: absolute;
+    left: 6px;
+    top: 5px;
+  }
+
+  .contact-box-container{
+    // margin-left: 40px / 358px * 100%;
+    margin-left: 40px;
+    font: 400 14px open sans;
+    line-height: 2em;
+
+    .contact-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1em;
+    }
+  }
+
+
+  .icon-phone{
+      background-position:  -30px -28px ;
+      width: 19px;
+      height: 26px;
+  }
+  .icon-email{
+      background-position:   -57px -29px ;
+      width: 23px !important;
+      height: 18px;  
+  }
+  .icon-address{
+      background-position:   -86px -30px ;
+      width: 22px;
+      height: 28px;
+  }
+  .icon-hours{
+      background-position:  0 -27px ;
+      width: 23px;
+      height: 24px;
+  }
+}
+
+.half-section {width: 45.5%; float: left;}
+.right-half {margin-left: 7%; 
+  @media screen and (max-width: 760px) {margin-left: 0;}}
+
+.half-section {
+
+  @media screen and (max-width: 760px) {
+    float: none;
+    width: 50%;
+    min-width: 470px;
+    margin: 0 auto !important;
+  }
+  @media screen and (max-width: 500px) {
+    min-width: 300px;
+  }
+}
+
+.google-map-dk {
+  overflow: hidden;
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+      .shopperbarn &,
+      .bwd & {
+        background-image: url(../../img/banner-contact.jpg);
+
+        @media screen and (max-width:760px) {
+          background-image: url(../../img/banner-contact-tablet.jpg);
+        }
+
+        @media screen and (max-width:560px) {
+          background-image: url(../../img/banner-contact-mobile.jpg);
+        }
+      }
+
+      .onlyonestopshop & {
+        background-image: url(../../img/banner-contact-oss.jpg);
+
+        @media screen and (max-width:760px) {
+          background-image: url(../../img/banner-contact-tablet-oss.jpg);
+        }
+
+        @media screen and (max-width:560px) {
+          background-image: url(../../img/banner-contact-mobile-oss.jpg);
+        }
+      }
+
+
+    @media screen and (max-width:500px) {
+      height: 250px;
+      background-size: 100% auto;
+    }
+
+    @media screen and (max-width:400px) {
+      height: 200px;
+    }
+
+    @media screen and (max-width:345px) {
+      height: 170px;
+    }
+}

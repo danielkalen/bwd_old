@@ -1,0 +1,27 @@
+@import '../global/vars';
+
+.empty-cart-icon {float: left;}
+
+.empty-cart {
+  float: left;
+  margin-left: 20px;
+}
+
+.cart-empty {
+  font:400 32px open sans;
+  margin-top: 16px;
+  
+  span {color: $primary-color;}
+}
+
+.return-to-shop {
+  .button {
+    @include button-large($sub-white, $primary-color, $divider-color, $primary-color);
+    font:600 13px open sans !important;
+    width: 150px !important;
+    margin-top: 15px;
+    padding: 10px 5px !important;
+    
+    .fa {margin-right: 8px; font-size: 18px; line-height: 40%;}
+  }
+}

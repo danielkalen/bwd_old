@@ -1,0 +1,49 @@
+.sidebar-right .sidebar .mini-cart-item-dk a{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.product_list_widget .product-content{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 92%;
+  }
+
+  .product_list_widget .product-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 62%;
+  }
+
+.sidebar .product_list_widget .product-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 62%;
+  }
+
+.shopping-cart-inner .mini-cart-item-dk .product-text > a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+}
+
+
+.p-content, .product-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+}

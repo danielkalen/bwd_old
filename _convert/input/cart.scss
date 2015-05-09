@@ -1,0 +1,241 @@
+@import '../global/vars';
+
+// Shipping and Coupon !
+.coupon-shipping {
+
+  > div {width: 365px / 786px * 100%;}
+
+  h4, .page h4 {text-transform: none !important; font: 600 18px/60% open sans !important; color: $font-color !important; padding-bottom: 19px !important; }
+
+  input {bottom: 1px solid $divider-color !important;}
+  .coupon {
+    float: left;
+
+    @media screen and (max-width:860px) {
+      float: none;
+      clear: both;       
+      width: 100%;
+      @include clearfix-dk;
+    }
+
+    input#coupon_code {
+      width: 100% !important;
+      border-radius: 2px;
+      border: 1px solid $divider-color;
+      height: 39px;
+      margin-bottom: 2.1%;
+      &::-webkit-input-placeholder {color: #b2b2b2;}
+      &:-moz-placeholder {color: #b2b2b2;}
+      &::-moz-placeholder {color: #b2b2b2;}
+      &:-ms-input-placeholder {color: #b2b2b2;}
+
+    }
+
+    .button {
+      float: right;
+      @include button-large ($sub-white, $primary-color, $divider-color, $primary-color);
+      width: 36.5%;
+      min-width: 114px;
+      //max-width: 133px;
+    }
+  }
+
+  .shipping {
+    float: right;
+    //width: 45%;
+
+    @media screen and (max-width:860px) {
+      float: none;
+      clear: both;
+      margin-top: 30px;   
+      width: 100%;    
+    }
+    
+
+    .form-row {
+      padding: 0 !important;
+      margin: 0 0 2.1% !important;
+      border: 1px solid $divider-color !important;
+      border-radius: 2px !important;
+      position: relative;
+
+      
+
+      #calc_shipping_country {
+        //max-width: 365px !important;
+        width: 110% !important;
+      }
+
+      #calc_shipping_country, #calc_shipping_state {
+        padding: 0 10px !important;
+        height: 37px;
+        border: 0px;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance:none !important;
+      }
+
+      select {
+       color: #c3c3c3 !important;
+
+       option {color:$font-color !important;}
+      }
+
+      #calc_shipping_state{
+        width: 120%;
+        padding: 0 10px !important;
+        height: 37px;
+        border: 0 !important;
+      }
+
+      #calc_shipping_postcode {
+        padding: 0 10px !important;
+        height: 37px;
+        border: 0 !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        &::-webkit-input-placeholder {color: #b2b2b2;}
+        &:-moz-placeholder {color: #b2b2b2;}
+        &::-moz-placeholder {color: #b2b2b2;}
+        &:-ms-input-placeholder {color: #b2b2b2;}
+      }
+
+      .dkfa {
+        position: absolute;
+        font-size: 1.5em;
+      }
+      .falong, .fashort {top: 9px; right: 9px;}
+    }
+
+    .button {
+        @include button-large($sub-white, $primary-color, $divider-color, $primary-color);
+        margin-left: 2.1%;
+        width: 35.86%;
+       // max-width: 133px;
+
+        @media screen and (min-width:1095px) {
+           min-width: 133px !important;
+        }
+
+        @media screen and (max-width:860px) and (min-width:480px) {
+          width: 36.6%;
+        }
+      }
+    .form-row:nth-child(1) {width: 99.4%; overflow: hidden !important;}
+    .form-row:nth-child(2), .form-row:nth-child(3) {width: 106px / 365px * 100%; overflow: hidden !important;}
+    .zip-code {float: left; margin-left: 2.1% !important;}
+    .state-select {float: left;}
+  }
+}
+
+// Shipping and Coupon #
+
+
+
+
+// Cart Sidebar !!!
+#execphp-4 {
+  margin-top: 13px;
+  margin-bottom: 0 !important;
+
+  .execphpwidget {
+
+    th {text-align: left;}
+    td {text-align: right;}
+
+    .cart-collaterals-dk {
+      position: relative;
+
+      .cart_totals {
+
+        table {
+          border-spacing: 0px 7px;
+          border-collapse: separate;
+          color: #3f3e3e;
+          font-weight: 600 !important;
+          margin-bottom: 20px;
+
+          tr {
+            margin-bottom: 5px;
+
+            td {position: absolute; right: 0;}
+          }
+
+          .dk-divider {height: 1px;max-height: 1px;width: 264%;background-color: $divider-color; display: block;}
+
+          .order-total {
+           // padding-top: 13px;
+            border-top: 1px solid $divider-color;
+            line-height: 105%;
+
+            th {
+              font-size: 22px;
+              font-weight: 600;
+            }
+
+            td {
+              font-size: 22px;
+              font-weight: 600;
+              color: $primary-color;
+            }
+
+          }
+        }
+      }
+
+      .button {
+        @include button-large (#fff, $primary-color, $divider-color, $primary-color);
+        width: 100% !important;
+      }
+
+      .checkout-button.button {
+        @include button-large ($txtcolor: #fff);
+        margin-top: 7px;
+      }
+    }
+
+  }
+
+  // .shipping-method-dd {
+  //   position: relative; 
+  //   width: 115%; 
+  //   float: right;
+  // }
+  .shipping-method-dd {
+    position: relative; 
+    width: 62%; 
+    float: right;
+  }
+  .shipping_method {
+    width: 100%;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance:none !important;
+    padding: 2px 5px !important;
+    margin: 0 !important;
+  }
+
+  .dkfa {
+    position: absolute;
+    font-size: 1em;
+    top: 5px;
+    right: 5px;
+    background-color: #fff;
+    width: 12px;
+  }
+}
+
+// Cart Siderbar ###
+
+
+
+// Content Clearfix for cart page sidebar fix !!!
+
+.woocommerce-cart #content {
+  @media screen and (max-width:760px) {
+    @include clearfix-dk;
+    margin-bottom: 30px;
+  }
+}
+
+// Content Clearfix ###

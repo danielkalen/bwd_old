@@ -1,0 +1,84 @@
+.onsale {
+  @extend .Sale-ribbon;
+  position: absolute;
+  top:0px;
+  right:0px;
+  margin: 0 !important;
+}
+
+.woocommerce .star-rating span{
+  color: $contrast-color !important;
+ }
+
+ .dt-btn-m {
+  @include button-medium($sub-white, $primary-color, $divider-color, $primary-color);
+ }
+
+ .woocommerce-cart #content .woocommerce {margin-top: -4px;}
+
+ 
+.woocommerce-product-rating {
+  float:left;
+}
+
+#woocommerce_top_rated_products-2 .star-rating {font-size: .65em; line-height: 1em; width: 26%; top: 2px;}
+
+
+.woocommerce form .form-row-wide, .woocommerce-page form .form-row-wide {clear:none !important;}
+
+#page ul.cart_list li, #page ul.product_list_widget li, #page .woocommerce ul.cart_list li, #page .woocommerce ul.product_list_widget li, .woocommerce-page #page ul.cart_list li, .woocommerce-page #page ul.product_list_widget li, .woocommerce.widget_product_categories li  {
+  margin: 0 !important;
+  padding: 6px 0 0 0 !important;
+}
+
+.product_list_widget{
+  .product-title {
+    display: block;
+    width: 100%;
+  }
+}
+.payment_methods.methods {padding: 0 !important;}
+
+fieldset {border: 0 !important;}
+
+#payment {background: none !important;}
+
+.order-info {
+  position: absolute; right:1.5em; margin-top: 5px;
+  
+  @media screen and (max-width:910px) {
+    position: static;
+    text-align: right;
+    // max-width: 420px;
+    // width: 50%;
+  }
+}
+
+table.order_details {margin-top: -30px !important;}
+
+.woocommerce-noreviews {position: absolute; bottom: 3%;}
+
+.single-product #main {position: relative;}
+
+.social-icons-product .social-icon-2 {display: block; float: left; margin-right: 3px;}
+
+tr.wcbulkorderformtr td {position: relative;}
+i.bulkorder_spinner {right: 18px; top: 9px;}
+.wcbulkorderformtable:nth-child(2) tr td {
+  text-align:right;
+  
+  button, input {
+    font: 400 14px open sans;
+    border-radius: 2px;
+    padding-right:17px;
+    padding-left: 17px;
+  }
+
+  button {
+    background-color: $sub-white;
+    color: $primary-color;
+    height: 35px;
+    border: 1px solid $divider-color;
+  }
+} 
+

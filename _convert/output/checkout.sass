@@ -1,0 +1,319 @@
+@import ../global/vars
+
+.shopperbarn-cart-notice.notify-box
+  bottom: 110px
+
+.accordion
+  padding: 15px 44px 13px
+  background: $primary-color
+  position: relative
+  border-radius: 2px 2px 0 0
+  margin-top: 25px
+  h3
+    font: 400 18px/60% montserrat !important
+    text-transform: uppercase !important
+    color: #fff !important
+    margin: 0 !important
+    padding: 0 !important
+    @media screen and (max-width: 480px)
+      font-size: 16px !important
+    @media screen and (max-width: 364px)
+      font-size: 13px !important
+  span
+    position: absolute
+    top: 11px / 41px * 100%
+    left: 14px / 741px * 100%
+    font: 700 28px/60% open sans
+    color: #fff
+  .fa
+    position: absolute
+    top: .45em
+    right: .7em
+    color: $contrast-color
+    font-size: 1.4em
+  .fa-dropbox
+    font-size: 1.7em
+    right: .48em
+    top: .35em
+
+.accordion-close
+  border-radius: 2px
+  .fa
+    color: #fff
+
+.accordion:nth-child(1)
+  margin-top: 0 !important
+
+.content-dk
+  padding: 28px
+  background-color: $sub-white
+  border-radius: 0 0 2px 2px
+  border: 1px solid $divider-color
+  border-top: none !important
+  input
+    border: 1px solid $divider-color !important
+    border-radius: 2px !important
+    background-color: #fff
+    font: 400 13px open sans !important
+    height: 46px !important
+    padding-left: 15px !important
+    &::-webkit-input-placeholder
+      color: #cacaca
+    &:-moz-placeholder
+      color: #cacaca
+    &::-moz-placeholder
+      color: #cacaca
+    &:-ms-input-placeholder
+      color: #cacaca
+  .form-row
+    margin: 0 3.45% 3.45% 0
+    float: left
+    width: 330px / 685px * 100%
+  .form-row input
+    width: 100%
+  .form-row-last
+    margin: 0 0 3.45% 0
+    @media screen and (max-width: 760px)
+      width: 100%
+  .small-field
+    width: 153px / 685px * 100%
+    @media screen and (max-width: 760px)
+      width: 48.2%
+  .form-row:nth-child(2), .form-row:nth-child(6), .form-row:nth-child(9), .form-row:nth-child(11)
+    @media screen and (max-width: 760px)
+      margin: 0 0 3.45% 0 !important
+  .form-row:nth-child(4)
+  .form-row:nth-child(5)
+    @media screen and (max-width: 760px)
+      width: 20%
+  .form-row:nth-child(6)
+    @media screen and (max-width: 760px)
+      width: 24.9%
+  #billing_state
+    width: 100%
+    height: 46px
+    border: 1px solid $divider-color
+    border-radius: 2px
+    width: 100% !important
+    -webkit-appearance: none !important
+    -moz-appearance: none !important
+    appearance: none !important
+  .chosen-container
+    border: 1px solid $divider-color
+    border-radius: 2px
+    width: 100% !important
+    -webkit-appearance: none !important
+    -moz-appearance: none !important
+    appearance: none !important
+    .chosen-single
+      width: 100%
+      background-color: #fcfcfc !important
+      font: 400 13px/75% open sans
+      //height: 46px;
+      color: $font-color
+      span
+        padding: 18px 0 17px 15px
+      div
+        width: 21px !important
+        i
+          padding: .9em .5em 0 0
+          font-size: 17px
+          margin-right: 5px
+    .chosen-drop
+      width: 100%
+      background-color: #fcfcfc !important
+      border: 1px solid $divider-color
+      border-top: none
+      .chosen-search input
+        width: 100% !important
+
+#ship-to-different-address
+  position: relative
+  clear: left
+  float: left
+  margin-top: .5em
+  cursor: pointer
+  //width: 190px;
+  @media screen and (max-width: 550px)
+    margin-bottom: 20px
+  label
+    display: block !important
+  input
+    height: 1em !important
+  .dk-checkbox
+    background-image: url(../sprites.png) !important
+    background-position: -31px -164px
+    width: 13px
+    height: 13px
+    position: absolute
+    bottom: .35em
+  #ship-to-different-address-checkbox:checked + label
+    background-image: url(../sprites.png) !important
+    background-position: -47px -164px
+    width: 13px
+    height: 13px
+  &:hover .dk-checkbox
+    background-image: url(../sprites.png) !important
+    background-position: -47px -164px
+    width: 13px
+    height: 13px
+  #ship-to-different-address-checkbox
+    visibility: hidden
+
+.next-step
+  +button-large
+  float: right
+  width: (153px / 685px * 100%) !important
+  min-width: 130px
+  margin-right: 2px
+  //height: auto !important;
+  cursor: pointer
+  display: block
+  @media screen and (max-width: 450px)
+    float: none
+    clear: both
+    margin: 30px auto 0
+    width: 100% !important
+
+.payment-section
+  position: relative
+
+#payment
+  padding-bottom: 40px
+  margin-bottom: 20px
+  border-bottom: 1px solid #dbdbdb
+  border-radius: 0 !important
+  @media screen and (max-width: 970px)
+    border-bottom: 0 !important
+    margin-bottom: 5px !important
+  label
+    display: none
+  .payment_methods
+    .payment_method_stripe
+      .payment_box
+        > fieldset
+          width: 50%
+          @media screen and (max-width: 970px)
+            margin: 0 auto
+            min-width: 315px
+          @media screen and (max-width: 411px)
+            min-width: 0 !important
+            width: 100% !important
+          .form-row-wide
+            width: 100%
+          .form-row-first, .form-row-last
+            width: 46.5%
+          .form-row-first
+            padding-right: 3.5%
+          .required
+            display: none
+          #stripe-card-number
+            margin-bottom: 18px
+          #stripe-card-name
+            margin-top: 18px
+  > ul
+    list-style: none !important
+    margin: 0 !important
+
+.card-wrapper
+  width: 47%
+  position: absolute
+  top: 0
+  right: 0
+  @media screen and (max-width: 970px)
+    position: relative
+    margin: 0px auto
+    min-width: 315px
+    .card
+      .number
+        font-size: 22px !important
+  @media screen and (max-width: 411px)
+    min-width: 0 !important
+    width: 100% !important
+    margin-top: 10px !important
+    .card
+      min-width: 0 !important
+      .number
+        font-size: 22px !important
+  @media screen and (max-width: 376px)
+    .card-container
+      height: 180px !important
+      .number, .name
+        font-size: 20px !important
+      .card-logo
+        width: 50px !important
+        height: 35px !important
+      .lower
+        margin-bottom: -20px !important
+  @media screen and (max-width: 359px)
+    .card-container
+      .number, .name
+        font-size: 16px !important
+
+.place-order
+  width: 47% !important
+  //margin-top: 25px !important;
+  margin: 3.45% 0 0 0 !important
+  margin: 0 0 0 !important
+  float: right !important
+  @media screen and (max-width: 970px)
+    width: 315px !important
+    text-align: center !important
+    margin: 25px auto !important
+    float: none !important
+  @media screen and (max-width: 480px)
+    width: 100% !important
+  input.button
+    +button-large
+    font: 600 15px open sans !important
+    color: #fff !important
+    line-height: 1em !important
+    display: block !important
+    margin: 0 auto !important
+  .checkbox.checkbox.checkbox
+    width: 100% !important
+    background: none !important
+  .terms.form-row
+    padding: 0 !important
+    width: 100% !important
+    position: relative
+    text-align: center
+    label
+      padding: 0 !important
+      font-size: 14px !important
+      line-height: 1em
+      display: inline
+    input[type="checkbox"]
+      height: auto !important
+      width: auto !important
+      line-height: 1em
+      margin: 0 3px 3px 0 !important
+
+.notes
+  margin: 0 !important
+  width: 50% !important
+  float: left !important
+  // label {
+  //   display: none !important;
+  // }
+  @media screen and (max-width: 970px)
+    width: 100% !important
+    max-width: 315px
+    margin: 30px auto 0 !important
+    clear: both !important
+    float: none !important
+    display: block
+    text-align: center
+  @media screen and (max-width: 760px)
+    margin: 18px auto 0 !important
+  @media screen and (max-width: 480px)
+    width: 100% !important
+
+.woocommerce-checkout #execphp-4
+  padding-bottom: 0 !important
+
+@media screen and (max-width: 380px)
+  .card .front .lower .number
+    margin-bottom: 0
+  .card .front .lower
+    bottom: 40px

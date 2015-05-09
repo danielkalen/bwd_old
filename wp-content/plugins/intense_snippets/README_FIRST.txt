@@ -1,0 +1,1 @@
+The files within this folder are a copy of the default snippets available for Intense. If you wish to change them, you can copy this directory to your theme directory or your child theme directory. After copying, you should have a directory called intense_snippets that is a mirror of this directory. Alter the copied snippets as desired. See the documentation for further details.

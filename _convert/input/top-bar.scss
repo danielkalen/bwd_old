@@ -1,0 +1,193 @@
+#top-bar {
+  z-index: 1000;
+  width:100%;
+  line-height: 36px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  visibility: visible !important;
+
+  @media screen and (max-width:850px) {font-size: .85em;}
+
+  // TABLE CELLS !!!!!!!!!!
+  .wf-wrap{
+    padding:0 10px;
+    margin:0 auto !important;
+    max-width:1064px !important;
+  }
+
+  .wf-float-left {
+    width: 60%;
+    @media screen and (max-width:760px) {width: 100%;}
+  }
+
+  .mini-contacts {
+    width: 40%;
+    @media screen and (max-width:760px) { width: 100%; }
+    li { padding-left:31px !important; }
+
+    .phone:before {
+      
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 20%;
+      @extend .Phone-icon;
+      //background-position:  left 7px !important;
+    }
+
+    .phone a {
+      color: #fff !important;
+    }
+
+  }
+
+  .right-block {
+
+    @media screen and (max-width:760px) { text-align: center;  }
+  }
+
+  .custom-links{
+    text-align: right;
+    font-size: 13px;
+    @media screen and (max-width:768px) {font-size: 12px;}
+    @media screen and (max-width:760px) {text-align: center;}
+
+    .shopperbarn &,
+    .bwd & {
+      color: #e63f8d; // text color
+    }
+
+    .onlyonestopshop & {
+      color: white; // text color
+    }
+
+    
+    
+    .amountremain{
+      background-color:$primary-color;
+      padding:.7em .3em;
+      color:#fff;
+
+      @media screen and (max-width:850px) {padding: 1em .3em;}
+      @media screen and (max-width:760px) {padding: .3em;}
+    }
+
+    #free-shipping-notice{ overflow: hidden; }
+  }
+
+  // Table Cells ##########
+  .social-icons {
+    display:inline-block;
+    margin-bottom:-7px;
+    @media screen and (max-width:850px) {display: none;}
+
+    .social-icon{
+      display:inline-block;
+      float:left;
+      margin-right:4px;
+      width: 21px;
+      height: 21px;
+    }
+
+    .social-icon-2{
+      display:inline-block;
+      float:left;
+      margin-right:3px;
+    }
+  }
+
+  .my-account {
+    display: inline;
+    margin-left: 5%;
+    position: relative;
+
+    @media screen and (max-width:760px) { margin: 0; }
+    
+    a {
+      color: #fff; 
+      @media screen and (max-width:760px) { vertical-align: middle;}
+    }
+
+    .logout-box {
+      visibility: hidden;
+      position: absolute;
+      width: 7em;
+      top: 40px;
+      left: 0;
+      box-shadow: 0px 0px 2px 0.00px rgba(24, 23, 24, 0.32);
+      background-color: $sub-white;
+      //border-bottom: 8px solid $primary-color;
+      padding: 10px 20px 20px;
+      overflow: hidden;
+
+      &:after {
+        content: '';
+        width: 110%;
+        height: 10px;
+        background-color: $primary-color;
+        position: absolute;
+        bottom: -2px;
+        left: -5px;
+      }
+
+
+      span {
+        display: block; 
+        text-align: left; 
+        color: $font-color; 
+        line-height: 2em;
+
+        &:hover {color: $primary-color;}
+      }
+    }
+  }
+    
+  .shopping-cart { 
+    float: right;
+    margin-left: 1%;
+    @media screen and (max-width:760px) { float: none; }
+  
+    .dk-ico-cart{
+  
+      @extend .Cart-reg;
+  
+      margin-left:5px;
+      margin-bottom:-9px;
+      display:inline-block;
+    }
+  
+    .top-bar-icon{
+  
+      text-decoration:none;
+
+      .shopperbarn &,
+      .bwd & {
+        color: #e63f8d;
+      }
+
+      .onlyonestopshop & {
+        color: $contrast-color;
+      }
+
+      &:hover {
+          color: $contrast-color;
+      }
+    }
+  
+    
+    .top-bar-icon:hover .dk-ico-cart{
+  
+      @extend .Cart-hover;
+  
+    }
+  
+    .dk-ico-cart:hover, .dk-ico-cart:active {
+  
+      @extend .Cart-hover;
+    }
+  }
+
+
+}

@@ -1,0 +1,1091 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ta",
+				"ta-c	text-align: center;"
+			],
+			[
+				"ovy",
+				"ovy-v	overflow-y: visible;"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"pay",
+				"payments-color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"su",
+				"subber-white"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"tt",
+				"tt	text-transform: ${1:uppercase};"
+			],
+			[
+				"td",
+				"td	text-decoration: ${1:none};"
+			],
+			[
+				"va",
+				"va-m	vertical-align: middle;"
+			],
+			[
+				"sid",
+				"sidebar-items-font"
+			],
+			[
+				"cour",
+				"cursor"
+			],
+			[
+				"fff",
+				"fafafa"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"ti",
+				"ti--	text-indent: -9999px;"
+			],
+			[
+				"font",
+				"font-color"
+			],
+			[
+				"fsi",
+				"font-size"
+			],
+			[
+				"d",
+				"d-n	display: none;"
+			],
+			[
+				"sub",
+				"sub-white"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"side",
+				"sidebar-items-font"
+			],
+			[
+				"tt-n",
+				"tt-n	text-transform: none;"
+			],
+			[
+				"base",
+				"base-title-font"
+			],
+			[
+				"sourc",
+				"sourceTitleParentId"
+			],
+			[
+				"s",
+				"sourceTitleHtml"
+			],
+			[
+				"source",
+				"sourceTitle"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"product_",
+				"product_name_l"
+			],
+			[
+				"f-l",
+				"fl-l	float: left;"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"list-",
+				"list-d	list-style-type: disc;"
+			],
+			[
+				"b",
+				"bg	background"
+			],
+			[
+				"ex",
+				"execphp-4"
+			],
+			[
+				"foo",
+				"footer-contact-font"
+			],
+			[
+				"exe",
+				"execphpwidget"
+			],
+			[
+				"execph",
+				"execphp-3"
+			],
+			[
+				"tit",
+				"footer-title-font"
+			],
+			[
+				"cont",
+				"contrast-color"
+			],
+			[
+				"pri",
+				"primary-color"
+			],
+			[
+				"butt",
+				"button-font"
+			],
+			[
+				"div",
+				"divider-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "wp-content/themes/dt-the7-child/css/sass/themainnew.scss",
+			"settings":
+			{
+				"buffer_size": 5385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/dt-the7-child/style.css",
+			"settings":
+			{
+				"buffer_size": 510892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 1264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/dt-the7/functions.php",
+			"settings":
+			{
+				"buffer_size": 60918,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ex",
+				"ExpandRegion"
+			],
+			[
+				"expa",
+				"ExpandRegion"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: media",
+				"Snippet: media"
+			],
+			[
+				"Snippet: ",
+				"Snippet: @media"
+			],
+			[
+				"",
+				"Sort Lines"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/templates/single-product/rating.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wordpress-seo-premiuma/frontend/class-frontend.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/parts/single-product-page.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/templates/single-product/product-image.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/templates/single-product/short-description.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/templates/single-product/title.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/parts/hide.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wordpress-seo-premiuma/admin/license-manager/class-license-manager.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/main.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/main.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/includes/class-wc-frontend-scripts.php",
+		"/Applications/MAMP/shopperbarn/wp-config.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/header.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/svg-icons.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/svg-icons.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/desktop.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/desktop-tablet.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/main_js_only.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-pip/woocommerce-pip.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slidera/js/owl.carousel.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slidera/wpb-wps.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slidera/js/toucheffects.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slidera/js/plugin-main.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slider/wpb-wps.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/main_js_only.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/woocommerce.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/contact-form-7/includes/controller.php",
+		"/Users/gazelle/Library/Application Support/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/contact-form-7/admin/admin.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/contact-form-7/settings.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/contact-form-7/wp-contact-form-7.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/jck_woo_quickview/assets/frontend/js/jckqv-scripts.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/jck_woo_quickview/jck_woo_quickview.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slidera/main.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/header.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/userpro/functions/ajax.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slider/main.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/modernizr.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/wpbakery/js_composer/include/classes/settings/class-vc-automapper.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/all-in-one-schemaorg-rich-snippets/functions.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/plugins.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/classie.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/classie.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/mlpushmenu.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/mlpushmenu.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/royalslider/jquery.royalslider.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/royalslider/jquery.royalslider.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/jquery.accordion.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/jquery.accordion.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/modernizr.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/snap.svg-min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/notificationFx.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/main_js_only_head.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/jquery.jsticky.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/jquery.jsticky.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/notificationFx.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slider/js/modernizr.custom.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/ajax-search-pro.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/js/nomin/aspjquery.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/backend/search.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/js/jquery.ajaxsearchpro.min.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/includes/shortcodes.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/backend/fulltext.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/css/style.css.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/backend/cache_settings.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/js/nomin/jquery.ajaxsearchpro.js",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/inc/widgets/contact-form.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/themain.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/inc/extensions/options-framework/options-framework.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/js/plugins/validator/validationEngine.clean.css",
+		"/Users/gazelle/Dropbox/Project Database 2014/Life Capital/235_LC_Emails/Web/Code/email_sig_smaller.html",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/ajax-pro.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/themainnew.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/functions.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/themainnew.min.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/themainnew.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/royalslider.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/js/nomin/jquery.mCustomScrollbar.js",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/ajax-search-pro/css/jquery.mCustomScrollbar.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/media.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/font-awesome.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-custom-checkout-options/wc-custom-checkout-options.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/css/media.min.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/parts/product-scroller.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/royalslider/royalslider.css",
+		"/Applications/MAMP/shopperbarn/Gruntfile.js",
+		"/Users/gazelle/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/gazelle/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/style.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/style.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/parts/quick-view.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/wpb_product_slider.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/wpbedit.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/prevmain.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/wc-dt-custom.clean.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/wc-dt-custom.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/custom-dt.clean.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/custom-dt.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/woocommerce.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/wc-dt-custom.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/prevmain.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/prevmain.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerce.css",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.clean.css",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.less",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7/css/font-awesome.min.css",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerc-layout.clean.css",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce/assets/css/woocommerce.clean.css",
+		"/Users/gazelle/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-brands/woocommerce-brands.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-brands/classes/class-wc-brands.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-brands/templates/brand-description.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-brands/assets/css/brands-styles.css",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/brands-styles.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/woocommerce-warranty/woocommerce-warranty.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/sep/contact-form.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/contact-form-7/includes/css/styles-rtl.css",
+		"/Applications/MAMP/shopperbarn/wp-admin/themes.php",
+		"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/parts/mini-cart.scss",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/wpb-woocommerce-product-slider/css/wpb_product_slider.scss",
+		"/Applications/MAMP/shopperbarn/wp-includes/class-wp-editor.php",
+		"/Applications/MAMP/shopperbarn/wp-includes/class-wp-customize-control.php",
+		"/Applications/MAMP/shopperbarn/wp-content/plugins/modern-admin/modern-admin.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"marker",
+			"<!--",
+			"#reviews",
+			".count",
+			".85em",
+			"quantity",
+			"itemprop",
+			"safari",
+			"product:nth-child(2",
+			"child(3n",
+			"{child",
+			",child",
+			".woocommerce ul.products li.product li.product:nth-child",
+			"ul.products li.product li.product",
+			",.woocommerce-page ul.products li.product:nth-child(10)",
+			",.woocommerce-page ul.products li.product:nth-child(8)",
+			",.woocommerce-page ul.products li.product:nth-child(4)",
+			",.woocommerce-page ul.products li.product:nth-child(12)",
+			",.woocommerce ul.products li.product:nth-child(9)",
+			",.woocommerce-page ul.products li.product:nth-child(9)",
+			"ul.products li.product:nth-child(6)",
+			",.woocommerce ul.products li.product:nth-child(6)",
+			",.woocommerce-page ul.products li.product:nth-child(6)",
+			"li.product:nth-child(3)",
+			"(3)",
+			"nth-child",
+			"<style",
+			"style",
+			"add-to-cart",
+			"enque",
+			"card-js",
+			"cookie",
+			"enque",
+			"script_is",
+			"enq",
+			"enque",
+			" >",
+			" /",
+			"jckqv ",
+			"script",
+			"2199",
+			"itemsd",
+			"items : 6,",
+			"items",
+			"$",
+			"-",
+			"$",
+			"400",
+			"$",
+			"0",
+			"10",
+			"'false'",
+			"'true'",
+			"false",
+			");?>",
+			"wpb_slider_type_sid_fea",
+			"wpb_ez_get_option",
+			"<?php echo wpb_ez_get_option(",
+			" <?php echo wpb_ez_get_option",
+			"<",
+			"<?php echo wpb_ez_get_option( 'wpb_slider_auto', 'wpb_wps_general', '",
+			"exists",
+			"photo",
+			"enque",
+			"modern",
+			"<script",
+			"dtglobals.logo",
+			"dtglobals",
+			"<script",
+			"svg",
+			"script",
+			"cdata",
+			"enque",
+			"cdata",
+			"bf",
+			"<script",
+			"<style",
+			"style",
+			"backend",
+			"var",
+			"var ajaxsearchpro",
+			"enque",
+			"div.content",
+			"h3 a",
+			"desc",
+			"p.showm",
+			"p.showmore",
+			"Lato",
+			"box-shadow",
+			"sans",
+			"PT Sans",
+			"pt sans",
+			"ajaxsearchprores1 .item",
+			"sprites",
+			"../font",
+			"fonts",
+			"../",
+			"enque",
+			"css",
+			"valid",
+			"jquery.validationEngine.js",
+			"validationEngine",
+			"jquery.validationEngine.js",
+			"enq",
+			".css",
+			"css",
+			"themain",
+			"enque",
+			"plugins",
+			"div",
+			"star",
+			"p-rate",
+			"star",
+			"stars",
+			"star",
+			"star-rating",
+			"enqueue",
+			"style",
+			"styles",
+			"css",
+			"enque",
+			"dashicons",
+			"enque",
+			"dashicons",
+			"enque",
+			"dashicons",
+			"dash",
+			"is_admin"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "wp-content/themes/dt-the7-child/css/sass/themainnew.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1160,
+								1160
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "wp-content/themes/dt-the7-child/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 510892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								510785,
+								510785
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 1980.0,
+						"translation.y": 13862.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								710,
+								710
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "wp-content/themes/dt-the7/functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21861,
+								21866
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 13054.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.965277777778,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 100.0
+	},
+	"project": "shopperbarn.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"h",
+				"/Applications/MAMP/shopperbarn/wp-content/themes/dt-the7-child/css/sass/hindistyle.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

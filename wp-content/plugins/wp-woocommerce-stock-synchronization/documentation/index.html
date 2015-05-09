@@ -1,0 +1,234 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>WooCommerce Stock Synchronization - Sync stocks between multiple WooCommerce sites</title>
+	
+	<meta name="description" content="The WooCommerce Stock Synchronization Plugin allows you to synchronize the stock values of the same products across multiple WooCommerce websites.">
+	<meta name="author" content="Pronamic">
+	<meta name="copyright" content="Pronamic">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2013-05-30T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#222222;}
+		::-moz-selection{background:#F9461C;color:#FFFFFF;}
+		::selection{background:#F9461C;color:#FFFFFF;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_12.png);}
+		a{color:#F9461C;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #F9461C, #F9461C);
+			  background-image: -ms-linear-gradient(top, #F9461C, #F9461C);
+			  background-image: -webkit-gradient(linear, 0 0, 0 F9461C%, from(#172229), to(#F9461C));
+			  background-image: -webkit-linear-gradient(top, #F9461C, #F9461C);
+			  background-image: -o-linear-gradient(top, #F9461C, #F9461C);
+			  background-image: linear-gradient(top, #F9461C, #F9461C);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9461C', endColorstr='#F9461C', GradientType=0);
+			  border-color: #F9461C #F9461C #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #F9461C #F9461C #bfbfbf;
+		  background-color: #F9461C;
+		}
+		hr{border-top:1px solid #F9F9F9;border-bottom:1px solid #F9F9F9;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#172229;color:#999999;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #172229;-moz-text-shadow:1px 1px 0px #172229;text-shadow:1px 1px 0px #172229;}
+		#documenter_sidebar ul{border-top:1px solid #172229;}
+		#documenter_sidebar ul a{border-top:1px solid #172229;border-bottom:1px solid #172229;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#F9461C;color:#FFFFFF;border-top:1px solid #F9461C;}
+		#documenter_sidebar ul a.current{background:#F9461C;color:#FFFFFF;border-top:1px solid #F9461C;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#usage" title="Usage">Usage</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+			<li><a href="#support" title="Support">Support</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Pronamic 2013<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>WooCommerce Stock Synchronization</h1>
+	<h2>Sync stocks between multiple WooCommerce sites</h2>
+	<div id="documenter_buttons">
+		<a href="http://pronamic.nl" class="btn btn-primary btn-large">Website</a> <a href="http://twitter.com/pronamic" class="btn btn-large">Twitter</a> <a href="https://www.facebook.com/Pronamic" class="btn btn-large">Facebook</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>Created: 05/30/2013</li>
+	<li>latest Update: 05/30/2013</li>
+	<li>By: Pronamic</li>
+	<li><a href=""></a></li>
+	<li>Email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#110;&#97;&#109;&#105;&#99;&#46;&#110;&#108;">&#105;&#110;&#102;&#111;&#64;&#112;&#114;&#111;&#110;&#97;&#109;&#105;&#99;&#46;&#110;&#108;</a></li>
+	</ul>
+	<p>The WooCommerce Stock Synchronization Plugin allows you to synchronize the stock values of the same products across multiple WooCommerce websites.</p>
+	</section>
+	
+	<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<p>
+	1. Go to <strong>Plugins </strong>and then <strong>Add New,</strong> Choose the <strong>Upload </strong>button ( shown below with the red border )</p>
+<p>
+	<img alt="" src="assets/images/image_1.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<hr>
+<p>
+	2. From this page, choose <strong>Browse&nbsp;</strong>and look for the .zip file you downloaded from <strong>CodeCanyon.&nbsp;</strong>Select it and choose&nbsp;<strong>Install</strong></p>
+<p>
+	<strong><img alt="" src="assets/images/image_2.png" style="border: 1px solid rgb(204, 204, 204);"></strong></p>
+<hr>
+<p>
+	3. Once you have pressed&nbsp;<strong>Install</strong> you will come to a page shown below.<strong>&nbsp;</strong>Text will show the progress of the installation. &nbsp;Please wait on this page until you see&nbsp;<strong>Completed</strong>. &nbsp;You will then have a button at the bottom called&nbsp;<strong>Activate Plugin</strong>, press this now.</p>
+<p>
+	<img alt="" src="assets/images/image_3.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<hr>
+<p>
+	4. You should to a new page, that will have the text in a&nbsp;<strong>yellow</strong> called saying <strong>Plugin activated</strong> ( as shown below ). The plugin has now been installed.</p>
+<p>
+	<img alt="" src="assets/images/image_4.png" style="width: 375px; height: 108px; border: 1px solid rgb(204, 204, 204);"></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="usage">
+	<div class="page-header"><h3>Usage</h3><hr class="notop"></div>
+<div class="alert">
+	<span style="background-color: rgb(252, 248, 227);">Each product you want to have synced must have the&nbsp;</span><strong>same SKU number filled in on WooCommerce</strong></div>
+<h3>
+	The Settings</h3>
+<p>
+	<img alt="" src="assets/images/image_5.png" style="width: 713px; height: 549px; border: 1px solid rgb(204, 204, 204);"></p>
+<p>
+	Under&nbsp;<strong>Stock Synchronization</strong>&nbsp;on the WooCommerce menu you will see the above page. &nbsp;It is important that you setup the URL&#39;s and Password Field</p>
+<h3>
+	<strong>URL&#39;s</strong>:</h3>
+<p>
+	The location of the websites you wish to synchronize stock with.</p>
+<p>
+	An example. If you have these WooCommerce websites.</p>
+<ul>
+	<li>
+		http://webshop.com</li>
+	<li>
+		http://webshop.co.uk</li>
+</ul>
+<p>
+	You will then, fill in at http://webshop.com the following example:</p>
+<p>
+	<img alt="" src="assets/images/image_6.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<p>
+	<b>AND</b> in http://webshop.co.uk the following example should be filled in:</p>
+<p>
+	<img alt="" src="assets/images/image_7.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<div class="alert alert-info">
+	Notice:&nbsp;<strong>The password is the same across both websites.</strong></div>
+<p>
+	<strong>Password:&nbsp;</strong>Fill in the same password between all the sites.</p>
+<h3 class="alert alert-info">
+	&nbsp;</h3>
+<h3 class="alert alert-info">
+	The Products</h3>
+<div class="alert">
+	<span style="color: rgb(34, 34, 34);">Each product you want to have synced must have the </span><strong style="color: rgb(34, 34, 34);">same SKU number filled in on WooCommerce</strong></div>
+<p class="alert">
+	From a&nbsp;<strong>Product</strong> edit page, at the top of the&nbsp;<strong>WooCommerce&nbsp;</strong>box, you will find a field for&nbsp;<strong>SKU</strong>. Products with&nbsp;<strong>THE SAME SKU</strong> are the products that are synced together. ( the area marked in red )</p>
+<p class="alert">
+	<img alt="" src="assets/images/image_8.png" style="width: 552px; height: 93px; border: 1px solid rgb(204, 204, 204);"></p>
+<p class="alert">
+	So on&nbsp;<strong>BOTH</strong> sites ( we continue with the example from eariler ) <b>http://webshop.com AND http://webshop.co.uk</b>&nbsp;will require a product with the&nbsp;<strong>SAME SKU</strong>.&nbsp;</p>
+<div class="alert alert-info">
+	Notice: All other fields can be different, including the price. &nbsp;<strong>ONLY THE SKU MUST BE THE SAME</strong></div>
+<p class="alert alert-info">
+	The next thing you should do is set the&nbsp;<strong>Inventory</strong> values.</p>
+<p class="alert alert-info">
+	<img alt="" src="assets/images/image_9.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<p class="alert alert-info">
+	Set the stock quantity to the required value. Once a sale has been made on 1 of this site then the stock will be decreased on the other <strong>URL&#39;s</strong> you filled in&nbsp;( http://webshop.com for example )</p>
+<div class="alert">
+	Each product you want to have synced must have the&nbsp;<strong>same SKU number filled in on WooCommerce</strong></div>
+<p class="alert">
+	&nbsp;</p>
+<h3 class="alert">
+	Synchronize All</h3>
+<p>
+	The synchronize all button will take&nbsp;<strong>ALL</strong> the stock values you have and give them to all other&nbsp;<strong>URL&#39;s</strong>. This is an effective way of setting the same stock across&nbsp;<strong>ALL&nbsp;</strong>sites.</p>
+<p>
+	<img alt="" src="assets/images/image_10.png" style="border: 1px solid rgb(204, 204, 204);"></p>
+<p>
+	Pressing this button will take all the products you have from that site ( the site you pressed the button on ) and set those values to&nbsp;<strong>ALL sites you have linked</strong>.</p>
+<p>
+	Once you have done this, you will see a message in&nbsp;<strong>Activity Log</strong> that says&nbsp;</p>
+<p>
+	<img alt="" src="assets/images/image_11.png" style="width: 495px; height: 54px; border: 1px solid rgb(204, 204, 204);"></p>
+<p>
+	With the date and time the button was pressed and the amount of sites that responded that it was successful.</p>
+<p>
+	Example:</p>
+<ul>
+	<li>
+		Product Cheese on http://webshop.com&nbsp;<strong>AND</strong> http://webshop.co.uk</li>
+	<li>
+		In <strong>http://webshop.com </strong>Product Cheese has 10 stock</li>
+	<li>
+		In <strong>http://webshop.co.uk </strong>Product Cheese has 5 stock</li>
+	<li>
+		You press the&nbsp;<strong>Synchronize All</strong> button on&nbsp;<strong>http://webshop.com</strong></li>
+	<li>
+		Now <strong>http://webshop.co.uk&nbsp;</strong>has&nbsp;<strong>10 stock</strong> ( the same as&nbsp;<strong>http://webshop.com, the site you pressed the button on&nbsp;</strong>)</li>
+</ul>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<p>
+	Pronamic: <a href="http://twitter.com/pronamic" target="_blank">@pronamic</a></p>
+<p>
+	Remco Tolsma: <a href="https://twitter.com/remcotolsma">@remcotolsma</a></p>
+<p>
+	Leon Rowland: <a href="http://twitter.com/leonrowland">@leonrowland</a></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="support">
+	<div class="page-header"><h3>Support</h3><hr class="notop"></div>
+<p>
+	Help and support can be found at <a href="http://pronamic.nl/forums">http://pronamic.nl/forums</a> or mailed to <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#112;&#114;&#111;&#110;&#97;&#109;&#105;&#99;&#46;&#110;&#108;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#112;&#114;&#111;&#110;&#97;&#109;&#105;&#99;&#46;&#110;&#108;</a></p>
+</section>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+1.0.0 - 2014-03-25 - Chris Wiegman
+	Initial Release
+1.0.1 - 2014-04-01 - Chris Wiegman
+	Existing pro modules use new upgrade system when upgrading between versions
+1.0.2 - 2014-04-17 - Chris Wiegman
+	Only load front-end classes as needed
+    Add link to free support at .org forums
