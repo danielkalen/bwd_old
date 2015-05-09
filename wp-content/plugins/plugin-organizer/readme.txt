@@ -3,8 +3,8 @@ Contributors: foomagoo
 Donate link: http://www.jsterup.com/donate
 Tags: plugin organizer, load order, organize plugins, plugin order, sort plugin, group plugin, disable plugins by post, disable plugins by page, disable plugins by custom post type, turn off plugins for post, turn off plugins for page, turn off plugins for custom post type
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 5.7.2
+Tested up to: 4.1.1
+Stable tag: 6.0.3
 
 
 This plugin allows you to do the following:
@@ -60,12 +60,54 @@ Note: If you are having troubles you can view the documentation by going to http
 
 == Screenshots ==
 
-1. Plugin admin page example.
-2. Settings page example.
-3. Global plugins page.
-4. Page edit screen.
+1. Settings page example.
+2. Global plugins page.
+3. Search plugins page.
+4. Post type page.
+5. Group and order plugins page.
+6. Page edit screen.
 
 == Changelog ==
+
+= 6.0.3 =
+Removed shortcodes from 3 template files.
+Changed check to make sure $ajaxSaveFunction is set in postMetabox.php.
+
+= 6.0.2 =
+Fixed display of plugin groups on the plugins page.
+Changed group and order js to use anonymous function sent to slideup instead of settimeout.
+
+= 6.0.1 =
+Fixed undefined variable warning on multisite activation.
+Added check to prevent save buttons from appearing in post metabox on post edit screen.
+
+= 6.0 =
+Added ability to set plugins for all posts matching a post type.
+Moved the plugin ordering and grouping to it's own page.
+Changed the interface to make it more user friendly.
+Added uninstall.php to remove all data from the database when the plugin is deleted through the admin.
+Fixed ordering of network activated plugins.  They are now displayed on the ordering page at the beginning of the list where they are loaded and can be reordered seperately.
+Added functionality to change the color of on/off buttons and rows on the ordering page.
+Cleaned up old code.
+Changed icons to use Font Awesome and the built in Dashicons.
+
+= 5.7.6 =
+Fixed a typo that prevented globally disabled mobile groups from being enabled on a post or page.
+Streamlined plugin matching functionality when saving enabled/disabled during meta box save so it all uses a single function instead of multiple if statements.
+Fixed the MU plugin so PO can't be disabled on the admin side which locks the user out of all plugin organizer settings.
+
+= 5.7.5 =
+Fixed problem with wordpress not deleting rows from the PO_plugins table upon auto emptying trash.
+Fixed problem where plugin filters would show up as duplicate permalinks when the plugin filter was in the trash.
+
+= 5.7.4 =
+Fixed error on plugins.php when using a ' in plugin group name.
+Fixed problem in mobile user agent strings box where a blank line was added on every save.
+Added functionality to create a default user agent search string.
+Fixed problem correcting ending slash in plugin filter permalink when the permalink is the base url.  Should always have a trailing slash unless it is a subsite of network.
+
+= 5.7.3 =
+Restricted search functionality to front end searches.
 
 = 5.7.2 =
 Added functionality to find duplicate plugin filters and display a warning on the edit screen.
@@ -444,8 +486,6 @@ Initial version.
 
 == Upgrade Notice ==
 
-= 5.7.2 =
-Added functionality to find duplicate plugin filters and display a warning on the edit screen.
-Fixed search for parent permalinks.  Was stopping the search even if there were no plugins and a parent was found.
-Fixed admin url links in error messages.
-Fixed plugin group links on the plugins page.
+= 6.0.3 =
+Removed shortcodes from 3 template files.
+Changed check to make sure $ajaxSaveFunction is set in postMetabox.php.
