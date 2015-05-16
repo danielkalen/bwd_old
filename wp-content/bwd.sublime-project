@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "themes/bwd_theme"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "plugins"
+		}
+	]
+}

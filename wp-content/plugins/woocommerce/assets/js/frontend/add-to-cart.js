@@ -17,6 +17,7 @@ jQuery( function( $ ) {
 
 			$thisbutton.removeClass( 'added' );
 			$thisbutton.addClass( 'loading' );
+			$thisbutton.find('.button-text').html('Adding');
 
 			var data = {
 				action: 'woocommerce_add_to_cart',
@@ -74,6 +75,7 @@ jQuery( function( $ ) {
 
 					// Changes button classes
 					$thisbutton.addClass( 'added' );
+					$thisbutton.find('.button-text').html('Added!');
 
 					// View cart text
 					if ( ! wc_add_to_cart_params.is_cart && $thisbutton.parent().find( '.added_to_cart' ).size() === 0 ) {

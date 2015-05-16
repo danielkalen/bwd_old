@@ -518,6 +518,17 @@ if ( ! function_exists( 'woocommerce_template_loop_price' ) ) {
 		wc_get_template( 'loop/price.php' );
 	}
 }
+if ( ! function_exists( 'woocommerce_template_loop_subtitle' ) ) {
+
+	/**
+	 * Display the average rating in the loop
+	 *
+	 * @subpackage	Loop
+	 */
+	function woocommerce_template_loop_subtitle() {
+		wc_get_template( 'loop/subtitle.php' );
+	}
+}
 if ( ! function_exists( 'woocommerce_template_loop_rating' ) ) {
 
 	/**

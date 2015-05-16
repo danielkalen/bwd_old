@@ -1104,11 +1104,12 @@ class WC_Product {
 			$rating = $this->get_average_rating();
 		}
 
-		if ( $rating > 0 ) {
+		if ( $rating >= 0 ) {
 
-			$rating_html  = '<div class="star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ) . '">';
+			$rating_html  = '<div class="products-item-content-rating star-rating" title="' . sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating ) . '">';
 
-			$rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'woocommerce' ) . '</span>';
+			// $rating_html .= '<span style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong> ' . __( 'out of 5', 'woocommerce' ) . '</span>';
+			$rating_html .= '<span class="star-rating-active" style="width:' . ( ( $rating / 5 ) * 100 ) . '%"><strong class="rating">' . $rating . '</strong></span>';
 
 			$rating_html .= '</div>';
 		}
