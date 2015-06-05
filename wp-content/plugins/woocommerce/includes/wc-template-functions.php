@@ -1024,7 +1024,7 @@ if ( ! function_exists( 'woocommerce_output_related_products' ) ) {
 	function woocommerce_output_related_products() {
 
 		$args = array(
-			'posts_per_page' => 2,
+			'posts_per_page' => 4,
 			'columns' => 2,
 			'orderby' => 'rand'
 		);
