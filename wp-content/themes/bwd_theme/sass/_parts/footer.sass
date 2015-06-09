@@ -1,0 +1,261 @@
+.footer
+	margin-top: 40px
+	width: 100%
+	background-color: $subwhite
+	border-top: 5px solid $primary
+	border-bottom: 5px solid $primary
+	box-sizing: border-box
+
+	&-wrap
+		padding: 20px
+		box-sizing: border-box
+		+clearfix
+
+	&-title
+		font-size: 24px
+		font-weight: 500
+		color: $primary
+		margin-bottom: 5px
+
+	&-cat
+		float: left
+		width: 48%
+
+		+max(736)
+			display: none
+
+		&-list
+			margin: 0
+			padding: 0 0 0 15px
+			list-style: none
+
+			&-item
+				float: left
+				display: inline
+				width: 33%
+				padding: 6px 0
+
+				a
+					display: block
+					+ellipsis(95%)
+					font-size: 15px
+					font-weight: 400
+					line-height: 1.2
+					color: $font
+
+
+	&-company
+		float: right
+		width: 48%
+
+		+max(736)
+			width: 100%
+			float: none
+
+		&-support
+			+clearfix
+
+			&-item
+				position: relative
+				float: left
+				margin-top: 10px
+
+
+				&:before
+					position: absolute
+					top: 0
+					font-family: bwdcons
+					font-size: 26px
+					line-height: 1
+					color: $primary
+
+				&.phone
+					margin-right: 5%					
+					&:before
+						content: 'a'
+
+				&.email
+					margin-right: 5%
+					&:before
+						content: 'f'
+						top: -2px
+						font-size: 29px
+
+				&-link
+					color: $font
+					font-weight: 500
+					margin-left: 33px
+		
+		&-social
+			margin-top: 30px
+
+			&-item
+				position: relative
+				float: left
+				width: 33%
+				margin-top: 10px
+				font-size: 12px
+				padding-left: 36px
+				box-sizing: border-box
+
+				a
+					color: $font
+
+					+max(1024)
+						font-size: 14px
+						line-height: 1
+						font-weight: 500
+						.mobile-hide
+							display: none
+
+					+max(350)
+						font-size: 12px
+						position: relative
+						left: -8px
+
+				&:before
+					content: ''
+					position: absolute
+					left: 0
+					top: -6px
+					+size(28)
+					border-radius: 50%
+					cursor: pointer
+
+					+max(350)
+						+size(24)
+						top: -4px
+
+
+				&:after
+					position: absolute
+					left: 4.5px
+					top: -2px
+					font-size: 20px
+					color: $subwhite
+					font-family: bwdcons
+					cursor: pointer
+
+					+max(350)
+						font-size: 16px
+						top: 0
+
+				&.facebook
+					&:before
+						background-color: #3b5998
+					&:after
+						content: 'x'
+						left: 4px
+				&.twitter
+					&:before
+						background-color: #00aced
+					&:after
+						content: 'y'
+				&.pinterest
+					&:before
+						background-color: #cb2027
+					&:after
+						content: 'z'
+
+
+	&-payments
+		width: 100%
+		background-image: url(img/footer.jpg)
+		background-size: 100%
+		+ratio(8%)
+
+		+max(736)
+			display: none
+
+
+	&-bottom
+		position: relative
+		height: 60px
+		padding: 0 20px
+		box-sizing: border-box
+		+clearfix
+
+		+max(736)
+			height: 90px
+
+
+		&-branding
+			position: relative
+			+valign(54%)
+			float: left
+
+			+max(736)
+				float: none
+				position: absolute
+				left: 0
+				right: 0
+				top: 70%
+				max-width: 327px
+				+center
+
+			&-logo
+				float: left
+				background-image: url(img/sprite.png)
+				background-position: -153px -190px
+				+size(32)
+
+				+max(350)
+					display: none
+
+			&-copyright
+				float: left
+				line-height: 1
+				padding: 9px 0 0 9px
+				font-size: 12px
+				color: $grey
+
+
+		&-links
+			position: relative
+			+valign
+			float: right
+			list-style: none
+			margin: 0
+			padding: 0
+
+			+max(1024)
+				max-width: 55%
+				text-align: center
+
+			+max(736)
+				max-width: none
+				float: none
+				top: 15px
+
+
+			&-item
+				position: relative
+				display: inline-block
+				font-size: 12px
+				margin-right: 16px
+
+				+max(736)
+					font-size: 11px
+
+
+				&:before
+					content: '·'
+					position: absolute
+					top: -4px
+					left: -11px
+					line-height: 1
+					font-size: 25px
+					font-weight: 700
+					color: $grey
+
+				&:first-child:before
+					content: ''
+
+				&:last-child
+					margin: 0
+
+				a
+					color: $grey
+
+					&:hover
+						text-decoration: underline

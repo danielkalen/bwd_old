@@ -1,0 +1,24 @@
+=button($width, $height, $color: $primary, $textcolor: $subberwhite, $hovercolor: $subwhite, $hovertextcolor: $primary, $font:14px, $fontweight: 500)
+	position: relative
+	display: block
+	width: $width
+	height: $height
+	background-color: $color
+	color: $textcolor
+	border-radius: 2px
+	cursor: pointer
+	transition: all 0.2s
+
+	&-text
+		position: absolute
+		+valign
+		display: block
+		width: 100%
+		line-height: 1
+		font-weight: $fontweight
+		font-size: $font
+		text-align: center
+
+	&:hover
+		background-color: $hovercolor
+		color: $hovertextcolor

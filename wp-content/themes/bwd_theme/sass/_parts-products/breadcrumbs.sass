@@ -1,0 +1,54 @@
+.breadcrumbs
+	margin-bottom: 20px
+	padding-bottom: 20px
+	border-bottom: 1px solid $divider
+	font-weight: 500
+	font-size: 28px
+	line-height: 1
+	color: $primary
+
+	+max(736)
+		line-height: 1.4
+
+	.single &
+		font-size: 13px
+		border-bottom: 0
+		padding-bottom: 0
+
+	&-item
+		position: relative
+		color: #bbb
+		margin-right: 24px
+
+		.single &
+			color: $font
+			margin-right: 15px
+
+		&:after
+			content: 'b'
+			position: absolute
+			right: -33px
+			top: 3px
+			font-family: bwdcons
+			font-size: 38px
+			font-weight: 400
+			line-height: 1
+
+			.single &
+				font-size: 20px
+				top: 0
+				right: -18px
+
+
+	+max(520)
+		font-size: 18px
+		margin-bottom: 15px
+		padding-bottom: 15px
+
+		&-item
+			margin-right: 18px
+
+			&:after
+				font-size: 28px
+				top: -1px
+				right: -23px

@@ -1,0 +1,64 @@
+@import _parts/_vars
+@import _parts/_elements
+@import _parts/normalize
+@import _parts/fonts
+@import _parts/icons
+@import _parts/header
+@import _parts/footer
+@import _parts/sidebar
+@import _parts/title
+@import products
+@import cart
+// @import home
+@import _parts/temp
+
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+html,
+body
+	height: 100%
+
+body
+	background-color: #f5f5f5
+	// font-family: open sans
+	// font-family: avenir
+	// font-family: helvetica, arial
+	font-family: open sans, helvetica, arial
+
+#page
+	width: 100%
+	// min-height: 100%
+	max-width: 1064px
+	+center
+	border-left: 1px solid $divider
+	border-right: 1px solid $divider
+	background-color: white
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15)
+
+.content-wrap
+	width: 100%
+	padding: 30px 20px 0
+	box-sizing: border-box
+	+clearfix
+
+.content
+	width: perc(786px, 1024px)
+
+	+max(920)
+		// width: perc(706px, 1024px)
+		width: 100%
+
+	// +max(736)
+	// 	width: 100%
+
+	.left &
+		float: right
+	.right &
+		float: left
+
+
+.clearfix
+	+clearfix

@@ -1,0 +1,43 @@
+&-product-list
+	
+	&-item
+		+clearfix
+		margin-top: 13px
+
+		&-img
+			position: relative
+			float: left
+			+size(50)
+			background-color: white
+
+			img
+				position: absolute
+				+valign
+				width: 100%
+				height: 100%
+				height: auto
+
+
+		&-content
+			position: relative
+			top: -2px
+			float: right
+			width: 65%
+			color: $font
+
+			&-title
+				font-size: 12px
+				font-weight: 600
+				+ellipsis(100%)
+
+			&-subtitle
+				font-size: 10px
+				+ellipsis(100%)
+
+			// &-rating
+
+			.star-rating
+				text-indent: -9999px
+				font-size: 11px
+				width: 5em
+				float: left

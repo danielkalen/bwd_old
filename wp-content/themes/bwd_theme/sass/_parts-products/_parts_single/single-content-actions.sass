@@ -1,0 +1,105 @@
+&-actions
+	position: relative
+	+center(39px)
+	padding: 13px 3.5%
+	background-color: $subwhite
+	border: 1px solid $divider
+	+clearfix
+
+	&-price
+		float: left
+		color: $primary
+		font-weight: 600
+
+		&-number
+			line-height: 1
+			position: absolute
+			+valign
+
+			&.pack
+				font-size: 23px
+				.per
+					font-size: 16px
+					margin-left: -5px
+
+				+max(520)
+					font-size: 20px
+					.per
+						font-size: 14px
+
+				+max(350)
+					font-size: 18px
+					.per
+						font-size: 12px
+
+				.bwd &
+					top: 32%
+
+
+			&.unit
+				font-size: 16px
+				.per
+					font-size: 12px
+					margin-left: -4px
+				
+				+max(520)
+					font-size: 14px
+					.per
+						font-size: 10px
+
+				.bwd &
+					top: 70%
+				
+				.onsale &
+					display: none
+					
+
+
+			// ==== Sale Amount =================================================================================
+			.onsale &
+				top: 61%
+
+			del // Before price
+				position: absolute
+				top: -15px
+				font-size: 14px
+				text-decoration: none
+				color: $grey-light
+
+				&:after 
+					content: ''
+					position: absolute
+					+valign
+					// top: 0
+					left: -2px
+					background-color: $grey-light
+					height: 1px
+					width: 110%
+
+
+			ins // New price
+				position: relative
+				text-decoration: none
+			/* ========================================================================== */
+
+
+
+
+	&-buttons
+		float: right
+		width: perc(249px, 368px)
+
+		&-add
+			float: left
+			position: relative
+			height: 38px
+			width: perc(133px, 249px)
+			background-color: $primary
+			border-radius: 2px
+			font-size: 14px
+			font-weight: 600
+			color: white
+
+		.quantity
+			float: left
+			width: perc(116px, 249px)

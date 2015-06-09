@@ -1,0 +1,38 @@
+.single-product
+
+	&-content
+		position: relative
+		+clearfix
+
+		@import _parts_single/single-images.sass
+
+		@import _parts_single/single-sale.sass
+		
+		
+		&-summary
+			float: right
+			width: perc(396px, 786px)
+
+			+max(736)
+				float: none
+				width: 100%
+				max-width: 460px
+				+center
+
+			@import _parts_single/single-content-title.sass
+
+			@import _parts_single/single-content-rating.sass
+
+			@import _parts_single/single-content-social.sass
+
+			@import _parts_single/single-content-desc.sass
+
+			@import _parts_single/single-content-actions.sass
+
+			@import _parts_single/single-content-meta.sass
+
+
+@import _parts_single/single-related.sass
+
+@import _parts_single/single-reviews.sass
+

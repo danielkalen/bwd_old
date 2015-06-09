@@ -1,0 +1,67 @@
+.ui-slider
+	position: relative
+	margin: 29px 8px 8px 8px
+	border-radius: 10px
+	height: 7px
+	background-color: lighten($divider, 5)
+	box-shadow: 0 0 0 1px $divider inset
+
+	&-range
+		position: absolute
+		z-index: 1
+		border-radius: 10px
+		height: 7px
+		background-color: $primary
+
+	&-handle
+		position: absolute
+		z-index: 2
+		top: -4px
+		display: block
+		+size(14)
+		margin-left: -7px
+		background-color: $primary
+		border: 1px solid darken($primary, 15)
+		outline: 0
+		box-sizing: border-box
+		border-radius: 50%
+		cursor: ew-resize
+
+		&-amount
+			position: absolute
+			top: -28px
+			left: -10px
+			padding: 4px 6px
+			border-radius: 3px
+			background-color: $background
+			line-height: 1
+			font-size: 13px
+			font-weight: 600
+			color: $primary
+
+			&:empty
+				display: none
+
+.price_slider_amount
+	+clearfix
+	
+	.button
+		position: relative
+		top: 2px
+		// float: right
+		+center(10px)
+		display: block
+		// margin-top: 5px
+		border: 1px solid $divider
+		border-radius: 2px
+		padding: 4px 10px
+		font-size: 11px
+		text-transform: uppercase
+		font-weight: 600
+		color: $primary
+
+		&:before
+			content: 'Apply '
+
+	.price_label
+		display: none !important

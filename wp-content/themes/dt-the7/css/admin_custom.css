@@ -1,0 +1,35 @@
+.misc-pub-userpro, 
+#edit-slug-box,
+.post-type-banner .search-box, 
+.post-type-banner .subsubsub, 
+.post-type-banner .tablenav.top, 
+.post-type-banner .add-new-h2 
+.post-type-dt_gallery .search-box, 
+.post-type-dt_gallery .subsubsub, 
+.post-type-dt_gallery .tablenav.top, 
+.post-type-dt_gallery .add-new-h2,
+#wp-excerpt-editor-tools,
+#wp-excerpt-wrap .mce-toolbar-grp.mce-container,
+#wp-excerpt-wrap .mce-statusbar,
+#postdivrich #wp-content-editor-tools,
+#postdivrich .mce-statusbar,
+#postdivrich .mce-toolbar-grp,
+label[for="_virtual"],
+label[for="_downloadable"] {
+	display:none !important;
+}
+
+#postdivrich #content_ifr {
+	height: 40px !important;
+}
+#postdivrich .mce-edit-area.mce-container {
+	padding-top: 0 !important;
+}
+
+.misc-pub-section {
+	height: auto !important;
+}
+
+#woocommerce-product-data .inside {
+	margin-top: 0 !important;
+}

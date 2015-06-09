@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "dt-the7"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "dt-the7-child"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Applications/MAMP/shopperbarn/wp-content/plugins"
+		}
+	]
+}

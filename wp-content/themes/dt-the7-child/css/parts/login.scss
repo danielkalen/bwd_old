@@ -1,0 +1,352 @@
+@import '../global/vars';
+
+.userpro {
+  width: 462px / 1024px * 100%;
+  //width: 462px;
+  float: left;
+  border-radius: 2px;
+  background: $item-bg;
+  border: 1px solid $divider-color;
+
+  @media screen and (max-width:1024px) {
+    float: none;
+    margin: 0 auto 25px !important;
+    min-width: 340px;  
+  }
+
+  @media screen and (max-width:420px) {
+    width: 90%;
+    min-width: 280px;
+  }
+
+  .userpro-head {
+    background-color: $primary-color;
+    padding: 8px !important;
+    color: #fff;
+    font: 400 19px montserrat;
+    text-transform: uppercase;
+    text-align: center;
+
+        .userpro-left {
+          margin-left: 10px;
+        }
+   
+        .userpro-right {
+          margin-right: 10px;
+
+              a {
+                color: #fff;
+                font-size: 12px;
+                vertical-align: middle;
+              }
+        }
+  }
+
+  .userpro-body{
+    padding: 0 40px 15px 40px;
+    line-height: 18px ;
+    position: relative;
+    @media screen and (max-width:480px) {
+      padding: 0 20px 15px 25px;
+    }
+
+    
+    .pre-form, .userpro-message {
+      margin-top: 25px;
+      font:400 13px open sans;
+    }
+
+    .userpro-message p {
+      padding: 0;
+    }
+
+    .pre-wholesale {
+      margin-top: 10px;
+      margin-bottom: -6px;
+      color: #9a9a9a;
+      font:400 11px open sans;
+    }
+
+    .userpro-input input,
+    .userpro-input textarea {
+      @include input-field;
+      position: relative !important;
+      margin-top: 0 !important;
+    }
+
+    .userpro-input {
+      margin-top: 25px;
+    }
+    .userpro-field-mailchimp_subscribe .userpro-input, .userpro-maxwidth .userpro-input {
+      margin-top: .7em;
+    }
+
+    .userpro-field {
+      @include clearfix-dk();
+    }
+    
+
+    .userpro-submit {margin-top: 20px; position: relative;}
+    .userpro-submit, .userpro-column {@include clearfix-dk;}
+    .userpro-maxwidth {border-top: 0px;}
+
+    .userpro-input:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 1.2em;
+      right: 1em;
+    }
+
+    .userpro-button, .fullwidth-block {
+      @include button-large($txtcolor: $white);
+      float: right;
+      width: 135px !important;
+      margin-bottom: 0 !important;
+
+      @media screen and (max-width:480px) {
+        clear: both;
+      }
+    }
+
+    .userpro-field-antispam {
+      position: relative;
+      margin-top: 25px;
+
+        .userpro-label {
+          // float: right;
+          width: auto;
+          position: absolute;
+          right: 0;
+          top: -6px;
+
+              label {
+                margin: 0;
+              }
+        }
+
+        .userpro-input {
+          margin-top: 0;
+        }
+    }
+
+    .userpro-checkbox-wrap {
+      float: left;
+      font: 400 13px/100% open sans;
+      padding: 0 19px;
+      margin:  0;
+      position: relative;
+      z-index: 10;
+      cursor: pointer;
+
+      @media screen and (max-width:1024px) {
+        float: none;
+        margin: 1em 0px 1em 0px;
+      }
+
+      @media screen and (max-width:420px) {
+        margin: 1em 0px 1em 0px;
+      }
+
+      span {
+        background-image: url(../sprites.png) !important;
+        background-position:  -31px -164px ;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        left: 0;
+        top: 0em;
+        cursor: pointer;
+      }
+
+      label {
+        cursor: pointer;
+      }
+
+      input{display: none;}
+    }
+    .userpro-checkbox-wrap:hover span, .userpro-checkbox-wrap span.checked {
+      background-position:  -47px -164px ;
+    }
+
+    .userpro-forget{
+      @include clearfix-dk;
+      clear:both;
+      text-align:right;
+      margin-top: 4em;
+
+      a {font:400 12px open sans !important; color: #9a9a9a;}
+    }
+
+
+    
+    .userpro-field-billing_first_name .userpro-input:after,
+    .userpro-field-billing_last_name .userpro-input:after {
+      background-image: url(../sprites.png) !important;
+      background-position:  -39px 0;
+      width: 14px;
+      height: 16px;
+    }
+
+    .userpro-field-username_or_email .userpro-input:after,
+    .userpro-field-user_email .userpro-input:after {
+      background-image: url(../sprites.png) !important;
+      background-position:   -58px 0;
+      width: 16px;
+      height: 11px;
+      bottom: 1.3em !important;
+    }
+    p{text-align: center;}
+    .userpro-social-connect{
+      // top: 0;
+      right: 12.1em;
+      width: auto;
+      height: 39px;
+
+    }
+    .userpro-social-facebook{
+      @include button($sub-white, $white, $divider-color, $divider-color);
+      color:#4369a2;
+      font-size: 1.8em !important;
+      padding-top: .40em;
+
+        &:hover {
+          color:#4369a2 !important;
+        }
+    }
+    .userpro-social-google {
+      @include button($sub-white, $white, $divider-color, $divider-color);
+      color:#D34836;
+      font-size: 1.8em !important;
+      padding-top: .40em;
+      margin-left: 10px;
+
+        &:hover {
+          color:#D34836 !important;
+        }
+    }
+
+    .userpro-social-connect {
+      @media screen and (max-width:352px) {
+        right: 12em;
+      }
+    }
+
+
+  }
+}
+
+
+
+
+// REGISTRATION FROM DIFFERENCE !!!!!!!!!!!!!!!!!
+
+.userpro[data-template="login"] {
+
+    .userpro-checkbox-wrap {
+      margin-top: 1em;
+    }
+
+}
+.userpro[data-template="edit"] {
+
+    .userpro-input {
+      margin-top: 0 !important;
+    }
+
+}
+
+.userpro[data-template="reset"], 
+.userpro[data-template="change"] {
+
+    .userpro-button {
+      width: 48% !important;
+      margin: 10px 0 !important;
+
+          &.secondary {
+            margin-right: 4% !important;
+            background-color: $sub-white;
+            color: $primary-color;
+            border-color: $divider-color !important;
+          }
+    }
+
+    .userpro-field-user_pass,
+    .userpro-field-user_pass_confirm {
+      width: 47.5% !important;
+      float: left;
+    }
+
+    .userpro-field-user_pass_confirm {
+      margin-left: 5%;
+    }
+
+    // .userpro-field-antispam {clear: both;}
+}
+
+.userpro[data-template="register"] {
+
+  .userpro-head {background-color: $contrast-color !important;}
+
+      .userpro-field-billing_first_name,
+      .userpro-field-billing_last_name,
+      .userpro-field-user_pass,
+      .userpro-field-user_pass_confirm {
+        width: 47.5% !important;
+        float: left;
+      }
+
+      .userpro-field-billing_last_name,
+      .userpro-field-user_pass_confirm {margin-left: 5%;}
+
+
+
+      .userpro-button, .fullwidth-block {
+        @include button-large ($contrast-color, $white, $contrast-color);
+        width: 51% !important;
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+          @media screen and (max-width:760px) {
+            width: 61.5% !important;
+          }
+
+          @media screen and (max-width:420px) {
+            width: 57.7% !important;
+          }
+      }
+
+      .userpro-social-connect{
+        right: 53.9%; bottom:-0.02em;
+        @media screen and (max-width:760px) {
+          right: 65.8%; 
+        }
+
+        @media screen and (max-width:420px) {
+          right: 62.2%;
+        }
+      }
+
+}
+
+.userpro-warning {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $primary-color !important;
+    border-radius: 2px;
+    text-indent: -9999px;
+    opacity: .5 !important;
+    z-index: 0;
+    top: -1px !important;
+    left: -1px !important;
+    .userpro-icon-caret-up {
+      display: none;
+    }
+}
+
+// REGISTRATION FROM DIFFERENCE #################
+
+.userpro:nth-child(3) {margin-left: 20px / 1024px * 100%;}
+.userpro:nth-child(4) {margin-left: 65px / 1024px * 100%;}

@@ -1,0 +1,1 @@
+function dt_update_cart_dropdown(t,n,d){var i=jQuery(".shopping-cart");if(n["div.widget_shopping_cart_content"]){var o=jQuery(n["div.widget_shopping_cart_content"]),r=o.find(".cart_list"),a=o.find(".total"),_=i.find(".buttons");i.find(".shopping-cart-inner").html("").append(r,a,_)}}jQuery(function($){$("body").bind("added_to_cart",dt_update_cart_dropdown)});

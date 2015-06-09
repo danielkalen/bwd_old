@@ -1,0 +1,58 @@
+
+
+.brand-thumbnails {
+  overflow: hidden;
+  zoom: 1;
+  margin: 0;
+  clear: both;
+}
+
+.brand-thumbnails li {
+  float: left;
+  padding: 0;
+  margin: 0 2% 2% 0;
+}
+
+.brand-thumbnails li img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+}
+
+
+ul.brands_index {
+  list-style: none outside;
+  overflow: hidden;
+  zoom: 1;
+}
+
+ul.brands_index li {
+  float: left;
+  margin: 0 2px 2px 0;
+}
+
+ul.brands_index li span {
+  border: 1px solid #ccc;
+  padding: 6px;
+  line-height: 1em;
+  float: left;
+  text-decoration: none;
+}
+
+ul.brands_index li span {
+  border-color: #eee;
+  color: #ddd;
+}
+
+div#brands_a_z a.top {
+  border: 1px solid #ccc;
+  padding: 4px;
+  line-height: 1em;
+  float: right;
+  text-decoration: none;
+  font-size: 0.8em;
+}

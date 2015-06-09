@@ -1,0 +1,262 @@
+.top-bar
+	position: relative
+	height: 36px
+	width: 100%
+	background-color: $font
+	color: white
+
+	// +max(736)
+	// 	height: 60px
+	// 	&:after
+	// 		content: ''
+	// 		position: absolute
+	// 		z-index: 1
+	// 		bottom: 0
+	// 		width: 100%
+	// 		height: 20px
+	// 		background-color: darken($font, 10)
+
+	// 	&:before
+	// 		content: 'b'
+	// 		position: absolute
+	// 		z-index: 2
+	// 		left: 0
+	// 		right: 0
+	// 		bottom: -2px
+	// 		font-family: bwdcons
+	// 		font-size: 24px
+	// 		line-height: 1
+	// 		text-align: center
+	// 		+transform(rotate(90deg))
+	// 		+user-select(none)
+
+	// 		.open &
+	// 			+transform(rotate(-90deg))
+
+
+	&-wrap
+		width: 100%
+		max-width: 1064px
+		+center
+		box-sizing: border-box
+		+clearfix
+
+		+max(1064)
+			padding: 0 20px
+
+		// +max(736)
+		// 	overflow: hidden
+
+	&-support
+		position: absolute
+		+valign
+		float: left
+		padding-left: 26px
+		line-height: 1
+		font-size: 13px
+		font-weight: 600
+
+		+max(820)
+			font-size: 12px
+		+max(520)
+			display: none
+
+		&:before
+			content: 'd'
+			position: absolute
+			top: -4px
+			left: 0
+			font-family: bwdcons
+			font-size: 20px
+			line-height: 1
+			font-weight: 400
+			+user-select(none)
+
+	&-shipping
+		position: absolute
+		left: 0
+		right: 0
+		height: 100%
+		width: 300px
+		+center
+		font-size: 13px
+		font-weight: 700
+		+clearfix
+
+		+max(920)
+			left: 10%
+		+max(820)
+			left: 14%
+			font-size: 12px
+		+max(736)
+			display: none
+
+		&-amount
+			float: left
+			height: 100%
+			padding: 9px 5px 0
+			background-color: $primary
+			text-align: center
+			box-sizing: border-box
+
+		&-text
+			float: left
+			padding: 9px 0 0 6px
+			
+
+
+	&-links
+		float: right
+
+		&-social
+			float: left
+			padding-top: 8px
+
+			+max(920)
+				display: none
+
+			&-item
+				position: relative
+				float: left
+				+size(21)
+				margin-right: 4px
+				background-color: white
+				border-radius: 50%
+				box-sizing: border-box
+				transition: all 0.2s
+
+				&:hover
+					background-color: $contrast
+
+				&:after
+					position: absolute
+					left: 0
+					right: 0
+					+valign
+					display: block
+					font-size: 15px
+					line-height: 1
+					font-family: bwdcons
+					text-align: center
+					color: $font
+					+user-select(none)
+
+				&.twitter:after
+					content: 'y'
+				&.facebook:after
+					content: 'x'
+				&.pinterest:after
+					content: 'z'
+				&.gplus:after
+					content: 'H'
+					font-size: 14px
+
+
+
+		&-account
+			float: left
+			position: relative
+			font-size: 13px
+
+			+max(820)
+				font-size: 12px
+
+			+max(520)
+				position: absolute
+				left: 0
+
+
+			&-link
+				display: block
+				padding: 10px 20px
+				color: white
+				font-weight: 700
+
+			&-box
+				position: absolute
+				z-index: 101
+				top: 50px
+				right: 6px
+				width: 131px
+				max-height: 85vh
+				overflow: scroll
+				padding: 10px 15px 10px
+				background-color: $subwhite
+				border-radius: 5px
+				border-bottom: 8px solid $primary
+				box-shadow: 0px 0px 4px 0px rgba(24, 23, 24, 0.32)
+				font-size: 14px
+				font-weight: 600
+				color: $font
+				box-sizing: border-box
+				visibility: hidden
+				opacity: 0
+				transition: all 0.2s
+
+				&-item
+					display: block
+					color: $font
+					font-size: 13px
+					font-weight: 600
+					line-height: 2
+
+					&:hover
+						color: $primary
+
+
+		&-cart
+			float: left
+			position: relative
+
+			&-text
+				font-weight: 700
+				font-size: 13px
+				padding: 10px 0
+				color: lighten($primary, 5)
+				cursor: pointer
+				display: block
+
+				+max(820)
+					font-size: 12px
+				+max(520)
+					&:before
+						content: 'My '
+
+				&-icon
+					position: relative
+					top: -6px
+					float: right
+					display: block
+					+size(29)
+					margin-left: 6px
+					background-image: url(img/sprite.png)
+					background-position: -103px -193px
+
+			&:hover &-text
+				color: $contrast
+
+			&:hover &-text-icon
+				background-position: -59px -193px
+
+
+
+			&-box
+				position: absolute
+				z-index: 101
+				top: 50px
+				right: 6px
+				width: 270px
+				max-height: 85vh
+				overflow: scroll
+				padding: 20px 20px 0
+				background-color: $subwhite
+				border-radius: 5px
+				border-bottom: 8px solid $primary
+				box-shadow: 0px 0px 4px 0px rgba(24, 23, 24, 0.32)
+				font-size: 14px
+				font-weight: 600
+				color: $font
+				box-sizing: border-box
+				visibility: hidden
+				opacity: 0
+				transition: all 0.2s

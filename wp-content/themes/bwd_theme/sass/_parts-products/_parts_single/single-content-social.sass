@@ -1,0 +1,51 @@
+&-social
+	float: right
+	+clearfix
+
+	&-text
+		// position: relative
+		// top: -1px
+		float: left
+		display: block
+		margin-right: 3px
+		font-size: 13px
+		font-weight: 600
+		color: $background
+		+user-select(none)
+		cursor: default
+
+	&-item
+		position: relative
+		float: left
+		display: block
+		+size(18)
+		margin-left: 3px
+		background-color: $background
+		border-radius: 50%
+		cursor: pointer
+
+		&:hover
+			background-color: $contrast
+
+		&:after
+			content: ''
+			position: absolute
+			+valign
+			display: block
+			width: 100%
+			font-family: bwdcons
+			line-height: 1
+			font-size: 12px
+			text-align: center
+			color: white
+			cursor: pointer
+
+		&#facebook:after
+			content: 'x'
+		&#twitter:after
+			content: 'y'
+		&#pinterest:after
+			content: 'z'
+			font-size: 13px
+		&#googleplus:after
+			content: 'H'

@@ -1,0 +1,53 @@
+.sidebar
+
+	.menu-item-has-children
+		position: relative
+		margin-bottom: 4px
+
+		&:before
+			position: relative
+			display: inline-block
+			// top: 1px
+			font-size: 12px
+			content: 'q'
+			font-family: bwdcons
+			line-height: 1
+			color: $primary
+			transition: all 0.1s
+			-webkit-transform: rotate(0deg)
+			-moz-transform: rotate(0deg)
+			-ms-transform: rotate(0deg)
+			transform: rotate(0deg)
+
+		&.open:before
+			-webkit-transform: rotate(90deg)
+			-moz-transform: rotate(90deg)
+			-ms-transform: rotate(90deg)
+			transform: rotate(90deg)
+
+		> a
+			font-size: 16px
+			color: $primary
+			font-weight: 500
+
+		.sub-menu
+			font-size: 12.5px
+			width: 100% !important
+			padding: 0 0 0 12px !important
+
+			.menu-item
+				margin-bottom: 4px
+
+				&:last-child
+					margin-bottom: 10px
+
+			a
+				color: $font
+
+	.widget-title
+		display: none
+
+	aside
+		border-bottom: 0
+		margin-bottom: 0
+		padding-bottom: 0

@@ -1,0 +1,86 @@
+// Body Css to prevent scrolling on mobile devices
+.opened-popup
+	overflow: hidden
+	position: fixed
+	width: 100%
+
+.popup
+	position: fixed
+	z-index: 1001
+	overflow: hidden
+	width: 100%
+	max-width: 745px
+	border-radius: 5px
+	background-color: white
+	+balign
+	top: 40%
+	opacity: 0
+	visibility: hidden
+	transition: opacity 0.4s, top 0.4s
+
+
+	&.show
+		top: 50%
+		opacity: 1
+		visibility: visible
+
+	// &.quick
+	// 	max-width: 807px
+	// 	border-radius: 0
+
+
+	&-overlay
+
+		position: fixed
+		z-index: 1000
+		display: none
+		width: 100%
+		height: 100%
+		background-color: black
+		opacity: 0
+		cursor: pointer
+		transition: opacity 0.4s 
+
+		&.show
+			display: block
+			opacity: .8
+
+	&-content
+		// height: 100%
+		height: 500px
+		max-height: 100vh
+
+		+m(736)
+			overflow-x: hidden
+			overflow-y: scroll		
+
+		&-loading
+			position: relative
+			+valign
+			background-image: url(img/preloader.gif)
+			+size(128)
+			+center
+
+
+	&-close
+		position: absolute
+		z-index: 2000
+		right: 10px
+		top: 10px
+		// display: none
+
+		&:after 
+			content: 'p'
+			font-family: bwdcons
+			color: $grey
+			font-size: 18px
+			line-height: 1
+			cursor: pointer
+			+user-select(none)
+
+
+		+m(736)
+			display: block
+
+
+	@import popup-product

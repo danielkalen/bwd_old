@@ -1,0 +1,47 @@
+&-images
+	position: relative
+	width: perc(368px, 786px)
+	float: left
+
+	+max(736)
+		float: none
+		width: 100%
+		max-width: 460px
+		+center
+		// border: 1px solid $divider
+
+	&-wrap
+		position: relative
+		+ratio(100%)
+		overflow: hidden
+
+	&-main_img
+		position: absolute
+		+balign
+		display: block
+		max-width: 100%
+		max-height: 100%
+		+center
+		height: auto
+		width: auto
+
+	&-thumbs
+		margin: 15px 0
+		padding: 15px 0
+		border-top: 1px solid $divider
+		border-bottom: 1px solid $divider
+		+clearfix
+
+		&-item
+			overflow: hidden
+			float: left
+			+size(80)
+
+			img
+				display: block
+				max-width: 100%
+				max-height: 100%
+				+center
+				width: auto
+
+

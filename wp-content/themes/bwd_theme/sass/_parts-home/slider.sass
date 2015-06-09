@@ -1,0 +1,64 @@
+.product-slider
+	position: relative
+
+	// &.recent
+	// 	margin-top: 30px
+
+	&-title
+		padding: 10px 0
+		margin-bottom: 20px
+		border-bottom: 1px solid $divider
+		font-size: 29px
+		font-weight: 400
+		color: $primary
+
+	&-controls
+		position: absolute
+		right: 0
+		top: 19px
+
+		&-arrow
+			position: relative
+			float: left
+			+size(25)
+			border: 3px solid 
+			border-radius: 50%
+			box-sizing: border-box
+			color: $divider
+			cursor: pointer
+			transition: color 0.15s
+
+			&:hover
+				color: $primary
+			
+			&:after
+				content: 'b'
+				position: absolute
+				top: -3.5px
+				font-family: bwdcons
+				font-weight: 600
+				font-size: 25px
+				line-height: 1
+				+user-select(none)
+
+			&.left
+				margin-right: 6px
+				&:after
+					content: 'c'
+					left: -4px
+			&.right
+				&:after
+					content: 'b'
+					left: -3px
+
+
+	&-wrap
+		position: relative
+		overflow: hidden
+
+		.mobile &
+			overflow: scroll
+
+		&-wrapper
+			position: relative
+			// width: 3500px

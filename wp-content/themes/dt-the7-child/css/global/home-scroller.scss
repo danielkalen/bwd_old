@@ -1,0 +1,140 @@
+.scroller-title {
+	position: relative;
+}
+
+.scroller-title {
+	clear: both;
+}
+
+.home-scroller {
+	margin-top: 22px;
+		.woocommerce {
+			position: relative;
+			overflow: hidden;
+			height: 301px;
+
+			@media screen and (max-width:1024px) {
+				overflow-x: scroll;
+				overflow-y: hidden;
+				-webkit-overflow-scrolling:touch;
+			}
+		}
+
+		ul.products {
+			width: 1620px;
+			position: absolute;
+			left: 0px;
+			margin: 0 !important;
+			transition:left 0.7s;
+
+				li.product {
+					display: block !important;
+					float: left !important;	
+					clear: none !important;
+					width: 245px !important;
+					margin-right: 25px !important;
+					padding: 0 !important;
+				}
+		}
+}
+
+
+.home .attachment-full {
+	max-width: none !important;
+	width: 100%;
+  @media screen and (max-width:760px) {
+    width: 108.5% !important;
+    margin-left: -4.3%;    
+  }
+
+  @media screen and (max-width: 510px) {
+    width: 111% !important; margin-left: -5.5%;
+  }
+
+  @media screen and (max-width:480px) {
+    width: 114% !important;
+    margin-left: -7%;;
+  }
+}
+
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		.owl-buttons {
+			position: absolute;
+
+				div {
+
+					background: none !important;
+					position: relative;
+					cursor: pointer;
+
+						&:after {
+						content: '\f1db';
+						font-family: FontAwesome;
+						top: 0;
+						left: 0;
+						color: #d3d3d3;
+						font-size: 2em;
+						}
+
+						&:hover:after {
+							color: $primary-color;
+						}
+				}
+
+				i {
+				  color: #D3D3D3;
+				  font-size: 14px;
+				  position: absolute;
+				  line-height: 1.5em;
+				  right: .4em;
+				}
+
+				i.fa {
+					display:inline !important;
+				}
+		}
+}
+
+.owl-buttons .owl-prev i {
+  right: .6em;
+}
+
+.gecko  .owl-buttons i {vertical-align: -10%;}
+.owl-prev:hover i, .owl-next:hover i {
+  color: $primary-color;
+}
+.owl-prev i{
+    margin-right: 0px;
+    // transition: all 0.2s linear 0s;
+}
+.owl-next i{
+  margin-left: 0px;
+  // transition: all 0.2s linear 0s;
+}
+
+.owl-buttons div {margin: 5px 4px 0 !important; display: inline-block;}
+
+
+div.owl-buttons {
+    right: 0px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    @media screen and (max-width: 1024px) {
+      // top: -17%;
+    }
+
+    @media screen and (max-width: 760px) {
+      padding: 3px 7px !important; 
+    }
+}
+

@@ -1,0 +1,101 @@
+.shopping-cart {
+  .shopping-cart-inner {
+    width: 227px;
+    top: 58px;
+    right: 10px;
+    box-shadow: 0px 0px 4px 0.00px rgba(24, 23, 24, 0.32);
+    background-color: $sub-white;
+    border-bottom: 8px solid $primary-color;
+    padding: 18px 20px;
+
+      @media screen and (max-width:760px) {
+        display: none;
+      }
+
+    .empty {color: $font-color;}
+    .total {
+        border-top: 1px solid $divider-color;
+        text-align:right;
+        padding-top: 5px;
+
+        strong{
+        color: $font-color;
+        font-weight: 600 !important;}
+      }
+    .buttons {
+      margin-top: 5px;
+      .view_cart{
+        @include button-medium (#fff, $primary-color, $divider-color, $primary-color);
+        display: block;
+        float: left;
+      }
+      .check_out{
+        @include button-medium ($txtcolor: #fff);
+        display: block;
+        float: left;
+        display: block !important;
+        text-align: center !important;
+        margin-left: 4px;
+        float: left;
+      }
+    }
+    ul.cart_list {
+      margin-bottom: 5px !important;
+      max-height: 600px;
+      overflow: scroll !important;
+      -webkit-overflow-scrolling:touch !important;
+
+      li{
+        border-bottom: none !important;
+        font:$base-font !important;
+        font-weight: 600 !important;
+        position:relative;
+        margin-bottom: 15px;
+
+        .product-text a {color: $font-color !important;}
+
+
+        .product-remove{
+          display:none;
+          position: absolute;
+          right: 0px;
+          top: 26px;
+        }
+
+        &:hover .product-remove {
+          display: block !important;
+
+          a{
+            display: block !important;
+            color: $primary-color !important;
+            font-size:1.45em !important;
+          }
+
+        }
+
+        img {
+          width: 75px !important;
+          height: 75px !important;
+          float:left;
+          margin-right: 13px;
+        }
+        .quantity, .amount {
+          font:$base-font !important;
+          font-weight: 600 !important;
+          font-size: 12px !important;
+          color: $primary-color;
+        }
+      }
+
+    }
+  }
+}
+
+.mini-cart-item-dk:after {
+    clear:both;
+}
+.mini-cart-item-dk {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.shopping-cart-inner .mini-cart-item-dk .product-text {float: left; width: 61%;}

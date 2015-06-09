@@ -1,0 +1,56 @@
+.related-products
+	margin-top: 25px
+
+	&-title
+		color: $primary
+		width: 100%
+		font-size: 29px
+		font-weight: 400
+		padding-bottom: 8px
+		margin-bottom: 20px
+		border-bottom: 1px solid $divider
+
+	&-wrap
+		width: 100%
+		overflow-x:scroll
+
+	.products
+		width: 786px
+		+clearfix
+
+		&-item
+			display: block
+			float: left
+			width: 23%
+			margin-right: 2.65%
+			width: 180px
+			margin-right: 22px
+
+			&:last-child
+				margin-right: 0
+			
+			&-img
+				min-height: 170px
+
+				img
+					max-height: 168px
+
+			&-content
+
+				&-title
+					font-size: 13px
+					width: 60%
+
+				&-subtitle
+					font-size: 11px
+
+				&-price
+					position: relative
+					top: -2px
+					font-size: 16px
+					font-weight: 600
+
+				&-rating
+					top: 3px
+					width: 49px
+					font-size: 10px

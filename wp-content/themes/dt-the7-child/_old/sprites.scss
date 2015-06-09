@@ -1,0 +1,435 @@
+.address, .email-icon, .emailicon, .hours, .nameicon, .phone-icon, .phoneicon, .resize, .left, .lefth, .pageLeft, .pageLefth, .pageRight, .pageRighth, .right, .righth, .f-Facebook, .f-Pinterest, .f-Twitter, .closedindicator, .dullindicator, .openindicator, .radio-filled, .radio, .checkbox, .checkbox-filled, .Cart-reg, .Cart-hover, .Phone-icon, .Phone-iconn, .Email-iconn, .Search-icon, .t-facebook, .t-facebookh, .t-gplus, .t-gplush, .t-pinterest, .t-pinteresth, .t-twitter, .t-twitterh, .Gift-icon, .PDF-File, .listh, .list, .gridlayout, .gridlayouth, .Minus, .Plus, .Cat_go, .Cat_goh, .lefts, .New-ribbon, .rights, .Sale-ribbon, .Slider-bubble, .facebook, .facebookh, .gplus, .gplush, .pinterest, .pinteresth, .twitter, .twitterh, .phone-sidebar, .email-sidebar, .logo-main {
+	background-image: url(sprites.png) !important;
+}
+
+.address{	
+	background-position:   -86px -30px ;
+	width: 22px;
+	height: 28px;
+}
+
+.email-icon{	
+	background-position:   -57px -29px ;
+	width: 23px !important;
+	height: 18px;
+}
+
+.emailicon{	
+	background-position:   -58px 0;
+	width: 16px;
+	height: 11px;
+}
+
+.hours{	
+	background-position:  0 -27px ;
+	width: 23px;
+	height: 24px;
+}
+
+.nameicon{	
+	background-position:  -39px 0;
+	width: 14px;
+	height: 16px;
+}
+
+.phone-icon{	
+	background-position:  -30px -28px ;
+	width: 19px;
+	height: 26px;
+}
+
+.phoneicon{	
+	background-position:  -21px 0;
+	width: 12px;
+	height: 16px;
+}
+
+.resize{	
+	background-position:  0 0;
+	width: 15px;
+	height: 15px;
+}
+.left{	
+	background-position:  -242px -66px ;
+	width: 32px;
+	height: 32px;
+	display:block;
+	float:left;
+}
+
+.lefth{	
+	background-position:  -207px -66px ;
+	width: 32px;
+	height: 32px;
+}
+
+.pageLeft{	
+	background-position:  -174px -66px ;
+	width: 30px;
+	height: 30px;
+}
+
+.pageLefth{	
+	background-position:  -141px -66px ;
+	width: 30px;
+	height: 30px;
+}
+
+.pageRight{	
+	background-position:  -103px -65px ;
+	width: 30px;
+	height: 30px;
+}
+
+.pageRighth{	
+	background-position:  -70px -65px ;
+	width: 30px;
+	height: 30px;
+}
+
+.right{	
+	background-position:  -35px -64px ;
+	width: 32px;
+	height: 32px;
+	display:block;
+	float:left;
+}
+
+.righth{	
+	background-position:  0 -64px ;
+	width: 32px;
+	height: 32px;
+}
+
+.f-Facebook{	
+	background-position:  -64px -104px ;
+	width: 31px !important;
+	height: 29px;
+}
+
+.f-Pinterest{	
+	background-position:  -31px -103px ;
+	width: 30px !important;
+	height: 29px;
+}
+
+.f-Twitter{	
+	background-position:  0 -103px ;
+	width: 30px !important;
+	height: 29px;
+}
+
+.closedindicator{	
+	background-position:  -48px -144px ;
+	width: 6px;
+	height: 7px;
+}
+
+.dullindicator{	
+	background-position:  -48px -152px ;
+	width: 6px;
+	height: 7px;
+}
+
+.openindicator{	
+	background-position:  -34px -144px ;
+	width: 7px;
+	height: 6px;
+}
+
+.radio-filled{	
+	background-position:  -16px -141px ;
+	width: 13px;
+	height: 13px;
+}
+
+.radio{	
+	background-position:  0 -141px ;
+	width: 13px;
+	height: 13px;
+}
+
+.checkbox{	
+	background-position:  -31px -164px ;
+	width: 13px;
+	height: 13px;
+}
+
+.checkbox-filled{	
+	background-position:  -47px -164px ;
+	width: 13px;
+	height: 13px;
+}
+
+.Cart-reg{	
+	background-position:  -44px -197px ;
+	width: 29px;
+	height: 29px;
+}
+
+.Cart-hover{	
+	background-position:  0 -197px ;
+	width: 29px;
+	height: 29px;
+}
+
+.Phone-icon{	
+	background-position:  0 -163px ;
+	width: 23px !important;
+	height: 22px;
+}
+
+.Phone-iconn{	
+	background-position:  -30px -450px;
+	width: 31px !important;
+	height: 30px;
+	margin-right:11px;
+}
+
+.Email-iconn{	
+	background-position:  0px -458px;
+	width: 30px !important;
+	height: 22px;
+	margin-right:11px;
+}
+
+.Search-icon{	
+	background-position:  -58px -141px ;
+	width: 15px;
+	height: 15px;
+}
+
+.t-facebook{	
+	background-position:  -534px -27px ;
+	width: 21px;
+	height: 21px;
+
+	&:hover {
+		@extend .t-facebookh;
+	}
+}
+
+.t-facebookh{	
+	background-position:  -540px -4px ;
+	width: 21px;
+	height: 21px;
+}
+
+.t-gplus{	
+	background-position:  -563px -28px ;
+	width: 21px;
+	height: 21px;
+
+	&:hover {
+		@extend .t-gplush;
+	}
+}
+
+.t-gplush{	
+	background-position:  -565px -4px ;
+	width: 21px;
+	height: 21px;
+}
+
+.t-pinterest{	
+	background-position:  -594px -28px ;
+	width: 21px;
+	height: 21px;
+
+	&:hover {
+		@extend .t-pinteresth;
+	}
+}
+
+.t-pinteresth{	
+	background-position:  -594px -5px ;
+	width: 21px;
+	height: 21px;
+}
+
+.t-twitter{	
+	background-position:  -618px -28px ;
+	width: 21px;
+	height: 21px;
+
+	&:hover {
+		@extend .t-twitterh;
+	}
+}
+
+.t-twitterh{	
+	background-position:  -619px -4px ;
+	width: 21px;
+	height: 21px;
+}
+
+.Gift-icon{	
+	background-position:  -562px -417px ;
+	width: 78px;
+	height: 63px;
+}
+
+.PDF-File{	
+	background-position:  -487px -417px ;
+	width: 70px;
+	height: 63px;
+}
+
+.listh{	
+	background-position:  0 -305px ;
+	width: 23px;
+	height: 16px;
+}
+
+.list{	
+	background-position:  -31px -305px ;
+	width: 23px;
+	height: 16px;
+}
+
+.gridlayout{	
+	background-position:  -24px -274px ;
+	width: 16px;
+	height: 16px;
+}
+
+.gridlayouth{	
+	background-position:  0 -274px ;
+	width: 16px;
+	height: 16px;
+}
+
+.Minus{	
+	background-position:  -277px -204px ;
+	width: 21px;
+	height: 20px;
+}
+
+.Plus{	
+	background-position:  -305px -172px ;
+	width: 21px;
+	height: 20px;
+}
+
+.Cat_go{	
+	background-position:  -325px -310px ;
+	width: 32px;
+	height: 32px;
+}
+
+.Cat_goh{	
+	background-position:  -287px -308px ;
+	width: 32px;
+	height: 32px;
+}
+
+.lefts{	
+	background-position:  -278px -172px ;
+	width: 21px;
+	height: 20px;
+}
+
+.New-ribbon{	
+	background-position:  -362px -249px ;
+	width: 63px;
+	height: 63px;
+}
+
+.rights{	
+	background-position:  -226px -290px ;
+	width: 21px;
+	height: 20px;
+}
+
+.Sale-ribbon{
+	  background:none !important;
+	background-image: url(sprites.png) !important;
+	background-repeat:no-repeat !important;	
+	background-position:  -375px -169px !important;
+	width: 63px !important;
+	height: 63px !important;
+}
+
+.Slider-bubble{	
+	background-position:  -209px -195px ;
+	width: 44px;
+	height: 28px;
+}
+
+.facebook{	
+	background-position:  -524px -216px ;
+	width: 19px;
+	height: 18px;
+
+	&:hover {
+		@extend .facebookh;
+	}
+}
+
+.facebookh{	
+	background-position:  -524px -241px ;
+	width: 19px;
+	height: 18px;
+}
+
+.gplus{	
+	background-position:  -594px -217px ;
+	width: 19px;
+	height: 18px;
+
+	&:hover {
+		@extend .gplush;
+	}
+}
+
+.gplush{	
+	background-position:  -595px -241px ;
+	width: 19px;
+	height: 18px;
+}
+
+.pinterest{	
+	background-position:  -572px -217px ;
+	width: 19px;
+	height: 18px;
+
+	&:hover {
+		@extend .pinteresth;
+	}
+}
+
+.pinteresth{	
+	background-position:  -572px -241px ;
+	width: 19px;
+	height: 18px;
+}
+
+.twitter{	
+	background-position:  -549px -217px ;
+	width: 19px;
+	height: 18px;
+
+	&:hover {
+		@extend .twitterh;
+	}
+}
+
+.twitterh{	
+	background-position:  -549px -242px ;
+	width: 19px;
+	height: 18px;
+}
+
+
+.phone-sidebar{	
+	background-position:  0px -362px ;
+	width: 22px;
+	height: 22px;
+}
+
+.email-sidebar{	
+	background-position:  0px -386px ;
+	width: 21px;
+	height: 16px;
+}
+

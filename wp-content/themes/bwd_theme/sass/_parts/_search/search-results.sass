@@ -1,0 +1,33 @@
+.header-search-results
+	.page-header,
+	.navigation
+		display: none
+
+
+.results
+	&-item
+		margin-bottom: 15px
+		+clearfix
+
+		&-img
+			float: left
+			+size(60)
+
+			img
+				width: 100%
+				height: auto
+
+		&-content
+			float: left
+			margin-left: 10px
+			width: 140px
+
+			&-title
+				display: block
+				+ellipsis(100%)
+				font-size: 13px
+				color: $font
+
+			&-price
+				font-size: 12px
+				color: $primary

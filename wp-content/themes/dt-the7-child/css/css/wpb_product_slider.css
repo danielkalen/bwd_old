@@ -1,0 +1,182 @@
+.grid {
+  margin: 0 auto;
+  text-align: center; }
+
+.grid div.owl-item {
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+  position: relative; }
+
+.grid figure {
+  margin: 0;
+  position: relative; }
+
+.grid figure img {
+  max-width: 100%;
+  display: block;
+  position: relative; }
+
+.grid figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center; }
+
+.grid figcaption a {
+  text-align: center !important;
+  display: inline-block !important;
+  font-size: 14px !important; }
+
+/* Individual Caption Styles */
+/* Caption Style 1 */
+/* Caption Style 2 */
+/* Caption Style 3 */
+.cs-style-3 figure {
+  overflow: hidden; }
+
+.cs-style-3 figure img {
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  transition: transform 0.4s; }
+
+.cs-style-3 figcaption {
+  height: 100px;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s; }
+
+.no-touch .cs-style-3 figure:hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: opacity 0.4s 0.2s;
+  -moz-transition: opacity 0.4s 0.2s;
+  transition: opacity 0.4s 0.2s; }
+
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+/* display none until init */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y; }
+
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+
+.owl-carousel .owl-item {
+  float: left; }
+
+/* mouse grab icon */
+/* fix */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0); }
+
+/*google font
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,100,400);*/
+body {
+  -webkit-backface-visibility: hidden; }
+
+div.wpb_slider_area .item {
+  margin: 3px; }
+
+div.wpb_slider_area .cs-style-3 .item img {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+
+#owl-demo .item img, #owl-demo-feature .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%; }
+
+span.p_price {
+  color: #fff;
+  text-align: center;
+  font-size: 14px; }
+
+.cs-style-3 figcaption a {
+  position: absolute !important;
+  right: 0;
+  margin: 0 auto !important;
+  max-width: 135px;
+  left: 0 !important;
+  text-align: center; }
+
+.grid figcaption a {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+
+.grid figcaption a:hover {
+  text-decoration: none; }
+
+img.wpb_pro_img {
+  border-radius: 0px !important;
+  box-shadow: none !important; }
+
+.wpb_slider_area del {
+  color: #fff !important; }
+
+.wpb_slider_area ins {
+  background: transparent !important;
+  text-decoration: none; }
+
+div.wpb_slider_area {
+  position: relative; }
+
+body, html {
+  font-size: 100%;
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
+  color: #b3b9bf;
+  background: #f9f9f9; }
+
+a {
+  color: #888;
+  text-decoration: none; }
+
+a:hover,
+a:active {
+  color: #333; }

@@ -1,0 +1,102 @@
+&-form
+		clear: both
+		display: none
+		padding: 20px
+		background-color: $subberwhite
+		box-sizing: border-box
+		+clearfix
+
+		&.show
+			display: block
+
+		h3
+			display: none
+
+		.stars
+			margin: 5px 0 10px
+
+			a
+				position: relative
+				display: inline-block
+				// height: 16px
+				line-height: 2
+				margin-right: 1em
+				text-indent: -9999px
+				border-right: 1px solid $divider
+
+				&:after
+					position: absolute
+					top: 0
+					display: block
+					text-indent: 0
+					font-family: bwdcons
+					color: $primary
+
+
+		.star-1
+			width: 2em
+			&:after 
+				content: 'N'
+			&:hover:after,
+			&.active:after
+				content: 'O'
+		.star-2
+			width: 3em
+			&:after 
+				content: 'NN'
+			&:hover:after,
+			&.active:after
+				content: 'OO'
+		.star-3
+			width: 4em
+			&:after 
+				content: 'NNN'
+			&:hover:after,
+			&.active:after
+				content: 'OOO'
+		.star-4
+			width: 5em
+			&:after 
+				content: 'NNNN'
+			&:hover:after,
+			&.active:after
+				content: 'OOOO'
+		.star-5
+			width: 6em
+			border-right: 0 !important
+			&:after 
+				content: 'NNNNN'
+			&:hover:after,
+			&.active:after
+				content: 'OOOOO'
+
+
+
+		#comment
+			border: 1px solid $divider
+			border-radius: 3px
+			padding: 13px
+			color: $font
+			box-sizing: border-box
+			width: 100%
+
+
+		#submit
+			float: right
+			width: 110px
+			height: 32px
+			margin-top: 21px
+			background-color: $subwhite
+			border: 1px solid $divider
+			border-radius: 2px
+			font-size: 12px
+			font-weight: 600
+			color: $primary
+			box-sizing: border-box
+			cursor: pointer
+			transition: all 0.15s
+
+			&:hover
+				background-color: $primary
+				border-color: $primary
+				color: white

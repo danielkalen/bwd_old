@@ -1,0 +1,135 @@
+#page.boxed {
+  overflow: visible;
+}
+#page.boxed {
+  max-width: 1064px;
+  margin: 0px auto 0px;
+  border-left:1px solid #cad0d5;
+  border-right:1px solid #cad0d5;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow:  0 0 4px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow:   0 0 4px rgba(0, 0, 0, 0.15);
+  -o-box-shadow:    0 0 4px rgba(0, 0, 0, 0.15);
+  box-shadow:     0 0 4px rgba(0, 0, 0, 0.15);
+
+  @media screen and (max-width: 1024px){
+    overflow: hidden;
+    border-left: 0px;
+    border-right: 0px;
+  }
+
+}
+
+#main {
+  margin-top: 40px;
+  padding: 0 !important;
+
+  @media screen and (max-width: 760px) {
+    margin-top: 20px;
+  }
+}
+
+.home #main {
+  @media screen and (max-width: 760px) {
+    margin-top: 0;
+  }
+}
+
+
+.wf-wrap, .ph-wrap-content {
+max-width:1064px !important;
+padding:0px 20px 60px;
+
+  @media screen and (max-width: 1024px) and (min-width:761px){
+    padding: 0 36px 60px;
+  }
+
+  @media screen and (max-width: 800px) and (min-width:761px){
+    padding: 0 31px 60px;
+  }
+}
+
+.ph-wrap-content {
+padding:0px 4px !important;
+}
+
+
+#content {color: $font-color;}
+
+.wpb_area_title {
+  border-bottom: 1px solid #d3d3d3;
+  font: $h1-font !important;
+  color: $primary-color !important;
+  padding:23px 0;
+
+}
+
+    .home h3.wpb_area_title {
+          @media screen and (max-width:420px) {
+              // padding: 23px 0 !important;
+              // font-size: 21px !important;
+              padding: 29px 0 23px !important;
+          }
+    }
+
+
+.page-title, .category-title, .default-page-title {padding: 0 0 23px 0 !important; margin-bottom: 22px !important; color: $primary-color !important;}
+.page-title {line-height: 60% !important;}
+.title-underline {border-bottom: 1px solid $divider-color;}
+.default-page-title {padding: 0 0 19px 0 !important; margin-bottom: 19px !important; line-height: 90% !important; font-size: 29px; font-weight: 400 !important;}
+
+
+
+#wpadminbar {
+direction: ltr;
+color: #fff;
+font: normal 13px/40px "Open Sans", sans-serif;
+height: 32px !important;
+position: absolute !important;
+top: 0;
+left: 0px !important;
+right: 0;
+min-width: 600px; /* match the min-width of the body in wp-admin.css */
+z-index: 99999;
+}
+
+
+
+h1, .h1-size {
+  color: $primary-color !important;
+  font-size: 29px;
+  font-weight: 500 !important;
+  line-height: 60px;
+  margin-bottom: 25px;
+  text-align: left !important;
+}
+
+#content > h3 {
+  color: #585858;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+h1{
+  border-bottom: 1px solid #d3d3d3;
+
+    &.large-oops,
+    &.entry-title {
+      border-bottom: 0;
+    }
+}
+
+.p-title{
+  margin-bottom:25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0px !important;
+}
+
+
+#content > p, #content  li {
+  color: #585858;
+  font-family: 'open sans';
+  font-size: 13px;
+}

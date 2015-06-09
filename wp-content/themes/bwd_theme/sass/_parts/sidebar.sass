@@ -1,0 +1,60 @@
+.sidebar-wrap
+	width: perc(216px, 1024px)
+	max-width: 216px
+	border-radius: 2px
+	overflow: hidden
+
+	+max(920)
+		// width: perc(296px, 1024px)
+		// max-width: none
+		display: none
+
+	// +max(736)
+	// 	display: none
+
+	.left &
+		float: left
+	.right &
+		float: right
+
+
+
+
+.sidebar
+	position: relative
+	width: 100%
+	border: 1px solid $divider
+	background-color: $subwhite
+	border-radius: 2px
+	box-sizing: border-box
+
+	&.fixed
+		position: fixed
+		top: 10px
+
+	&-title
+		line-height: 1
+		background-color: $primary
+		padding: 12px 0 9px
+		font-weight: 700
+		text-align: center
+		font-size: 19px
+		font-family: avenir
+		color: white
+		text-transform: uppercase
+
+	.widget-area
+		padding: 10px 15px
+
+	.widget-title
+		font-size: 18px
+		font-weight: 500
+		line-height: 1
+		padding-bottom: 10px
+		color: $primary
+
+
+	
+
+
+

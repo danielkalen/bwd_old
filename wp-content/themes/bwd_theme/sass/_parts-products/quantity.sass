@@ -1,0 +1,57 @@
+.quantity
+
+	&-text
+		font-size: 12px
+		line-height: 1
+		text-align: center
+	
+	&-wrap
+		height: 21px
+		width: 63px
+		+center(5px)
+		+clearfix
+	
+	&-input
+		float: left
+		text-align: center
+		height: 100%
+		width: 21px
+		background-color: white
+		border: 0
+		border-top: 1px solid $divider
+		border-bottom: 1px solid $divider
+		font-size: 12px
+		font-weight: 500
+		color: $font
+		-webkit-appearance: textfield !important
+		-moz-appearance: textfield !important
+		-ms-appearance: textfield !important
+		-o-appearance: textfield !important
+		appearance: textfield !important
+		box-sizing: border-box
+
+	&-button
+		position: relative
+		width: 21px
+		height: 100%
+		float: left
+		background-color: $background
+		// fz
+		color: white
+		cursor: pointer
+
+		&:after
+			position: absolute
+			font-weight: 600
+			line-height: 1
+			text-align: center
+			width: 100%
+
+		&.minus:after
+			content: '-'
+			font-size: 20px
+			font-weight: 500
+			top: -1px
+		&.plus:after
+			content: '+'
+			top: 2px

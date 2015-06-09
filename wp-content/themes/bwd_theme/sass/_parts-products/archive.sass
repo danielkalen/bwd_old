@@ -1,0 +1,373 @@
+.products
+	text-align: justify
+	text-justify: distribute-all-lines
+	font-size: 0px
+	vertical-align: top
+
+	&:after
+		content: ''
+		display: inline-block
+		width: 100%
+
+	&-item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		width: 245px
+		border: 1px solid $divider
+		border-radius: 3px
+		margin-right: 20px
+		text-align: left
+		box-sizing: border-box
+
+		&.blank
+			border: 0
+
+		.archive &
+			width: 31.5%
+			margin-bottom: 25px
+			margin-right: 0
+
+			+max(920)
+				width: 48.4%
+
+			+max(520)
+				margin-bottom: 15px
+
+			+max(350)
+				width: 100%
+				margin-bottom: 25px
+
+
+
+		&:last-child
+			margin-right: 0
+
+		&-sale
+			position: absolute
+			z-index: 2
+			top: 0
+			right: 0
+			display: block
+			+size(63)
+			background-image: url(img/sprite.png)
+			background-position: -384px -9px
+
+			
+		&-img
+			position: relative
+			width: 100%
+			min-height: 224px
+			overflow: hidden
+
+			+max(520)
+				min-height: 164px
+
+			+max(350)
+				min-height: 194px
+
+			img
+				position: absolute
+				left: 0
+				right: 0
+				+valign
+				display: block
+				max-width: 100%
+				max-height: 225px
+				// height: 100%
+				width: auto
+				+center
+
+				+max(520)
+					max-height: 165px
+
+				+max(350)
+					max-height: 195px
+
+					
+
+			&-hover
+				position: absolute
+				width: 100%
+				height: 100%
+				opacity: 0
+				transition: opacity 0.2s
+				.shopperbarn &,
+				.bwd & 
+					background: rgba(182, 44, 108, 0.5)
+
+				.onlyonestopshop &
+					background: rgba(52, 73, 96, 0.5)
+
+				&-actions
+					position: absolute
+					+valign
+					left: 0
+					right: 0
+
+					.button
+						+button(133px, 38px, white, $primary, $primary, white)
+						+center
+
+						&-text
+							padding-left: 10px
+							&:before
+								// content: 'v'
+								// content: 'K'
+								position: absolute
+								top: -2px
+								left: 15px
+								font-family: bwdcons
+								line-height: 1
+								font-size: 20px
+
+					&-add
+						&.button
+							margin-top: 10px
+						&-text:before
+							content: 'K'
+							font-size: 18px !important
+
+					&-quickview
+						&-text:before
+							content: 'v'
+
+
+
+
+
+		&:hover &-img-hover
+			opacity: 1
+
+		&-content
+			padding: 15px 10px
+			background-color: $subwhite
+			border-top: 1px solid $divider
+			box-sizing: border-box
+			+clearfix
+
+			+max(520)
+				padding: 10px 10px
+
+			&-title
+				float: left
+				text-overflow: ellipsis
+				width: 65%
+				overflow: hidden
+				white-space: nowrap
+				font-size: 16px
+				color: $font
+
+				+max(520)
+					width: 100%
+					font-size: 14px
+
+			&-price
+				float: right
+				font-weight: 500
+				line-height: 1.25
+				font-size: 19px
+				color: $primary
+
+				+max(520)
+					position: relative
+					top: 2px
+					font-size: 16px
+					font-weight: 500
+
+					+ .clearfix
+						display: none
+
+				del
+					display: none
+
+				ins
+					text-decoration: none
+
+
+
+			&-subtitle
+				float: left
+				text-overflow: ellipsis
+				width: 65%
+				overflow: hidden
+				white-space: nowrap
+				font-size: 12px
+				color: $font
+
+				+max(520)
+					position: relative
+					width: 60%
+					top: 4px
+
+			&-rating
+				position: relative
+				width: 64px
+				top: 3px
+				float: right
+				font-size: 13px
+
+				+max(520)
+					display: none
+
+
+.star-rating
+	position: relative
+	&:after
+		content: 'NNNNN'
+		position: absolute
+		left: 0
+		top: 0
+		font-family: bwdcons
+		color: lighten($grey-light, 17)
+		line-height: 1
+		text-indent: 0
+
+	&-active
+		position: absolute
+		z-index: 2
+		left: 0
+		top: 0
+		width: 100%
+		height: 1em
+		overflow: hidden
+		display: block
+		&:after
+			content: 'OOOOO'
+			position: absolute
+			left: 0
+			top: 0
+			font-family: bwdcons
+			font-weight: 400
+			line-height: 1
+			text-indent: 0
+			color: $contrast
+
+
+
+
+
+.category-list
+	text-align: justify
+	text-justify: distribute-all-lines
+	font-size: 0px
+	vertical-align: top
+
+	&:after
+		content: ''
+		display: inline-block
+		width: 100%
+
+	&-item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		width: 245px
+		border: 1px solid $divider
+		border-radius: 3px
+		margin-right: 20px
+		text-align: left
+		box-sizing: border-box
+
+		&.blank
+			border: 0
+
+			+max(350)
+				display: none
+
+		.archive &
+			width: 31.5%
+			margin-bottom: 25px
+			margin-right: 0
+
+			+max(920)
+				width: 48.4%
+
+			+max(520)
+				margin-bottom: 15px
+
+			+max(350)
+				width: 100%
+				margin-bottom: 25px
+
+
+
+		&:last-child
+			margin-right: 0
+
+		&-img
+			position: relative
+			width: 100%
+			min-height: 224px
+			overflow: hidden
+
+			+max(520)
+				min-height: 164px
+
+			+max(350)
+				min-height: 194px
+
+			img
+				position: absolute
+				left: 0
+				right: 0
+				+valign
+				display: block
+				max-width: 100%
+				max-height: 225px
+				// height: 100%
+				width: auto
+				+center
+
+				+max(520)
+					max-height: 165px
+
+				+max(350)
+					max-height: 195px
+
+
+		&-content
+			position: relative
+			padding: 15px 10px
+			background-color: $subwhite
+			border-top: 1px solid $divider
+			box-sizing: border-box
+			+clearfix
+
+			+max(520)
+				padding: 10px 10px
+
+			&-title
+				font-size: 16px
+				font-weight: 500
+				color: $font
+				+ellipsis(77%)
+
+			&-count
+				font-size: 12px
+				color: $font
+
+			&-arrow
+				position: absolute
+				+valign
+				right: 15px
+				display: block
+				+size(32)
+				border: 2px solid
+				border-radius: 50%
+				color: $font
+				box-sizing: border-box
+
+				.category-list-item:hover &
+					color: $primary
+
+				&:after
+					content: 'b'
+					position: absolute
+					top: -1px
+					left: 0
+					right: 0
+					font-size: 30px
+					line-height: 1
+					font-family: bwdcons
+					text-align: center
