@@ -76,7 +76,7 @@ class WC_Widget_Top_Rated_Products extends WC_Widget {
 
 			$this->widget_start( $args, $instance );
 
-			echo '<ul class="product_list_widget">';
+			echo '<ul class="sidebar-product-list">';
 
 			while ( $r->have_posts() ) {
 				$r->the_post();
