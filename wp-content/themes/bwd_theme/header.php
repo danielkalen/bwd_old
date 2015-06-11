@@ -60,11 +60,13 @@
 	</div>
 </div>
 <div id="page" class="hfeed site">
+	<div class="hover-overlay_mobile"></div>
 	<header id="masthead" class="header" role="banner">
 		<div class="header-wrap">
 			<a href="/" class="header-logo">
 			</a><!-- .site-branding -->
 			<div class="header-search">
+				<div class="header-search-mobile_menu_trigger"><div class="header-search-mobile_menu_trigger-text">Shop</div></div>
 				<?php get_product_search_form() ?>
 			</div>
 		</div>
@@ -73,35 +75,42 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'header-nav-list'  ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-	<div id="menu-mobile" class="menu-mobile">
-		<div class="menu-mobile-level">
-			<h6 class="menu-mobile-level-title">Shop Categories</h6>
-			<ul class="menu-mobile-level-list">
-				<?php 
-				$menu_object = wp_get_nav_menu_object( 'product-categories' );
-				$menu_items = wp_get_nav_menu_items($menu_object->term_id);
-				// $menu_items = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0));
-				// // print_r($menu_items);
-				
-				foreach ($menu_items as $key => $item) {
-					if ( $item->post_parent === 0 ) {
-						if ( $item->title !== 'Household' ) {
-							echo '</ul></div></li>';
-						}
-						echo '
-						<li class="menu-mobile-level-list-item">
-							<a href="#" class="menu-mobile-level-list-item-title">'. $item->title .'</a>
-							<div class="menu-mobile-level-list-item-level menu-mobile-level">
-								<h6 class="menu-mobile-level-title">'. $item->title .'</h6>' .
-								'<a class="menu-mobile-back" href="#">back</a>' . 
-									'<ul>';
-					} else {
-										echo '<li><a href="' . $item->url . '">' . $item->title . '</a></li>';
-					}
-				}
+	<div id="menu-mega" class="menu-mega">
+		<div class="menu-mega-close"></div>
+		<h6 class="menu-mega-title">Shop Categories</h6>
+		<ul class="menu-mega-list">
+			<?php 
+			$menu_object = wp_get_nav_menu_object( 'product-categories' );
+			$menu_items = wp_get_nav_menu_items($menu_object->term_id);
+			$menu_items = get_terms('product_cat', array('hide_empty' => 1, 'orderby' => 'ASC',  'parent' =>0));
+			
+			foreach ($menu_items as $item) {
+					echo '
+					<li class="menu-mega-list-item">
+						<a href="'. get_term_link($item->slug, $item->taxonomy) .'" class="menu-mega-list-item-title"><span class="menu-mega-list-item-title-text">'. $item->name .'</span></a>
+						<div class="menu-mega-list-item-level">
+							<div class="menu-mega-list-item-level-back">Back</div>
+							<a href="'.get_term_link($item->slug, $item->taxonomy).'" class="menu-mega-list-item-level-title">'. $item->name .'</a>' .
+								'<ul class="menu-mega-list-item-level-submenu">';
+								$menu_items_sub = array(
+								   'hierarchical' => 1,
+								   'show_option_none' => '',
+								   'hide_empty' => 1,
+								   'parent' => $item->term_id,
+								   'taxonomy' => 'product_cat'
+								);
+								$menu_items_sub = get_categories($menu_items_sub);
 
-				?>
-				</ul></div></li>
-			</ul>
-		</div>
+								foreach ($menu_items_sub as $item_sub) {
+									echo '<li class="menu-mega-list-item-level-submenu-item"><a class="menu-mega-list-item-level-submenu-item-link" href="' . get_term_link($item_sub->slug, $item_sub->taxonomy) . '">' . $item_sub->name . '</a></li>';
+								}
+						echo '
+								</ul>
+						</div>
+					</li>';
+				// }
+			}
+
+			?>
+		</ul>
 	</div>

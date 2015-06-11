@@ -28,6 +28,18 @@ body
 	// font-family: helvetica, arial
 	font-family: open sans, helvetica, arial
 
+	// +max(1064)
+	// 	overflow-y: scroll
+	// 	overflow-x: hidden
+	// 	width: 100%
+	// 	-webkit-overflow-scrolling: auto
+
+	&.mobile-menu-open
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+
 #page
 	width: 100%
 	// min-height: 100%
@@ -37,6 +49,7 @@ body
 	border-right: 1px solid $divider
 	background-color: white
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15)
+	box-sizing: border-box
 
 .content-wrap
 	width: 100%

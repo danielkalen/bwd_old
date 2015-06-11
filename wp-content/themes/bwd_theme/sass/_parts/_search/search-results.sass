@@ -13,6 +13,11 @@
 			float: left
 			+size(60)
 
+			+max(520)
+				+size(40)
+			+max(350)
+				+size(37)
+
 			img
 				width: 100%
 				height: auto
@@ -20,7 +25,13 @@
 		&-content
 			float: left
 			margin-left: 10px
-			width: 140px
+			// width: 140px
+			width: perc(140px, 210px)
+
+			+max(620)
+				width: perc(150px, 210px)
+			+max(520)
+				width: perc(160px, 210px)
 
 			&-title
 				display: block

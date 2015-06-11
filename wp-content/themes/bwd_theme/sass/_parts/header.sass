@@ -1,10 +1,13 @@
 @import _menu/top-bar
 @import _menu/mini-cart
-@import _menu/menu-mobile
+@import _menu/menu-mega
 
 .header
 	position: relative
 	height: 169px
+
+	+max(620)
+		height: 240px
 
 	&-wrap
 		position: relative
@@ -13,12 +16,26 @@
 		padding: 0 20px
 		box-sizing: border-box
 
+		+max(620)
+			height: 189px
+
 	&-logo
 		position: absolute
 		+valign(47.5%)
 		background-image: url(img/v2.png)
+		// background-size: 100%
+		background-size: cover
+		max-width: 90%
 		width: 293px
 		height: 56px
+		height: auto
+		+ratio(19%)
+
+		+max(620)
+			top: 32%
+			left: 0
+			right: 0
+			+center
 
 	&-search
 		position: absolute
@@ -27,9 +44,51 @@
 		+valign
 		width: 235px
 		height: 30px
-		background: $subwhite
-		border: 1px solid $divider
-		border-radius: 2px
+
+
+		+max(620)
+			top: 70%
+			right: 0
+			left: 0
+			+center
+			max-width: 280px
+			width: 86%
+
+		&-mobile_menu_trigger
+			position: relative
+			float: left
+			display: none
+			// min-width: 75px
+			width: 27%
+			height: 30px
+			background-color: $primary
+			border-radius: 3px
+			color: white
+			box-sizing: border-box
+			cursor: pointer
+
+			+max(620)
+				display: block
+
+			&-text
+				position: absolute
+				+valign
+				right: 10%
+				font-weight: 600
+				font-size: 13px
+				line-height: 1
+				text-transform: uppercase
+
+			&:after
+				content: 'J'
+				position: absolute
+				+valign
+				left: 8%
+				font-size: 18px
+				font-family: bwdcons
+				line-height: 1
+
+
 
 		&-overlay
 			position: fixed
@@ -90,6 +149,7 @@
 					display: block
 					top: 0
 					right: 65px
+					right: 31%
 					letter-spacing: -16px
 					font-weight: 400
 					font-size: 22px

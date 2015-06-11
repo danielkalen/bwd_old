@@ -2,7 +2,9 @@ var $ = jQuery.noConflict();
 
 // @codekit-prepend '_plugins/jquery-cache.js'
 
-// @codekit-append '_plugins/css_browser_selectors.js'
+// @codekit-prepend '_plugins/fastclick.js'
+
+// @codekit-prepend '_plugins/css_browser_selectors.js'
 
 
 $window = $$(window);
@@ -24,15 +26,19 @@ var	$this,
 	$cartActions,
 	$link,
 	$menu,
+	$menuMega,
 	visible,
+	wasClicked,
+	firstClick,
 	menuTimeoutShow,
-	menuTimeoutHide
+	menuTimeoutHide,
+	isMobileWidth = window.innerWidth <= 736,
+	isMobile = $$('html').hasClass('mobile')
 ;
-
 
 // @codekit-append '_parts/_header/menu-nav.js'
 
-// @codekit-append '_parts/_header/top-bar.js'
+// @codekit-append '_parts/_header/hover-boxes.js'
 
 // @codekit-append '_parts/_header/mini-cart.js'
 

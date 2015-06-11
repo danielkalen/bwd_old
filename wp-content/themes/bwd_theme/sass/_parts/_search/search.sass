@@ -1,7 +1,16 @@
 .product-search
+	position: relative
+	top: -1px
 	width: 100%
 	height: 100%
+	background: $subwhite
+	border: 1px solid $divider
+	border-radius: 2px
 	
+	+max(620)
+		float: right
+		width: 68%
+
 	&-field
 		border: 0
 		background: transparent
@@ -25,6 +34,7 @@
 			left: 0
 			right: 0
 			+valign
+			line-height: 1
 			text-align: center
 			display: block
 			font-family: bwdcons

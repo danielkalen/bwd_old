@@ -1,0 +1,258 @@
+.menu-mega
+    position: absolute
+    z-index: 90
+    top: 60px
+    top: 50px
+    left: 0
+    max-width: 100vw
+    width: 280px
+    background-color: $subwhite
+    background-color: white
+    border-bottom: 8px solid $primary
+    box-shadow: 0px 4px 12px rgba(24, 23, 24, 0.2)
+    font-size: 14px
+    font-weight: 600
+    color: $font
+    box-sizing: border-box
+    visibility: hidden
+    opacity: 0
+    // transition: all 0.3s
+
+    +max(736)
+        position: fixed
+        z-index: 200
+        top: 0
+        left: 0
+        width: 100%
+        background-color: darken(#344960, 5)
+        border-bottom: 0
+        color: white
+        +transform(translateY(-100%));
+        opacity: 1 !important
+        visibility: visible !important
+        box-shadow: none
+        transition: all 0.3s
+
+        .hover &
+            +transform(translateY(0));
+
+        .submenu-open &    
+            +transform(translateX(-100%));
+
+    &-close
+        display: none
+        position: fixed
+        top: 16px
+        right: 20px
+        line-height: 1
+        z-index: 2
+
+        +max(736)
+            display: block
+
+        &:after
+            content: 'p'
+            font-family: bwdcons
+            font-size: 22px
+            font-weight: 400
+            line-height: 1
+            text-transform: none
+
+    &-title // Mobile title
+        display: none
+        font-size: 18px
+        line-height: 1
+        padding: 19px 15px 15px
+        border-bottom: 1px solid rgba(255,255,255,0.3)
+        color: $contrast
+
+        +max(736)
+            display: block
+
+    &-list
+        width: 100%
+        +max(736)
+            height: 100vh
+
+        &-item
+            width: 100%
+            height: 50px
+            border-bottom: 1px solid $divider
+            line-height: 1
+            text-transform: none
+            box-sizing: border-box
+
+            +max(736)
+                border-color: rgba(255,255,255,0.3)
+
+            
+
+
+            // ==== Parent Category title =================================================================================
+            &-title
+                position: relative
+                display: block
+                height: 100%
+                width: 100%
+                padding: 0 14px
+                font-weight: 500
+                font-family: open sans
+                color: $font
+                box-sizing: border-box
+
+                &-text
+                    position: absolute
+                    +valign
+                    display: block
+
+                // ==== Left hover line =================================================================================
+                &:before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    height: 100%
+                    width: 3px
+                    background-color: $primary
+                    opacity: 0
+
+                .hover > &:before
+                    opacity: 1
+
+                // ==== Right arrow =================================================================================
+                &:after
+                    content: 'b'
+                    position: absolute
+                    top: 0
+                    right: 14px
+                    +valign
+                    font-family: bwdcons
+                    font-size: 24px
+                    font-weight: 400
+                    line-height: 1
+                    color: $grey-light
+
+                .hover > &:after
+                    color: $primary
+
+
+            &.hover &-title
+                color: $primary
+
+
+            +max(736)
+                &-title,
+                &.hover &-title,
+                &-title:after,
+                .hover > &-title:after
+                    color: white
+
+                &-title:before
+                    background-color: white
+
+
+            // ==== Category Sub Level =================================================================================
+            &-level
+                position: absolute
+                top: 0
+                left: 100%
+                width: 280px
+                padding: 20px
+                background-color: white
+                box-shadow: 0px 4px 12px rgba(24, 23, 24, 0.2)
+                font-family: open sans
+                box-sizing: border-box
+                cursor: default
+                visibility: hidden
+                opacity: 0
+
+                +max(736)
+                    z-index: 1
+                    // +transform(translatex(0));
+                    height: 100%
+                    width: 100%
+                    background-color: darken(#344960, 5)
+                    opacity: 1 !important
+                    box-shadow: none
+                    // transition: all 0.3s
+
+                    .hover > &
+                        visibility: visible !important
+
+                &-back
+                    display: none
+                    position: absolute
+                    z-index: 10
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 50px
+                    padding-top: 17px
+                    padding-left: 40px
+                    border-bottom: 1px solid rgba(255,255,255,0.3)
+                    // font-weight: 400
+                    font-size: 14px
+                    line-height: 1
+                    box-sizing: border-box
+
+                    +max(736)
+                        display: block
+
+                    &:before // Arrow
+                        content: 'c'
+                        position: absolute
+                        top: 11px
+                        font-family: bwdcons
+                        line-height: 1
+                        font-size: 25px
+                        left: 16px
+                        font-weight: 400
+
+
+
+
+                &-title
+                    display: block
+                    font-size: 16px
+                    color: $primary
+                    font-weight: 500
+
+                    +max(736)
+                        padding-top: 50px
+                        color: white
+                        font-size: 18px
+                        color: $contrast
+
+                &-submenu
+                    margin-top: 15px
+                    font-size: 14px
+
+                    +max(736)
+                        margin-top: 10px
+                        // height: 100%
+                        height: auto
+                        max-height: 72vh
+                        overflow: scroll
+                        -webkit-overflow-scrolling: touch
+
+                    &-item
+                        line-height: 1.9
+                        font-weight: 400
+                        font-size: 13px
+
+                        &-link
+                            color: $font
+
+                            &:hover
+                                color: $primary
+
+                            +max(736)
+                                color: white
+
+                                &:hover
+                                    color: $contrast
+
+
+
+// .sidebar
+//     display: none
