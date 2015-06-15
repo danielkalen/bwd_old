@@ -1,0 +1,84 @@
+.promo-dividers
+	width: 100%
+	margin: 25px 0 15px
+	+clearfix
+
+	&-item
+		position: relative
+		width: perc(383px, 786px)
+		height: 63px
+		padding: 0 4%
+		background-color: $subwhite
+		box-sizing: border-box
+		+max(620)
+			width: 100%
+			padding: 0 6%
+
+		&.specials 
+			float: left
+		&.pdf 
+			float: right
+			+max(620)
+				display: none
+
+		&-text
+			position: relative
+			+valign
+			float: right
+			font-size: 18px
+			font-weight: 500
+			line-height: 1
+			color: $grey-light
+
+			+max(1000)
+				font-size: 16px
+			+max(736)
+				font-size: 14px
+			+max(620)
+				font-size: 18px
+			+max(400)
+				font-size: 15px
+			+max(350)
+				font-size: 12.5px
+
+
+			&-highlight
+				position: relative
+				color: $primary
+
+				&:after // Arrow icon
+					+icon('b')
+					position: absolute
+					top: 2px
+					right: -17px
+					font-size: 24px
+
+					+maxmin(736, 620)
+						font-size: 20px
+						top: 1.5px
+					+max(400)
+						font-size: 20px
+						top: 1.5px
+					+max(350)
+						font-size: 18px
+						right: -14px
+						top: 1px
+
+
+		&-icon
+			position: absolute
+			left: 17px
+			display: block
+			height: 100%
+			background-image: url(../img/sprite.png)
+			background-position: 0 0
+
+			.specials &
+				width: 78px
+				background-position: -369px -159px
+				.oss &
+					background-position: -459px -159px
+
+			.pdf &
+				width: 70px
+				background-position: -294px -159px
