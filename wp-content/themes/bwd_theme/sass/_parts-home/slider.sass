@@ -1,8 +1,9 @@
 .product-slider
 	position: relative
+	+tap-color
 
-	// &.recent
-	// 	margin-top: 30px
+	// &.recent 
+		// 
 
 	&-title
 		padding: 10px 0
@@ -11,6 +12,10 @@
 		font-size: 29px
 		font-weight: 400
 		color: $primary
+
+		+max(350)
+			font-size: 24px
+			padding: 13px 0 10px
 
 	&-controls
 		position: absolute
@@ -56,10 +61,11 @@
 		position: relative
 		overflow: hidden
 
+
 		.mobile &
 			overflow: scroll
-			-webkit-overflow-scrolling: touch
+			+overflow-touch
 
 		&-wrapper
 			position: relative
-			// width: 3500px
+			width: 2100px

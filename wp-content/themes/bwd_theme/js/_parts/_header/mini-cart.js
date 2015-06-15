@@ -8,4 +8,7 @@ $$('body').on('added_to_cart', function(event, fragments, hash){
 	$cartActions = $cartContent.find('.cart-list-actions');
 
 	$miniCart.empty().append($cartItems, $cartTotal, $cartActions);
+
+	updateFreeShipping();
+	notify('success', 'Product has been added to the cart successfully!', true);
 });

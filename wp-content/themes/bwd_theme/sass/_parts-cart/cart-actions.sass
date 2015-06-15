@@ -1,0 +1,97 @@
+.cart-actions
+	margin: 20px 0 20px
+	+clearfix
+
+	&-item
+		width: 48%
+		+clearfix
+
+		&.coupon
+			float: left
+		&.shipping
+			float: right
+
+		+max(620)
+			float: none !important
+			width: 100%
+			margin-bottom: 20px
+
+		&-title
+			font-size: 18px
+			margin-bottom: 10px
+			font-weight: 600
+			color: $font
+
+		&-input
+			width: 100%
+			height: 40px
+			margin-bottom: 10px
+			padding: 0 13px
+			background-color: $subberwhite
+			border: 1px solid $divider
+			border-radius: 2px
+			font-size: 14px
+			color: $font
+
+		&-button
+			float: right
+			width: 48.5%
+			height: 40px
+			background-color: $subwhite
+			border: 1px solid $divider
+			border-radius: 2px
+			font-size: 14px
+			font-weight: 500
+			color: $primary
+			transition: background-color 0.2s
+
+			&:hover
+				background-color: darken($subwhite, 7)
+
+
+.shipping-calculator
+
+	&-fieldset
+		position: relative
+		float: left
+		width: 48.5%
+		height: 40px
+		margin-bottom: 10px
+		border: 1px solid $divider
+		border-radius: 2px
+		font-size: 14px
+		color: $font
+		box-sizing: border-box
+
+		&#calc_shipping_state_field
+			float: right
+
+		&-input,
+		&-select
+			width: 100%
+			height: 100%
+			background-color: $subberwhite
+			-webkit-appearance: none !important
+			-moz-appearance: none !important
+			-ms-appearance: none !important
+			-o-appearance: none !important
+			appearance: none !important
+			outline: none !important
+			box-shadow: none !important
+			border: 0
+
+
+		&-input
+			padding: 0 12px
+
+		&-select
+			padding: 0 25px 0 8px
+
+
+		&.select:after
+			position: absolute
+			right: 2px
+			+valign
+			+icon('M')
+			font-size: 23px
+

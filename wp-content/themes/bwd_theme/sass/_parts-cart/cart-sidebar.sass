@@ -1,0 +1,112 @@
+#cart_totals-2
+	padding-bottom: 0
+
+
+.cart-totals
+
+	&-table
+		width: 100%
+
+		&-row
+			font-size: 14px
+
+			&.total
+				border-top: 1px solid $divider
+
+			&-heading
+				text-align: left
+				padding-top: 5px
+				width: 75px
+
+				.tax &
+					padding-bottom: 7px // For 'totals' padding
+
+				.total &
+					font-size: 20px
+
+			&-value
+				text-align: right
+				padding-top: 5px
+
+				.tax &
+					padding-bottom: 7px // For 'totals' padding
+
+				.total &
+					font-size: 20px
+					color: $primary
+
+
+				&-select
+					width: 90%
+
+
+
+
+
+	&-actions
+		margin-top: 18px
+
+		&-button
+			position: relative
+			display: block
+			height: 39px
+			border: 1px solid $divider
+			border-radius: 2px
+			box-sizing: border-box
+			cursor: pointer
+			transition: background-color 0.2s
+
+			&.update
+				background-color: white
+				color: $primary
+
+				&:hover
+					background-color: darken(white, 10)
+
+			&.checkout
+				margin-top: 7px
+				background-color: $primary
+				border-color: $primary
+				color: white
+
+				&:hover
+					background-color: $primary-dark
+
+			&-text
+				position: absolute
+				+valign
+				width: 100%
+				font-size: 14px
+				font-weight: 500
+				line-height: 1
+				text-align: center
+
+
++max(920)
+	.page-id-31
+		
+		.sidebar-wrap
+			float: none
+			display: block
+			width: 100%
+			max-width: 350px
+			+center(35px)
+
+			.sidebar
+				position: relative
+				top: 0 !important
+				max-width: none !important
+
+
+		
+
+		
+
+		
+
+		
+
+		
+
+		
+

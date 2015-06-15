@@ -35,8 +35,28 @@ get_header(); ?>
 				</div>
 			</div>
 		</section>
+
+
+
+		<div class="promo-dividers">
+			<div class="promo-dividers-item specials">
+				<div class="promo-dividers-item-icon"></div>
+				<div class="promo-dividers-item-text">
+					View our <a href="/specials" class="promo-dividers-item-text-highlight">monthly specials</a>
+				</div>
+			</div>
+			<div class="promo-dividers-item pdf">
+				<div class="promo-dividers-item-icon"></div>
+				<div class="promo-dividers-item-text">
+					Download PDF Catalog <a href="/<?php echo site_version(); ?>-catalog-<?php echo Date('Y') ?>.pdf" class="promo-dividers-item-text-highlight">here</a>
+				</div>
+			</div>
+		</div>
+
+
+
 		<section class="product-slider recent">
-			<h3 class="product-slider-title">Recent Products</h3>
+			<h3 class="product-slider-title">Latest Products</h3>
 			<div class="product-slider-controls">
 				<div class="product-slider-controls-arrow left"></div>
 				<div class="product-slider-controls-arrow right"></div>

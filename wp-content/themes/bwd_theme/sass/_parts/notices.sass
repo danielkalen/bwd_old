@@ -1,0 +1,74 @@
+.notice
+	display: none
+
+.notices
+	position: fixed
+	z-index: 1000
+	bottom: 0
+	left: 0
+	width: 100%
+
+.notice
+	position: relative
+	display: block
+	height: 0
+	overflow: hidden
+	padding: 0 45px
+	font-size: 15px
+	font-weight: 500
+	color: white
+	box-sizing: border-box
+	transition: height 0.25s, padding 0.25s
+
+	&.show
+		height: 40px
+		padding: 10px 45px
+
+		+max(736)
+			height: auto
+
+	&_success
+		background-color: $success
+	&_error
+		background-color: $error
+	&_info
+		background-color: $info
+
+	&-close
+		position: absolute
+		right: 10px
+		+valign
+
+		&:after
+			+icon('p')
+			// position: absolute
+			display: block
+			cursor: pointer
+
+	&:before // Notice Icon
+		+icon('')
+		position: absolute
+		+valign
+		left: 14px
+		+size(20)
+		background-color: white
+		border-radius: 50%
+		text-align: center
+		box-sizing: border-box
+
+	&_success:before
+		content: 's'
+		padding-top: 4px
+		font-size: 11px
+		color: $success
+	&_error:before
+		content: 'D'
+		padding-top: 3px
+		font-size: 14px
+		color: $error
+	&_info:before
+		content: 'A'
+		padding-top: 3px
+		font-size: 13px
+		color: $info
+

@@ -1,7 +1,10 @@
 <?php
 
 /**
- * WC_Boxpack class.
+ * WooCommerce Box Packer
+ *
+ * @version 2.0
+ * @author WooThemes / Mike Jolley
  */
 class WC_Boxpack {
 
@@ -86,76 +89,75 @@ class WC_Boxpack {
 	public function pack() {
 		try {
 			// We need items
-			if ( sizeof( $this->items ) == 0 )
+			if ( sizeof( $this->items ) == 0 ) {
 				throw new Exception( 'No items to pack!' );
+			}
 
 			// Clear packages
 			$this->packages = array();
 
-			// Order the boxes and items by volume
-			$this->items = $this->order_by_volume( $this->items );
+			// Order the boxes by volume
 			$this->boxes = $this->order_boxes( $this->boxes );
+
+			if ( ! $this->boxes ) {
+				$this->cannot_pack = $this->items;
+				$this->items       = array();
+			}
 
 			// Keep looping until packed
 			while ( sizeof( $this->items ) > 0 ) {
-				if ( $this->boxes ) {
+				$this->items       = $this->order_items( $this->items );
+				$possible_packages = array();
+				$best_package      = '';
 
-					$possible_packages = array();
-					$best_package      = '';
+				// Attempt to pack all items in each box
+				foreach ( $this->boxes as $box ) {
+					$possible_packages[] = $box->pack( $this->items );
+				}
 
-					// Attempt to pack all items in each box
-					foreach ( $this->boxes as $box ) {
-						$possible_packages[] = $box->pack( $this->items );
+				// Find the best success rate
+				$best_percent = 0;
+
+				foreach ( $possible_packages as $package ) {
+					if ( $package->percent > $best_percent ) {
+						$best_percent = $package->percent;
 					}
+				}
 
-					// Find the best success rate
-					$best_percent = 0;
-
-					foreach ( $possible_packages as $package ) {
-						if ( $package->percent > $best_percent )
-							$best_percent = $package->percent;
-					}
-
-					if ( $best_percent == 0 ) {
-						$this->cannot_pack = $this->items;
-						$this->items       = array();
-					} else {
-
-						// Get smallest box with best_percent
-						$possible_packages = array_reverse( $possible_packages );
-
-						foreach ( $possible_packages as $package ) {
-							if ( $package->percent == $best_percent ) {
-								$best_package = $package;
-								break; // Done packing
-							}
-						}
-
-						// Update items array
-						$this->items = $best_package->unpacked;
-
-						// Store package
-						$this->packages[] = $best_package;
-
-					}
-
-				} else {
+				if ( $best_percent == 0 ) {
 					$this->cannot_pack = $this->items;
 					$this->items       = array();
+				} else {
+					// Get smallest box with best_percent
+					$possible_packages = array_reverse( $possible_packages );
+
+					foreach ( $possible_packages as $package ) {
+						if ( $package->percent == $best_percent ) {
+							$best_package = $package;
+							break; // Done packing
+						}
+					}
+
+					// Update items array
+					$this->items = $best_package->unpacked;
+
+					// Store package
+					$this->packages[] = $best_package;
 				}
 			}
 
 			// Items we cannot pack (by now) get packaged individually
 			if ( $this->cannot_pack ) {
 				foreach ( $this->cannot_pack as $item ) {
-					$package          = new stdClass();
-					$package->id      = '';
-					$package->weight  = $item->get_weight();
-					$package->length  = $item->get_length();
-					$package->width   = $item->get_width();
-					$package->height  = $item->get_height();
-					$package->value   = $item->get_value();
-					$this->packages[] = $package;
+					$package           = new stdClass();
+					$package->id       = '';
+					$package->weight   = $item->get_weight();
+					$package->length   = $item->get_length();
+					$package->width    = $item->get_width();
+					$package->height   = $item->get_height();
+					$package->value    = $item->get_value();
+					$package->unpacked = true;
+					$this->packages[]  = $package;
 				}
 			}
 
@@ -170,8 +172,21 @@ class WC_Boxpack {
 	 * @return array
 	 */
 	private function order_boxes( $sort ) {
-		if ( ! empty( $sort ) )
+		if ( ! empty( $sort ) ) {
 			uasort( $sort, array( $this, 'box_sorting' ) );
+		}
+		return $sort;
+	}
+
+	/**
+	 * Order items by weight and volume
+	 * $param array $sort
+	 * @return array
+	 */
+	private function order_items( $sort ) {
+		if ( ! empty( $sort ) ) {
+			uasort( $sort, array( $this, 'item_sorting' ) );
+		}
 		return $sort;
 	}
 
@@ -182,11 +197,30 @@ class WC_Boxpack {
 	 * @return void
 	 */
 	private function order_by_volume( $sort ) {
-		if ( ! empty( $sort ) )
+		if ( ! empty( $sort ) ) {
 			uasort( $sort, array( $this, 'volume_based_sorting' ) );
+		}
 		return $sort;
 	}
-	
+
+	/**
+	 * item_sorting function.
+	 *
+	 * @access public
+	 * @param mixed $a
+	 * @param mixed $b
+	 * @return void
+	 */
+	public function item_sorting( $a, $b ) {
+		if ( $a->get_volume() == $b->get_volume() ) {
+	        if ( $a->get_weight() == $b->get_weight() ) {
+		        return 0;
+		    }
+		    return ( $a->get_weight() < $b->get_weight() ) ? 1 : -1;
+	    }
+	    return ( $a->get_volume() < $b->get_volume() ) ? 1 : -1;
+	}
+
 	/**
 	 * box_sorting function.
 	 *

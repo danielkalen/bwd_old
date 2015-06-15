@@ -24,6 +24,7 @@ var	$this,
 	$cartItems,
 	$cartTotal,
 	$cartActions,
+	$remaining,
 	$link,
 	$menu,
 	$menuMega,
@@ -42,7 +43,11 @@ var	$this,
 
 // @codekit-append '_parts/_header/mini-cart.js'
 
+// @codekit-append '_parts/_header/free-shipping.js'
+
 // @codekit-append '_parts/_header/search-ajax.js'
+
+// @codekit-append '_parts/notices.js'
 
 // @codekit-append '_parts/sidebar.js'
 

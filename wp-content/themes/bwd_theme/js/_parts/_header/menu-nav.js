@@ -65,6 +65,10 @@ if (!isMobileWidth) {
 
 
 		hideChildMenu($this);
+
+		if ( $this.hasClass('menu-item-has-children') ) {
+			hideChildMenu($this.find('.hover-trigger_menu'));
+		}
 	});
 
 
@@ -135,7 +139,7 @@ $$('.header-search-mobile_menu_trigger').on('click', function(){ // Alternate tr
 
 			function hideChildMenu($this){
 				clearTimeout(menuTimeoutShow);
-				clearTimeout(menuTimeoutHide);
+				// clearTimeout(menuTimeoutHide);
 
 				menuTimeoutHide = setTimeout(function() {
 					if ( !$this.hasClass('hover') ) {

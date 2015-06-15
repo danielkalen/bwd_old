@@ -1,6 +1,6 @@
 // Body Css to prevent scrolling on mobile devices
 .opened-popup
-	overflow: hidden
+	// overflow: hidden
 	position: fixed
 	width: 100%
 
@@ -50,9 +50,14 @@
 		height: 500px
 		max-height: 100vh
 
-		+m(736)
+		+max(736)
 			overflow-x: hidden
-			overflow-y: scroll		
+			overflow-y: scroll	
+			height: 400px
+
+		+max(620)
+			height: auto
+			padding: 20px 0
 
 		&-loading
 			position: relative
@@ -60,6 +65,9 @@
 			background-image: url(img/preloader.gif)
 			+size(128)
 			+center
+
+			+max(620)
+				margin-top: 120px
 
 
 	&-close

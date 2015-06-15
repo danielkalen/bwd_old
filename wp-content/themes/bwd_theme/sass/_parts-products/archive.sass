@@ -74,6 +74,7 @@
 				display: block
 				max-width: 100%
 				max-height: 225px
+				height: auto
 				// height: 100%
 				width: auto
 				+center
@@ -92,11 +93,11 @@
 				height: 100%
 				opacity: 0
 				transition: opacity 0.2s
-				.shopperbarn &,
+				.sb &,
 				.bwd & 
 					background: rgba(182, 44, 108, 0.5)
 
-				.onlyonestopshop &
+				.oss &
 					background: rgba(52, 73, 96, 0.5)
 
 				&-actions
@@ -126,7 +127,12 @@
 							margin-top: 10px
 						&-text:before
 							content: 'K'
+							line-height: 1
 							font-size: 18px !important
+
+						&.added &-text:before
+							content: 's'
+
 
 					&-quickview
 						&-text:before

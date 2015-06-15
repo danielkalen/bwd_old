@@ -3,7 +3,12 @@
 
 	&-images
 		height: 100%
-		// width: 40%
+		width: 30%
+
+		+max(736)
+			float: left
+		+max(620)
+			float: none
 
 		&-wrap
 			height: 100%
@@ -13,13 +18,18 @@
 
 
 	&-summary
-		// position: absolute
-		// +valign
-		// right: 0
 		width: 53%
 		height: 100%
 		padding: 35px 35px 35px 0
 		box-sizing: border-box
+
+		+max(736)
+			float: right
+			width: 66%
+		+max(620)
+			float: none
+			padding: 35px 25px 0
+			width: 100%
 
 		&-actions
 			margin-top: 190px

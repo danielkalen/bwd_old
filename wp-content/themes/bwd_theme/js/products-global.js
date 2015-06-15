@@ -2,18 +2,19 @@
    Quantity buttons
    ========================================================================== */
 $$('.quantity-button').on('click', function(){
-	var quantityVal = $$('.quantity-input').val();
+	var $this = $(this);
+	var quantityVal = $this.siblings('.quantity-input').val();
 
-	if ( $(this).hasClass('minus') ) {
+	if ( $this.hasClass('minus') ) {
 
 		if (quantityVal > 1) {
 			--quantityVal;
-			$$('.quantity-input').val(quantityVal);
+			$this.siblings('.quantity-input').val(quantityVal);
 		}
 
 	} else {
 		++quantityVal;
-		$$('.quantity-input').val(quantityVal);
+		$this.siblings('.quantity-input').val(quantityVal);
 	}
 }); 
 

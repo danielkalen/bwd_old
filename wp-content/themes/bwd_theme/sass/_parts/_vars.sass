@@ -31,13 +31,20 @@ $subwhite: #f0f0f0
 $subberwhite: #fafafa
 $background: #c2c2c2
 $payments-color:#e4e4e4
+$success: #72c322
+$success: #87B331
+$error: #cc4820
+$info: $grey
 
-// helper vars
+$iconfamily: bwdcons
 
-$first: first-child
-$last: last-child
 
-// mixins
+// snippet mixins
+=overflow-touch
+  -webkit-overflow-scrolling: touch
+
+=tap-color
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 
 
 // mixins
@@ -55,7 +62,7 @@ $last: last-child
     @content
 
 =maxmin($maxsize: 760, $minsize: 760, $maxdimension:width, $mindimension:width)
-  @media screen and (max-#{$maxdimension}: #{$maxsize}px) and (max-#{$mindimension}: #{$minsize}px)
+  @media screen and (max-#{$maxdimension}: #{$maxsize}px) and (min-#{$mindimension}: #{$minsize}px)
     @content
 
 
@@ -240,7 +247,11 @@ $last: last-child
   user-select: $opt
 
 
-
+=icon($iconname)
+  content: $iconname
+  font-family: $iconfamily
+  line-height: 1
+  cursor: default
 
 
 
