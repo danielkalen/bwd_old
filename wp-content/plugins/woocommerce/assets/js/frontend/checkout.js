@@ -123,6 +123,7 @@ jQuery( function( $ ) {
 				$( 'div.payment_box' ).show();
 			}
 
+
 			if ( $( this ).data( 'order_button_text' ) ) {
 				$( '#place_order' ).val( $( this ).data( 'order_button_text' ) );
 			} else {

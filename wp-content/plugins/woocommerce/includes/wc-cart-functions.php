@@ -84,11 +84,11 @@ function wc_add_to_cart_message( $product_id ) {
 
 		$return_to 	= apply_filters( 'woocommerce_continue_shopping_redirect', wp_get_referer() ? wp_get_referer() : home_url() );
 
-		$message 	= sprintf('<a href="%s" class="button wc-forward">%s</a> %s', $return_to, __( 'Continue Shopping', 'woocommerce' ), $added_text );
+		$message 	= sprintf('%s <a href="%s" class="button wc-forward">%s</a>', $added_text, $return_to, __( 'Continue Shopping', 'woocommerce' ) );
 
 	else :
 
-		$message 	= sprintf('<a href="%s" class="button wc-forward">%s</a> %s', wc_get_page_permalink( 'cart' ), __( 'View Cart', 'woocommerce' ), $added_text );
+		$message 	= sprintf('%s <a href="%s" class="button wc-forward">%s</a>', $added_text,wc_get_page_permalink( 'cart' ), __( 'View Cart', 'woocommerce' ) );
 
 	endif;
 

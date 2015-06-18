@@ -1,6 +1,9 @@
 // ==== Mini Cart =================================================================================
 
 $$('body').on('added_to_cart', function(event, fragments, hash){
+	addingInProgress = false;
+	$$('body').removeClass('addingInProgress');
+	
 	$miniCart = $$('.top-bar-links-cart-box');
 	$cartContent = $$(fragments['div.widget_shopping_cart_content']);
 	$cartItems = $cartContent.find('.cart-list');
@@ -10,5 +13,5 @@ $$('body').on('added_to_cart', function(event, fragments, hash){
 	$miniCart.empty().append($cartItems, $cartTotal, $cartActions);
 
 	updateFreeShipping();
-	notify('success', 'Product has been added to the cart successfully!', true);
+	notify('success', '"'+ $addedProduct +'" was successfully added to your cart.', true);
 });

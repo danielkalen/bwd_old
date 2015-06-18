@@ -1,0 +1,62 @@
+.widget_checkout_totals.widget_checkout_totals
+	margin-bottom: 0
+
+.checkout-totals
+	width: 100%
+
+	&-row
+
+		&-value
+			font-size: 12px
+			text-align: left
+			padding-bottom: 14px
+			width: 100%
+
+			&-name
+				font-weight: 500
+				display: inline
+
+			&-quantity
+				display: inline
+
+			&-price
+				font-weight: 600
+				color: $primary
+
+
+
+	&-summary
+		// display: none	
+		border-top: 1px solid $divider
+
+		&-row
+			font-size: 14px
+
+			&.total
+				border-top: 1px solid $divider
+
+			&-heading
+				text-align: left
+				padding-top: 5px
+				width: 75px
+
+				.tax &
+					padding-bottom: 7px // For 'totals' padding
+
+				.total &
+					font-size: 20px
+
+			&-value
+				text-align: right
+				padding-top: 5px
+
+				.tax &
+					padding-bottom: 7px // For 'totals' padding
+
+				.total &
+					font-size: 20px
+					color: $primary
+
+
+				&-select
+					width: 90%

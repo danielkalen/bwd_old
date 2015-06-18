@@ -1,0 +1,131 @@
+#place_order
+	display: none
+
+.place-order
+	+clearfix
+	width: 47%
+	float: right
+
+	+max(736)
+		float: none
+		clear: both
+		+center
+		width: 100%
+
+
+.checkout-section.payment
+
+	.checkout-section-fieldset
+		// float: none
+
+		&.order_commments
+			width: 50%
+
+			+max(736)
+				float: none
+				+center
+				width: 100%
+
+		&.checkbox
+			float: none
+			width: 100%
+			margin: 10px 0 14px
+
+		&-checkbox
+			width: 317px
+			+center
+
+			// +max(736)
+			// 	width: auto
+
+			&-label-highlight
+				color: $primary
+				cursor: pointer
+
+				&:hover
+					text-decoration: underline
+
+	.checkout-section-buttons
+		width: 100%
+
+
+// ==== Cart Totals (mobile) =================================================================================
+.checkout-section.payment
+	.checkout-totals
+		display: none
+		margin-bottom: 35px
+
+		+max(920)
+			display: table
+
+
+			
+
+// ==== Stripe =================================================================================
+
+.checkout-payment
+
+	&-methods
+		border-bottom: 1px solid $divider
+		padding-bottom: 15px
+		margin-bottom: 15px
+		+clearfix
+
+	&-stripe
+		width: 50%
+		float: left
+
+		+max(920)
+			float: none
+			width: 100%
+
+	fieldset
+		border: 0
+		margin: 0
+		padding: 0
+
+
+
+// ==== Card =================================================================================
+
+@import checkout-card
+
+
+.card-wrapper
+	width: 47%
+	position: relative
+	top: 0
+	right: 0
+	float: right
+	+max(1100)
+		position: relative
+		margin: 0px auto
+
+		.card
+			.number.number
+				font-size: 22px
+
+	+max(920)
+		display: none
+// +max(411)
+//   min-width: 0 !important
+//   width: 100% !important
+//   margin-top: 10px !important
+//   .card
+//     min-width: 0 !important
+//     .number
+//       font-size: 22px !important
+// +max(376)
+//   .card-container
+//     height: 180px !important
+//     .number, .name
+//       font-size: 20px !important
+//     .card-logo
+//       width: 50px !important
+//       height: 35px !important
+//     .lower
+//       margin-bottom: -20px !important
+// +max(359)
+//   .card-container
+//     .number, .name
+//       font-size: 16px !important

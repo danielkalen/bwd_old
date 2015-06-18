@@ -1,0 +1,114 @@
+.checkout-section
+	margin-bottom: 25px
+	background-color: $subwhite
+	border: 1px solid $divider
+	border-radius: 3px
+	overflow: hidden
+	box-sizing: border-box
+	transition: height 0.6s
+	+clearfix
+
+	&-title
+		position: relative
+		height: 39px
+		background-color: $primary
+		color: white
+		cursor: pointer
+
+		&-text
+			position: absolute
+			left: 40px
+			+valign(55%)
+			font-family: avenir
+			line-height: 1
+			text-transform: uppercase
+
+		&:before // Number
+			content: ''
+			position: absolute
+			left: 13px
+			+valign(47%)
+			font-size: 28px
+			line-height: 1
+
+			.billing &
+				content: '1'
+			.shipping &
+				content: '2'
+			.payment &
+				content: '3'
+
+		&:after // Number
+			+icon('')
+			position: absolute
+			right: 13px
+			+valign
+			font-weight: 400
+			line-height: 1
+
+			.show &
+				color: $contrast
+
+			.billing &
+				content: 'G'
+				font-size: 24px
+			.shipping &
+				content: 'u'
+				font-size: 24px
+			.payment &
+				content: 'j'
+				font-size: 21px
+
+	&-wrap
+		padding: 25px 25px 0
+		box-sizing: border-box
+
+		.billing &
+			padding: 25px
+
+
+	&-buttons
+		width: 48%
+		float: right
+
+		+max(620)
+			.shipping &
+				float: none
+				width: 100%
+				padding-bottom: 25px
+				+clearfix
+
+
+		&-item
+			+button(perc(158px, 340px), 48px, $textcolor: white, $hovercolor: darken($primary, 10), $hovertextcolor: white)
+			border-radius: 2px
+			box-sizing: border-box
+
+			+max(620)
+				width: 100%
+				.shipping &
+					width: perc(164px, 340px)
+
+			&-text
+				font-weight: 600
+
+				.submit &
+					font-size: 16px
+
+			&.next
+				float: right
+
+			&.back
+				float: left
+				background-color: $grey-x-light
+
+				&:hover
+					color: white
+
+			&.submit
+				+center
+
+
+
+
+

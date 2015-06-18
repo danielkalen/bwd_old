@@ -84,6 +84,7 @@ add_action( 'after_setup_theme', 'bwd_setup' );
  */
 
 require_once('inc/widget-cart.php');
+require_once('inc/widget-checkout.php');
 
 function snapmagnet_widgets_init() {
 	register_sidebar( array(
@@ -337,6 +338,7 @@ function child_manage_woocommerce_styles() {
 		wp_dequeue_style( 'woocommerce_chosen_styles' );
 		wp_dequeue_style( 'select2' );
 		wp_dequeue_script( 'select2' );
+		wp_dequeue_script( 'wc-chosen' );
 		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
 			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
 			wp_dequeue_script( 'wc_price_slider' );
@@ -347,7 +349,6 @@ function child_manage_woocommerce_styles() {
 			wp_dequeue_script( 'wc-add-to-cart-variation' );
 			wp_dequeue_script( 'wc-single-product' );
 			// wp_dequeue_script( 'wc-cart' );
-			wp_dequeue_script( 'wc-chosen' );
 			// wp_dequeue_script( 'woocommerce' );
 			wp_dequeue_script( 'prettyPhoto' );
 			wp_dequeue_script( 'prettyPhoto-init' );
@@ -493,6 +494,7 @@ function woo_add_custom_general_fields_save( $post_id ){
 	
 }
 
+require_once('inc/checkout_fields.php');
 
 /**
  * Implement the Custom Header feature.

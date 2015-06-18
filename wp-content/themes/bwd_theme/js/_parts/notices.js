@@ -1,4 +1,4 @@
-addNotice($$('.notice'));
+addNotice($$('.notice'), true);
 
 $$('.notices').on('click', '.notice-close', function(){
 	var $parent = $(this).parent();
@@ -7,7 +7,7 @@ $$('.notices').on('click', '.notice-close', function(){
 });
 
 
-function notify($type, $text, $timed){
+function notify($type, $text, timed){
 	var notification = '<div class="notice notice_' + $type + '">
 							<div class="notice-text">' + $text + '</div>
 							<div class="notice-close"></div>
@@ -18,18 +18,22 @@ function notify($type, $text, $timed){
 		$('.notice').last().addClass('show');
 	}, 200);
 
-	if ( $timed ) {
+	if ( timed ) {
 		removeNotice($('.notice').last());
 	}
 }
 
 
 
-function addNotice($notice){
+function addNotice($notice, timed){
 	$notice.appendTo('.notices');
 	setTimeout(function(){
 		$notice.addClass('show');
 	}, 200);
+	
+	if ( timed ) {
+		removeNotice($('.notice').last());
+	}
 }
 
 

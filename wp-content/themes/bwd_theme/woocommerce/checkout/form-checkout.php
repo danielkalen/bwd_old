@@ -28,24 +28,32 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 
 	<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+		<div class="checkout-section billing">
+			<?php do_action( 'woocommerce_checkout_billing' ); ?>
+		</div>
 
-		<?php do_action( 'woocommerce_checkout_billing' ); ?>
-
-		<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+		<div class="checkout-section shipping">
+			<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+		</div>
 
 	<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 	
-	<section class="checkout-section payment">
-		<h3 class="checkout-section-title"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
+	<div class="checkout-section payment">
+		<h3 class="checkout-section-title"><div class="checkout-section-title-text"><?php _e( 'Payment &amp; Confirmation', 'woocommerce' ); ?></div></h3>
 
-		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+		<div class="checkout-section-wrap">
 
-		<div id="order_review" class="woocommerce-checkout-review-order">
-			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			<div id="order_review" class="woocommerce-checkout-review-order">
+				<?php //do_action( 'woocommerce_checkout_order_review' ); ?>
+				<?php woocommerce_order_review() ?>
+				<?php woocommerce_checkout_payment() ?>
+			</div>
+
+
+			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+			<div class="clearfix"></div>
 		</div>
-
-		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-	</section>
+	</div>
 
 </form>
 

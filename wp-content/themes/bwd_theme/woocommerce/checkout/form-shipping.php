@@ -12,28 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="woocommerce-shipping-fields">
 	<?php if ( WC()->cart->needs_shipping_address() === true ) : ?>
 
-		<?php
-			if ( empty( $_POST ) ) {
+		<h3 class="checkout-section-title"><div class="checkout-section-title-text"><?php _e( 'Shipping Address', 'woocommerce' ); ?></div></h3>
 
-				$ship_to_different_address = get_option( 'woocommerce_ship_to_destination' ) === 'shipping' ? 1 : 0;
-				$ship_to_different_address = apply_filters( 'woocommerce_ship_to_different_address_checked', $ship_to_different_address );
-
-			} else {
-
-				$ship_to_different_address = $checkout->get_value( 'ship_to_different_address' );
-
-			}
-		?>
-
-		<h3 id="ship-to-different-address">
-			<label for="ship-to-different-address-checkbox" class="checkbox"><?php _e( 'Ship to a different address?', 'woocommerce' ); ?></label>
-			<input id="ship-to-different-address-checkbox" class="input-checkbox" <?php checked( $ship_to_different_address, 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />
-		</h3>
-
-		<div class="shipping_address">
+		<div class="checkout-section-wrap">
 
 			<?php do_action( 'woocommerce_before_checkout_shipping_form', $checkout ); ?>
 
@@ -45,27 +28,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php do_action( 'woocommerce_after_checkout_shipping_form', $checkout ); ?>
 
+			<div class="checkout-section-buttons">
+				<div class="checkout-section-buttons-item button back"><div class="checkout-section-buttons-item-text">Previous Step</div></div>
+				<div class="checkout-section-buttons-item button next"><div class="checkout-section-buttons-item-text">Next Step</div></div>
+			</div>
+
+			<div class="clearfix"></div>
 		</div>
 
 	<?php endif; ?>
 
-	<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
 
-	<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', get_option( 'woocommerce_enable_order_comments', 'yes' ) === 'yes' ) ) : ?>
-
-		<?php if ( ! WC()->cart->needs_shipping() || WC()->cart->ship_to_billing_address_only() ) : ?>
-
-			<h3><?php _e( 'Additional Information', 'woocommerce' ); ?></h3>
-
-		<?php endif; ?>
-
-		<?php foreach ( $checkout->checkout_fields['order'] as $key => $field ) : ?>
-
-			<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
-
-		<?php endforeach; ?>
-
-	<?php endif; ?>
-
-	<?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
-</div>

@@ -26,7 +26,7 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 
 		<div class="shipping-calculator-fieldset select" id="calc_shipping_country_field">
 			<select name="calc_shipping_country" id="calc_shipping_country" class="shipping-calculator-fieldset-select" rel="calc_shipping_state">
-				<option value=""><?php _e( 'Select a country&hellip;', 'woocommerce' ); ?></option>
+				<option value=""><?php _e( 'Country', 'woocommerce' ); ?></option>
 				<?php
 					foreach( WC()->countries->get_shipping_countries() as $key => $value )
 						echo '<option value="' . esc_attr( $key ) . '"' . selected( WC()->customer->get_shipping_country(), esc_attr( $key ), false ) . '>' . esc_html( $value ) . '</option>';
@@ -50,7 +50,7 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 
 					?>
 						<select name="calc_shipping_state" id="calc_shipping_state" class="shipping-calculator-fieldset-select" placeholder="<?php _e( 'State / county', 'woocommerce' ); ?>">
-							<option value=""><?php _e( 'Select a state&hellip;', 'woocommerce' ); ?></option>
+							<option value=""><?php _e( 'State', 'woocommerce' ); ?></option>
 							<?php
 								foreach ( $states as $ckey => $cvalue )
 									echo '<option value="' . esc_attr( $ckey ) . '" ' . selected( $current_r, $ckey, false ) . '>' . __( esc_html( $cvalue ), 'woocommerce' ) .'</option>';

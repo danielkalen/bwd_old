@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php do_action( 'woocommerce_review_order_before_payment' ); ?>
 <?php endif; ?>
 
-<div id="payment" class="woocommerce-checkout-payment">
+<div id="payment" class="checkout-payment woocommerce-checkout-payment">
 	<?php if ( WC()->cart->needs_payment() ) : ?>
-	<ul class="payment_methods methods">
+	<div class="checkout-payment-methods payment_methods methods">
 		<?php
 			if ( ! empty( $available_gateways ) ) {
 				foreach ( $available_gateways as $gateway ) {
@@ -35,8 +35,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 				echo '<p>' . apply_filters( 'woocommerce_no_available_payment_methods_message', $no_gateways_message ) . '</p>';
 			}
 		?>
-	</ul>
-	<?php endif; ?>
+
+		<div class="card-wrapper"></div>
+	</div>
+	<?php endif;
+	
+
+	// ==== ORDER NOTES =================================================================================
+	do_action( 'woocommerce_checkout_before_order_review' );
+
+			do_action( 'woocommerce_before_order_notes', $checkout ); 
+
+			if ( apply_filters( 'woocommerce_enable_order_notes_field', get_option( 'woocommerce_enable_order_comments', 'yes' ) === 'yes' ) ) : 
+
+				foreach ( $checkout->checkout_fields['order'] as $key => $field ) : 
+
+					woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); 
+
+				endforeach; 
+
+			endif; 
+
+			do_action( 'woocommerce_after_order_notes', $checkout ); 
+
+	/* =================================================================================================== */
+	?>
 
 	<div class="form-row place-order">
 
@@ -46,14 +69,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
+		<?php if ( wc_get_page_id( 'terms' ) > 0 && apply_filters( 'woocommerce_checkout_show_terms', true ) ) : ?>
+		<div class="checkout-section-fieldset checkbox fieldset">
+			<div class="checkout-section-fieldset-checkbox input-button">
+				<div class="checkout-section-fieldset-checkbox-box"></div>
+				<label for="terms" class="checkout-section-fieldset-checkbox-label">I&rsquo;ve read and accept the 
+					<span class="checkout-section-fieldset-checkbox-label-highlight popup-trigger terms">terms &amp; conditions</span>.</label>
+				<input id="terms" class="input input-checkbox" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> type="checkbox" name="name" />
+			</div>
+		</div>
+		<?php endif; ?>
+
+
 		<?php echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' ); ?>
 
-		<?php if ( wc_get_page_id( 'terms' ) > 0 && apply_filters( 'woocommerce_checkout_show_terms', true ) ) : ?>
-			<p class="form-row terms">
-				<label for="terms" class="checkbox"><?php printf( __( 'I&rsquo;ve read and accept the <a href="%s" target="_blank">terms &amp; conditions</a>', 'woocommerce' ), esc_url( wc_get_page_permalink( 'terms' ) ) ); ?></label>
-				<input type="checkbox" class="input-checkbox" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" />
-			</p>
-		<?php endif; ?>
+		<div class="checkout-section-buttons">
+			<div class="checkout-section-buttons-item submit">
+				<div class="checkout-section-buttons-item-text">Place Order</div>
+			</div>
+		</div>
+
 
 		<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 

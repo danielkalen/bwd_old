@@ -59,6 +59,7 @@
 		</div>
 	</div>
 </div>
+<?php wc_print_notices(); ?>
 <div id="page" class="hfeed site">
 	<div class="hover-overlay_mobile"></div>
 	<header id="masthead" class="header" role="banner">

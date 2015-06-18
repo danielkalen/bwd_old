@@ -5,13 +5,13 @@
 // ==== Sidebar Scroll =================================================================================
 
 $sidebarTop = $$('.sidebar').offset().top;
-$sidebarWidth = $$('.sidebar-wrap').width() + 2;
+$sidebarWidth = $$('.sidebar-wrap').width();
 $sidebarHeight = $$('.sidebar').height() + 2;
 $footerTop = $$('.footer').offset().top;
 
 	// Update vars upon resize
 	$window.on('resize', function(){
-		$sidebarWidth = $$('.sidebar').width() + 2;
+		$sidebarWidth = $$('.sidebar').width();
 		$footerTop = $$('.footer').offset().top;
 	});
 

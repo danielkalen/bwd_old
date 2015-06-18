@@ -852,8 +852,8 @@ class WC_Countries {
 				),
 				'US' => array(
 					'postcode'  => array(
-						'label'       => __( 'Zip', 'woocommerce' ),
-						'placeholder' => __( 'Zip', 'woocommerce' ),
+						'label'       => __( 'Zip Code', 'woocommerce' ),
+						'placeholder' => __( 'Zip Code', 'woocommerce' ),
 					),
 					'state'     => array(
 						'label'       => __( 'State', 'woocommerce' ),

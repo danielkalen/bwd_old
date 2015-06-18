@@ -53,6 +53,10 @@
 			background-image: url(img/sprite.png)
 			background-position: -384px -9px
 
+			.oss &
+				background-position: -467px -9px
+
+
 			
 		&-img
 			position: relative
@@ -132,6 +136,21 @@
 
 						&.added &-text:before
 							content: 's'
+
+						.addingInProgress &
+							color: $grey
+
+							&:hover
+								color: $grey
+								background-color: $white
+						
+						&.loading
+							color: $primary
+
+							&:hover
+								color: white
+								background-color: $primary
+
 
 
 					&-quickview
