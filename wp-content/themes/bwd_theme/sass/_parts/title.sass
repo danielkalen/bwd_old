@@ -9,3 +9,33 @@
 
 	+max(520)
 		font-size: 22px
+
+	&.floated
+		border-bottom: 0
+		margin-bottom: 0
+		float: left
+
+		+max(736)
+			float: none
+			padding-bottom: 0
+
+
+
+
+.page-subtitle
+	font-size: 14px
+	color: $font
+
+	&.floated
+		float: right
+		text-align: right
+		padding-top: 7px
+
+		+max(736)
+			float: none
+			clear: both
+			text-align: left
+			margin-bottom: 15px
+
+	span
+		font-weight: 600

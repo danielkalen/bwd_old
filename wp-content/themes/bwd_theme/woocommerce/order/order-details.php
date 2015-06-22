@@ -14,12 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 $order = wc_get_order( $order_id );
 
 ?>
-<h2><?php _e( 'Order Details', 'woocommerce' ); ?></h2>
-<table class="shop_table order_details">
-	<thead>
+<table class="view-order shop_table order_details">
+	<thead class="view-order-head">
 		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
+			<th class="view-order-head-item name"></th>
+			<th class="view-order-head-item name"><?php _e( 'Product', 'woocommerce' ); ?></th>
+			<th class="view-order-head-item price"><?php _e( 'Price', 'woocommerce' ); ?></th>
+			<th class="view-order-head-item quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
+			<th class="view-order-head-item total"><?php _e( 'Total', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -32,16 +34,22 @@ $order = wc_get_order( $order_id );
 
 				if ( apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 					?>
-					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
-						<td class="product-name">
+					<tr class="view-order-item <?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
+						<td class="view-order-item-cell thumb">
+							<?php 
+								$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+								echo $thumbnail;
+							?>
+						</td>
+
+						<td class="view-order-item-cell name">
 							<?php
 								if ( $_product && ! $_product->is_visible() ) {
 									echo apply_filters( 'woocommerce_order_item_name', $item['name'], $item );
 								} else {
-									echo apply_filters( 'woocommerce_order_item_name', sprintf( '<a href="%s">%s</a>', get_permalink( $item['product_id'] ), $item['name'] ), $item );
+									echo apply_filters( 'woocommerce_order_item_name', sprintf( '<a class="view-order-item-cell-name" href="%s">%s</a>', get_permalink( $item['product_id'] ), $item['name'] ), $item );
 								}
-
-								echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', $item['qty'] ) . '</strong>', $item );
 
 								// Allow other plugins to add additional product information here
 								do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order );
@@ -67,8 +75,26 @@ $order = wc_get_order( $order_id );
 								do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order );
 							?>
 						</td>
-						<td class="product-total">
-							<?php echo $order->get_formatted_line_subtotal( $item ); ?>
+
+
+						<td class="view-order-item-cell price">
+							<div class="view-order-item-cell-price">
+								<?php echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); ?>
+							</div>
+						</td>
+
+
+						<td class="view-order-item-cell quantity">
+							<div class="view-order-item-cell-quantity">
+								<?php echo apply_filters( 'woocommerce_order_item_quantity_html', sprintf( '%s', $item['qty'] ) , $item ); ?>
+							</div>
+						</td>
+
+
+						<td class="view-order-item-cell total">
+							<div class="view-order-item-cell-total">
+								<?php echo $order->get_formatted_line_subtotal( $item ); ?>
+							</div>
 						</td>
 					</tr>
 					<?php
@@ -87,7 +113,7 @@ $order = wc_get_order( $order_id );
 		do_action( 'woocommerce_order_items_table', $order );
 		?>
 	</tbody>
-	<tfoot>
+	<tfoot class="view-order-summary">
 	<?php
 		$has_refund = false;
 
@@ -134,9 +160,11 @@ $order = wc_get_order( $order_id );
 					$value = '<del>' . strip_tags( $order->get_formatted_order_total() ) . $refunded_tax_del . '</del> <ins>' . wc_price( $order->get_total() - $total_refunded, array( 'currency' => $order->get_order_currency() ) ) . $refunded_tax_ins . '</ins>';
 				}
 				?>
-				<tr>
-					<th scope="row"><?php echo $total['label']; ?></th>
-					<td><?php echo $value; ?></td>
+				<tr class="view-order-summary-item">
+					<td class="view-order-summary-item-empty"></td>
+					<td class="view-order-summary-item-empty"></td>
+					<th class="view-order-summary-item-label" colspan="2" scope="row"><?php echo $total['label']; ?></th>
+					<td class="view-order-summary-item-value"><?php echo $value; ?></td>
 				</tr>
 				<?php
 			}
@@ -144,18 +172,18 @@ $order = wc_get_order( $order_id );
 
 		// Check for refund
 		if ( $has_refund ) { ?>
-			<tr>
-				<th scope="row"><?php _e( 'Refunded:', 'woocommerce' ); ?></th>
-				<td>-<?php echo wc_price( $total_refunded, array( 'currency' => $order->get_order_currency() ) ); ?></td>
+			<tr class="view-order-summary-item">
+				<th class="view-order-summary-item-label" colspan="4" scope="row"><?php _e( 'Refunded:', 'woocommerce' ); ?></th>
+				<td class="view-order-summary-item-value">-<?php echo wc_price( $total_refunded, array( 'currency' => $order->get_order_currency() ) ); ?></td>
 			</tr>
 		<?php
 		}
 
 		// Check for customer note
 		if ( '' != $order->customer_note ) { ?>
-			<tr>
-				<th scope="row"><?php _e( 'Note:', 'woocommerce' ); ?></th>
-				<td><?php echo wptexturize( $order->customer_note ); ?></td>
+			<tr class="view-order-summary-item">
+				<th class="view-order-summary-item-label" colspan="4" scope="row"><?php _e( 'Note:', 'woocommerce' ); ?></th>
+				<td class="view-order-summary-item-value"><?php echo wptexturize( $order->customer_note ); ?></td>
 			</tr>
 		<?php } ?>
 	</tfoot>
@@ -163,68 +191,64 @@ $order = wc_get_order( $order_id );
 
 <?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
-<header>
-	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
-</header>
-<table class="shop_table shop_table_responsive customer_details">
-<?php
-	if ( $order->billing_email ) {
-		echo '<tr><th>' . __( 'Email:', 'woocommerce' ) . '</th><td data-title="' . __( 'Email', 'woocommerce' ) . '">' . $order->billing_email . '</td></tr>';
-	}
+<h2 class="page-title">Customer Details</h1>
 
-	if ( $order->billing_phone ) {
-		echo '<tr><th>' . __( 'Telephone:', 'woocommerce' ) . '</th><td data-title="' . __( 'Telephone', 'woocommerce' ) . '">' . $order->billing_phone . '</td></tr>';
-	}
+<div class="customer_details">
 
-	// Additional customer details hook
-	do_action( 'woocommerce_order_details_after_customer_details', $order );
-?>
-</table>
+	<?php if ($order->billing_email || $order->billing_phone) { ?>
+		<div class="customer_details-item">
+			<div class="customer_details-item-title">Contact Information</div>
 
-<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) : ?>
+			<?php if ($order->billing_email) { ?>
+				<div class="customer_details-item-row email">
+					<span class="customer_details-item-row-label">Email: </span>
+					<?php echo $order->billing_email ?>
+				</div>
+			<?php } ?>
+			
+			<?php if ($order->billing_phone) { ?>
+				<div class="customer_details-item-row phone">
+					<span class="customer_details-item-row-label">Phone: </span>
+					<?php echo $order->billing_phone ?>
+				</div>
+			<?php } ?>
 
-<div class="col2-set addresses">
+		</div>
+	<?php } ?>
 
-	<div class="col-1">
 
-<?php endif; ?>
+		<div class="customer_details-item">
+			<div class="customer_details-item-title">Billing Address</div>
 
-		<header class="title">
-			<h3><?php _e( 'Billing Address', 'woocommerce' ); ?></h3>
-		</header>
-		<address>
-			<?php
-				if ( ! $order->get_formatted_billing_address() ) {
-					_e( 'N/A', 'woocommerce' );
-				} else {
-					echo $order->get_formatted_billing_address();
-				}
-			?>
-		</address>
+			<div class="customer_details-item-row billing">
+				<?php
+					if ( ! $order->get_formatted_billing_address() ) {
+						_e( 'N/A', 'woocommerce' );
+					} else {
+						echo $order->get_formatted_billing_address();
+					}
+				?>
+			</div>
 
-<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) : ?>
+		</div>
 
-	</div><!-- /.col-1 -->
+	<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) : ?>
 
-	<div class="col-2">
+		<div class="customer_details-item">
+			<div class="customer_details-item-title">Shipping Address</div>
 
-		<header class="title">
-			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>
-		</header>
-		<address>
-			<?php
-				if ( ! $order->get_formatted_shipping_address() ) {
-					_e( 'N/A', 'woocommerce' );
-				} else {
-					echo $order->get_formatted_shipping_address();
-				}
-			?>
-		</address>
+			<div class="customer_details-item-row shipping">
+				<?php
+					if ( ! $order->get_formatted_shipping_address() ) {
+						_e( 'N/A', 'woocommerce' );
+					} else {
+						echo $order->get_formatted_shipping_address();
+					}
+				?>
+			</div>
 
-	</div><!-- /.col-2 -->
+		</div>
 
-</div><!-- /.col2-set -->
 
-<?php endif; ?>
-
-<div class="clear"></div>
+	<?php endif; ?>
+</div>

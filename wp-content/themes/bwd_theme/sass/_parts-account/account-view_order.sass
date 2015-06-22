@@ -1,0 +1,205 @@
+.view-order
+	width: 100%
+	border: 1px solid $divider
+	border-radius: 3px
+	margin-bottom: 55px
+
+	&-head
+		background-color: $subwhite
+
+		&-item
+			border-bottom: 3px solid $primary
+			padding: 12px 0 7px
+			font-family: avenir
+			font-weight: 600
+			font-size: 14px
+			line-height: 1
+			text-transform: uppercase
+			color: $primary
+
+	&-item
+		border-top: 1px solid $divider
+
+		&:first-child
+			border-top: 0
+
+		&:nth-child(2n)
+			background-color: $subberwhite
+
+
+		&-cell
+			text-align: center
+			font-size: 14px
+
+			&.thumb
+				img
+					+size(60)
+					padding: 10px 15px
+
+			&-item_count
+				font-size: 11px
+
+
+			&-name,
+			&-price,
+			&-quantity,
+			&-total
+				font-size: 15px
+				font-weight: 500
+				color: $font
+
+			&-price,
+			&-total
+				padding: 0 16px
+				box-sizing: border-box
+
+
+			&.price,
+			&.total
+				width: 13%
+
+			// &.name
+			// 	width: 24%
+
+			&-name
+				display: block
+				padding: 10px 0
+
+			&-price,
+			&-subtotal
+				display: block
+				width: 100%
+
+				text-align: center
+
+	&-summary
+		border-top: 1px solid $divider
+		background-color: $subwhite
+
+		&-item
+			// border-top: 1px solid $divider
+			color: $font
+			&-label
+				padding: 8px 10px 8px 0
+				text-transform: uppercase
+				font-size: 14px
+				line-height: 1
+				font-family: avenir
+				text-align: right
+				text-align: left
+
+			&-value
+				padding: 5px 10px 5px 0
+				font-size: 14px
+				font-weight: 500
+				text-align: center
+				line-height: 1
+				// text-align: right
+				// font-family: avenir
+
+		&-item:last-child
+			color: $primary
+
+
+
+
+
+// ==== Mobile =================================================================================
+
++max(520)
+	.view-order,
+	.view-order tbody,
+	.view-order tr,
+	.view-order th,
+	.view-order td
+		display: block
+
+	thead
+		display: none
+
+	.view-order
+
+		&-item
+			position: relative
+			padding: 15px 20px
+			+clearfix
+
+			&-cell
+				&.thumb img
+					padding: 0
+
+				&.name
+					width: 100%
+					max-width: 300px
+					text-align: center
+					+center
+				&-name
+					padding: 10px 0 5px
+
+
+				&.price,
+				&.total
+					width: 100%
+					text-align: center
+
+				&-quantity
+					&:after
+						content: 'Items'
+						content: '(Quantity)'
+						font-size: 11px
+
+
+
+				&-total
+					color: $primary
+					display: block
+
+
+				&.subtotal
+					display: none
+
+
+		&-summary
+			display: block
+
+			&-item
+				display: block
+				padding: 0 12px 0
+				padding: 7px 12px
+				border-top: 1px solid $divider
+				+clearfix
+
+				&:first-child
+					border-top: 0
+
+				&-empty
+					display: none
+
+				&-label
+					float: left
+					padding: 0
+					width: 60%
+
+				&-value
+					float: right
+					text-align: right
+					padding: 0
+					width: 40%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

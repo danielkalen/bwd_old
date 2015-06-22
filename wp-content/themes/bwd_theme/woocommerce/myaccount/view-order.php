@@ -17,7 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php wc_print_notices(); ?>
 
-<p class="order-info"><?php printf( __( 'Order #<mark class="order-number">%s</mark> was placed on <mark class="order-date">%s</mark> and is currently <mark class="order-status">%s</mark>.', 'woocommerce' ), $order->get_order_number(), date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ), wc_get_order_status_name( $order->get_status() ) ); ?></p>
+<p class="page-subtitle floated"><?php printf( __( 'Order #<span class="order-number">%s</span> was placed on <span class="order-date">%s</span> and is currently <span class="order-status">%s</span>.', 'woocommerce' ), $order->get_order_number(), date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ), wc_get_order_status_name( $order->get_status() ) ); ?></p>
+
+<div class="clearfix"></div>
 
 <?php if ( $notes = $order->get_customer_order_notes() ) :
 	?>
