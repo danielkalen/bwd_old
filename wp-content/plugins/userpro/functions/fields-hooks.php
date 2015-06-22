@@ -11,11 +11,12 @@
 			?>
 			
 					
-						<div class='userpro-checkbox-wrap'>
-							<label class='userpro-checkbox hide-field'>
-								<span></span>
-								<input type='checkbox' name='rememberme-<?php echo $args['unique_id']; ?>' id='rememberme-<?php echo $args['unique_id']; ?>' value="true" /><?php _e('Remember me','userpro'); ?>
-							</label>
+						<div class='userpro-form-fieldset fieldset checkbox userpro-checkbox-wrap'>
+							<div class='userpro-form-fieldset-checkbox input-button userpro-checkbox'>
+								<div class="userpro-form-fieldset-checkbox-box"></div>
+								<label for="rememberme-<?php echo $args['unique_id']; ?>" class="userpro-form-fieldset-checkbox-label">Remember Me</label>
+								<input type='checkbox' name='rememberme-<?php echo $args['unique_id']; ?>' id='rememberme-<?php echo $args['unique_id']; ?>' value="true" />
+							</div>
 						</div>
 
 			

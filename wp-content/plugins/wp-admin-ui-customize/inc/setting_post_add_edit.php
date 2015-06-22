@@ -11,7 +11,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Add New Post and Edit Post Screen Setting' , $this->ltd ); ?></h2>
 	<p>&nbsp;</p>
@@ -105,3 +105,11 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 	</form>
 
 </div>
+
+<style>
+</style>
+<script>
+jQuery(document).ready( function($) {
+
+});
+</script>

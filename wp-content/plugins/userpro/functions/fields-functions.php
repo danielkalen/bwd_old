@@ -243,7 +243,7 @@
 		/* display a field */
 		if (!$user_id) $user_id = 0;
 		if (isset( $array['type'] ) && userpro_field_by_role( $key, $user_id ) ) {
-		$res .= "<div class='userpro-field userpro-field-".$key." ".userpro_private_field_class($array)."' data-key='$key'>";
+		$res .= "<div class='userpro-clearfix'></div><div class='userpro-form-fieldset fieldset userpro-field userpro-field-".$key." ".userpro_private_field_class($array)."' data-key='$key'>";
 		
 		if ( $array['label'] && $array['type'] != 'passwordstrength' ) {
 		
@@ -265,7 +265,7 @@
 		$res .= "</div>";
 		}
 		
-		$res .= "<div class='userpro-input'>";
+		$res .= "<div class='userpro-form-fieldset-wrap userpro-input'>";
 		
 			/* switch field type */
 			switch($array['type']) {
@@ -306,7 +306,9 @@
 					
 				case 'text':
 				
-					$res .= "<input type='text' name='$key-$i' id='$key-$i' value=".'"'.$value.'"'." placeholder='".$array['placeholder']."' $data />";
+					$res .= "
+					<label for='$key-$i' class='userpro-form-fieldset-label'>".$array['placeholder']."</label>
+					<input class='userpro-form-fieldset-input input' type='text' name='$key-$i' id='$key-$i' value=".'"'.$value.'"'." placeholder='".$array['placeholder']."' $data />";
 					
 					/* allow user to make it hideable */
 					if ( isset($array['hideable']) && $array['hideable'] == 1) {
@@ -349,11 +351,13 @@
 					break;
 					
 				case 'password':
-					$res .= "<input type='password' name='$key-$i' id='$key-$i' value='".$value."' placeholder='".$array['placeholder']."' autocomplete='off' $data />";
+					$res .= "
+					<label for='$key-$i' class='userpro-form-fieldset-label'>".$array['placeholder']."</label>
+					<input type='password' class='userpro-form-fieldset-input' name='$key-$i' id='$key-$i' value='".$value."' placeholder='".$array['placeholder']."' autocomplete='off' $data />";
 					break;
 					
 				case 'passwordstrength' :
-					$res .= '<span class="strength-text" '.$data.'>'.__('Password Strength','userpro').'</span><div class="userpro-clear"></div><span class="strength-container"><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span></span><div class="userpro-clear"></div>';
+					$res .= '<span class="strength-text" '.$data.'>'.__('Password Strength','userpro').'</span></div><span class="strength-container"><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span><span class="strength-plain"></span></span></div>';
 					break;
 					
 				case 'select':
@@ -426,14 +430,17 @@
 					
 				case 'checkbox':
 					if (isset($options)){
-					$res .= "<div class='userpro-checkbox-wrap' data-required='".$array['required']."'>";
+					$res .= "<div class='userpro-form-fieldset fieldset checkbox userpro-checkbox-wrap' data-required='".$array['required']."'>";
 					foreach($options as $k=>$v) {
 						$v = stripslashes($v);
-						$res .= "<label class='userpro-checkbox'><span";
-						if ( ( is_array( $value ) && in_array($v, $value ) ) || $v == $value ) { $res .= ' class="checked"'; }
-						$res .= '></span><input type="checkbox" value="'.$v.'" name="'.$key.'-'.$i.'[]" ';
+						$res .= "<div class='userpro-checkbox userpro-form-fieldset-checkbox input-button'>";
+						if ( ( is_array( $value ) && in_array($v, $value ) ) || $v == $value ) { $res .= '<span class="checked"></span>'; }
+						$res .= '
+						<div class="userpro-form-fieldset-checkbox-box"></div>
+						<div class="userpro-form-fieldset-checkbox-label">'.$v.'</div>
+						<input class="input input-checkbox" type="checkbox" value="'.$v.'" name="'.$key.'-'.$i.'[]" ';
 						if ( ( is_array( $value ) && in_array($v, $value ) ) || $v == $value ) { $res .= 'checked="checked"'; }
-						$res .= " />$v</label>";
+						$res .= " /></div>";
 					}
 					$res .= "</div>";
 					}
@@ -470,10 +477,12 @@
 					
 					} else {
 					
-					$res .= "<div class='userpro-checkbox-wrap'>";
-					$res .= "<label class='userpro-checkbox'><span";
-					$res .= '></span><input type="checkbox" value="unsubscribed" name="'.$key.'-'.$i.'" ';
-					$res .= " />".$array['list_text']."</label>";
+					$res .= "<div class='userpro-form-fieldset fieldset checkbox userpro-checkbox-wrap'>";
+					$res .= "<div class='userpro-form-fieldset-checkbox input-button userpro-checkbox'>";
+					$res .= "<div class='userpro-form-fieldset-checkbox-box'></div>";
+					$res .= "<label for='".$key.'-'.$i."' class='userpro-form-fieldset-checkbox-label'>".$array['list_text']."</label>";
+					$res .= '<input class="input input-checkbox" type="checkbox" value="unsubscribed" name="'.$key.'-'.$i.'" ';
+					$res .= " /></div>";
 					$res .= "</div>";
 					
 					}
@@ -515,9 +524,8 @@
 		$hook = apply_filters("userpro_field_filter", $key, $user_id);
 		$res .= $hook;
 		
-		$res .= "<div class='userpro-clear'></div>";
 		$res .= "</div>";
-		$res .= "</div><div class='userpro-clear'></div>";
+		$res .= "</div>";
 		}
 		
 		return $res;

@@ -1,0 +1,25 @@
+.account-links
+	font-size: 13px
+
+	&-item
+		position: relative
+		margin-bottom: 6px
+		padding-left: 12px
+		box-sizing: border-box
+
+		&:last-child
+			margin-bottom: 0
+
+		&:before
+			+icon('q')
+			position: absolute
+			left: -2px
+			+valign
+			color: lighten($grey-light, 20)
+			transition: color 0.2s
+
+		&:hover:before
+			color: $primary
+
+		&-text
+			color: $font

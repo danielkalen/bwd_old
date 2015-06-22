@@ -11,7 +11,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Dashboard' ); ?><?php _e( 'Settings' ); ?></h2>
 	<p>&nbsp;</p>
@@ -146,6 +146,18 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 </div>
 
+<style>
+.form-table td {
+	vertical-align: top;
+}
+.inside .loading {
+	display: none;
+}
+.inside .loading .spinner {
+	float: left;
+    visibility: visible;
+}
+</style>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 

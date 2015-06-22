@@ -13,7 +13,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Admin Bar Menu' , $this->ltd ); ?></h2>
 	<p><?php _e( 'Please change the menu by drag and drop.' , $this->ltd ); ?></p>
@@ -191,6 +191,15 @@ body.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside
 body.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside .widget.comments .widget-top .widget-title h4 .ab-icon,
 body.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside .widget.new-content .widget-top .widget-title h4 .ab-icon
 { background-image: url(../wp-includes/images/admin-bar-sprite.png); }
+.widget h4 {
+    padding: 10px 15px;
+}
+.widget-top a.widget-action:after {
+    padding: 9px 12px;
+}
+.widget.ui-draggable-dragging {
+    min-width: 170px;
+}
 </style>
 
 <script type="text/javascript">
@@ -209,7 +218,6 @@ jQuery(document).ready(function($) {
 		distance: 2,
 		helper: 'clone',
 		zIndex: 5,
-		containment: 'document',
 		stop: function(e,ui) {
 			wauc_widget_each();
 			wauc_menu_sortable();
@@ -234,17 +242,18 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-
-	var $AvailableAction = $('#poststuff #post-body .postbox-container .postbox .inside .widget .widget-top .widget-title-action a[href=#available]', $Form);
-	$AvailableAction.live( 'click', function() {
-		$(this).parent().parent().parent().children(".widget-inside").slideToggle();
+	$(document).on('click', '.widget .widget-top .widget-title-action a[href=#available]', function() {
+		
+		$(this).parent().parent().parent().children('.widget-inside').slideToggle();
 		return false;
+
 	});
 
-	var $RemoveAction = $('#poststuff #post-body .postbox-container .postbox .inside .widget .widget-inside .widget-control-actions .alignleft a[href=#remove]', $Form);
-	$RemoveAction.live( 'click', function() {
-		$(this).parent().parent().parent().parent().slideUp("normal", function() { $(this).remove(); } );
+	$(document).on('click', '.widget .widget-inside .widget-control-actions .alignleft a[href=#remove]', function() {
+		
+		$(this).parent().parent().parent().parent().slideUp('normal', function() { $(this).remove(); } );
 		return false;
+
 	});
 
 	wauc_menu_sortable = function menu_sortable() {
@@ -256,7 +265,6 @@ jQuery(document).ready(function($) {
 			handle: '> .widget-top > .widget-title',
 			cursor: 'move',
 			distance: 2,
-			containment: 'document',
 			change: function(e,ui) {
 				var $height = ui.helper.height();
 				$('#wauc_setting_admin_bar_menu #poststuff #post-body .postbox-container .postbox .inside .widget-placeholder').height($height);

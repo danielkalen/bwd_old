@@ -23,7 +23,28 @@ setTimeout(function(){
 
 $$('body').on('updated_checkout', function(){
 	initCard();
+	attachStripeFieldEvents();
+	popupAddEventListener(document.querySelectorAll( '.popup-trigger.terms' )[0]);
 });
+
+
+
+// ==== Form Login =================================================================================
+
+attachEvents($$('#username'));
+attachEvents($$('#password'));
+attachEvents($$('#coupon_code'));
+
+$$('.login-button').on('click', function(){
+	$$('.login-button-hidden').click();
+});
+
+$$('.apply_coupon-button').on('click', function(){
+	$$('.apply_coupon-button-hidden').click();
+});
+
+/* ========================================================================== */
+
 
 
 function initCard(){
@@ -34,4 +55,14 @@ function initCard(){
 	    cvcInput: '#stripe-card-cvc',
 	    nameInput: '#stripe-card-name'
 	});
+}
+
+function attachStripeFieldEvents(){
+	$.fn.formPrepare.inputField($('.checkout-section-fieldset.cardnumber'));
+	$.fn.formPrepare.numberField($('.checkout-section-fieldset.cardexpire'));
+	$.fn.formPrepare.numberField($('.checkout-section-fieldset.cardcvc'));
+	attachEvents($('#stripe-card-number'));
+	attachEvents($('#stripe-card-expiry'));
+	attachEvents($('#stripe-card-cvc'));
+	attachEvents($('input[name="cardname"]'));
 }

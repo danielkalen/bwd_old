@@ -1,0 +1,90 @@
+.quick-order
+	&-table
+		margin-top: 20px
+
+		&-head
+			&-item
+				padding-bottom: 10px
+				font-family: avenir
+				text-transform: uppercase
+				font-weight: 700
+				font-size: 14px
+				color: $font
+
+				&.name
+					width: 80%
+				&.quantity
+					width: 10%
+				&.price
+					width: 10%
+
+		&-item
+			&-cell
+				padding-bottom: 15px
+				position: relative
+
+				&-input
+					height: 40px
+					border: 1px solid $divider
+					border-radius: 2px
+					background-color: $subberwhite
+					padding: 0 15px
+					font-size: 14px
+					color: $font
+
+
+	&-footer
+		margin-top: 10px
+		padding-top: 15px
+		border-top: 1px solid $divider
+		+clearfix
+
+
+		&-summary
+			float: left
+			padding-top: 10px
+			line-height: 1
+			font-size: 18px
+			font-family: avenir
+			font-weight: 700
+			color: $font
+			text-transform: uppercase
+
+			+max(520)
+				float: none
+				text-align: center
+
+			&-total
+				color: $primary
+
+		&-actions
+			float: right
+
+			+max(520)
+				float: none
+				display: block
+				width: 220px
+				+center(10px)
+
+			&-item
+				height: 37px
+				padding: 0 16px
+				background-color: $subwhite
+				border: 1px solid $divider
+				border-radius: 3px
+				line-height: 2.6
+				font-size: 14px
+				font-weight: 500
+				color: $primary
+				transition: all 0.2s
+
+				&:first-child
+					color: $grey
+					margin-right: 10px
+
+				&:hover
+					background-color: $primary
+					color: white
+
+			input
+				display: none

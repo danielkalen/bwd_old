@@ -3,3 +3,4 @@
 // @codekit-append '_parts-checkout/form-engine-fields.js'
 // @codekit-append '_parts-checkout/form-control.js'
 // @codekit-append '_plugins/card.js'
+// @codekit-append '_plugins/popup-md.js'

@@ -29,6 +29,8 @@
 			$$("body").removeClass('opened-popup');
 			popOpen = false;
 			firstOpen = false;
+
+			$window.off('keydown.popup_close');
 		}
 
 		if ( popOpen === false ) {
@@ -52,6 +54,12 @@
 				}
 				// $('.popup-content').empty().append(response);
 				popOpen = true;
+
+				$window.on('keydown.popup_close', function(e){
+					if ( e.keyCode === 27 ) {
+						$.fn.popup('close');
+					}
+				});
 			}
 
 		}

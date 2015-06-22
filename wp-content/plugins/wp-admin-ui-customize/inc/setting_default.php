@@ -10,7 +10,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 ?>
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php echo $this->Name; ?></h2>
 	<p><?php _e( 'Customize the UI of the management screen for all users.' , $this->ltd ); ?></p>
@@ -168,6 +168,19 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 </div>
 
+<style>
+#donationbox {
+	background: #87BCE4;
+	border: 3px solid #227499;
+}
+#donationbox .inside {
+	padding: 6px 10px 10px 10px;
+}
+#donationbox .inside .donation_memo {
+	background: #FFF8D9;
+	padding: 2px 10px;
+}
+</style>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 	

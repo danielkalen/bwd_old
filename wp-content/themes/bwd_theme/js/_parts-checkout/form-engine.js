@@ -253,32 +253,9 @@ $.fn.formPrepare = function() {
 		});
 	});
 
-	$$('form.checkout input.input').each(function(){
+	$$('form.checkout .input').each(function(){
 		$this = $(this);
-		$this.focus(function(){
-			$(this).parent().addClass('focus');
-		});
-		$this.blur(function(){
-			$(this).parent().removeClass('focus');
-		});
-
-		$this.keyup(function(){
-			if ( $(this).val() === '' ) {
-				$(this).parent().removeClass('filled');
-			} else {
-				$(this).parent().addClass('filled');
-			}
-		});
-
-		if ( $this.parent().hasClass('select') ) {
-			$this.change(function(){
-				if ( $(this).val() !== '' ) {
-					$(this).parent().addClass('filled');
-				} else {
-					$(this).parent().removeClass('filled');
-				}
-			});
-		}
+		attachEvents($this);
 	});
 }
 
@@ -296,7 +273,32 @@ $.fn.formPrepare = function() {
 
 
 
+function attachEvents($field){
+	$field.focus(function(){
+		$(this).parent().addClass('focus');
+	});
+	$field.blur(function(){
+		$(this).parent().removeClass('focus');
+	});
 
+	$field.keyup(function(){
+		if ( $(this).val() === '' ) {
+			$(this).parent().removeClass('filled');
+		} else {
+			$(this).parent().addClass('filled');
+		}
+	});
+
+	if ( $field.parent().hasClass('select') ) {
+		$field.change(function(){
+			if ( $(this).val() !== '' ) {
+				$(this).parent().addClass('filled');
+			} else {
+				$(this).parent().removeClass('filled');
+			}
+		});
+	}
+}
 
 function makeValid($subject) {
 	$subject.addClass('valid').removeClass('invalid error');

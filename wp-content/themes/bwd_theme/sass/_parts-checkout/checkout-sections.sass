@@ -23,6 +23,11 @@
 			line-height: 1
 			text-transform: uppercase
 
+			+max(520)
+				font-size: 16px
+			+max(350)
+				font-size: 13.5px
+
 		&:before // Number
 			content: ''
 			position: absolute
@@ -72,11 +77,11 @@
 		float: right
 
 		+max(620)
-			.shipping &
-				float: none
-				width: 100%
-				padding-bottom: 25px
-				+clearfix
+			// .shipping &
+			float: none
+			width: 100%
+			padding-bottom: 25px
+			+clearfix
 
 
 		&-item

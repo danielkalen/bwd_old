@@ -10,7 +10,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 ?>
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Reset User Roles' , $this->ltd ); ?></h2>
 	<p>&nbsp;</p>
@@ -66,5 +66,12 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 	</form>
 
-
 </div>
+
+<style>
+</style>
+<script>
+jQuery(document).ready( function($) {
+
+});
+</script>

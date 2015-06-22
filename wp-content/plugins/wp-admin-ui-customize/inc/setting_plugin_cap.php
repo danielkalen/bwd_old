@@ -12,7 +12,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php echo sprintf( __( '%1$s of %2$s %3$s' , $this->ltd ) , __( 'Change' ) , __( 'Plugin' ) , __( 'Capabilities' ) ); ?></h2>
 	<p><?php echo sprintf( __( 'You can change the user role %2$s of %1$s settings.' , $this->ltd ) , $this->Name , __( 'Capabilities' ) ); ?></p>
@@ -86,3 +86,11 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 	</form>
 
 </div>
+
+<style>
+</style>
+<script>
+jQuery(document).ready( function($) {
+
+});
+</script>

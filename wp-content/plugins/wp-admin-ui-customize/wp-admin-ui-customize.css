@@ -41,17 +41,6 @@ input.regular-text {
 
 
 
-.postbox-container #donationbox {
-	background: #87BCE4;
-	border: 3px solid #227499;
-}
-.postbox-container #donationbox .inside {
-	padding: 6px 10px 10px 10px;
-}
-.postbox-container #donationbox .inside .donation_memo {
-	background: #FFF8D9;
-	padding: 2px 10px;
-}
 
 #list_variables {
 	display: none;
@@ -204,59 +193,6 @@ body.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .columns-1 .post
 	width: 170px;
 	float: left;
 	margin: 0 4px 4px 0;
-}
-
-
-/* manage metabox */
-
-#wauc_setting_manage_metabox table.form-table td {
-	vertical-align: top;
-}
-#wauc_setting_manage_metabox .inside .loading,
-#wauc_setting_dashboard .inside .loading {
-	display: none;
-}
-#wauc_setting_manage_metabox .inside .loading .spinner,
-#wauc_setting_dashboard .inside .loading .spinner {
-	float: left;
-    visibility: visible;
-}
-
-
-
-/* compatible mp6 */
-
-body.mp6.toplevel_page_wp_admin_ui_customize .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_setting_site .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_general_setting .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_dashboard .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_sidemenu .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_manage_metabox .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_post_add_edit_screen .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_appearance_menus .postbox:hover .handlediv:before,
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_loginscreen .postbox:hover .handlediv:before {
-	right: 12px;
-	content: '\f142';
-	font: normal 20px/1 'dashicons';
-	speak: none;
-	display: inline-block;
-	padding: 8px 10px;
-	color: #888;
-	top: 0;
-	position: relative;
-	-webkit-font-smoothing: antialiased;
-	text-decoration: none !important;
-}
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar #can_menus > .postbox {
-	background: none;
-}
-
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside .widget-group > .widget-top {
-	background: #333;
-}
-body.mp6.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside .widget-group .widget-top a {
-	color: #333;
 }
 
 

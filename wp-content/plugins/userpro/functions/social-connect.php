@@ -7,7 +7,7 @@
 		// only in login/register
 		if ($array['template'] == 'login' || $array['template'] == 'register' ) {
 			
-			echo '<div class="userpro-social-connect">';
+			echo '<div class="userpro-social">';
 		
 			if (userpro_get_option('facebook_app_id') != '' && userpro_get_option('facebook_connect') == 1) {
 				?>
@@ -126,7 +126,9 @@
 				}(document, 'script', 'facebook-jssdk'));
 				</script>
 
-				<a href="#" class="userpro-social-facebook userpro-tip" data-redirect="<?php echo $array['facebook_redirect']; ?>" title="<?php _e('Login with Facebook','userpro'); ?>"><i class="fa fa-facebook"></i></a>
+				<a href="#" class="userpro-social-item facebook userpro-social-facebook userpro-tip" data-redirect="<?php echo $array['facebook_redirect']; ?>" title="<?php _e('Login with Facebook','userpro'); ?>">
+					<span class="userpro-social-item-tooltip">Login with Facebook</span>
+				</a>
 				<?php
 			}
 			
@@ -135,7 +137,7 @@
 				$url = $userpro->get_twitter_auth_url();
 				?>
 			
-				<a href="<?php echo $url; ?>" class="userpro-social-twitter userpro-tip" title="<?php _e('Login with Twitter','userpro'); ?>"></a>
+				<a href="<?php echo $url; ?>" class="userpro-social-item twitter userpro-social-twitter userpro-tip" title="<?php _e('Login with Twitter','userpro'); ?>"></a>
 		
 				<?php
 			}
@@ -145,7 +147,9 @@
 				$url = $userpro->get_google_auth_url();
 				?>
 			
-				<a href="<?php echo $url; ?>" class="userpro-social-google userpro-tip" title="<?php _e('Login with Google+','userpro'); ?>"><i class="fa fa-google-plus"></i></a>
+				<a href="<?php echo $url; ?>" class="userpro-social-item googleplus userpro-social-google userpro-tip" title="<?php _e('Login with Google+','userpro'); ?>">
+					<span class="userpro-social-item-tooltip">Login with Google+</span>
+				</a>
 				
 				<?php
 			}
@@ -153,7 +157,7 @@
 			/* MORE NETWORKS SHOULD BE ADDED BELOW */
 			do_action('userpro_social_connect_buttons');
 			
-			echo '</div><div class="userpro-clear"></div>';
+			echo '</div>';
 		
 		}
 	}

@@ -22,3 +22,206 @@
 	&:hover
 		background-color: $hovercolor
 		color: $hovertextcolor
+/* ========================================================================== */
+
+
+
+
+
+
+
+
+$contrast-color: $contrast-dark
+$label-color: $grey-light
+$error-color: #E34B4F
+$text-color: $font
+$dropdownIcon: 'M'
+$checkIcon: 's'
+
+=fieldset($inputHeight: 48px, $inputColor: white, $textareaHeight: 78px)
+	position: relative
+
+
+	&.error
+		animation: shakey 0.2s
+
+	+fieldset-label
+
+
+
+	+fieldset-input_n_select($inputHeight, $inputColor)
+
+	+fieldset-input($inputHeight, $inputColor)
+
+	+fieldset-select($inputHeight, $inputColor)
+
+	+fieldset-checkbox($inputHeight, $inputColor)
+
+	+fieldset-textarea($inputColor, $textareaHeight)
+
+
+
+
+// ==== Label =================================================================================
+=fieldset-label
+	&-label
+		position: absolute
+		z-index: 20
+		font-size: 11px
+		font-weight: 600
+		line-height: 1
+		color: $label-color
+		padding: 9px 15px 0
+		opacity: 0
+		transition: opacity 0.2s
+
+
+		.filled &
+			opacity: 1
+
+		.focus &
+			color: $contrast-color
+
+		.error &
+			color: $error-color
+
+		.textarea &
+			position: relative
+			opacity: 1
+			padding: 0
+			font-size: 14px
+			font-weight: 500
+			color: $text-color
+
+
+
+// ==== Input & Select =================================================================================
+=fieldset-input_n_select($inputHeight, $inputColor)
+	&-input,
+	&-select
+		position: relative
+		z-index: 2
+		width: 100%
+		height: $inputHeight
+		background-color: $inputColor
+		border: 1px solid $divider
+		border-radius: 2px
+		box-sizing: border-box
+		font-size: 14px
+		font-weight: 500
+		color: $text-color
+		transition: all 0.2s
+
+		.focus &
+			border-color: $contrast-color
+
+		.error &
+			border-color: $error-color
+
+
+
+// ==== Input =================================================================================
+=fieldset-input($inputHeight, $inputColor)
+	&-input
+		padding: 2px 14px 0
+
+		.filled &
+			padding: 14px 14px 0	
+
+
+
+
+// ==== Select =================================================================================
+=fieldset-select($inputHeight, $inputColor)
+	&.select
+
+		&:after
+			+icon($dropdownIcon)
+			position: absolute
+			z-index: 2
+			right: 6px
+			+valign(54%)
+			color: $text-color
+			font-size: 22px
+
+	&-select
+		padding: 2px 28px 0 11px
+		box-sizing: border-box
+		color: $label-color
+		transition: color 0.0001s, padding 0.2s
+
+		.valid &
+			color: $text-color
+
+		.filled &
+			padding: 14px 28px 0 11px
+
+
+
+// ==== Checkbox =================================================================================
+=fieldset-checkbox($inputHeight, $inputColor)
+	&-checkbox
+		
+		&-label
+			font-size: 14px
+			line-height: 1
+			font-weight: 500
+			color: $text-color
+			display: block
+			margin-left: 19px
+
+			&-highlight
+				transition: color 0.2s
+				.highlight &
+					color: $primary
+
+		&-box
+			position: relative
+			float: left
+			+size(14)
+			margin-right: 5px
+			background-color: $inputColor
+			border: 1px solid $divider
+			border-radius: 4px
+			box-sizing: border-box
+			cursor: pointer
+
+			&:after
+				+icon($checkIcon)
+				position: absolute
+				display: none
+				padding-top: 2px
+				width: 100%
+				text-align: center
+				font-size: 8px
+				color: $primary
+				cursor: pointer
+
+				.checked &
+					display: block
+
+
+		input[type="checkbox"]
+			display: none
+
+
+
+
+// ==== Textarea =================================================================================
+=fieldset-textarea($inputColor, $textareaHeight)
+	&-textarea
+		position: relative
+		z-index: 2
+		width: 100%
+		height: $textareaHeight
+		margin-top: 5px 
+		padding: 9px 14px
+		background-color: $inputColor
+		border: 1px solid $divider
+		border-radius: 2px
+		font-size: 14px
+		font-weight: 500
+		color: $text-color
+		box-sizing: border-box
+		// transition: all 0.2s
+

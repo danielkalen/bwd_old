@@ -12,7 +12,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Side Menu' , $this->ltd ); ?></h2>
 	<p><?php _e( 'Please change the menu by drag and drop.' , $this->ltd ); ?></p>
@@ -239,6 +239,14 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 <?php require_once( dirname( __FILE__ ) . '/list_variables.php' ); ?>
 
+<style>
+.widget h4 {
+    padding: 12px 15px;
+}
+.widget-top a.widget-action:after {
+    padding: 7px 12px;
+}
+</style>
 <script type="text/javascript">
 
 var wauc_widget_each, wauc_menu_sortable;
@@ -255,7 +263,6 @@ jQuery(document).ready(function($) {
 		distance: 2,
 		helper: 'clone',
 		zIndex: 5,
-		containment: 'document',
 		stop: function(e,ui) {
 			wauc_widget_each();
 			wauc_menu_sortable();
@@ -280,17 +287,18 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-
-	var $AvailableAction = $('#postbox-container-2 .postbox .inside .widget .widget-top .widget-title-action a[href=#available]', $Form);
-	$AvailableAction.live( 'click', function() {
+	$(document).on('click', '.widget .widget-top .widget-title-action a[href=#available]', function() {
+		
 		$(this).parent().parent().parent().children(".widget-inside").slideToggle();
 		return false;
+		
 	});
 
-	var $RemoveAction = $('#postbox-container-2 .postbox .inside .widget .widget-inside .widget-control-actions .alignleft a[href=#remove]', $Form);
-	$RemoveAction.live( 'click', function() {
-		$(this).parent().parent().parent().parent().slideUp("normal", function() { $(this).remove(); } );
+	$(document).on('click', '.widget .widget-inside .widget-control-actions .alignleft a[href=#remove]', function() {
+		
+		$(this).parent().parent().parent().parent().slideUp('normal', function() { $(this).remove(); } );
 		return false;
+		
 	});
 
 	wauc_menu_sortable = function menu_sortable() {
@@ -302,7 +310,6 @@ jQuery(document).ready(function($) {
 			handle: '> .widget-top > .widget-title',
 			cursor: 'move',
 			distance: 2,
-			containment: 'document',
 			change: function(e,ui) {
 				var $height = ui.helper.height();
 				$('#wauc_setting_sidemenu #poststuff #post-body #postbox-container-2 #setting_menus .postbox .inside .widget-placeholder').height($height);
@@ -345,10 +352,19 @@ jQuery(document).ready(function($) {
 	}
 	wauc_widget_each();
 
-	$('#wauc_setting_sidemenu #setting_menus .sidebar_setting_delete a').live('click', function() {
-		$('#wauc_setting_sidemenu #setting_menus .postbox .inside').html('');
-		return false;
-	});
+	$('#setting_menus .sidebar_setting_delete a').on('click', function() {
 		
+		$('#setting_menus .postbox .inside').html('');
+		return false;
+
+	});
+
+	$('#wauc_setting_sidemenu').on('submit', function() {
+		
+		$('#can_menus').remove();
+		return true;
+		
+	});
+
 });
 </script>

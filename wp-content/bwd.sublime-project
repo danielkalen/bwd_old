@@ -9,6 +9,9 @@
 		},
 		{
 			"path": "plugins"
+		},
+		{
+			"path": "/Applications/MAMP/bwd"
 		}
 	]
 }

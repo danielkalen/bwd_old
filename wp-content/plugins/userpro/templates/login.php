@@ -1,17 +1,16 @@
-<div class="userpro userpro-<?php echo $i; ?> userpro-<?php echo $layout; ?>" <?php userpro_args_to_data( $args ); ?>>
-
-	<a href="#" class="userpro-close-popup"><?php _e('Close','userpro'); ?></a>
+<div class="login userpro userpro-<?php echo $i; ?> userpro-<?php echo $layout; ?>" <?php userpro_args_to_data( $args ); ?>>
 	
-	<div class="userpro-head">
-		<div class="userpro-heading"><?php echo $args["{$template}_heading"]; ?></div>
-		<div class="userpro-clear"></div>
+	<div class="userpro-title userpro-head">
+		<div class="userpro-title-text"><?php echo $args["{$template}_heading"]; ?></div>
 	</div>
 	
-	<div class="userpro-body">
+	<div class="userpro-wrap userpro-body">
 	
 		<?php do_action('userpro_pre_form_message'); ?>
+
+		<div class="userpro-intro">Sign in to view your order history, track orders, and edit default account details.</div>
 		
-		<form action="" method="post" data-action="<?php echo $template; ?>">
+		<form class="userpro-form" action="" method="post" data-action="<?php echo $template; ?>">
 		
 			<?php do_action('userpro_super_get_redirect', $i); ?>
 			
@@ -23,8 +22,6 @@
 			$hook_args = array_merge($args, array('user_id' => $user_id, 'unique_id' => $i));
 			do_action('userpro_before_fields', $hook_args);
 			?>
-
-			<p class="pre-form">Sign in to view your order history, track orders, and edit default account details.</p>
 		
 			<?php foreach( userpro_fields_group_by_template( $template, $args["{$template}_group"] ) as $key => $array ) { ?>
 				
@@ -37,11 +34,9 @@
 			$hook_args = array_merge($args, array('user_id' => $user_id, 'unique_id' => $i));
 			do_action('userpro_after_fields', $hook_args);
 			?>
-						
-			<div class="userpro-column"></div>
-			
+									
 			<?php if ($args["{$template}_button_primary"] ||  $args["{$template}_button_secondary"] ) { ?>
-			<div class="userpro-field userpro-submit userpro-column">
+			<div class="userpro-form-actions userpro-field userpro-submit userpro-column">
 
 				<?php // Hook into fields $args, $user_id
 				if (!isset($user_id)) $user_id = 0;
@@ -49,25 +44,32 @@
 				do_action('userpro_before_form_submit', $hook_args);
 				?>
 				
+				<div class="userpro-form-actions-button">
+					<div class="userpro-form-actions-button-text">
+						Sign In
+					</div>
+				</div>
+
+				<?php if ($args["{$template}_button_primary"]) { ?>
+				<input type="submit" value="<?php echo $args["{$template}_button_primary"]; ?>" class="userpro-form-actions-button-hidden userpro-button" />
+				<?php } ?>
+				
+							
 				<?php // Hook into fields $args, $user_id
 				if (!isset($user_id)) $user_id = 0;
 				$hook_args = array_merge($args, array('user_id' => $user_id, 'unique_id' => $i));
 				do_action('userpro_inside_form_submit', $hook_args);
 				?>
-				
-				<?php if ($args["{$template}_button_primary"]) { ?>
-				<input type="submit" value="<?php echo $args["{$template}_button_primary"]; ?>" class="userpro-button" />
-				<?php } ?>
-				
 
-				<?php if ($args["{$template}_side"]) { ?>
-				<div class="userpro-forget"><a href="#" data-template="<?php echo $args["{$template}_side_action"]; ?>"><?php echo $args["{$template}_side"]; ?></a></div>
-				<?php } ?>
 
 				<img src="<?php echo $userpro->skin_url(); ?>loading.gif" alt="" class="userpro-loading" />
-				<div class="userpro-clear"></div>
 				
 			</div>
+
+			<?php if ($args["{$template}_side"]) { ?>
+				<div class="userpro-form-forget userpro-forget"><a class="userpro-form-forget-link" href="#" data-template="<?php echo $args["{$template}_side_action"]; ?>"><?php echo $args["{$template}_side"]; ?></a></div>
+			<?php } ?>
+
 			<?php } ?>
 		
 		</form>

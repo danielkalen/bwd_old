@@ -160,30 +160,32 @@ class WCBulkOrderForm_Standard_Template {
 		
 		$html = '<form action="" method="post" id="BulkOrderForm" category="'.$category.'" included="'.$include.'" excluded="'.$exclude.'">';
 		$html .= <<<HTML
-		<table class="wcbulkorderformtable">
-			<tbody class="wcbulkorderformtbody">
+		<table class="quick-order-table wcbulkorderformtable">
+			<thead class="quick-order-table-head">
 				<tr>
-					<th class="wcbulkorder-title">$product_label</th>
-					<th class="wcbulkorder-quantity">$quantity_label</th>
+					<th class="quick-order-table-head-item name">$product_label</th>
+					<th class="quick-order-table-head-item quantity">$quantity_label</th>
 HTML;
 					if ($price == 'true'){
-						$html .= '<th class="wcbulkorderprice">'.$price_label.'</th>';
+						$html .= '<th class="quick-order-table-head-item price wcbulkorderprice">'.$price_label.'</th>';
 					}
-				$html .= '</tr>';
+				$html .= '</tr>
+			</thead>';
+			$html .= '<tbody class="wcbulkorderformtbody">';
 			while($i < $rows) {
 				++$i;
 				$html .= <<<HTML2
-				<tr class="wcbulkorderformtr">
-					<td class="wcbulkorder-title">
+				<tr class="quick-order-table-item wcbulkorderformtr">
+					<td class="quick-order-table-item-cell name wcbulkorder-title">
 						<i class="bulkorder_spinner"></i>
-						<input type="text" name="wcbulkorderproduct[]" class="wcbulkorderproduct" />
+						<input type="text" placeholder="Product name or SKU" name="wcbulkorderproduct[]" class="quick-order-table-item-cell-input wcbulkorderproduct" />
 					</td>
-					<td class="wcbulkorder-quantity">
-						<input type="text" name="wcbulkorderquantity[]" class="wcbulkorderquantity" />
+					<td class="quick-order-table-item-cell quantity wcbulkorder-quantity">
+						<input type="text" placeholder="Enter Quantity" name="wcbulkorderquantity[]" class="quick-order-table-item-cell-input wcbulkorderquantity" />
 					</td>
 HTML2;
 					if($price == 'true'){
-					$html .= '<td class="wcbulkorderprice"></td>';
+					$html .= '<td class="quick-order-table-item-cell price wcbulkorderprice"></td>';
 					}
 					$html .= <<<HTML7
 					<input type="hidden" name="wcbulkorderid[]" class="wcbulkorderid" value="" />
@@ -193,42 +195,36 @@ HTML7;
 		$html .= <<<HTML3
 			</tbody>
 		</table>	
-		<table class="wcbulkorderformtable">
-			<tbody>
+		<div class="quick-order-footer wcbulkorderformtable">
 HTML3;
 				if ($price == 'true'){
 				$html .= <<<HTML4
-				<tr class="wcbulkorderformtr">
-					<td class="wcbulkorder-title"></td>
-					<td class="wcbulkorder-quantity"></td>
-					<td class="wcbulkorder-quantity">
+				<div class="quick-order-footer-summary wcbulkorder-quantity">
 HTML4;
-						$html .= __( 'Total Price:' , 'wcbulkorderform' );
+						$html .= __( 'Total Price: ' , 'wcbulkorderform' );
 					$html .= <<<HTML6
-					</td>
-					
-					<td class="wcbulkorderpricetotal"></td>
-					
-				</tr>
+						<span class="quick-order-footer-summary-total wcbulkorderpricetotal"></span>
+
+				</div>
 HTML6;
 				}
-				$html .= '<tr>';
-					$html .= '<td class="wcbulkorder-title"></td>';
-					$html .= '<td class="wcbulkorder-quantity"></td>';
-					$html .= '<td class="wcbulkorder-quantity">';
+				$html .= '<div class="quick-order-footer-actions">';
 						if (($add_rows == 'true') && ($price == 'true')){
 						$html .='<button class="wcbulkordernewrowprice">'.__( 'Add Row' , 'wcbulkorderform' ).'</button>';
 						}
 						elseif (($add_rows == 'true') && ($price != 'true')) {
 						$html .='<button class="wcbulkordernewrow">'.__( 'Add Row' , 'wcbulkorderform' ).'</button>';
 						}
-					
-					$html .='</td>';
-					$html .='<td class="wcbulkorder-quantity"><input type="submit" value="'.__( 'Add To Cart' , 'wcbulkorderform' ).'" name="submit" /></td>';
+						$html .= '
+							<button class="quick-order-footer-actions-item add_row wcbulkordernewrowprice">Add Row
+							</button>
+							<button class="quick-order-footer-actions-item submit">Add To Cart
+							</button>
+						';
+					$html .='<input type="submit" value="'.__( 'Add To Cart' , 'wcbulkorderform' ).'" name="submit" />';
 					$html .= <<<HTML5
-				</tr>
-			</tbody>
-		</table>
+				</div>
+		</div>
 		</form>
 HTML5;
 		return $html;

@@ -2,10 +2,10 @@
 /*
 Plugin Name: WP Admin UI Customize
 Description: An excellent plugin to customize the management screens.
-Plugin URI: http://wpadminuicustomize.com/?utm_source=use_plugin&utm_medium=list&utm_content=wauc&utm_campaign=1_5_2_7
-Version: 1.5.2.7
+Plugin URI: http://wpadminuicustomize.com/?utm_source=use_plugin&utm_medium=list&utm_content=wauc&utm_campaign=1_5_3
+Version: 1.5.3
 Author: gqevu6bsiz
-Author URI: http://gqevu6bsiz.chicappa.jp/?utm_source=use_plugin&utm_medium=list&utm_content=wauc&utm_campaign=1_5_2_7
+Author URI: http://gqevu6bsiz.chicappa.jp/?utm_source=use_plugin&utm_medium=list&utm_content=wauc&utm_campaign=1_5_3
 Text Domain: wauc
 Domain Path: /languages
 */
@@ -58,7 +58,7 @@ class WP_Admin_UI_Customize
 
 
 	function __construct() {
-		$this->Ver = '1.5.2.7';
+		$this->Ver = '1.5.3';
 		$this->Name = 'WP Admin UI Customize';
 		$this->Dir = plugin_dir_path( __FILE__ );
 		$this->Url = plugin_dir_url( __FILE__ );
@@ -104,8 +104,7 @@ class WP_Admin_UI_Customize
 		// load text domain
 		load_plugin_textdomain( $this->ltd , false , $this->PluginSlug . '/languages' );
 		
-		// action
-		do_action( $this->ltd . '_plugins_loaded' );
+		add_action( 'plugins_loaded' , array( $this , 'plugins_loaded' ) );
 		
 		// plugin links
 		add_filter( 'plugin_action_links' , array( $this , 'plugin_action_links' ) , 10 , 2 );
@@ -137,6 +136,12 @@ class WP_Admin_UI_Customize
 		// default post metabox dashbaord load.
 		add_action( 'wp_dashboard_setup' , array( $this , 'post_meta_boxes_dashboard_load' ) , 10000 );
 
+	}
+	
+	function plugins_loaded() {
+		
+		do_action( $this->ltd . '_plugins_loaded' );
+		
 	}
 
 	// PluginSetup
@@ -686,46 +691,45 @@ class WP_Admin_UI_Customize
 		if( !empty( $current_screen ) && $current_screen->base == 'post' && current_user_can( $capability ) ) {
 			global $wp_meta_boxes;
 			
-			$GetData = $this->get_data( "regist_metabox" );
+			$regist_meta_boxes = $this->get_data( "regist_metabox" );
+			
 			$post_type = $current_screen->post_type;
 			$Metaboxes = $wp_meta_boxes[$post_type];
-			
-			$Update = array();
-			if( empty( $GetData ) ) {
 
-				$Update["UPFN"] = $this->UPFN;
-				foreach( $Metaboxes as $context => $meta_box ) {
-					foreach( $meta_box as $priority => $box ) {
-						foreach( $box as $metabox_id => $b ) {
-							$Update["metaboxes"][$post_type][$context][$priority][$b["id"]] = strip_tags( $b["title"] );
-						}
-					}
-				}
-					
-			} else {
-					
-				$Update = $GetData;
-				if( !empty( $Metaboxes ) ) {
-					foreach( $Metaboxes as $context => $meta_box ) {
-						foreach( $meta_box as $priority => $box ) {
-							if( is_array( $box ) ) {
-								foreach( $box as $metabox_id => $b ) {
-									if( !empty( $GetData["metaboxes"][$post_type][$context][$priority][$b["id"]] ) ) {
-										$Update["metaboxes"][$post_type][$context][$priority][$b["id"]] = strip_tags( $b["title"] );
-									} else {
-										$Update["metaboxes"][$post_type][$context][$priority][$b["id"]] = strip_tags( $b["title"] );
-									}
-								}
-							}
-						}
-					}
-				}
+			$regist_meta_boxes['UPFN'] = $this->UPFN;
+			
+			if( empty( $regist_meta_boxes['metaboxes'][$post_type] ) or !empty( $_GET[$this->ltd . '_metabox_load'] ) ) {
+				
+				$regist_meta_boxes['metaboxes'][$post_type] = array();
 				
 			}
 
-			if( !empty( $Update ) ) {
-				update_option( $this->Record["regist_metabox"] , $Update );
+			if( !empty( $Metaboxes ) ) {
+				
+				foreach( $Metaboxes as $context => $meta_box ) {
+					
+					foreach( $meta_box as $priority => $box ) {
+
+						if( is_array( $box ) ) {
+							
+							foreach( $box as $metabox_id => $metabox_detail ) {
+
+								$regist_meta_boxes['metaboxes'][$post_type][$context][$priority][$metabox_id] = strip_tags( $metabox_detail['title'] );
+
+							}
+
+						}
+
+					}
+
+				}
+
 			}
+
+			if( !empty( $regist_meta_boxes ) ) {
+				update_option( $this->Record["regist_metabox"] , $regist_meta_boxes );
+			}
+
 		}
 
 	}

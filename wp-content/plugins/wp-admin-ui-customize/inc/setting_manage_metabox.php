@@ -13,7 +13,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Manage meta box' , $this->ltd ); ?></h2>
 	<p><?php _e( 'Please update or add a "post" and a "page" to load the available meta boxes.' , $this->ltd ); ?></p>
@@ -356,6 +356,18 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 </div>
 
+<style>
+.form-table td {
+	vertical-align: top;
+}
+.inside .loading {
+	display: none;
+}
+.inside .loading .spinner {
+	float: left;
+    visibility: visible;
+}
+</style>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 
@@ -400,17 +412,27 @@ jQuery(document).ready(function($) {
 
 	$('.wauc_form .column_load').on('click', function( ev ) {
 		var load_url = $(ev.target).prop('href');
-				
+		
+		load_url += '&<?php echo $this->ltd; ?>_metabox_load=1';
+		
 		$.ajax({
 			url: load_url,
 			beforeSend: function( xhr ) {
 				$(ev.target).parent().parent().find('.loading').show();
 				$(ev.target).parent().parent().find('.spinner').show();
 			}
-		}).done(function( data ) {
+		}).done(function( post_html_el ) {
+			
+			if( post_html_el.indexOf( "adminpage = 'post-php'" ) != -1 || post_html_el.indexOf( "adminpage = 'post-new-php'" ) != -1 ) {
+
+				location.reload();
+
+			}
+			
 		});
-		
+
 		return false;
+		
 	}).disableSelection();
 
 });

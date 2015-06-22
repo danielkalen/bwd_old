@@ -11,7 +11,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 ?>
 
 <div class="wrap">
-	<div class="icon32" id="icon-tools"></div>
+
 	<?php echo $this->Msg; ?>
 	<h2><?php _e( 'Login Screen Settings' , $this->ltd ); ?></h2>
 	<p>&nbsp;</p>
@@ -158,3 +158,11 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 </div>
 
 <?php require_once( dirname( __FILE__ ) . '/list_variables.php' ); ?>
+
+<style>
+</style>
+<script>
+jQuery(document).ready( function($) {
+
+});
+</script>

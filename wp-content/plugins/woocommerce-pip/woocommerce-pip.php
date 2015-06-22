@@ -234,7 +234,7 @@ function woocommerce_pip_my_orders_action( $actions, $order ) {
 	if ( in_array( $order->status, array( 'processing', 'completed' ) ) ) {
 		$actions[] = array(
 			'url'	 => wp_nonce_url( site_url( '?print_pip_invoice=true&post='.$order->id ), 'client-print-pip' ),
-			'name' => __( 'View invoice', 'woocommerce-pip' )
+			'name' => __( 'Invoice', 'woocommerce-pip' )
 		);
 	}
 	return $actions;

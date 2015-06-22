@@ -1,0 +1,250 @@
+// @import _parts-login/login-both
+// @import _parts-login/login-login
+// @import _parts-login/login-register
+@import _parts/_vars
+@import _parts/_elements
+
+.content
+	width: 100%
+	box-sizing: border-box
+
+	+min(1025)
+		padding: 0 20px
+
+.userpro
+	width: 48%
+	background-color: $subwhite
+	border: 1px solid $divider
+	border-radius: 3px
+	overflow: hidden
+	box-sizing: border-box
+
+	&.login
+		float: left
+	&.register
+		float: right
+
+	.register-submitted &
+		float: none !important
+		+center
+
+	+max(1024)
+		float: none !important
+		width: 100%
+		max-width: 491px
+		+center(0, 30px)
+
+
+	&-wrap
+		padding: 25px 35px
+		box-sizing: border-box
+
+		+max(520)
+			padding: 25px
+
+	&-title
+		position: relative
+		height: 40px
+
+		.login &
+			background-color: $primary
+		.register &
+			background-color: $contrast
+
+		&-text
+			position: absolute
+			+valign(57%)
+			width: 100%
+			text-align: center
+			font-size: 19px
+			line-height: 1
+			font-weight: 700
+			font-family: avenir
+			text-transform: uppercase
+			color: white 
+
+
+	&-intro
+		font-size: 13px
+		text-align: center
+		color: $font
+		padding: 0 5%
+
+	&-form
+		
+		&-fieldset
+			margin-top: 20px
+			+fieldset
+
+			&-checkbox-label-highlight
+				color: $primary
+				cursor: pointer
+
+				&:hover
+					text-decoration: underline
+
+
+			.register &.userpro-field
+				&-billing_first_name,
+				&-billing_last_name,
+				&-user_pass,
+				&-user_pass_confirm
+					width: 47.7%
+
+				&-billing_first_name,
+				&-user_pass
+					float: left
+
+				&-billing_last_name,
+				&-user_pass_confirm
+					float: right
+
+					+ .userpro-clearfix
+						+clearfix
+
+				&-user_email
+					clear: both
+
+					+ .userpro-clearfix
+						+clearfix
+
+				&.userpro-maxwidth // second checkbox margin fix
+					margin-top: 10px
+
+
+
+		&-actions
+			+clearfix
+
+			.login &
+				margin-top: 25px
+
+			&-button
+				+button(0, 41px, $hovercolor: white, $fontweight: 600)
+				float: right
+				transition: all 0.2s, border 0.001s
+				box-sizing: border-box
+
+				&:hover
+					border: 1px solid $divider
+
+				.login &
+					width: perc(140px, 360px)
+					+max(520)
+						width: perc(190px, 360px)
+				.register &
+					width: perc(190px, 360px)
+					margin-top: 25px
+					background-color: $contrast
+
+					&:hover
+						background-color: white
+						color: $contrast
+
+				&-hidden
+					display: none
+
+			.login &
+				.fieldset
+					float: left
+					margin-top: 14px
+
+					+max(520)
+						float: none
+						margin-top: -11px
+						margin-bottom: 10px
+
+
+		&-forget
+			float: right
+			width: perc(140px, 360px)
+			margin: 5px 0 13px
+
+			+max(520)
+				width: perc(190px, 360px)
+
+			&-link
+				display: block
+				text-align: right
+				text-align: center
+				font-size: 12px
+				font-weight: 500
+				color: $grey-light
+
+				&:hover
+					text-decoration: underline
+
+
+	&-social
+		float: right
+
+		.register &
+			margin-top: 25px
+
+		&-item
+			position: relative
+			display: block
+			+size(41)
+			margin-right: 10px
+			border: 1px solid $divider
+			border-radius: 3px
+			box-sizing: border-box
+			float: left
+
+			&:after
+				+icon('')
+				position: absolute
+				+valign
+				width: 100%
+				font-size: 20px
+				text-align: center
+				cursor: pointer
+
+			&:hover
+				background-color: white
+
+			&.facebook:after
+				content: 'x'
+				color: #4369A2
+			&.googleplus:after
+				content: 'H'
+				color: #D34836
+
+			&-tooltip
+				position: absolute
+				top: 45px
+				left: -45px
+				display: block
+				// +center
+				padding: 5px 11px
+				border-radius: 3px
+				background-color: $font
+				font-size: 11px
+				white-space: nowrap
+				font-weight: 500
+				line-height: 1
+				visibility: hidden
+				color: white
+				opacity: 0
+				transition: all 0.2s
+
+			&:hover &-tooltip
+				visibility: visible
+				opacity: 1
+
+	&-warning
+		position: absolute
+		top: auto !important
+		bottom: -16px
+		left: 0
+		font-size: 11px
+		width: 100%
+		font-weight: 500
+		text-align: center
+		// color: $error
+		color: $primary
+
+
+
+.userpro-loading
+	display: none

@@ -1,0 +1,58 @@
+.login
+	position: relative
+	max-width: 450px
+	background-color: $subwhite
+	border: 1px solid $divider
+	border-radius: 3px
+	margin-bottom: 28px
+	box-sizing: border-box
+
+	&-title
+		position: relative
+		height: 39px
+		background-color: $contrast
+		color: white
+
+		&-text
+			position: absolute
+			+valign(55%)
+			width: 100%
+			text-align: center
+			font-family: avenir
+			line-height: 1
+			text-transform: uppercase
+
+			+max(520)
+				font-size: 16px
+			+max(350)
+				font-size: 13.5px
+
+	&-wrap
+		padding: 25px
+		box-sizing: border-box
+
+	&-fieldset
+		position: relative
+
+		+fieldset-label
+		+fieldset-input_n_select(48px, white)
+		+fieldset-input(48px, white)
+		+fieldset-checkbox(48px, white)
+
+		&-input
+			margin-bottom: 19px
+
+		&-link
+			font-size: 12px
+			color: $font
+
+			&:hover
+				text-decoration: underline
+
+
+	&-button
+		+button(50%, 40px, $contrast, white, $font: 15px, $fontweight: 500 )
+		float: right
+
+		&-hidden
+			display: none

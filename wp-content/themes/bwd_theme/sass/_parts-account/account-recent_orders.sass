@@ -1,0 +1,177 @@
+.orders-table
+	width: 100%
+	border: 1px solid $divider
+	border-radius: 3px
+	margin-bottom: 25px
+
+	&-head
+		background-color: $subwhite
+
+		&-item
+			border-bottom: 3px solid $primary
+			padding: 12px 0 7px
+			font-family: avenir
+			font-weight: 600
+			font-size: 14px
+			line-height: 1
+			text-transform: uppercase
+			color: $primary
+
+	&-item
+		border-top: 1px solid $divider
+		height: 65px
+
+		&:first-child
+			border-top: 0
+
+		&:nth-child(2n)
+			background-color: $subberwhite
+
+		&:hover &-cell-remove
+			opacity: 1
+
+		&-cell
+			text-align: center
+			font-size: 14px
+
+			&-number
+				font-weight: 500
+				color: $primary
+
+			&.date
+				font-weight: 500
+				color: $font
+
+			&.status
+				font-weight: 600
+				color: $contrast
+
+
+
+
+			&-price
+				font-weight: 500
+				font-size: 15px
+				color: $font
+
+			&-item_count
+				font-size: 11px
+
+
+
+
+			&.actions
+				width: 30%
+				padding-top: 5px
+			&-button
+				position: relative
+				display: inline-block
+				height: 28px
+				border-radius: 2px
+				transition: background-color 0.2s
+				box-sizing: border-box
+
+				&:last-child
+					width: 70px
+					border: 1px solid  $divider
+					margin-left: 13px
+					background-color: $subwhite
+					&:hover
+						background-color: darken($subwhite, 10)
+
+				&:last-child &-text
+					color: $primary
+
+
+
+				&:first-child
+					width: 50px
+					border: 0
+					background-color: $primary
+					// background-color: $contrast
+					&:hover
+						background-color: darken($primary, 10)
+
+				&:first-child &-text
+					color: white
+
+
+
+
+
+				&-text
+					position: absolute
+					+valign
+					left: 0
+					width: 100%
+					line-height: 1
+					font-size: 12px
+					font-weight: 600
+					text-align: center
+					// color: 
+
+
+
+
+
+// ==== Mobile =================================================================================
+
++max(520)
+	.orders-table,
+	.orders-table tbody,
+	.orders-table tr,
+	.orders-table th,
+	.orders-table td
+		display: block
+
+	thead
+		display: none
+
+	.orders-table
+
+		&-item
+			position: relative
+			padding: 15px 20px
+			height: auto
+
+			&-cell
+
+				&-number
+					&:before
+						content: 'Order'
+						color: $font
+						text-transform: uppercase
+
+				&.total
+					margin-top: 10px
+
+				&-price
+					color: $font
+					display: block
+				
+
+
+				// &.quantity
+
+
+				&.actions
+					margin-top: 16px
+					width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

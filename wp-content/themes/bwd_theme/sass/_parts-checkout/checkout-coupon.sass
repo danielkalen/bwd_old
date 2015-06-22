@@ -1,0 +1,35 @@
+.apply_coupon
+	position: relative
+	max-width: 400px
+	padding: 25px
+	background-color: $subwhite
+	border: 1px solid $divider
+	border-radius: 3px
+	margin-bottom: 28px
+	box-sizing: border-box
+	+clearfix
+
+	&-fieldset
+		position: relative
+
+		+fieldset-label
+		+fieldset-input_n_select(48px, white)
+		+fieldset-input(48px, white)
+
+		&-input
+			margin-bottom: 19px
+
+		&-link
+			font-size: 12px
+			color: $font
+
+			&:hover
+				text-decoration: underline
+
+
+	&-button
+		+button(100%, 40px, $contrast, white, $font: 15px, $fontweight: 500 )
+		float: right
+
+		&-hidden
+			display: none
