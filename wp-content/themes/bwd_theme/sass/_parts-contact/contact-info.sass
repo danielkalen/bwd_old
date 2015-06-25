@@ -1,0 +1,47 @@
+&-info
+	
+	&-item
+		position: relative
+		margin-bottom: 30px
+		padding-left: 9%
+		padding-left: 33px
+		box-sizing: border-box
+		color: $font
+
+		&:before
+			+icon('')
+			position: absolute
+			left: 0
+			color: $primary
+
+		&.phone:before
+			content: 'a'
+			font-size: 24px
+			top: -1px
+		&.email:before
+			content: 'g'
+			font-size: 22px
+			top: -5px
+		&.address:before
+			content: 'h'
+			font-size: 25px
+			top: -2px
+			left: -1px
+		&.hours:before
+			content: 'l'
+			font-size: 24px
+			top: -3px
+
+		&-title
+			line-height: 1
+			margin-bottom: 10px
+			font-weight: 600
+			// font-size: 16px
+
+		&-text
+			font-size: 14px
+			// font-weight: 500
+			line-height: 1.6
+
+			&-highlight
+				font-weight: 600

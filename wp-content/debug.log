@@ -3194,3 +3194,10 @@
 [22-Jun-2015 02:09:09 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /Applications/MAMP/bwd/wp-content/plugins/woocommerce-bulk-order-form/includes/templates/standard_template/standard_template.php on line 175
 [22-Jun-2015 02:09:25 UTC] PHP Parse error:  syntax error, unexpected '$html' (T_VARIABLE) in /Applications/MAMP/bwd/wp-content/plugins/woocommerce-bulk-order-form/includes/templates/standard_template/standard_template.php on line 224
 [22-Jun-2015 02:09:25 UTC] PHP Parse error:  syntax error, unexpected '$html' (T_VARIABLE) in /Applications/MAMP/bwd/wp-content/plugins/woocommerce-bulk-order-form/includes/templates/standard_template/standard_template.php on line 224
+[24-Jun-2015 15:22:31 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/page-contact.php on line 31
+[24-Jun-2015 15:23:03 UTC] PHP Warning:  gethostbyname() expects exactly 1 parameter, 0 given in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/page-contact.php on line 31
+[24-Jun-2015 17:56:15 UTC] PHP Warning:  Illegal string offset 'placeholder' in /Applications/MAMP/bwd/wp-content/plugins/contact-form-7/modules/textarea.php on line 63
+[24-Jun-2015 17:57:30 UTC] PHP Warning:  Illegal string offset 'placeholder' in /Applications/MAMP/bwd/wp-content/plugins/contact-form-7/modules/textarea.php on line 63
+[24-Jun-2015 17:57:30 UTC] PHP Warning:  Illegal string offset 'placeholder' in /Applications/MAMP/bwd/wp-content/plugins/contact-form-7/modules/textarea.php on line 64
+[24-Jun-2015 23:31:13 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/page-specials.php on line 46
+[24-Jun-2015 23:33:20 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /Applications/MAMP/bwd/wp-includes/formatting.php on line 209

@@ -1,0 +1,89 @@
+@import _parts/_vars
+@import _parts/_elements
+
+.specials
+	position: relative
+	+clearfix
+
+	&-item
+		float: left
+		overflow: hidden
+		width: perc(245px, 786px)
+		margin-right: perc(25px, 786px)
+		margin-bottom: perc(25px, 786px)
+		background-color: $subwhite
+		border-radius: 3px
+		border: 1px solid $divider
+		box-sizing: border-box
+
+		&:nth-child(3n)
+			+min(621)
+				margin-right: 0
+
+		+max(620)
+			width: perc(380px, 786px)
+
+			&:nth-child(2n)
+				margin-right: 0
+
+		// ==== Image =================================================================================
+		&-img
+			position: relative
+			width: 100%
+			+ratio(91%)
+			background-image: url(../img/coupon.jpg)
+			background-size: cover
+			cursor: pointer
+			vertical-align: bottom !important 
+
+			&-text
+				position: absolute
+				left: 0
+				right: 0
+				bottom: auto
+				+valign
+				max-width: 85%
+				+center
+				font-family: avenir
+				font-size: 24px
+				font-weight: 700
+				text-transform: uppercase
+				color: white
+				text-align: center
+
+				+max(520)
+					font-size: 18px
+
+				+max(350)
+					font-size: 16px
+
+		&:hover &-img
+			background-image: url(../img/coupon-hover.jpg)
+
+		&:hover &-img-text
+			color: $primary
+
+
+
+		// ==== Content =================================================================================
+		&-content
+			border-top: 1px solid $divider
+			text-align: center
+			color: $font
+
+			&-title
+				font-size: 15px
+				padding-top: 10px
+
+				+max(350)
+					font-size: 13px
+					font-weight: 500
+
+			&-code
+				font-weight: 600
+				text-transform: uppercase
+				font-size: 19px
+				padding-bottom: 12px
+
+				+max(350)
+					font-size: 16px

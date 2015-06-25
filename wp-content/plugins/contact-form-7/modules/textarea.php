@@ -30,7 +30,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts['cols'] = $tag->get_cols_option( '40' );
 	$atts['rows'] = $tag->get_rows_option( '10' );
 	$atts['maxlength'] = $tag->get_maxlength_option();
-	$atts['class'] = $tag->get_class_option( $class );
+	$atts['class'] = $tag->get_class_option( $class ) . ' wpcf7-form-fieldset-textarea textarea input';
 	$atts['id'] = $tag->get_id_option();
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 
@@ -59,7 +59,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %1$s"><textarea %2$s>%3$s</textarea>%4$s</span>',
+		'<div class="wpcf7-form-fieldset textarea wpcf7-form-control-wrap %1$s"><textarea %2$s>%3$s</textarea>%4$s</div>',
 		sanitize_html_class( $tag->name ), $atts,
 		esc_textarea( $value ), $validation_error );
 

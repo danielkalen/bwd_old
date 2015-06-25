@@ -163,32 +163,28 @@ function snapmagnet_scripts() {
 				break;
 		}
 
+
+		/* ==========================================================================
+		   Stylesheets
+		   ========================================================================== */
+		
 		wp_enqueue_style( 'main', $maincss );
 
 		if ( is_front_page() ) {
 			wp_enqueue_style( 'home', $folder . 'home.css' );
 		}
-		// if ( !is_front_page() ) {
-			// wp_enqueue_style( 'products', '/wp-content/themes/bwd_theme/css/home.css' );
-		// }
+		
+		if ( is_page('about')) {
+			wp_enqueue_style( 'about', $folder . 'about.css' );
+		}
 
+		if ( is_page('contact')) {
+			wp_enqueue_style( 'contact', $folder . 'contact.css' );
+		}
 
-		// if ( is_page('wholesale-apply') ) {
-		// 	wp_enqueue_script( 'accordion-form', 'js/accordion-form' );
-		// }
-	
-		// if ( is_page('us')) {
-		// 	wp_enqueue_script( 'dk-gallery', 'js/gallery.min' );
-		// }
-
-		// if ( is_page('login') || is_page('register') || is_page('wholesale-apply') || is_checkout()) {
-		// 	wp_enqueue_script( 'dk-login', 'js/login' );
-		// 	wp_enqueue_style( 'dk-modal', $folder . 'login-modal' );
-		// }
-
-		// if ( is_page('account') || is_page('quick-order') || is_page('edit') || is_page('request-return-form') || is_page('wholesale-apply') || is_page('view-order') || is_page('checkout-2')) {
-		// 	wp_enqueue_style( 'dk-account', $folder . 'account' );
-		// }
+		if ( is_page('specials')) {
+			wp_enqueue_style( 'specials', $folder . 'specials.css' );
+		}
 
 		if ( is_cart() ) {
 			wp_enqueue_style( 'cart', $folder . 'cart.css' );
@@ -231,7 +227,12 @@ function snapmagnet_scripts() {
 		// 	wp_enqueue_style( 'dk-specials', $folder . 'table' );
 		// }
 
-		// main.js
+
+
+		/* ==========================================================================
+		   JS Files
+		   ========================================================================== */
+		
 		wp_enqueue_script( 'global', '/wp-content/themes/bwd_theme/js/main.min.js', array('jquery') );
 
 		if ( is_front_page() ) {
@@ -261,8 +262,14 @@ function snapmagnet_scripts() {
 		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form') ) {
 			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/account.min.js', array('jquery') );
 		}
-		// wp_enqueue_script( 'product-slider', '/wp-content/themes/bwd_theme/js/product-slider.js', array('jquery') );
-		// wp_enqueue_script( 'search', '/wp-content/themes/bwd_theme/js/search.js', array('jquery') );
+
+		if ( is_page('about')) {
+			wp_enqueue_script( 'about', '/wp-content/themes/bwd_theme/js/about.min.js', array('jquery') );
+		}
+
+		if ( is_page('contact')) {
+			wp_enqueue_script( 'contact', '/wp-content/themes/bwd_theme/js/contact.min.js', array('jquery') );
+		}
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

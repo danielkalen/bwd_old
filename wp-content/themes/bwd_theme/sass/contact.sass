@@ -1,0 +1,44 @@
+@import _parts/_vars
+@import _parts/_elements
+
+
+.contact
+	
+	&-header
+		position: relative
+		top: 1px
+		width: 100%
+		+ratio(25%)
+		background-image: url(../img/banner-contact.jpg)
+		background-size: cover
+
+		.oss &
+			background-image: url(../img/banner-contact-oss.jpg)
+
+		+max(520)
+			+ratio(50%)
+			background-image: url(../img/banner-contact-mobile.jpg)
+
+			.oss &
+				background-image: url(../img/banner-contact-mobile-oss.jpg)
+
+
+	&-section
+		width: 46.5%
+
+		&.form
+			float: left
+		&.info
+			float: right
+
+		+max(620)
+			float: none !important
+			width: 100%
+			max-width: 400px
+			+center
+			margin-bottom: 60px
+
+		@import _parts-contact/contact-info
+
+
+@import _parts-contact/contact-form

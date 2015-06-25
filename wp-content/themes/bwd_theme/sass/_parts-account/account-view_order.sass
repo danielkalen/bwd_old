@@ -80,7 +80,7 @@
 			// border-top: 1px solid $divider
 			color: $font
 			&-label
-				padding: 8px 10px 8px 0
+				padding: 6px 10px 6px 0
 				text-transform: uppercase
 				font-size: 14px
 				line-height: 1
@@ -89,7 +89,7 @@
 				text-align: left
 
 			&-value
-				padding: 5px 10px 5px 0
+				padding: 6px 10px 6px 0
 				font-size: 14px
 				font-weight: 500
 				text-align: center
@@ -99,6 +99,18 @@
 
 		&-item:last-child
 			color: $primary
+
+		&-item:last-child &-item-label,
+		&-item:last-child &-item-value
+			padding-bottom: 16px
+			+max(520)
+				padding: 0
+
+		&-item:first-child &-item-label,
+		&-item:first-child &-item-value
+			padding-top: 16px
+			+max(520)
+				padding: 0
 
 
 

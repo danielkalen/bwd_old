@@ -1,0 +1,74 @@
+@import _parts/_vars
+@import _parts/_elements
+
+.about-image
+	float: right
+	margin: 0 0 15px 15px
+
+#main 
+	p
+		margin-bottom: 10px
+		font-size: 14px
+		color: darken($font, 10) 
+
+	ul
+		list-style: disc
+		margin: 15px
+		font-size: 14px
+
+		li
+			margin-top: 4px
+
+	h2
+		margin-top: 60px
+
+
+.gallery
+	text-align: justify
+	text-justify: distribute-all-lines
+	font-size: 0px
+	vertical-align: top
+
+	&:after
+		content: ''
+		display: inline-block
+		width: 100%
+
+	&-item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		// margin-right: 20px
+		margin: 5px 5px 0 0
+		// +size(128)
+		width: 16%
+		height: 16%
+		text-align: left
+		cursor: pointer
+		box-sizing: border-box
+
+		&:first-child
+			+size(256)
+			float: left
+
+
+		&:after // Hover Overlay
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: $primary
+			opacity: 0
+			transition: opacity 0.3s
+
+		&:hover:after
+			opacity: .7
+
+
+
+		img
+			width: 100%
+			height: 100%
+

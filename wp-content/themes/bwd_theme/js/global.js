@@ -29,6 +29,8 @@ var	$this,
 	$menu,
 	$menuMega,
 	$addedProduct,
+	$headerHeight,
+	$footerHeight,
 	addingInProgress = false,
 	visible,
 	wasClicked,
@@ -57,6 +59,23 @@ function normalKeycodes(event){
 	} else {
 		return false;
 	}
+}
+
+
+if ( window.innerWidth > 736 ) {
+	if ( window.innerHeight > ( $$('#page').height() + $$('.top-bar').height() ) ) {
+		expandBody();
+	}
+}
+
+
+
+function expandBody() {
+	$headerHeight = $$('#masthead').height() + $$('.top-bar').height();
+	$footerHeight = $$('.footer').height() + 50;
+	$bodyHeight = window.innerHeight - ($headerHeight + $footerHeight);
+
+	$$('.content-wrap').css('min-height', $bodyHeight);
 }
 
 // @codekit-append '_parts/_header/menu-nav.js'
