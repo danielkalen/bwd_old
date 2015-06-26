@@ -251,7 +251,8 @@ function userpro_cache_clear_wt()
 				} else {
 				
 					if (is_email($username_or_email)) {
-						$user = get_user_by_email($username_or_email);
+						// $user = get_user_by_email($username_or_email);
+						$user = get_user_by('email', $username_or_email);
 						$username_or_email = $user->user_login;
 					}
 				

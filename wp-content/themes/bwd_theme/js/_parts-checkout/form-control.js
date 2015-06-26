@@ -5,8 +5,8 @@ $$('form.checkout').formPrepare();
 $$('form.checkout .next').on('click', function(){
 	$$('form.checkout').formNext();
 });
-$$('form.checkout .submit').on('click', function(){
-	$$('form.checkout').formSubmit();
+$('form.checkout .submit').on('click', function(){
+	$('form.checkout').formSubmit();
 });
 $$('form.checkout .back').on('click', function(){
 	$$('form.checkout').formBack();
@@ -29,6 +29,21 @@ $$('body').on('updated_checkout', function(){
 
 
 
+// ==== Shipping select change sync =================================================================================
+
+$$('.widget_checkout_totals').on('change', 'select', function(){
+	$('form.checkout .shipping_method').val($(this).val()).change();
+});
+
+/* ========================================================================== */
+
+
+
+
+
+
+
+
 // ==== Form Login =================================================================================
 
 attachEvents($$('#username'));
@@ -41,6 +56,21 @@ $$('.login-button').on('click', function(){
 
 $$('.apply_coupon-button').on('click', function(){
 	$$('.apply_coupon-button-hidden').click();
+});
+
+/* ========================================================================== */
+
+
+
+
+
+
+// ==== Notices =================================================================================
+
+$$('body').on('checkout_error', function(){
+	$('.woocommerce .notice').each(function(){
+		addNotice($(this), true);
+	});q
 });
 
 /* ========================================================================== */
@@ -65,4 +95,11 @@ function attachStripeFieldEvents(){
 	attachEvents($('#stripe-card-expiry'));
 	attachEvents($('#stripe-card-cvc'));
 	attachEvents($('input[name="cardname"]'));
+
+
+	$.fn.formPrepare.checkboxField($('.payment .checkout-section-fieldset.checkbox'));
+
+	$('form.checkout .submit').on('click', function(){
+		$('form.checkout').formSubmit();
+	});
 }

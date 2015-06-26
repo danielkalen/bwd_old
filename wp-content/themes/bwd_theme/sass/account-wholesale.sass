@@ -1,0 +1,263 @@
+@import _parts/_vars
+@import _parts/_elements
+
+
+.wpcf7-form
+	&-section
+		display: block !important
+		clear: both
+		margin-bottom: 25px
+		background-color: $subwhite
+		border: 1px solid $divider
+		border-radius: 3px
+		overflow: hidden
+		box-sizing: border-box
+		transition: height 0.6s
+		+clearfix
+
+		&-title
+			position: relative
+			height: 39px
+			background-color: $primary
+			color: white
+			cursor: pointer
+
+			&-text
+				position: absolute
+				left: 25px
+				+valign(55%)
+				font-family: avenir
+				font-weight: 700
+				font-size: 18px
+				line-height: 1
+				text-transform: uppercase
+
+				+max(520)
+					font-size: 16px
+				+max(350)
+					font-size: 13.5px
+
+		&-wrap
+			padding: 25px 25px 
+			box-sizing: border-box
+
+
+		&-additional
+			+clearfix
+			overflow: hidden
+			height: 0
+
+			&.open
+				height: auto
+
+			&-title
+				color: $primary
+				font-weight: 500
+				font-size: 18px
+				border-bottom: 1px solid $divider
+				padding-bottom: 3px
+				margin-top: 25px
+				margin-bottom: 22px
+
+
+
+
+
+	&-fieldset
+		+fieldset
+		margin-bottom: 22px
+
+		+min(621)
+			width: 48%
+			float: left
+		+max(620)
+			width: 100%
+
+		&.billing-address,
+		&.shipping-address,
+		&.shipping-address + &.checkbox,
+		&.owner-address,
+		&.owner-2-address,
+		&.owner-3-address,
+		&.bank-address,
+		&.bank-2-address,
+		&.bank-3-address,
+		&.trade-address,
+		&.trade-2-address,
+		&.trade-3-address,
+		&.ownership-type,
+		&.checkbox,
+			width: 100%
+			float: none
+
+
+		+min(621)
+			&.corporate-name,
+			&.store-fax,
+			&.store-manager,
+			&.tax-id,
+			&.owner-phone,
+			&.owner-soc,
+			&.owner-2-phone,
+			&.owner-2-soc,
+			&.owner-3-phone,
+			&.owner-3-soc,
+			&.bank-account_number,
+			&.bank-2-account_number,
+			&.bank-3-account_number,
+			&.trade-account_number,
+			&.trade-2-account_number,
+			&.trade-3-account_number,
+			&.bank-fax,
+			&.bank-2-fax,
+			&.bank-3-fax,
+			&.trade-fax,
+			&.trade-2-fax,
+			&.trade-3-fax,
+				margin-left: 4%
+
+		+max(620)
+			margin-left: 0 !important
+
+		&.shipping-address
+			display: none
+
+
+
+
+		&-input
+			background-color: $subberwhite
+
+		&-select
+			-webkit-appearance: none !important
+			-moz-appearance: none !important
+			-ms-appearance: none !important
+			-o-appearance: none !important
+			appearance: none !important
+			outline: none !important
+			box-shadow: none !important
+			text-shadow: none !important
+			background-color: $subberwhite
+
+		&-textarea
+			background-color: $subberwhite
+			height: 150px
+		&.textarea
+			width: 100%	
+		
+		&.checkbox
+			padding-bottom: 11px
+			margin-bottom: 10px
+
+		&-checkbox
+			
+			&-label
+				&-highlight
+					transition: color 0.2s
+					color: $primary
+					cursor: pointer
+
+					&:hover
+						text-decoration: underline
+
+			// &-box
+			// 	&:after
+			// 		display: block
+
+			// 		.checked &
+			// 			display: none
+
+		&-radio
+			font-size: 13px
+			margin-right: 20px
+			font-weight: 500
+			color: $font
+
+			&:last-child
+				margin-right: 0
+
+		&-label
+			.radio &
+				opacity: 1
+				position: relative
+				padding: 0
+				margin-bottom: 5px
+				font-size: 13px
+				color: $primary
+
+
+	&-buttons
+		+clearfix
+
+		&-item
+			+button(48%, 47px, $hovercolor: white, $fontweight: 600)
+			// max-width: 300px
+			margin-top: 6px
+			float: right
+			transition: all 0.2s, border 0.001s
+			box-sizing: border-box
+
+			+max(620)
+				width: 100%
+
+			&:hover
+				border: 1px solid $divider
+				background-color: $subberwhite
+
+			&.add
+				clear: both
+				float: none
+				width: 30%
+				min-width: 220px
+				margin-bottom: 40px
+				background-color: $subwhite
+				border: 1px solid $divider
+				color: $primary
+
+				&:hover
+					background-color: white
+
+				&:before
+					content: '+'
+					position: absolute
+					+valign(48%)
+					left: 5%
+					font-size: 30px
+					font-weight: 700
+					line-height: 1
+			&.add &-text 
+				// text-align: left
+				padding-left: 3%
+
+			&.back
+				float: left
+				background-color: $subwhite
+				background-color: $divider
+				border: 1px solid $divider
+				// color: $primary
+
+
+
+	input[type='submit']
+		display: none
+
+
+.wpcf7-not-valid-tip
+	position: absolute
+	top: auto !important
+	bottom: -16px
+	left: 0
+	font-size: 11px
+	width: 100%
+	font-weight: 500
+	text-align: center
+	// color: $error
+	color: $primary
+
+.screen-reader-response,
+.wpcf7-response-output
+	display: none
+
+
+.userpro-loading
+	display: none		

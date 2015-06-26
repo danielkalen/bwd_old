@@ -1,0 +1,36 @@
+.cart-empty
+	
+	&-icon
+		position: relative
+		left: -3%
+		width: 80%
+		max-width: 250px
+		+ratio(85.5%)
+		+center
+		background-size: cover
+
+	&-title
+		margin-top: 15px
+		font-size: 32px
+		text-align: center
+		font-weight: 500
+		color: $font
+
+		+max(620)
+			font-size: 28px
+
+		&-highlight
+			color: $primary
+
+	&-button
+		+button(180px, 40px, $subwhite, $primary, $primary, white)
+		display: block
+		+center(20px)
+		border: 1px solid $divider
+		box-sizing: border-box
+
+		&:hover
+			border-color: $primary
+
+		&-text
+			top: 52%

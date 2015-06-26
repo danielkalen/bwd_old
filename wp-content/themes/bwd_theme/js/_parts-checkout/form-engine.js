@@ -25,186 +25,6 @@ $window.on('resize', function(){
 
 $.fn.form = function($arg, $url) {}
 
-$.fn.formValidate = function() {
-	proceed = false;
-	problem = false;
-	$required = $$('form.checkout').find('.checkout-section.show').find('.fieldset.required');
-	billingSame = !$$('form.checkout').find('.fieldset.checkbox .input-button').hasClass('checked');
-
-	$required.each(function(){
-
-		$this = $(this);
-
-		if ( !$this.hasClass('valid') ) {
-			problem = true;
-			$this.addClass('error');
-
-		} else {
-			$this.removeClass('error');
-		}
-	});
-
-	if ( problem ) {
-		proceed = false;
-	} else {
-		proceed = true;
-	}
-}
-
-
-
-
-
-
-$.fn.formNext = function() {
-	$currentStep = $$('form.checkout').find('.checkout-section.show')
-
-	if ( !$currentStep.hasClass('payment') ) {
-		$$('form.checkout').formValidate();
-	} else {
-		var proceed = true;
-	}
-
-	if ( proceed ) {
-		var isOne = $$('form.checkout').find('.checkout-section.billing').hasClass('show'),
-			$nextStep;
-
-		if ( isOne ) {
-			if ( billingSame ) {
-				$nextStep = $currentStep.next().next();
-			} else {
-				$nextStep = $currentStep.next();
-			}
-		} else {
-			$nextStep = $currentStep.next();
-		}
-
-		$currentStep.removeClass('show').height(39);
-		$nextStep.addClass('show');
-		setSectionHeight(this);
-		scrollUpIfNeeded($nextStep);
-	}
-}
-
-
-
-
-
-$.fn.formOpen = function() {
-	if ( !this.hasClass('show') ) {
-		var $currentStep = $$('form.checkout').find('.checkout-section.show');
-
-		if ( !$currentStep.hasClass('payment') ) {
-			$$('form.checkout').formValidate();
-		} else {
-			var proceed = true;
-		}
-
-		if ( !proceed ) {
-
-			$currentStep.addClass('incomplete');
-		}
-		if (this.hasClass('shipping')) {
-			if (billingSame) {
-				if ( !$currentStep.hasClass('billing') ) {
-					$currentStep.removeClass('show').height(39);
-					$$('.checkout-section.billing').addClass('show');
-					setSectionHeight($$('.checkout-section.billing'));
-				}
-
-				$$('#ship-to-different-address').addClass('highlight');
-
-				setTimeout(function(){
-					$$('#ship-to-different-address').removeClass('highlight');
-				}, 2000);
-
-			} else {
-				$currentStep.removeClass('show').height(39);
-				this.addClass('show');
-				setSectionHeight(this);
-				scrollUpIfNeeded(this);
-			}
-
-		} else {
-			$currentStep.removeClass('show').height(39);
-			this.addClass('show');
-			setSectionHeight(this);
-
-			scrollUpIfNeeded(this);
-		}
-	}
-}
-
-
-
-
-
-
-
-
-
-
-$.fn.formSubmit = function() {
-	$$('form.checkout').formValidate();
-
-	if ( $$('.cta-form-totals-item.shipping').hasClass('error') ) {
-		buttonError('Shipping Zip Code');
-	} else {
-		if ( proceed ) {
-			$$('#place_order').click();
-		}
-	}
-
-}
-
-
-
-// $.fn.formSend = function() {
-// 	$.post('send', 
-// 		{'stripeToken': $$('#stripeToken').val(), 'stripeAmount': $$('#stripeAmount').val()}, 
-// 		function(response){
-// 			if ( response.success ) {
-// 				savePurchase();
-// 			}
-// 	},'json');
-
-// 	function savePurchase(){
-// 		$.get('save', $$('form.checkout').serializeArray(), function(response){
-// 			console.log(response);
-// 			if ( response ) {
-// 				showTabFour();
-// 				$$('form.checkout').addClass('success');
-// 			}
-// 		},'json');
-// 	}
-// }
-
-
-
-
-
-
-
-
-
-
-$.fn.formBack = function() {
-	$currentStep = $$('form.checkout').find('.checkout-section.show');
-	$previousStep = $currentStep.prev();
-
-	if ( $currentStep.hasClass('payment') ) {
-		if (billingSame) {
-			var $previousStep = $currentStep.prev().prev();
-		}
-	}
-
-	$currentStep.removeClass('show').height(39);
-	$previousStep.addClass('show');
-	setSectionHeight($previousStep);
-
-	scrollUpIfNeeded($previousStep);
-}
-
 
 
 
@@ -262,6 +82,163 @@ $.fn.formPrepare = function() {
 
 
 
+$.fn.formValidate = function() {
+	proceed = false;
+	problem = false;
+	$required = $$('form.checkout').find('.checkout-section.show').find('.fieldset.required');
+	billingSame = $$('form.checkout').find('.billing .fieldset.checkbox .input-button').hasClass('checked');
+
+	$required.each(function(){
+
+		$this = $(this);
+
+		if ( !$this.hasClass('valid') ) {
+			problem = true;
+			$this.addClass('error');
+
+		} else {
+			$this.removeClass('error');
+		}
+	});
+
+	if ( problem ) {
+		proceed = false;
+	} else {
+		proceed = true;
+	}
+}
+
+
+
+
+
+
+$.fn.formNext = function() {
+	$currentStep = $$('form.checkout').find('.checkout-section.show')
+
+	if ( !$currentStep.hasClass('payment') ) {
+		$$('form.checkout').formValidate();
+	} else {
+		proceed = true;
+	}
+
+	if ( proceed ) {
+		var isOne = $$('form.checkout').find('.checkout-section.billing').hasClass('show'),
+			$nextStep;
+
+		if ( isOne ) {
+			if ( billingSame ) {
+				$nextStep = $currentStep.next().next();
+			} else {
+				$nextStep = $currentStep.next();
+			}
+		} else {
+			$nextStep = $currentStep.next();
+		}
+
+		$currentStep.removeClass('show').height(39);
+		$nextStep.addClass('show');
+		setSectionHeight($nextStep);
+		scrollUpIfNeeded($nextStep);
+	}
+}
+
+
+
+
+
+$.fn.formOpen = function() {
+	if ( !this.hasClass('show') ) {
+		var $currentStep = $$('form.checkout').find('.checkout-section.show');
+
+		if ( !$currentStep.hasClass('payment') ) {
+			$$('form.checkout').formValidate();
+		} else {
+			proceed = true;
+		}
+
+		if ( !proceed ) {
+
+			$currentStep.addClass('incomplete');
+		}
+		if (this.hasClass('shipping')) {
+			if (billingSame) {
+				if ( !$currentStep.hasClass('billing') ) {
+					$currentStep.removeClass('show').height(39);
+					$$('.checkout-section.billing').addClass('show');
+					setSectionHeight($$('.checkout-section.billing'));
+				}
+
+				$$('#ship-to-different-address').addClass('highlight');
+
+				setTimeout(function(){
+					$$('#ship-to-different-address').removeClass('highlight');
+				}, 2000);
+
+			} else {
+				$currentStep.removeClass('show').height(39);
+				this.addClass('show');
+				setSectionHeight(this);
+				scrollUpIfNeeded(this);
+			}
+
+		} else {
+			$currentStep.removeClass('show').height(39);
+			this.addClass('show');
+			setSectionHeight(this);
+
+			scrollUpIfNeeded(this);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+$.fn.formSubmit = function() {
+	$$('form.checkout').formValidate();
+
+		if ( proceed ) {
+			$$('#place_order').click();
+		}
+
+}
+
+
+
+
+
+
+
+
+
+$.fn.formBack = function() {
+	$currentStep = $$('form.checkout').find('.checkout-section.show');
+	$previousStep = $currentStep.prev();
+
+	if ( $currentStep.hasClass('payment') ) {
+		if (billingSame) {
+			var $previousStep = $currentStep.prev().prev();
+		}
+	}
+
+	$currentStep.removeClass('show').height(39);
+	$previousStep.addClass('show');
+	setSectionHeight($previousStep);
+
+	scrollUpIfNeeded($previousStep);
+}
+
+
+
+
+
 
 
 
@@ -298,6 +275,11 @@ function attachEvents($field){
 			}
 		});
 	}
+	if ( $field.attr('type') !== 'checkbox' ){
+		if ( $field.val() !== '' ) {
+			$field.parent().addClass('filled valid');
+		}
+	}
 }
 
 function makeValid($subject) {
@@ -321,15 +303,18 @@ function setSectionHeight($section){
 
 	if ($section.hasClass('billing')) {
 		$section.height(billingHeight);
-		setTimeout(function(){billingHeight = $section.height();},1000);
+		// setTimeout(function(){billingHeight = $section.height();},1000);
+		billingHeight = $$('.checkout-section.billing').find('.checkout-section-wrap').height() + 80;
 	}
 	if ($section.hasClass('shipping')) {
 		$section.height(shippingHeight);
-		setTimeout(function(){shippingHeight = $section.height();},1000);
+		// setTimeout(function(){shippingHeight = $section.height();},1000);
+		shippingHeight = $$('.checkout-section.shipping').find('.checkout-section-wrap').height() + 80;
 	}
 	if ($section.hasClass('payment')) {
 		$section.height(paymentHeight);
-		setTimeout(function(){paymentHeight = $section.height();},1000);
+		// setTimeout(function(){paymentHeight = $section.height();},1000);
+		paymentHeight = $$('.checkout-section.payment').find('.checkout-section-wrap').height() + 80;
 	}
 }
 

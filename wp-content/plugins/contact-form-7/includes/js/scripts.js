@@ -99,6 +99,7 @@
 			$form.addClass('invalid');
 
 			$(data.into).trigger('invalid.wpcf7');
+			notify('error', data.message, true);
 
 		} else if (1 == data.spam) {
 			$responseOutput.addClass('wpcf7-spam-blocked');
@@ -114,12 +115,14 @@
 				$.each(data.onSentOk, function(i, n) { eval(n) });
 
 			$(data.into).trigger('mailsent.wpcf7');
+			notify('success', data.message, true);
 
 		} else {
 			$responseOutput.addClass('wpcf7-mail-sent-ng');
 			$form.addClass('failed');
 
 			$(data.into).trigger('mailfailed.wpcf7');
+			notify('error', data.message, true);
 		}
 
 		if (data.onSubmit)

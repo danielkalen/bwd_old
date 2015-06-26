@@ -1,0 +1,123 @@
+@import _parts/_vars
+@import _parts/_elements
+
+
+.wpcf7-form
+
+	&-fieldset
+		+fieldset
+		margin-bottom: 22px
+
+		+min(621)
+			width: 48%
+			float: left
+		+max(620)
+			width: 100%
+
+		// &.quarter
+		// 	+min(621)
+		// 		width: perc(158px, 707px)
+		// 		float: left
+		// 	+max(620)
+		// 		width: perc(340px, 707px)
+		// 		float: left
+
+
+		+min(621)
+			&:nth-child(2n)
+				margin-left: 4%
+			#wpcf7-f668-o1 &
+				margin-left: 0
+			&.reason-select
+				margin-left: 4% !important
+
+		&-input
+			background-color: $subberwhite
+
+		&-select
+			-webkit-appearance: none !important
+			-moz-appearance: none !important
+			-ms-appearance: none !important
+			-o-appearance: none !important
+			appearance: none !important
+			outline: none !important
+			box-shadow: none !important
+			text-shadow: none !important
+			background-color: $subberwhite
+
+		&-textarea
+			background-color: $subberwhite
+			height: 150px
+		&.textarea
+			width: 100%	
+		
+		&.checkbox
+			float: left
+			width: 48%
+			box-sizing: border-box
+			padding-top: 17px
+			margin-bottom: 10px
+
+			+max(620)
+				float: none
+				clear: both
+				width: 100%
+				padding-top: 0
+
+			&.highlight
+				animation: shakey 0.2s
+
+		&-checkbox
+			
+			&-label
+				&-highlight
+					transition: color 0.2s
+					.highlight &
+						color: $primary
+
+			&-box
+				&:after
+					display: block
+
+					.checked &
+						display: none
+
+	&-button
+		+button(100%, 47px, $hovercolor: white, $fontweight: 600)
+		// max-width: 300px
+		margin-top: 6px
+		float: right
+		transition: all 0.2s, border 0.001s
+		box-sizing: border-box
+
+		+max(620)
+			width: 100%
+
+		&:hover
+			border: 1px solid $divider
+			background-color: $subberwhite
+
+
+	input[type='submit']
+		display: none
+
+
+.wpcf7-not-valid-tip
+	position: absolute
+	top: auto !important
+	bottom: -16px
+	left: 0
+	font-size: 11px
+	width: 100%
+	font-weight: 500
+	text-align: center
+	// color: $error
+	color: $primary
+
+.screen-reader-response,
+.wpcf7-response-output
+	display: none
+
+
+.userpro-loading
+	display: none		

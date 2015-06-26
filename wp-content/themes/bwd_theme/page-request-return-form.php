@@ -15,28 +15,7 @@ get_header(); ?>
 <div class="content-wrap left">
 	<main id="main" class="content" role="main">
 
-			<div class="mobile_menu-trigger">
-				<div class="mobile_menu-trigger-text">Account Menu</div>
-			</div>
-			<div id="mobile_menu" class="mobile_menu">
-				<div class="mobile_menu-close"></div>
-				<h6 class="mobile_menu-title">Account Menu</h6>
-				<ul class="mobile_menu-list">
-					<?php 
-						$menu_items = wp_get_nav_menu_items(48);
-						foreach ($menu_items as $item) {
-							if (isset($item->title)) {
-								$title = $item->title;
-							} else {
-								$title = $item->post_title;
-							}
-							echo '<li class="mobile_menu-list-item">
-									<a href="'.$item->url.'" class="mobile_menu-list-item-text">'.$title.'</a>
-								 </li>';
-						}
-					?>
-				</ul>
-			</div>
+			<?php do_action('account_menu'); ?>
 
 			<h1 class="page-title">Request Return Form</h1>
 

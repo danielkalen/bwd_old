@@ -85,7 +85,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="clearfix"></div>
 
 		<div class="checkout-section-fieldset checkbox fieldset" id="ship-to-different-address">
-			<div class="checkout-section-fieldset-checkbox input-button">
+			<div class="checkout-section-fieldset-checkbox checked input-button">
 				<div class="checkout-section-fieldset-checkbox-box"></div>
 				<label for="ship-to-different-address-checkbox" class="checkout-section-fieldset-checkbox-label">My billing &amp; shipping addresses <span class="checkout-section-fieldset-checkbox-label-highlight">are the same</span>.</label>
 				<input id="ship-to-different-address-checkbox" class="input input-checkbox" <?php checked( $ship_to_different_address, 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />

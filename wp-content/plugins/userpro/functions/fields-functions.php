@@ -237,7 +237,15 @@
 		
 		/* display a section */
 		if ($allow_sections && isset( $array['heading'] ) ) {
-		$res .= "<div class='userpro-section userpro-column userpro-collapsible-".$array['collapsible']." userpro-collapsed-".$array['collapsed']."'>".$array['heading']."</div>";
+		$res .= "</div></div>
+			<div class='userpro-section userpro-column userpro-collapsible-".$array['collapsible']." userpro-collapsed-".$array['collapsed']."'>
+				<div class='userpro-section-title'>
+					<div class='userpro-section-title-text'>"
+						.$array['heading'].
+					"</div>
+				</div>
+					<div class='userpro-section-wrap'>
+				";
 		}
 		
 		/* display a field */
@@ -250,9 +258,9 @@
 		if ($args['field_icons'] == 1) {
 		$res .= "<div class='userpro-label iconed'>";
 		} else {
-		$res .= "<div class='userpro-label'>";
+		$res .= "<div class='userpro-form-fieldset-label-wrap userpro-label'>";
 		}
-		$res .= "<label for='$key-$i'>".$array['label']."</label>";
+		$res .= "<label class='userpro-form-fieldset-label antispam' for='$key-$i'>".$array['label']."</label>";
 					
 					if ($args['field_icons'] == 1 && $userpro->field_icon($key)) {
 						$res .= '<span class="userpro-field-icon"><i class="userpro-icon-'. $userpro->field_icon($key) .'"></i></span>';
@@ -322,11 +330,10 @@
 					break;
 					
 				case 'antispam':
-					
 					$rand1 = rand(1, 10);
 					$rand2 = rand(1, 10);
-					$res .= sprintf(__('Answer: %s + %s','userpro'), $rand1, $rand2);
-					$res .= "<input type='text' name='$key-$i' id='$key-$i' value='' $data />";
+					$res .= '<span class="userpro-form-fieldset-label antispam-question">' . sprintf(__('Answer: %s + %s','userpro'), $rand1, $rand2) . '</span>';
+					$res .= "<input class='userpro-form-fieldset-input input' type='text' name='$key-$i' id='$key-$i' value='' $data />";
 					$res .= "<input type='hidden' name='answer-$i' id='answer-$i' value='".($rand1 + $rand2)."' />";
 					
 					break;

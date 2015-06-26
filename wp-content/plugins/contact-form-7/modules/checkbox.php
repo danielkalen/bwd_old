@@ -79,7 +79,7 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$hangover = wpcf7_get_hangover( $tag->name, $multiple ? array() : '' );
 
 	foreach ( $values as $key => $value ) {
-		$class = 'wpcf7-list-item';
+		$class = 'wpcf7-form-fieldset-radio wpcf7-list-item';
 
 		$checked = false;
 
@@ -161,7 +161,13 @@ function wpcf7_checkbox_shortcode_handler( $tag ) {
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %1$s"><span %2$s>%3$s</span>%4$s</span>',
+		'<div class="wpcf7-form-fieldset fieldset radio wpcf7-form-control-wrap %1$s">
+			<div class="wpcf7-form-fieldset-label">Ownership Type</div>
+			<span %2$s>
+				%3$s
+			</span>
+			%4$s
+		</div>',
 		sanitize_html_class( $tag->name ), $atts, $html, $validation_error );
 
 	return $html;

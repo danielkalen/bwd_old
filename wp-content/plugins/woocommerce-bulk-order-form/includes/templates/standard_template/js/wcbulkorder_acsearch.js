@@ -122,13 +122,13 @@ jQuery(document).ready(function ($){
 	$("#BulkOrderForm").on('click','input.wcbulkorderproduct', autocomplete());
 	$("button.wcbulkordernewrow").live('click', function() {
 		var $totalinput = $("tr:last").html();
-		$("tbody.wcbulkorderformtbody").append('<tr class="wcbulkorderformtr"><td class="wcbulkorder-title"><i class="bulkorder_spinner"></i><input type="text" name="wcbulkorderproduct[]" class="wcbulkorderproduct" /></td><td class="wcbulkorder-quantity"><input type="text" name="wcbulkorderquantity[]" class="wcbulkorderquantity" /></td><input type="hidden" name="wcbulkorderid[]" class="wcbulkorderid" value="" /></tr>');
+		$("tbody.wcbulkorderformtbody").append('<tr class="wcbulkorderformtr"><td class="quick-order-table-item-cell name wcbulkorder-title"><i class="bulkorder_spinner"></i><input type="text" placeholder="Product name or SKU" name="wcbulkorderproduct[]" class="quick-order-table-item-cell-input wcbulkorderproduct" /></td><td class="quick-order-table-item-cell quantity wcbulkorder-quantity"><input type="text" name="wcbulkorderquantity[]" placeholder="Enter Quantity" class="quick-order-table-item-cell-input wcbulkorderquantity" /></td><input type="hidden" name="wcbulkorderid[]" class="wcbulkorderid" value="" /></tr>');
 		autocomplete();
 		return false;
 	});
 	$("button.wcbulkordernewrowprice").live('click', function() {
 		var $totalinput = $("tr:last").html();
-		$("tbody.wcbulkorderformtbody").append('<tr class="wcbulkorderformtr"><td class="wcbulkorder-title"><i class="bulkorder_spinner"></i><input type="text" name="wcbulkorderproduct[]" class="wcbulkorderproduct" /></td><td class="wcbulkorder-quantity"><input type="text" name="wcbulkorderquantity[]" class="wcbulkorderquantity" /></td><td class="wcbulkorderprice"></td><input type="hidden" name="wcbulkorderid[]" class="wcbulkorderid" value="" /></tr>');
+		$("tbody.wcbulkorderformtbody").append('<tr class="wcbulkorderformtr"><td class="quick-order-table-item-cell name wcbulkorder-title"><i class="bulkorder_spinner"></i><input type="text" placeholder="Product name or SKU" name="wcbulkorderproduct[]" class="quick-order-table-item-cell-input wcbulkorderproduct" /></td><td class="quick-order-table-item-cell quantity wcbulkorder-quantity"><input type="text" name="wcbulkorderquantity[]" placeholder="Enter Quantity" class="quick-order-table-item-cell-input wcbulkorderquantity" /></td><td class="quick-order-table-item-cell price wcbulkorderprice"></td><input type="hidden" name="wcbulkorderid[]" class="wcbulkorderid" value="" /></tr>');
 		autocomplete();
 		return false;
 	});

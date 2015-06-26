@@ -275,15 +275,15 @@ class WC_Gateway_Stripe extends WC_Payment_Gateway {
 					<p><?php _e( 'Click "Enter payment details" to continue.', 'woocommerce-gateway-stripe' ) ?></p>
 				<?php else :
 			    $fields = array(
-			      'card-number-field' => '<div class="checkout-section-fieldset fieldset required input cardnumber">
+			      'card-number-field' => '<div class="checkout-section-fieldset fieldset input cardnumber">
 							<label class="checkout-section-fieldset-label" for="' . esc_attr( $this->id ) . '-card-number">' . __( 'Card Number', 'woocommerce' ) . '</label>
 							<input id="' . esc_attr( $this->id ) . '-card-number" class="checkout-section-fieldset-input input-text wc-credit-card-form-card-number" type="text" maxlength="20" autocomplete="off" placeholder="Card Number" name="' . ( $args['fields_have_names'] ? $this->id . '-card-number' : '' ) . '" />
 						</div>',
-			      'card-expiry-field' => '<div class="checkout-section-fieldset fieldset required input half cardexpire">
+			      'card-expiry-field' => '<div class="checkout-section-fieldset fieldset input half cardexpire">
 							<label class="checkout-section-fieldset-label" for="' . esc_attr( $this->id ) . '-card-expiry">' . __( 'Expiry (MM/YY)', 'woocommerce' ) . '</label>
 							<input id="' . esc_attr( $this->id ) . '-card-expiry" class="checkout-section-fieldset-input input-text wc-credit-card-form-card-expiry" type="text" autocomplete="off" placeholder="' . __( 'MM / YY', 'woocommerce' ) . '" name="' . ( $args['fields_have_names'] ? $this->id . '-card-expiry' : '' ) . '" />
 						</div>',
-			      'card-cvc-field' => '<div class="checkout-section-fieldset fieldset required input half cardcvc">
+			      'card-cvc-field' => '<div class="checkout-section-fieldset fieldset input half cardcvc">
 							<label class="checkout-section-fieldset-label" for="' . esc_attr( $this->id ) . '-card-cvc">' . __( 'Card Code', 'woocommerce' ) . '</label>
 							<input id="' . esc_attr( $this->id ) . '-card-cvc" class="checkout-section-fieldset-input input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="' . __( 'CVC', 'woocommerce' ) . '" name="' . ( $args['fields_have_names'] ? $this->id . '-card-cvc' : '' ) . '" />
 						</div>'

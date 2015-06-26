@@ -86,6 +86,7 @@ function stripeResponseHandler( status, response ) {
         // show the errors on the form
         jQuery('.woocommerce_error, .woocommerce-error, .woocommerce-message, .woocommerce_message, .stripe_token').remove();
         jQuery('#stripe-card-number').closest('p').before( '<ul class="woocommerce_error woocommerce-error"><li>' + response.error.message + '</li></ul>' );
+        notify('error', response.error.message , true);
         $form.unblock();
 
     } else {

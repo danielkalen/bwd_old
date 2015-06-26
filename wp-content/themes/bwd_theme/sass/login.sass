@@ -19,7 +19,8 @@
 	overflow: hidden
 	box-sizing: border-box
 
-	&.login
+	&.login,
+	&.reset
 		float: left
 	&.register
 		float: right
@@ -46,7 +47,8 @@
 		position: relative
 		height: 40px
 
-		.login &
+		.login &,
+		.reset &
 			background-color: $primary
 		.register &
 			background-color: $contrast
@@ -62,6 +64,22 @@
 			font-family: avenir
 			text-transform: uppercase
 			color: white 
+			+clearfix
+
+			&-left // For reset form header
+				float: left
+				padding-left: 4.5%
+
+			&-right
+				float: right
+				color: white
+				font-size: 12px
+				line-height: 1
+				padding-top: 3px
+				padding-right: 4%
+
+				&:hover
+					text-decoration: underline
 
 
 	&-intro
@@ -69,6 +87,9 @@
 		text-align: center
 		color: $font
 		padding: 0 5%
+
+		.reset & + .userpro-message // Hide the default message on the reset form
+			display: none
 
 	&-form
 		
@@ -111,6 +132,33 @@
 				&.userpro-maxwidth // second checkbox margin fix
 					margin-top: 10px
 
+			&-label-wrap
+				position: relative
+
+			&-label
+				&.antispam
+					position: relative
+					display: block
+					padding: 0
+					// padding: 0 0 10px
+					opacity: 1
+					text-align: right
+					float: right
+					color: $font
+
+				&.antispam-question
+					position: relative
+					display: block
+					padding: 0 0 10px
+					font-size: 14px
+					color: $font
+					opacity: 1
+
+			&-input 
+
+				.userpro-field-antispam &
+					padding: 2px 14px 0 !important
+
 
 
 		&-actions
@@ -120,7 +168,7 @@
 				margin-top: 25px
 
 			&-button
-				+button(0, 41px, $hovercolor: white, $fontweight: 600)
+				+button(auto, 41px, $hovercolor: white, $fontweight: 600)
 				float: right
 				transition: all 0.2s, border 0.001s
 				box-sizing: border-box
@@ -140,6 +188,30 @@
 					&:hover
 						background-color: white
 						color: $contrast
+
+
+				// ==== Reset Form Buttons =================================================================================		
+				.reset &
+					width: perc(170px, 360px)
+					margin-top: 25px
+
+
+				// &.request
+				// 	background-color: $contrast
+
+				&.change
+					float: left
+					background-color: $subwhite
+					border: 1px solid  $divider
+					color: $primary
+
+					&:hover
+						background-color: white
+						color: $primary
+
+
+
+
 
 				&-hidden
 					display: none

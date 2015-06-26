@@ -1,7 +1,5 @@
 <div class="userpro userpro-<?php echo $i; ?> userpro-id-<?php echo $user_id; ?> userpro-<?php echo $layout; ?>" <?php userpro_args_to_data( $args ); ?>>
-	
-	<a href="#" class="userpro-close-popup"><?php _e('Close','userpro'); ?></a>
-	
+		
 	<?php if (!isset($header_only)) { ?>
 	
 	<?php
@@ -26,12 +24,13 @@
 			$hook_args = array_merge($args, array('user_id' => $user_id, 'unique_id' => $i));
 			do_action('userpro_before_fields', $hook_args);
 			?>
-			
+			<div><div><!-- For the first section closing -->
 			<?php foreach( userpro_fields_group_by_template( $template, $args["{$template}_group"] ) as $key => $array ) { ?>
 				
 				<?php  if ($array) echo userpro_edit_field( $key, $array, $i, $args, $user_id ) ?>
 				
 			<?php } ?>
+			</div></div><!-- For the last section opening -->
 			
 			<?php // Hook into fields $args, $user_id
 			if (!isset($user_id)) $user_id = 0;
@@ -49,7 +48,12 @@
 			<div class="userpro-field userpro-submit userpro-column">
 				
 				<?php if (isset($args["{$template}_button_primary"]) ) { ?>
-				<input type="submit" value="<?php echo $args["{$template}_button_primary"]; ?>" class="userpro-button" />
+					<div class="userpro-form-actions-button">
+						<div class="userpro-form-actions-button-text">
+							Save Changes
+						</div>
+					</div>
+				<input type="submit" value="<?php echo $args["{$template}_button_primary"]; ?>" class="userpro-form-actions-button-hidden userpro-button" />
 				<?php } ?>
 				
 				<?php if (isset( $args["{$template}_button_secondary"] )) { ?>
@@ -65,7 +69,6 @@
 				<?php } ?>
 
 				<img src="<?php echo $userpro->skin_url(); ?>loading.gif" alt="" class="userpro-loading" />
-				<div class="userpro-clear"></div>
 				
 			</div>
 			<?php } ?>

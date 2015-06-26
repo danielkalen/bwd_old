@@ -20,7 +20,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 
 	$validation_error = wpcf7_get_validation_error( $tag->name );
 
-	$class = wpcf7_form_controls_class( $tag->type );
+	$class = wpcf7_form_controls_class( $tag->type, 'wpcf7-form-fieldset-select input' );
 
 	if ( $validation_error )
 		$class .= ' wpcf7-not-valid';
@@ -100,7 +100,7 @@ function wpcf7_select_shortcode_handler( $tag ) {
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<span class="wpcf7-form-control-wrap %1$s"><select %2$s>%3$s</select>%4$s</span>',
+		'<div class="wpcf7-form-control-wrap wpcf7-form-fieldset fieldset select %1$s"><select %2$s>%3$s</select>%4$s</div>',
 		sanitize_html_class( $tag->name ), $atts, $html, $validation_error );
 
 	return $html;

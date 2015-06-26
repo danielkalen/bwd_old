@@ -59,7 +59,7 @@ function wpcf7_textarea_shortcode_handler( $tag ) {
 	$atts = wpcf7_format_atts( $atts );
 
 	$html = sprintf(
-		'<div class="wpcf7-form-fieldset textarea wpcf7-form-control-wrap %1$s"><textarea %2$s>%3$s</textarea>%4$s</div>',
+		'<div class="wpcf7-form-fieldset fieldset textarea wpcf7-form-control-wrap %1$s"><textarea %2$s>%3$s</textarea>%4$s</div>',
 		sanitize_html_class( $tag->name ), $atts,
 		esc_textarea( $value ), $validation_error );
 

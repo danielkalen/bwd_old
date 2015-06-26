@@ -3201,3 +3201,14 @@
 [24-Jun-2015 17:57:30 UTC] PHP Warning:  Illegal string offset 'placeholder' in /Applications/MAMP/bwd/wp-content/plugins/contact-form-7/modules/textarea.php on line 64
 [24-Jun-2015 23:31:13 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/page-specials.php on line 46
 [24-Jun-2015 23:33:20 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /Applications/MAMP/bwd/wp-includes/formatting.php on line 209
+[25-Jun-2015 16:07:03 UTC] PHP Notice:  get_user_by_email is <strong>deprecated</strong> since version 3.3! Use get_user_by('email') instead. in /Applications/MAMP/bwd/wp-includes/functions.php on line 3391
+[25-Jun-2015 16:07:22 UTC] PHP Notice:  get_user_by_email is <strong>deprecated</strong> since version 3.3! Use get_user_by('email') instead. in /Applications/MAMP/bwd/wp-includes/functions.php on line 3391
+[25-Jun-2015 16:29:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/functions.php on line 534
+[25-Jun-2015 22:58:06 UTC] PHP Fatal error:  Call to undefined function prinr_r() in /Applications/MAMP/bwd/wp-content/plugins/userpro/functions/fields-functions.php on line 240
+[25-Jun-2015 23:09:06 UTC] PHP Parse error:  syntax error, unexpected '"<div class='userpro-section-t' (T_CONSTANT_ENCAPSED_STRING) in /Applications/MAMP/bwd/wp-content/plugins/userpro/functions/fields-functions.php on line 242
+[26-Jun-2015 18:36:24 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
+[26-Jun-2015 18:37:46 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
+[26-Jun-2015 18:37:49 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
+[26-Jun-2015 18:37:58 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
+[26-Jun-2015 18:38:06 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
+[26-Jun-2015 18:38:14 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18

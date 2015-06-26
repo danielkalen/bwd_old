@@ -1,0 +1,189 @@
+.userpro-section
+	display: block !important
+	clear: both
+	margin-bottom: 25px
+	background-color: $subwhite
+	border: 1px solid $divider
+	border-radius: 3px
+	overflow: hidden
+	box-sizing: border-box
+	transition: height 0.6s
+	+clearfix
+
+	&-title
+		position: relative
+		height: 39px
+		background-color: $primary
+		color: white
+		cursor: pointer
+
+		&-text
+			position: absolute
+			left: 25px
+			+valign(55%)
+			font-family: avenir
+			font-weight: 700
+			font-size: 18px
+			line-height: 1
+			text-transform: uppercase
+
+			+max(520)
+				font-size: 16px
+			+max(350)
+				font-size: 13.5px
+
+		// &:after // Caret
+		// 	+icon('c')
+		// 	position: absolute
+		// 	right: 4px
+		// 	+valign(52%)
+		// 	font-size: 40px
+
+		// 	.open &
+		// 		content: 'M'
+
+	&-wrap
+		padding: 25px 25px 0
+		box-sizing: border-box
+
+
+
+.userpro-form
+
+	&-fieldset
+		+fieldset
+		margin-bottom: 22px
+
+		+min(621)
+			width: 48%
+			float: left
+		+max(620)
+			width: 100%
+
+		// &.quarter
+		// 	+min(621)
+		// 		width: perc(158px, 707px)
+		// 		float: left
+		// 	+max(620)
+		// 		width: perc(340px, 707px)
+		// 		float: left
+
+
+		+min(621)
+			&:nth-child(4n)
+				margin-left: 4%
+
+		&-select
+			-webkit-appearance: none !important
+			-moz-appearance: none !important
+			-ms-appearance: none !important
+			-o-appearance: none !important
+			appearance: none !important
+			outline: none !important
+			box-shadow: none !important
+			text-shadow: none !important
+
+		
+		&.checkbox
+			float: left
+			width: 48%
+			box-sizing: border-box
+			padding-top: 17px
+			margin-bottom: 10px
+
+			+max(620)
+				float: none
+				clear: both
+				width: 100%
+				padding-top: 0
+
+			&.highlight
+				animation: shakey 0.2s
+
+		&-checkbox
+			
+			&-label
+				&-highlight
+					transition: color 0.2s
+					.highlight &
+						color: $primary
+
+			&-box
+				&:after
+					display: block
+
+					.checked &
+						display: none
+
+	&-actions
+		+clearfix
+
+		.login &
+			margin-top: 25px
+
+		&-button
+			+button(100%, 47px, $hovercolor: white, $fontweight: 600)
+			max-width: 300px
+			float: right
+			transition: all 0.2s, border 0.001s
+			box-sizing: border-box
+
+			&:hover
+				border: 1px solid $divider
+
+			// .login &
+			// 	width: perc(140px, 360px)
+			// 	+max(520)
+			// 		width: perc(190px, 360px)
+			// .register &
+			// 	width: perc(190px, 360px)
+			// 	margin-top: 25px
+			// 	background-color: $contrast
+
+				// &:hover
+				// 	background-color: white
+				// 	color: $contrast
+
+
+			// ==== Reset Form Buttons =================================================================================		
+			.reset &
+				width: perc(170px, 360px)
+				margin-top: 25px
+
+
+			// &.request
+			// 	background-color: $contrast
+
+			&.change
+				float: left
+				background-color: $subwhite
+				border: 1px solid  $divider
+				color: $primary
+
+				&:hover
+					background-color: white
+					color: $primary
+
+
+
+
+
+			&-hidden
+				display: none
+
+
+.userpro-warning
+	position: absolute
+	top: auto !important
+	bottom: -16px
+	left: 0
+	font-size: 11px
+	width: 100%
+	font-weight: 500
+	text-align: center
+	// color: $error
+	color: $primary
+
+
+.userpro-loading
+	display: none		

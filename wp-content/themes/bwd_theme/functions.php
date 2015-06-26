@@ -173,7 +173,7 @@ function snapmagnet_scripts() {
 		if ( is_front_page() ) {
 			wp_enqueue_style( 'home', $folder . 'home.css' );
 		}
-		
+
 		if ( is_page('about')) {
 			wp_enqueue_style( 'about', $folder . 'about.css' );
 		}
@@ -197,8 +197,16 @@ function snapmagnet_scripts() {
 			wp_enqueue_style( 'login-bwd', $folder . 'login.css' );
 		}
 
-		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form') ) {
+		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form')|| is_page('wholesale-apply')|| is_page('edit') ) {
 			wp_enqueue_style( 'account', $folder . 'account.css' );
+		}
+
+		if ( is_page('request-return-form') ) {
+			wp_enqueue_style( 'account-return', $folder . 'account-return.css' );
+		}
+
+		if ( is_page('wholesale-apply') ) {
+			wp_enqueue_style( 'account-wholesale', $folder . 'account-wholesale.css' );
 		}
 
 
@@ -259,7 +267,7 @@ function snapmagnet_scripts() {
 			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/login.min.js', array('jquery') );
 		}
 
-		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form') ) {
+		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form')|| is_page('wholesale-apply')|| is_page('edit') ) {
 			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/account.min.js', array('jquery') );
 		}
 
@@ -269,6 +277,18 @@ function snapmagnet_scripts() {
 
 		if ( is_page('contact')) {
 			wp_enqueue_script( 'contact', '/wp-content/themes/bwd_theme/js/contact.min.js', array('jquery') );
+		}
+
+		if ( is_page('edit')) {
+			wp_enqueue_script( 'account-edit', '/wp-content/themes/bwd_theme/js/account-edit.min.js', array('jquery') );
+		}
+
+		if ( is_page('request-return-form')) {
+			wp_enqueue_script( 'account-return', '/wp-content/themes/bwd_theme/js/account-return.min.js', array('jquery') );
+		}
+
+		if ( is_page('wholesale-apply')) {
+			wp_enqueue_script( 'account-wholesale', '/wp-content/themes/bwd_theme/js/account-wholesale.min.js', array('jquery') );
 		}
 
 
@@ -508,6 +528,32 @@ function woo_add_custom_general_fields_save( $post_id ){
 		update_post_meta( $post_id, '_pack', esc_attr( $woocommerce_pack ) );
 	
 }
+
+function account_mobile_menu(){
+	echo '
+			<div class="mobile_menu-trigger">
+				<div class="mobile_menu-trigger-text">Account Menu</div>
+			</div>
+
+			<div id="mobile_menu" class="mobile_menu">
+				<div class="mobile_menu-close"></div>
+				<h6 class="mobile_menu-title">Account Menu</h6>
+				<ul class="mobile_menu-list">';
+						$menu_items = wp_get_nav_menu_items(48);
+						foreach ($menu_items as $item) {
+							if (isset($item->title)) {
+								$title = $item->title;
+							} else {
+								$title = $item->post_title;
+							}
+							echo '<li class="mobile_menu-list-item">
+									<a href="'.$item->url.'" class="mobile_menu-list-item-text">'.$title.'</a>
+								 </li>';
+						}
+	echo		'</ul>
+			</div>';
+}
+add_action('account_menu', 'account_mobile_menu');
 
 require_once('inc/checkout_fields.php');
 

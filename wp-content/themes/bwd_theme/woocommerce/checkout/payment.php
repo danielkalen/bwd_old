@@ -70,12 +70,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
 		<?php if ( wc_get_page_id( 'terms' ) > 0 && apply_filters( 'woocommerce_checkout_show_terms', true ) ) : ?>
-		<div class="checkout-section-fieldset checkbox fieldset">
+		<div class="checkout-section-fieldset checkbox required fieldset">
 			<div class="checkout-section-fieldset-checkbox input-button">
 				<div class="checkout-section-fieldset-checkbox-box"></div>
 				<label for="terms" class="checkout-section-fieldset-checkbox-label">I&rsquo;ve read and accept the 
 					<span class="checkout-section-fieldset-checkbox-label-highlight popup-trigger terms">terms &amp; conditions</span>.</label>
-				<input id="terms" class="input input-checkbox" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> type="checkbox" name="name" />
+				<input id="terms" class="input input-checkbox" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> type="checkbox" name="terms" />
 			</div>
 		</div>
 		<?php endif; ?>
