@@ -3214,3 +3214,82 @@
 [26-Jun-2015 18:38:14 UTC] PHP Parse error:  syntax error, unexpected '?>' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/woocommerce/checkout/payment-method.php on line 18
 [26-Jun-2015 23:15:45 UTC] PHP Parse error:  syntax error, unexpected ')' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/header.php on line 25
 [26-Jun-2015 23:16:01 UTC] PHP Parse error:  syntax error, unexpected ')' in /Applications/MAMP/bwd/wp-content/themes/bwd_theme/header.php on line 25
+[26-Jun-2015 23:23:35 UTC] Checking DB size .... 
+[26-Jun-2015 23:23:35 UTC] Total Size .... 18531043
+[26-Jun-2015 23:23:35 UTC] Total Gain .... 19767
+[26-Jun-2015 23:23:42 UTC] Checking DB size .... 
+[26-Jun-2015 23:23:42 UTC] Total Size .... 18531043
+[26-Jun-2015 23:23:42 UTC] Total Gain .... 2451327
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_PO_plugins
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_advanced_notification_triggers
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_advanced_notifications
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_cart_notices
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_commentmeta
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_comments
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_hook_list
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_itsec_lockouts
+[26-Jun-2015 23:23:42 UTC] optimizing .... bwd_itsec_log
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_itsec_temp
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_links
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_options
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_phppc_functions
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_pmxi_files
+[26-Jun-2015 23:23:43 UTC] optimizing .... bwd_pmxi_imports
+[26-Jun-2015 23:23:44 UTC] optimizing .... bwd_pmxi_posts
+[26-Jun-2015 23:23:44 UTC] optimizing .... bwd_pmxi_templates
+[26-Jun-2015 23:23:44 UTC] optimizing .... bwd_postmeta
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_posts
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_term_relationships
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_term_taxonomy
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_terms
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_usermeta
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_users
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_woocommerce_attribute_taxonomies
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_woocommerce_downloadable_product_permissions
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_woocommerce_order_itemmeta
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_woocommerce_order_items
+[26-Jun-2015 23:23:45 UTC] optimizing .... bwd_woocommerce_tax_rate_locations
+[26-Jun-2015 23:23:46 UTC] optimizing .... bwd_woocommerce_tax_rates
+[26-Jun-2015 23:23:46 UTC] optimizing .... bwd_woocommerce_termmeta
+[26-Jun-2015 23:23:46 UTC] Total Gain .... 2451327
+[26-Jun-2015 23:23:59 UTC] Checking DB size .... 
+[26-Jun-2015 23:23:59 UTC] Total Size .... 15139532
+[26-Jun-2015 23:23:59 UTC] Total Gain .... 0
+[26-Jun-2015 23:36:13 UTC] Checking DB size .... 
+[26-Jun-2015 23:36:13 UTC] Total Size .... 15189344
+[26-Jun-2015 23:36:13 UTC] Total Gain .... 380
+[26-Jun-2015 23:36:16 UTC] Checking DB size .... 
+[26-Jun-2015 23:36:16 UTC] Total Size .... 15189344
+[26-Jun-2015 23:36:16 UTC] Total Gain .... 50564
+[26-Jun-2015 23:36:16 UTC] optimizing .... bwd_PO_plugins
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_advanced_notification_triggers
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_advanced_notifications
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_cart_notices
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_commentmeta
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_comments
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_hook_list
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_itsec_lockouts
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_itsec_log
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_itsec_temp
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_links
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_options
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_phppc_functions
+[26-Jun-2015 23:36:17 UTC] optimizing .... bwd_pmxi_files
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_pmxi_imports
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_pmxi_posts
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_pmxi_templates
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_postmeta
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_posts
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_term_relationships
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_term_taxonomy
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_terms
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_usermeta
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_users
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_attribute_taxonomies
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_downloadable_product_permissions
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_order_itemmeta
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_order_items
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_tax_rate_locations
+[26-Jun-2015 23:36:18 UTC] optimizing .... bwd_woocommerce_tax_rates
+[26-Jun-2015 23:36:19 UTC] optimizing .... bwd_woocommerce_termmeta
+[26-Jun-2015 23:36:19 UTC] Total Gain .... 50564

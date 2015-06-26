@@ -291,6 +291,13 @@ function snapmagnet_scripts() {
 			wp_enqueue_script( 'account-wholesale', '/wp-content/themes/bwd_theme/js/account-wholesale.min.js', array('jquery') );
 		}
 
+		// Remove stupid Emoji
+			wp_dequeue_script( 'emoji' );
+			remove_action( 'wp_print_styles', 'print_emoji_styles' );
+			remove_action( 'wp_print_scripts', 'print_emoji_detection_script' );
+			remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+			remove_action( 'admin_print_styles', 'print_emoji_styles');
+			remove_action( 'admin_print_scripts','print_emoji_detection_script');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

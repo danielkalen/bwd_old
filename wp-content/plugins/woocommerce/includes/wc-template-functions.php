@@ -206,6 +206,12 @@ function wc_product_post_class( $classes, $class = '', $post_id = '' ) {
 		return $classes;
 	}
 
+	array_pop($classes);
+	array_pop($classes);
+	array_pop($classes);
+	array_pop($classes);
+	array_pop($classes);
+
 	$product = wc_get_product( $post_id );
 
 	if ( $product ) {
@@ -215,50 +221,51 @@ function wc_product_post_class( $classes, $class = '', $post_id = '' ) {
 		if ( $product->is_featured() ) {
 			$classes[] = 'featured';
 		}
-		if ( $product->is_downloadable() ) {
-			$classes[] = 'downloadable';
-		}
-		if ( $product->is_virtual() ) {
-			$classes[] = 'virtual';
-		}
-		if ( $product->is_sold_individually() ) {
-			$classes[] = 'sold-individually';
-		}
-		if ( $product->is_taxable() ) {
-			$classes[] = 'taxable';
-		}
-		if ( $product->is_shipping_taxable() ) {
-			$classes[] = 'shipping-taxable';
-		}
-		if ( $product->is_purchasable() ) {
-			$classes[] = 'purchasable';
-		}
-		if ( isset( $product->product_type ) ) {
-			$classes[] = "product-type-" . $product->product_type;
-		}
+		// if ( $product->is_downloadable() ) {
+		// 	$classes[] = 'downloadable';
+		// }
+		// if ( $product->is_virtual() ) {
+		// 	$classes[] = 'virtual';
+		// }
+		// if ( $product->is_sold_individually() ) {
+		// 	$classes[] = 'sold-individually';
+		// }
+		// if ( $product->is_taxable() ) {
+		// 	$classes[] = 'taxable';
+		// }
+		// if ( $product->is_shipping_taxable() ) {
+		// 	$classes[] = 'shipping-taxable';
+		// }
+		// if ( $product->is_purchasable() ) {
+		// 	$classes[] = 'purchasable';
+		// }
+		// if ( isset( $product->product_type ) ) {
+		// 	$classes[] = "product-type-" . $product->product_type;
+		// }
 
-		// add category slugs
-		$categories = get_the_terms( $product->id, 'product_cat' );
-		if ( ! empty( $categories ) ) {
-			foreach ( $categories as $key => $value ) {
-				$classes[] = 'product-cat-' . $value->slug;
-			}
-		}
+		// // add category slugs
+		// $categories = get_the_terms( $product->id, 'product_cat' );
+		// if ( ! empty( $categories ) ) {
+		// 	foreach ( $categories as $key => $value ) {
+		// 		$classes[] = 'product-cat-' . $value->slug;
+		// 	}
+		// }
 
-		// add tag slugs
-		$tags = get_the_terms( $product->id, 'product_tag' );
-		if ( ! empty( $tags ) ) {
-			foreach ( $tags as $key => $value ) {
-				$classes[] = 'product-tag-' . $value->slug;
-			}
-		}
+		// // add tag slugs
+		// $tags = get_the_terms( $product->id, 'product_tag' );
+		// if ( ! empty( $tags ) ) {
+		// 	foreach ( $tags as $key => $value ) {
+		// 		$classes[] = 'product-tag-' . $value->slug;
+		// 	}
+		// }
 
-		$classes[] = $product->stock_status;
+		// $classes[] = $product->stock_status;
 	}
 
 	if ( false !== ( $key = array_search( 'hentry', $classes ) ) ) {
 		unset( $classes[ $key ] );
 	}
+
 
 	return $classes;
 }
