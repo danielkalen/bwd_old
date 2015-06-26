@@ -22,10 +22,14 @@
 
 <?php wp_head(); ?>
 
-     <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
-     <script type="text/javascript">
-       takanaClient.run({host: 'localhost:48626'});
-     </script>
+
+	<?php if ( $_SERVER['SERVER_NAME'] === 'bwd.dev' ) { ?>
+	     <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+	     <script type="text/javascript">
+	       takanaClient.run({host: 'localhost:48626'});
+	     </script>
+	<?php } ?>
+
 
 </head>
 
