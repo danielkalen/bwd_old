@@ -6,6 +6,9 @@
 	position: relative
 	height: 169px
 
+	.oss &
+		height: 319px
+
 	+max(620)
 		height: 240px
 
@@ -16,6 +19,9 @@
 		padding: 0 20px
 		box-sizing: border-box
 
+		.oss &
+			height: 268px
+
 		+max(620)
 			height: 189px
 
@@ -23,13 +29,25 @@
 		position: absolute
 		+valign(47.5%)
 		background-image: url(img/v2.png)
-		// background-size: 100%
 		background-size: cover
 		max-width: 90%
 		width: 293px
-		height: 56px
-		height: auto
 		+ratio(19%)
+
+		.oss &
+			top: 37%
+			background-image: url(img/v2-oss.png)
+			width: 100%
+			max-width: 300px
+			+ratio(46.3%)
+			+center
+
+		.bwd &
+			top: 50%
+			background-image: url(img/v2-bwd.png)
+			width: 100%
+			max-width: 297px
+			+ratio(17.85%)
 
 		+max(620)
 			top: 32%
@@ -45,6 +63,11 @@
 		width: 235px
 		height: 30px
 
+		.oss &
+			right: 0
+			left: 0
+			+center
+			top: 81%
 
 		+max(620)
 			top: 70%

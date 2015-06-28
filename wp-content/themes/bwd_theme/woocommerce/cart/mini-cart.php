@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<ul class="cart-list cart_list product_list_widget <?php echo $args['list_class']; ?>">
+<ul class="cart-list cart_list product_list_widget">
 
 	<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 

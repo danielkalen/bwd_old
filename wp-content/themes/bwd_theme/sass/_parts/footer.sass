@@ -164,6 +164,9 @@
 		background-size: 100%
 		+ratio(8%)
 
+		.oss &
+			background-image: url(img/footer-oss.jpg)
+
 		+max(736)
 			display: none
 
@@ -195,9 +198,13 @@
 
 			&-logo
 				float: left
+				+size(32)
 				background-image: url(img/sprite.png)
 				background-position: -153px -190px
-				+size(32)
+
+				.oss &
+					+size(54, 42)
+					background-position: -209px -182px
 
 				+max(350)
 					display: none

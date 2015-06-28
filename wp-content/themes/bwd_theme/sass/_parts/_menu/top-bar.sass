@@ -16,8 +16,6 @@
 		+max(1064)
 			padding: 0 20px
 
-		// +max(736)
-		// 	overflow: hidden
 
 	&-support
 		position: absolute
@@ -199,6 +197,9 @@
 					&:before
 						content: 'My '
 
+				.oss &
+					color: $contrast
+
 				&-icon
 					position: relative
 					top: -6px
@@ -208,6 +209,9 @@
 					margin-left: 6px
 					background-image: url(img/sprite.png)
 					background-position: -103px -193px
+
+					.oss &
+						background-position: -59px -193px
 
 			&:hover &-text
 				color: $contrast

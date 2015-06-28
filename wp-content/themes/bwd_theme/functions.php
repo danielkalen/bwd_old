@@ -103,28 +103,20 @@ add_action( 'widgets_init', 'snapmagnet_widgets_init' );
 
 function site_version() {
 		$site = get_bloginfo('name');
-		$folder = '../bwd_theme/css/';
-		$maincss = '/wp-content/themes/bwd_theme/style.css';
-		$version = '';
+		$version = 'sb';
 
 		switch ( $site ) {
 			case 'ShopperBarn':
-				$folder = '../bwd_theme/css/';
-				$maincss = '/wp-content/themes/bwd_theme/style.css';
 				$siteurl = 'shopperbarn.com';
 				$version = 'sb';
 				break;
 
 			case 'OnlyOneStopShop':
-				$folder = '../bwd_theme/css-oss/';
-				$maincss = '/wp-content/themes/bwd_theme/style-oss.css';
 				$siteurl = 'onlyonestopshop.com';
 				$version = 'oss';
 				break;
 
 			case 'BWD Wholesale':
-				$folder = '../bwd_theme/css/';
-				$maincss = '/wp-content/themes/bwd_theme/style.css';
 				$siteurl = 'bwdny.com';
 				$version = 'bwd';
 				break;
@@ -241,54 +233,54 @@ function snapmagnet_scripts() {
 		   JS Files
 		   ========================================================================== */
 		
-		wp_enqueue_script( 'global', '/wp-content/themes/bwd_theme/js/main.min.js', array('jquery') );
+		wp_enqueue_script( 'global', '/wp-content/themes/bwd_theme/js/main.min.js', array('jquery'), false, true );
 
 		if ( is_front_page() ) {
-			wp_enqueue_script( 'home', '/wp-content/themes/bwd_theme/js/home.min.js', array('jquery') );
+			wp_enqueue_script( 'home', '/wp-content/themes/bwd_theme/js/home.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_shop() || is_product_category() ) {
-			wp_enqueue_script( 'products-archive', '/wp-content/themes/bwd_theme/js/products-archive.min.js', array('jquery') );
+			wp_enqueue_script( 'products-archive', '/wp-content/themes/bwd_theme/js/products-archive.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_woocommerce() || is_cart() ) {
-			wp_enqueue_script( 'products-global', '/wp-content/themes/bwd_theme/js/products-global.min.js', array('jquery') );
+			wp_enqueue_script( 'products-global', '/wp-content/themes/bwd_theme/js/products-global.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_cart() ) {
-			wp_enqueue_script( 'cart', '/wp-content/themes/bwd_theme/js/cart.min.js', array('jquery') );
+			wp_enqueue_script( 'cart', '/wp-content/themes/bwd_theme/js/cart.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_checkout() ) {
-			wp_enqueue_script( 'checkout', '/wp-content/themes/bwd_theme/js/checkout.min.js', array('jquery') );
+			wp_enqueue_script( 'checkout', '/wp-content/themes/bwd_theme/js/checkout.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('login') || is_page('register') ) {
-			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/login.min.js', array('jquery') );
+			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/login.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_page('request-return-form')|| is_page('wholesale-apply')|| is_page('edit') ) {
-			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/account.min.js', array('jquery') );
+			wp_enqueue_script( 'login-bwd', '/wp-content/themes/bwd_theme/js/account.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('about')) {
-			wp_enqueue_script( 'about', '/wp-content/themes/bwd_theme/js/about.min.js', array('jquery') );
+			wp_enqueue_script( 'about', '/wp-content/themes/bwd_theme/js/about.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('contact')) {
-			wp_enqueue_script( 'contact', '/wp-content/themes/bwd_theme/js/contact.min.js', array('jquery') );
+			wp_enqueue_script( 'contact', '/wp-content/themes/bwd_theme/js/contact.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('edit')) {
-			wp_enqueue_script( 'account-edit', '/wp-content/themes/bwd_theme/js/account-edit.min.js', array('jquery') );
+			wp_enqueue_script( 'account-edit', '/wp-content/themes/bwd_theme/js/account-edit.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('request-return-form')) {
-			wp_enqueue_script( 'account-return', '/wp-content/themes/bwd_theme/js/account-return.min.js', array('jquery') );
+			wp_enqueue_script( 'account-return', '/wp-content/themes/bwd_theme/js/account-return.min.js', array('jquery'), false, true );
 		}
 
 		if ( is_page('wholesale-apply')) {
-			wp_enqueue_script( 'account-wholesale', '/wp-content/themes/bwd_theme/js/account-wholesale.min.js', array('jquery') );
+			wp_enqueue_script( 'account-wholesale', '/wp-content/themes/bwd_theme/js/account-wholesale.min.js', array('jquery'), false, true );
 		}
 
 		// Remove stupid Emoji
