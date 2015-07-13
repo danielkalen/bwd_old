@@ -1,0 +1,59 @@
+@import _parts/_vars
+@import _parts/_elements
+
+body
+	position: relative
+	height: 100%
+	background-image: url(../img/coming_soon-bg.jpg)
+	background-size: cover
+	background-position: 50% 50%
+
+.coming-soon
+	position: absolute
+	left: 0
+	right: 0
+	+valign
+	text-align: center
+
+	&-logo
+		max-width: 90%
+		+center
+		background-size: 100%
+		+transform(scale(1.5))
+
+		+max(736)
+			+transform(scale(1))
+
+		.sb &
+			background-image: url(../img/v2.png)
+			width: 292px
+			+ratio(21.23%)
+			margin-bottom: 30px
+		.bwd &
+			background-image: url(../img/v2-bwd.png)
+			width: 297px
+			+ratio(17.84%)
+			margin-bottom: 30px
+		.oss &
+			background-image: url(../img/v2-oss.png)
+			width: 300px
+			+ratio(46.33%)
+			margin-bottom: 60px
+
+	&-title
+		font-size: 30px
+		// color: #ce337b
+
+		// .oss &
+		// 	color: #344960
+
+	&-subtitle
+		font-size: 18.5px
+
+
+
+
+
+#page, 
+.top-bar
+	display: none !important

@@ -202,31 +202,11 @@ function snapmagnet_scripts() {
 		}
 
 
-		// if ( is_checkout() || is_page('wholesale-apply') || is_page('request-return-form')) {
-		// 	wp_enqueue_style( 'dk-checkout', $folder . 'checkout' );
-		// }
+		// ==== Coming soon conditional =================================================================================
 
-		// if ( is_page('contact-us') || is_page(263) ) {
-		// 	wp_enqueue_style( 'dk-contact', $folder . 'contact' );
-		// 	wp_enqueue_style( 'dk-contact-form', $folder . 'contact-form' );
-		// }
-
-		// if ( is_404() || is_search() || is_product_category()) {
-		// 	wp_enqueue_style( 'dk-error404', $folder . 'error404' );
-		// }
-
-		// if ( is_page('login') || is_page('register') || is_page('edit')) {
-		// 	wp_enqueue_style( 'dk-login', $folder . 'login' );
-		// }
-
-		// if ( is_page('specials')) {
-		// 	wp_enqueue_style( 'dk-specials', $folder . 'specials' );
-		// }
-
-		// if ( is_page('account') || is_page('quick-order') || is_page('view-order') || is_cart() || is_page('checkout-2')) {
-		// 	wp_enqueue_style( 'dk-specials', $folder . 'table' );
-		// }
-
+		if ( !is_user_logged_in() ) {
+			wp_enqueue_style( 'coming-soon', $folder . 'coming-soon.css' );
+		}
 
 
 		/* ==========================================================================
