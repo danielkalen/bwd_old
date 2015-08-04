@@ -36,3 +36,20 @@ RewriteRule . /index.php [L]
 #php_value suhosin.get.max_vars 3000
 #php_value suhosin.post.max_vars 3000
 #php_value suhosin.request.max_vars 3000
+
+
+
+
+
+
+
+
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+# RewriteRule ^admin.bwd.dev:8888$ bwd.dev:8888/wp-login.php
+# RewriteCond %{HTTP_HOST} ^(www\.)?admin\.pureaesthetics\.net$ [NC]
+# RewriteRule ^ http://www.pureaesthetics.net/wp-login.php?login=1 [NE,R=301,L]
+</IfModule>

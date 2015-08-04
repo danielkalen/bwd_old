@@ -1,0 +1,1 @@
+<?php $templates['basiclist'] = array('Basic Product List', 'Simple listing showing product title and prices only.');

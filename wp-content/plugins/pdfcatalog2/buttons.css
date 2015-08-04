@@ -1,0 +1,29 @@
+
+.PDFCatalogButtons  a {
+    background: #2cd66f;
+    margin: 3px 0;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: white !important;
+    padding: 3px 15px;
+}
+
+.PDFCatalogButtons a:hover {
+    text-decoration: none;
+    background: #2fcf84;
+}
+
+.PDFCatalogButtons.PDFWidget a {
+    padding: 3px 0;
+    width: 100%;
+}
+
+.categoryCatalog {
+}
+
+.fullCatalog {
+}

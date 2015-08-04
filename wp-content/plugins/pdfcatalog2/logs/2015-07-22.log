@@ -1,0 +1,55 @@
+2015-07-22 14:46:53 ::1 Started getCatalogEx
+2015-07-22 14:46:53 ::1 allCategories: ENTRY
+2015-07-22 14:46:53 ::1 Cache Hit:FALSE
+2015-07-22 14:46:59 ::1 allCategories: EXIT
+2015-07-22 14:46:59 ::1 Cache miss, sending HTML for full
+2015-07-22 14:47:20 ::1 {"success":false,"errorCode":2}
+2015-07-22 14:52:27 ::1 Started getCatalogEx
+2015-07-22 14:52:27 ::1 allCategories: ENTRY
+2015-07-22 14:52:27 ::1 Cache Hit:FALSE
+2015-07-22 14:52:33 ::1 allCategories: EXIT
+2015-07-22 14:52:33 ::1 Cache miss, sending HTML for full
+2015-07-22 14:52:34 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afae3100bc3277fa48440e83155c40e2e4172e7983d.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afae3100bc3277fa48440e83155c40e2e4172e7983d.pdf","success":true}
+2015-07-22 14:58:37 ::1 Started getCatalogEx
+2015-07-22 14:58:37 ::1 allCategories: ENTRY
+2015-07-22 14:58:37 ::1 Cache Hit:FALSE
+2015-07-22 14:58:42 ::1 Started getCatalogEx
+2015-07-22 14:58:42 ::1 allCategories: ENTRY
+2015-07-22 14:58:42 ::1 Cache Hit:FALSE
+2015-07-22 14:58:43 ::1 allCategories: EXIT
+2015-07-22 14:58:43 ::1 Cache miss, sending HTML for full
+2015-07-22 14:58:43 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afafa275a850885ae914422c18287dab8df8595a2fb.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afafa275a850885ae914422c18287dab8df8595a2fb.pdf","success":true}
+2015-07-22 14:58:49 ::1 allCategories: EXIT
+2015-07-22 14:58:49 ::1 Cache miss, sending HTML for full
+2015-07-22 14:58:49 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afafa89f87e77c79f3f61d17fbefb14311524b23a0b.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afafa89f87e77c79f3f61d17fbefb14311524b23a0b.pdf","success":true}
+2015-07-22 16:45:26 ::1 Started getCatalogEx
+2015-07-22 16:45:26 ::1 allCategories: ENTRY
+2015-07-22 16:45:26 ::1 Cache Hit:FALSE
+2015-07-22 16:45:32 ::1 allCategories: EXIT
+2015-07-22 16:45:32 ::1 Cache miss, sending HTML for full
+2015-07-22 16:45:33 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afc8abbf481186cf594548db89bc20e2cd7134b9cc7.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afc8abbf481186cf594548db89bc20e2cd7134b9cc7.pdf","success":true}
+2015-07-22 16:52:13 ::1 Started getCatalogEx
+2015-07-22 16:52:13 ::1 allCategories: ENTRY
+2015-07-22 16:52:14 ::1 Cache Hit:FALSE
+2015-07-22 16:52:19 ::1 allCategories: EXIT
+2015-07-22 16:52:19 ::1 Cache miss, sending HTML for full
+2015-07-22 16:52:20 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afca43008a75a561f90ae61f2493fd42d6820970b7a.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afca43008a75a561f90ae61f2493fd42d6820970b7a.pdf","success":true}
+2015-07-22 16:52:28 ::1 Started getCatalogEx
+2015-07-22 16:52:28 ::1 allCategories: ENTRY
+2015-07-22 16:52:28 ::1 Cache Hit:FALSE
+2015-07-22 16:52:34 ::1 allCategories: EXIT
+2015-07-22 16:52:34 ::1 Cache miss, sending HTML for full
+2015-07-22 16:52:35 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55afca51e5d57a5ce9cd9553574490ae509d808d0edce.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55afca51e5d57a5ce9cd9553574490ae509d808d0edce.pdf","success":true}
+

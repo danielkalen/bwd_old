@@ -48,7 +48,7 @@ get_header(); ?>
 			<div class="promo-dividers-item pdf">
 				<div class="promo-dividers-item-icon"></div>
 				<div class="promo-dividers-item-text">
-					Download PDF Catalog <a href="/<?php echo site_version(); ?>-catalog-<?php echo Date('Y') ?>.pdf" class="promo-dividers-item-text-highlight">here</a>
+					Download PDF Catalog <a href="/?pdfcat&amp;all" class="promo-dividers-item-text-highlight">here</a>
 				</div>
 			</div>
 		</div>

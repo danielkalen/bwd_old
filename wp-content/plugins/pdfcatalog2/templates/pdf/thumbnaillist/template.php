@@ -1,0 +1,1 @@
+<?php  $templates['thumbnaillist'] = array('Vertical Thumbnail List', 'Vertical list with descriptions and thumbnails.');

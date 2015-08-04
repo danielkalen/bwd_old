@@ -1,0 +1,1 @@
+<?php $templates['threecolumns']  = array('3-Column Grid', '3 column product thumbnail grid three columns with title and price.');

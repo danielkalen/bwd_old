@@ -1,0 +1,12 @@
+- fixed template designs
+- fixed header issues with cropped logos etc
+- empty categories are no longer displayed
+- Hierarchical Tree / Flat Catalog
+- Optional Alphabetical Category Sorting
+- Internal Framework Changes that help make future release cycles more frequent.
+- Fixed Caching Issues - should see substantial speed improvements.
+- Cached Files Table and Delete Option
+- option to hide products from parent categories
+
+- Custom PDF templates can now be located in Child Theme or Theme directory
+- PHP 5.3 is now supported again

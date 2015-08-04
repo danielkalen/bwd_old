@@ -1,0 +1,1 @@
+<?php $templates['thumbgrid']  = array('Thumbnail Grid', '2-Column product thumbnail grid with title and price.');

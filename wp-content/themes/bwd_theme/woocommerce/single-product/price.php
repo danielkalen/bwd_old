@@ -13,7 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 $product_price_pack	 = substr($product->get_price_html(), 26);
-$product_price_unit	 = intval($product_price_pack) / get_post_meta( get_the_ID(), '_pack', true );
+if ( get_post_meta( get_the_ID(), '_pack', true ) == FALSE ) {
+	$product_price_unit = 0;
+} else {
+	$product_price_unit	= intval($product_price_pack) / get_post_meta( get_the_ID(), '_pack', true );
+}
 $product_price_unit	 = '$' . round($product_price_unit, 2);
 $product_price_pack	 = $product->get_price_html();
 $onsale = false;
