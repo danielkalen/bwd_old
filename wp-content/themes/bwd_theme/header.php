@@ -35,13 +35,13 @@
 
 <body <?php body_class(); ?>>
 <?php 
-	if ( !is_user_logged_in() ) {
-		echo '<div class="coming-soon">
-				<div class="coming-soon-logo"></div>
-				<div class="coming-soon-title">We are currently under maintenance.</div>
-				<div class="coming-soon-subtitle">We sincerely appreciate your patience.</div>
-			</div>';
-	}
+	// if ( !is_user_logged_in() ) {
+	// 	echo '<div class="coming-soon">
+	// 			<div class="coming-soon-logo"></div>
+	// 			<div class="coming-soon-title">We are currently under maintenance.</div>
+	// 			<div class="coming-soon-subtitle">We sincerely appreciate your patience.</div>
+	// 		</div>';
+	// }
 ?>
 <div class="top-bar">
 	<div class="top-bar-wrap">

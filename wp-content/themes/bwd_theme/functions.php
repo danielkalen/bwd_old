@@ -204,9 +204,9 @@ function snapmagnet_scripts() {
 
 		// ==== Coming soon conditional =================================================================================
 
-		if ( !is_user_logged_in() ) {
-			wp_enqueue_style( 'coming-soon', $folder . 'coming-soon.css' );
-		}
+		// if ( !is_user_logged_in() ) {
+		// 	wp_enqueue_style( 'coming-soon', $folder . 'coming-soon.css' );
+		// }
 
 
 		/* ==========================================================================
