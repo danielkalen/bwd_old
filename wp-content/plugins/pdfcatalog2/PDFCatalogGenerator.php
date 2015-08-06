@@ -83,6 +83,11 @@ class PDFCatalogGenerator {
 
 		PDFCatalogGenerator::$template = get_option( 'pdfcat_template' );
 
+		if ( isset( $_GET['template'] ) ) {
+			if ( isset( PDFCatalogGenerator::$templates[ $_GET['template'] ] ) ) {
+				PDFCatalogGenerator::$template = $_GET['template'];
+			}
+		}
 
 		$this->logo = $pdfC->getLogoURL();
 		$this->options = new stdClass();
@@ -836,7 +841,7 @@ class PDFCatalogGenerator {
 			$cachePDF = $this->getCacheFilePathForSlug( $slug, $lang, 'pdf' );
 			$cacheHTML = $this->getCacheFilePathForSlug( $slug, $lang, 'html' );
 
-			if ( ! file_exists( $cachePDF ) || ( ! file_exists( $cacheHTML ) ) ) {
+			if ( ! file_exists( $cachePDF ) || ( ! file_exists( $cacheHTML ) ) || ( filesize( $cachePDF ) < 10 ) ) {
 				return true;
 			} else {
 				$lastPDFGeneratedTime = filemtime( $cachePDF );

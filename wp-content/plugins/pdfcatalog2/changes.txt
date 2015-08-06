@@ -10,3 +10,7 @@
 
 - Custom PDF templates can now be located in Child Theme or Theme directory
 - PHP 5.3 is now supported again
+
+- increased CURLHelper timeout.
+- fixed CurlHelper short opening tag.
+- fixed case when cached file is 0 bytes to force regenerate

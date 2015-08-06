@@ -1,4 +1,4 @@
-<?
+<?php
 class CurlHelper
 {
 
@@ -15,7 +15,7 @@ class CurlHelper
 			$options = array();
 		$options = array_merge(array(
 			'connectionTimeout' => 5, // seconds
-			'timeout' => 10, // seconds
+			'timeout' => 60, // seconds
 			'sslVerifyPeer' => false,
 			'followLocation' => false, // if true, limit recursive redirection by
 			'maxRedirs' => 1, // setting value for "maxRedirs"

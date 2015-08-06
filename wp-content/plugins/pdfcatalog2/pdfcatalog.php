@@ -3,11 +3,11 @@ Plugin Name: PDF Product Catalog 2 (BETA4) for WooCommerce
 Plugin URI: http://www.brainvial.com/pdfcatalog
 Description: Customizable and flexible PDF catalog generator for WooCommerce stores.
 Author: Kyriakos Ktorides
-Version: 2.0.0 BETA-4
+Version: 2.0.0 BETA-5
 Author URI: http://www.brainvial.com
 */
 
-define('PDFCATALOG_VERSION', '2.0.0B4');
+define( 'PDFCATALOG_VERSION', '2.0.0B5' );
 
 include_once "widget.php";
 include_once 'classes/admin/PDFCatalogAdminOptions.php';
@@ -204,7 +204,8 @@ class PDFCatalog {
 			'catids'   => null,
 			'catid'    => 'all',
 			'class'    => '',
-			'children' => false
+			'children' => false,
+			'template' => ''
 		), $a );
 
 		$c = new stdClass();
@@ -248,6 +249,11 @@ class PDFCatalog {
 			$categoryID = 'all';
 		}
 
+		$template = '';
+		if ($a['template']!='') {
+			$template = '&template='.$a['template'];
+		}
+
 		if ( $categoryID != 'none' ) {
 			ob_start();
 			switch ( $categoryID ) {
@@ -263,6 +269,8 @@ class PDFCatalog {
 					break;
 			}
 
+			$url .= $template;
+
 			?>
 			<span class="PDFCatalogButtons<?php echo ' ' . $a['class']; ?>">
 			<a href="<?php echo $url; ?>">
@@ -270,7 +278,7 @@ class PDFCatalog {
 			</a>
 		</span>
 
-			<?php 			return ob_get_clean();
+			<?php return ob_get_clean();
 		} else {
 			return '';
 		}
@@ -331,7 +339,7 @@ class PDFCatalog {
 		     style="max-width: 150px;max-height:150px; min-width: 80px; min-height: 80px; border:1px solid black; background: <?php echo get_option( 'pdfcat_headerColor' ); ?>"
 		     id="pdfcat_logo_preview">
 		<input class="button" id="fld_pdflogo_button" type="button" value="Choose Image"/>
-		<?php 	}
+	<?php }
 
 
 	static function field_footer_text() {
@@ -343,7 +351,7 @@ class PDFCatalog {
 		<textarea id="headSubtitle" name="pdfcat_footerText"
 		          style="width: 400px"><?php echo get_option( 'pdfcat_footerText' ); ?></textarea>
 
-		<?php 	}
+	<?php }
 
 	static
 	function field_headsubtitle_text() {
@@ -351,7 +359,7 @@ class PDFCatalog {
 		<input type="text" id="headSubtitle" name="pdfcat_headSubtitle"
 		       value="<?php echo get_option( 'pdfcat_headSubtitle' ); ?>" style="width: 400px">
 
-		<?php 	}
+	<?php }
 
 
 	static function field_headtitle_text() {
@@ -359,7 +367,7 @@ class PDFCatalog {
 		<input type="text" id="pdfcat_headTitle" name="pdfcat_headTitle"
 		       value="<?php echo get_option( 'pdfcat_headTitle' ); ?>" style="width: 400px">
 		<label for="pdfcat_headTitle">The main header title.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_header_title_color() {
@@ -367,7 +375,7 @@ class PDFCatalog {
 		<input type="color" id="pdfcat_headerTitle" name="pdfcat_headerTitle"
 		       value="<?php echo get_option( 'pdfcat_headerTitle' ); ?>">
 		<label for="pdfcat_headerTitle">used in header title.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_category_color() {
@@ -375,7 +383,7 @@ class PDFCatalog {
 		<input type="color" id="pdfcat_categoryColor" name="pdfcat_categoryColor"
 		       value="<?php echo get_option( 'pdfcat_categoryColor' ); ?>">
 		<label for="pdfcat_categoryColor">used in category titles.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_header_lines_color() {
@@ -383,7 +391,7 @@ class PDFCatalog {
 		<input type="color" id="pdfcat_headLinesColor" name="pdfcat_headLinesColor"
 		       value="<?php echo get_option( 'pdfcat_headLinesColor' ); ?>">
 		<label for="pdfcat_headLinesColor">used header & footer separator lines.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_header_subtitle_color() {
@@ -391,34 +399,34 @@ class PDFCatalog {
 		<input type="color" id="pdfcat_headerSubTitle" name="pdfcat_headerSubTitle"
 		       value="<?php echo get_option( 'pdfcat_headerSubTitle' ); ?>">
 		<label for="pdfcat_headerSubTitle">used header subtitle and page numbers.</label>
-		<?php 	}
+	<?php }
 
 	static function field_price_color() {
 		?>
 		<input type="color" id="pdfcat_priceColor" name="pdfcat_priceColor"
 		       value="<?php echo get_option( 'pdfcat_priceColor' ); ?>">
 		<label for="pdfcat_priceColor">used in prices</label>
-		<?php 	}
+	<?php }
 
 	static function field_light_color() {
 		?>
 		<input type="color" id="pdfcat_lightText" name="pdfcat_lightText"
 		       value="<?php echo get_option( 'pdfcat_lightText' ); ?>">
 		<label for="pdfcat_lightText">used in product descriptions</label>
-		<?php 	}
+	<?php }
 
 	static function field_header_color() {
 		?>
 		<input type="color" id="pdfcat_headerColor" name="pdfcat_headerColor"
 		       value="<?php echo get_option( 'pdfcat_headerColor' ); ?>">
 		<label for="pdfcat_headerColor">header background color. Usually the same a paper color.</label>
-		<?php 	}
+	<?php }
 
 	static function field_image_resolution() {
 		//pdfcat_imagesize
 		?>
 		<select id="pdfcat_imagesize" name="pdfcat_imagesize">
-			<?php 			foreach ( PDFCatalogGenerator::$imageSizes as $key => $size ) {
+			<?php foreach ( PDFCatalogGenerator::$imageSizes as $key => $size ) {
 				?>
 				<option value="<?php echo $key; ?>"<?php if ( $key == get_option( 'pdfcat_imagesize' ) ) {
 					echo ' selected';
@@ -443,7 +451,7 @@ class PDFCatalog {
 		</p>
 
 
-		<?php 	}
+	<?php }
 
 	static function field_jpeg_quality() {
 		?>
@@ -467,14 +475,14 @@ class PDFCatalog {
 				});
 			});
 		</script>
-		<?php 	}
+	<?php }
 
 	static function field_paper_color() {
 		?>
 		<input type="color" id="paper_color" name="pdfcat_paperColor"
 		       value="<?php echo get_option( 'pdfcat_paperColor' ); ?>">
 		<label for="paper_color">catalog background color</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_text_color() {
@@ -482,7 +490,7 @@ class PDFCatalog {
 		<input type="color" id="mainTextColor" name="pdfcat_mainText"
 		       value="<?php echo get_option( 'pdfcat_mainText' ); ?>">
 		<label for="mainTextColor">used in titles and headings</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_order_select() {
@@ -491,7 +499,7 @@ class PDFCatalog {
 			<option value="desc">New to Old Products</option>
 			<option value="asc">Old to New Products</option>
 		</select>
-		<?php 	}
+	<?php }
 
 	static function field_orderby_select() {
 		$orderby = get_option( 'pdfcat_orderby' );
@@ -500,7 +508,7 @@ class PDFCatalog {
 			<option value="date">Date product was created</option>
 			<option value="price">Price</option>
 		</select>
-		<?php 	}
+	<?php }
 
 
 	public function getCategoryTree( $parent, $level = 0 ) {

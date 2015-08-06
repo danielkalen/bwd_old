@@ -1,31 +1,0 @@
-2015-08-04 01:16:06 ::1 Started getCatalogEx
-2015-08-04 01:16:06 ::1 allCategories: ENTRY
-2015-08-04 01:16:06 ::1 Cache Hit:FALSE
-2015-08-04 01:16:13 ::1 allCategories: EXIT
-2015-08-04 01:16:13 ::1 Cache miss, sending HTML for full
-2015-08-04 01:16:16 ::1 {"success":false,"errorCode":2}
-2015-08-04 01:32:01 ::1 Started getCatalogEx
-2015-08-04 01:32:01 ::1 allCategories: ENTRY
-2015-08-04 01:32:01 ::1 Cache Hit:FALSE
-2015-08-04 01:32:07 ::1 allCategories: EXIT
-2015-08-04 01:32:07 ::1 Cache miss, sending HTML for full
-2015-08-04 01:32:08 ::1 <br />
-<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55c0161868a002caaed4c0fe62702d3c2da6ae9332848.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
-{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55c0161868a002caaed4c0fe62702d3c2da6ae9332848.pdf","success":true}
-2015-08-04 01:32:29 ::1 Started getCatalogEx
-2015-08-04 01:32:29 ::1 allCategories: ENTRY
-2015-08-04 01:32:29 ::1 Cache Hit:FALSE
-2015-08-04 01:32:35 ::1 allCategories: EXIT
-2015-08-04 01:32:35 ::1 Cache miss, sending HTML for full
-2015-08-04 01:32:36 ::1 <br />
-<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55c0163409710be886eea48f5e1adb7e6a8cd2378d26d.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
-{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55c0163409710be886eea48f5e1adb7e6a8cd2378d26d.pdf","success":true}
-2015-08-04 01:32:42 ::1 Started getCatalogEx
-2015-08-04 01:32:42 ::1 allCategories: ENTRY
-2015-08-04 01:32:42 ::1 Cache Hit:FALSE
-2015-08-04 01:32:49 ::1 allCategories: EXIT
-2015-08-04 01:32:49 ::1 Cache miss, sending HTML for full
-2015-08-04 01:32:50 ::1 <br />
-<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55c01641e141961b6ad5b831ba2795d7da27d89ce9f68.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
-{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55c01641e141961b6ad5b831ba2795d7da27d89ce9f68.pdf","success":true}
-

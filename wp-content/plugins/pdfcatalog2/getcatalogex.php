@@ -14,13 +14,13 @@ if ( version_compare( PHP_VERSION, '5.4.0', '>=' ) ) {
 }
 
 if ( strlen( trim( get_option( 'pdfcat_purchasecode' ) ) ) < 16 ) {
-	// PDFCatalogGenerator::toLog( 'No Purchase Code Specified' );
-	// echo 'No Purchase Code Specified. Please enter your Envato purchase code for this plugin in the PDF Catalog Settings.';
-	// exit;
+	PDFCatalogGenerator::toLog( 'No Purchase Code Specified' );
+	echo 'No Purchase Code Specified. Please enter your Envato purchase code for this plugin in the PDF Catalog Settings.';
+	exit;
 }
 
 if ( ! PDFCatalog::canViewCatalog() ) {
-	// exit;
+	exit;
 }
 $wpml = defined( 'ICL_LANGUAGE_CODE' );
 $lang = '';
