@@ -125,6 +125,13 @@ function site_version() {
 		return $version;
 }
 
+
+function dk_login_classes( $classes ) {
+	$classes[] = site_version();
+	return $classes;
+}
+add_filter( 'login_body_class', 'dk_login_classes' );
+
 /**
  * Enqueue scripts and styles.
  */

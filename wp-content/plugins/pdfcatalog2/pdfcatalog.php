@@ -114,11 +114,11 @@ class PDFCatalog {
 
 		add_action( 'init', array( 'PDFCatalog', 'getCatalog' ) );
 
-		add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css' ) );
+		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css' ) );
 
 		add_action( 'widgets_init', array( 'PDFCatalog', 'widget_init' ) );
 
-		add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css2' ) );
+		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css2' ) );
 
 		add_shortcode( 'pdfcatalog', array( 'PDFCatalog', 'shortCode' ) );
 

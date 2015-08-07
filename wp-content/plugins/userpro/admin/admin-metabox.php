@@ -9,9 +9,13 @@ function userpro_edit_restrict() {
 	wp_nonce_field( plugin_basename(__FILE__), 'userpro_edit_restrict_nonce' );
 	$val = get_post_meta( $post->ID, '_userpro_edit_restrict', true ) ? get_post_meta( $post->ID, '_userpro_edit_restrict', true ) : 'none';
 	echo '<input type="radio" name="userpro_edit_restrict" id="userpro_edit_restrict-none" value="none" '.checked($val,'none',false).' /> <label for="userpro_edit_restrict-none" class="select-it">'.__('No restriction','userpro').'</label><br />';
+	echo '<div class="clearfix"></div>';
 	echo '<input type="radio" name="userpro_edit_restrict" id="userpro_edit_restrict-true" value="true" '.checked($val,'true',false).'/> <label for="userpro_edit_restrict-true" class="select-it">'.__('Restricted to All Members','userpro').'</label><br />';
+	echo '<div class="clearfix"></div>';
 	echo '<input type="radio" name="userpro_edit_restrict" id="userpro_edit_restrict-verified" value="verified" '.checked($val,'verified',false).'/> <label for="userpro_edit_restrict-verified" class="select-it">'.__('Restricted to <b>Verified Accounts</b>','userpro').'</label><br />';
+	echo '<div class="clearfix"></div>';
 	echo '<input type="radio" name="userpro_edit_restrict" id="userpro_edit_restrict-roles" value="roles" '.checked($val,'roles',false).'/> <label for="userpro_edit_restrict-roles" class="select-it">'.__('Restricted to <b>User Roles</b>','userpro').'</label>';
+	echo '<div class="clearfix"></div>';
 	
 	?>
 	<p class="restrict_roles"><select name="restrict_roles[]" id="restrict_roles[]" multiple="multiple" class="chosen-select" style="width:300px" data-placeholder="<?php _e('Select roles','userpro'); ?>">

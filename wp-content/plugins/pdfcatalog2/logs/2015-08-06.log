@@ -1,0 +1,17 @@
+2015-08-06 22:09:50 ::1 Started getCatalogEx
+2015-08-06 22:09:50 ::1 allCategories: ENTRY
+2015-08-06 22:09:50 ::1 Cache Hit:FALSE
+2015-08-06 22:09:57 ::1 allCategories: EXIT
+2015-08-06 22:09:57 ::1 Cache miss, sending HTML for full
+2015-08-06 22:09:57 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55c3db35264e74dc1c9b3285ab4f2f1ae0f55ce94747f.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55c3db35264e74dc1c9b3285ab4f2f1ae0f55ce94747f.pdf","success":true}
+2015-08-06 22:10:08 ::1 Started getCatalogEx
+2015-08-06 22:10:08 ::1 allCategories: ENTRY
+2015-08-06 22:10:08 ::1 Cache Hit:FALSE
+2015-08-06 22:10:14 ::1 allCategories: EXIT
+2015-08-06 22:10:14 ::1 Cache miss, sending HTML for full
+2015-08-06 22:10:17 ::1 <br />
+<b>Warning</b>:  filesize(): stat failed for /home/pdfbrainvial/public_html/site/../out/pdf55c3db4869dbf6f36e214d8ab6034f1e9b2d4a2932d3c.pdf in <b>/home/pdfbrainvial/public_html/site/controllers/MainController.php</b> on line <b>92</b><br />
+{"url":"http:\/\/pdf.brainvial.com\/out\/pdf55c3db4869dbf6f36e214d8ab6034f1e9b2d4a2932d3c.pdf","success":true}
+

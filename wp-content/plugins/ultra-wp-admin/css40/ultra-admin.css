@@ -15,6 +15,8 @@
 
 
 
+
+
 /*---------------------------------------------
   General & Typo 
  ---------------------------------------------*/
@@ -3240,3 +3242,80 @@ RTL
 .rtl .contextual-help-tabs {
 margin-right: -23px;
 }
+
+
+
+
+/*OVERRIDES*/
+
+
+.misc-pub-curtime {
+	font-size: 10px !important;
+}
+
+.misc-yoast, .misc-pub-userpro, #pageparentdiv {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
