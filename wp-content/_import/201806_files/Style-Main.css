@@ -1,0 +1,969 @@
+BODY {
+	background: #ffffff;
+	color: #1c1c1c;
+	margin: 0px;
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+}
+
+FORM {
+	display: inline;
+}
+
+p {margin:0px} 
+A {
+	/*color: #646464;*/
+	color: #1c1c1c;
+	text-decoration: none;
+}
+
+A:hover {
+	
+	/*color: #888888;*/
+	text-decoration: underline;
+}
+
+td{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #1c1c1c;
+}
+
+.SpecialTitle
+{
+	font-size: 15px; 
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle;    
+ }
+ 
+.TopLink
+{
+	font-size: 11px; 
+	color: #D30F43;
+	text-decoration: none;
+	vertical-align: middle;    
+ }    
+.TopLink A
+{
+	color: #D30F43;
+	text-decoration: none;
+}    
+.TopLink A:hover
+{
+	text-decoration: underline;
+}    
+
+select {
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #1c1c1c;
+}   
+.FrameBack
+{
+	background-color: #ffffff
+}  
+/* eTop begin*/
+.TopRight {
+	background-color: #5b7e9c;
+}
+
+.InCart{
+	font-size: 11px;
+	color: #FFFFFF;
+ }       
+
+ .Welcome
+ {
+	font-size: 13px;
+	color: #1c1c1c;
+	font-weight: bold;
+ }       
+ .Welcome A{
+	color: #1c1c1c;
+	font-weight: bold;
+ 	text-decoration: none;
+}       
+
+.TopItemCount{
+	font-size: 11px;
+	color: #B80B10;
+	font-weight: bold;
+	text-decoration: none;
+ }    
+
+.TopMenu1{
+	font-size: 11px;
+	color: #939292;	
+	text-decoration: none;
+	text-transform:uppercase;
+ }    
+.TopMenu2{
+	font-size: 11px;
+	color: #656565;	
+	text-decoration: none;
+ }    
+.TopMenu
+{
+	background-image: url("image/topmenu.jpg");
+	background-repeat: repeat-x; 
+	font-size: 12px;
+	font-weight: bolder; 
+	color: #FFFFFF;
+	text-decoration: none;
+	text-transform:uppercase;
+	height: 35px;
+	width: 100%
+	vertical-align: middle;   
+	text-align: center;
+	border: 0;  
+ }    
+.TopMenu A
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}    
+.TopMenu A:hover
+{
+	color: #D30F43;
+	text-decoration: none;
+}
+ .TopMenu_Select
+{
+	background-image: url("image/topmenu.jpg");
+	background-repeat: repeat-x; 
+	font-size: 12px;
+	font-weight: bolder; 
+	color: #D30F43;
+	text-decoration: none;
+	text-transform:uppercase;
+	height: 35px;
+	vertical-align: middle;   
+	text-align: center; 
+ }    
+.TopMenu_Select A
+{
+	color: #D30F43;
+	text-decoration: none;
+}    
+.TopMenu_Select A:hover
+{
+	text-decoration: none;
+}    
+.TopMenu_Home
+{
+	background-image: url("image/topmenu_home.gif");
+	background-repeat: no-repeat; 
+	height: 35px;
+	width: 78px;
+}    
+ .TopSeparator{
+	padding-left: 4px;
+ }       
+ .TopSeparator2{
+	padding-left: 10px;
+ }       
+ 
+.TopMenu_Search {
+	background-image: url("image/topmenu.jpg");
+	background-repeat: repeat-x ; 
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-transform:uppercase;
+	height: 35px;
+	width: 420px;
+	text-align: right; 
+}
+.TopMenu_Search A
+{
+	text-decoration: none;
+}   
+.TopMenu_Search A:hover
+{
+	text-decoration: none;
+}
+.ButtonGo {
+	cursor:pointer;
+	border:0;
+	width:56px;
+	height:20px;
+	/*background-Image:url("image/btnGo.gif");
+	background-repeat: no-repeat;*/
+	background-color:#085394;
+	color: #ffffff;
+	font-size:11px;
+	vertical-align: top;
+	PADDING-TOP: 0px;
+	margin-top: 1px;
+	text-align:center; 
+}
+.tdLine {
+	background-color: #41597f;
+	height: 2px;
+}
+
+.tableCart {
+	background-color: #727272;
+}
+.tdCart {
+	background-Image:url("image/shopping_cart.gif");
+	background-repeat: no-repeat;
+	font-size: 10px;
+	height:63px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tdCart A {
+	font-size: 10px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tdCart A:hover {
+	text-decoration: none;
+}
+.topBack {
+
+	background-repeat: no-repeat;
+}
+.Top_Link {
+	color: #434343;
+	text-transform:uppercase;
+}
+.Top_Link A {
+	color: #434343;
+}
+/* eTop end*/
+
+
+/* eBottom begin*/
+.Bottom_Link {
+	color: #434343;
+	text-transform:uppercase;
+}
+.Bottom_Link A {
+	color: #434343;
+}
+.Bottom_Link_Dark {
+	color: #979696;
+	text-transform:uppercase;
+}
+.Bottom_Link_Dark A {
+	color: #979696;
+}
+ .separator{
+	padding-left: 4px;
+ }       
+.BottomBack {
+	background-color: #A4BFDA;
+	background-repeat: no-repeat;
+}
+/* eBottom end*/
+
+
+/* eBrand begin*/
+.bgMyAccount{
+	background-image: url("image/m07.gif");
+ }
+
+ .tableBrand{
+	border: 1px #B9B9B9 solid;
+ }    
+
+.tdLine2 {
+	background-color: #F3A518;
+	height: 2px;
+}
+/* eBrand end*/
+
+
+/* eLeft begin*/
+.Category {
+	background-color: #F4F4F4;
+}
+.CatTitle {
+	background-color: #5b7e9c;
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding-left: 20px;
+	height: 32px;
+}
+.CatTitle A {
+	color: #ffffff;
+}
+.CatTitle A:hover {
+	color: #dddddd;
+	text-decoration: underline;
+}
+.CatList {
+	font-family: tahoma;
+	font-size: 12px;
+	font-style: normal;
+    vertical-align: middle;       
+	color: #625F63;
+	height: 25px;
+	width: 220px;
+    padding-left: 0px;    
+    border-bottom: 1px #DCDCDC dashed;
+}
+.CatList A {
+	color: #625F63;
+}
+.CatArrow {
+    /*background-image: url(image/arrow.jpg);
+    background-repeat:no-repeat;    */
+    width: 12px;
+    height: 12px;  
+    margin-right: 5px;
+    border: 0;
+}
+.CatExpand {
+    /*background-image: url(image/plus.jpg);
+    background-repeat:no-repeat;    */
+    width: 12px;
+    height: 12px;  
+    margin-right: 5px;
+    border:0;
+}
+.CatShrink {
+    /*background-image: url(image/minus.jpg);
+    background-repeat:no-repeat;    */
+    width: 12px;
+    height: 12px;  
+    margin-right: 5px;
+	border: 0;
+}
+.CatLine 
+{
+    background-image: url(image/category_line.gif);
+    background-repeat: repeat-x;    
+    height: 1px;  
+}
+/* eLeft end*/
+
+/* eLeftAccount begin*/
+.AccTitle {
+	background-color: #4682B4;
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding-left: 20px;
+	height: 32px;
+}
+.AccTitle A {
+	color: #ffffff;
+}
+.AccTitle A:hover {
+	color: #dddddd;
+	text-decoration: underline;
+}
+/* eLeftAccount end*/
+
+.leftInput{             
+	height: 20px;
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #434343;
+}
+.rightInput{             
+	height: 20px;
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #434343;
+	text-align: right;
+}
+
+.ButtonLogin {
+	cursor:pointer;
+	border:0;
+	width:60px;
+	height:18px;
+	/*background-Image:url(image/button60_blue.gif);*/
+	background-color: #9abdd9;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 10px; 
+}
+
+.ButtonCatalog {
+	cursor:pointer;
+	border:0;
+	width:100px;
+	height:18px;
+	/*background-Image:url(image/button60_blue.gif);*/
+	background-color: #9abdd9;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 10px; 
+}
+
+.Button30_yellow {
+	cursor:pointer;
+	border:0;
+	width:30px;
+	height:18px;
+	background-Image:url(image/button30_yellow.gif);
+	color: #ffffff;
+	font-size:11px;
+	font-family: Tahoma;
+	font-weight:bold;
+	text-align: center;
+}
+.Button50_yellow {
+	cursor:pointer;
+	border:0;
+	width:50px;
+	height:18px;
+	background-Image:url(image/button50_yellow.gif);
+	color: #ffffff;
+	font-size:11px;
+	font-family: Tahoma;
+	font-weight:bold;
+	text-align: center;
+}
+.Button60_blue {
+	cursor:pointer;
+	border:0;
+	width:60px;
+	height:18px;
+	/*background-Image:url(image/button60_blue.gif);*/
+	background-color: #5b7e9d;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 10px; 
+}
+.Button80_blue {
+	cursor:pointer;
+	border:0;
+	width:88px;
+	height:23px;
+	/*background-Image:url(image/button80_blue.gif);*/
+	background-color: #5b7e9d;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+    font-size: 10px; 
+}
+.Button80_blue_thin {
+	cursor:pointer;
+	border:0;
+	width:80px;
+	height:18px;
+	background-Image:url(image/button80_blue_thin.gif);
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+    font-size: 10px; 
+}
+.Button_detail {
+	cursor:pointer;
+	border:0;
+	width:69px;
+	height:23px;
+	/*background-Image:url(image/button_detail.gif);*/
+	background-color: #5b7e9d;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+    font-size: 10px; 
+}
+.Button120_blue {
+	cursor:pointer;
+	border:0;
+	width:120px;
+	height:23px;
+	background-color: #5b7e9d;
+	background-repeat: repeat-x;
+	color: #ffffff;
+	font-size:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.Button120_gray {
+	cursor:pointer;
+	border:0;
+	width:120px;
+	height:23px;
+	background-Image:url(image/button120_gray.gif);
+	background-repeat: repeat-x;
+	color: #ffffff;
+	font-size:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.Button120_gray_thin {
+	cursor:pointer;
+	border:0;
+	width:120px;
+	height:18px;
+	background-Image:url(image/button120_gray_thin.gif);
+	background-repeat: repeat-x;
+	color: #ffffff;
+	font-size:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.Button150_blue {
+	cursor:pointer;
+	border:0;
+	width:150px;
+	height:23px;
+	background-Image:url(image/button80_blue.gif);
+	background-repeat: repeat-x;
+	color: #ffffff;
+	font-size:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.Button150_blue_thin {
+	cursor:pointer;
+	border:0;
+	width:150px;
+	height:18px;
+	background-Image:url(image/button80_blue_thin.gif);
+	background-repeat: repeat-x;
+	color: #ffffff;
+	font-size:10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.SrhResult 
+{
+	background-color: #ffffff; 
+	color: #1c1c1c;
+	text-transform: uppercase;
+}
+.SrhResult A {
+	color: #1c1c1c;
+}
+.LongDesc {
+	color: #1c1c1c;
+}
+.TopPageNum 
+{
+	background-color: #ffffff; 
+	color: #1c1c1c;  
+}
+/*.TopPageNum A {
+	color: #000000;	
+}  
+.TopPageNum A:hover {
+	text-decoration: underline;
+}*/
+
+.PageNum {
+	color: #1c1c1c;  
+}
+/*.PageNum A {
+	color: #000000;	
+}  
+.PageNum A:hover {
+	text-decoration: underline;
+}*/
+.CurPageNum {
+	font-weight:bold;
+}
+.tdLabel {	
+    color: #353535;
+}
+.tdValue {	
+    color: #353535;
+    font-weight:bold; 
+}
+.HighlightColor {	
+    font-weight:bold; 	
+}
+.Category_Title
+{
+	background-Image:url(image/cen_t.jpg);
+	background-repeat: no-repeat;
+	font-size: 16px;
+	font-weight: bold;
+	width: 210px;
+	height: 55px;
+}
+.CategoryTitle
+{
+	color: #4682B4;
+	font-size: 16px;
+	font-weight: bold;
+}
+.Category_Bottom
+{
+	background-Image:url(image/cen_b.jpg);
+	background-repeat: no-repeat;
+	width: 210px;
+	height: 3px;
+}
+.Type_Title
+{
+	background-Image:url(image/type_title.gif);
+	background-repeat: repeat-x;
+	BORDER-RIGHT: 1px solid #d6d6d6;
+	height: 33px; 
+	padding-left: 5px;	
+	font-size: 13px;
+	font-weight: bold;
+}
+.Type_Title A
+{
+
+}
+.Product {
+	background-color: #ffffff;
+}
+.ProdTitle {
+	background-color: #F4F4F4;
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 15px; 
+	COLOR: #3f3f3f; 
+	LINE-HEIGHT: 18px; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.ProdTitle A {
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 15px; 
+	COLOR: #3f3f3f; 
+	LINE-HEIGHT: 18px; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+/*.ProdTable1 {
+	border-right:1px #B9B9B9 dashed;
+	border-bottom:1px #B9B9B9 dashed;
+}
+.ProdTable2 {
+	border-bottom:1px #B9B9B9 dashed;
+}*/
+.ProdTable1 {
+	background-color: #FFFFFF;  
+}
+.ProdTable2 {
+	background-color: #FFFFFF;  
+}
+.ProdNo{
+	color: #353535;
+	/*text-transform: uppercase; */
+}
+ .ProdDesc{
+	color: #353535;
+	text-decoration: none;
+	/*text-transform: uppercase; */
+}
+ .ProdDesc A{
+	color: #353535;
+	text-decoration: none;
+}
+ .ProdListPrice{
+	color: #ff0000;
+	/*text-transform: uppercase; */
+}
+.tblImage {
+	width:92px;
+	height:87px;
+}
+.tblImage2 {
+	height:50px;
+	background-color:#FAFAFA;
+}
+.tblImage3 {
+	width:150px;
+	height:150px;
+	background-color:#ffffff;
+}
+
+.ProductTD {
+	padding-left:0px;
+}
+
+.tdBgColorGray {
+	background-color: #F4F4F4;
+}
+.tdBgColorWhite {
+	background-color: #ffffff;
+}
+
+.rel {
+	FLOAT: left;
+	WIDTH: 100%;
+	text-align: center;	
+}
+.rel_item {
+	FLOAT: left;
+	WIDTH: 175px;
+	HEIGHT: 145px;
+	color: #646464;
+}
+.rel_item SPAN {
+	FLOAT: left;
+	MARGIN: 8px 42px 0px;
+	WIDTH: 90px;
+	color: #646464;
+}
+.rel_item A {
+	color: #646464;
+}
+
+.FuncTitle {
+	height: 28px;
+	font-weight: bold; 
+}
+
+.tdCheckout {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #4B4B4B;
+}
+.tdProcess {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+.tdCurrentProcess {
+	FONT-WEIGHT: bold;
+	background-color: #F4F4F4;
+	FONT-SIZE: 17px; 
+	COLOR: #3f3f3f; 
+	LINE-HEIGHT: 18px; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.tbList {
+	border-bottom: 1px #DCDCDC dashed;
+}
+.tbList td {
+	border-bottom: 1px #DCDCDC dashed;
+}
+.trHeader td {
+	color:#9A9A9A;
+	vertical-align: middle;
+	height: 40px;
+	text-transform: uppercase; 
+	font-weight: bolder; 
+	border-bottom: 1px #DCDCDC dashed;
+}
+.trHeader_myaccount td {
+	color:#9A9A9A;
+	vertical-align: middle;
+	height: 40px;
+	font-weight: bolder; 
+	border-bottom: 1px #DCDCDC dashed;
+}
+.trHeader_noborder td {
+	color:#9A9A9A;
+	vertical-align: middle;
+	height: 40px;
+	font-weight: bolder; 
+}
+.trSubTotal {
+	color:#9A9A9A;
+	vertical-align: middle;
+	text-transform: uppercase; 
+	font-weight: bolder; 
+}
+.trOdd {
+	background-color: #ffffff;
+	height: 22px;
+}
+.trEven {
+	background-color: #f4f4f4;
+	height: 22px;
+}
+
+.ListLink_Line 
+{
+	font-size: 12px;
+	color: #353535;
+	text-decoration: underline;
+}
+.ListLink_Line A {
+	color: #353535;
+	text-decoration: none;
+}
+.aListLink 
+{
+	font-size: 12px;
+	color: #353535;
+	text-decoration: none;
+}
+.aListLink A {
+	color: #353535;
+	text-decoration: none;
+}
+
+.tbPayment {
+	BORDER-BOTTOM: #9A9A9A 1px solid;
+}
+
+
+/* html report begin */
+.trFormBar { 
+background-color: #ffffff; 
+font-family: Arial, Sans-serif; 
+font-size: 8pt; 
+font-weight: bold; 
+color: #000000; 
+height: 18px; 
+margin: 0pt; 
+text-align: center; 
+border-top: 1px #c0c0c0; 
+border-right: 1px #c0c0c0; 
+border-bottom: 1px solid #c0c0c0; 
+border-left: 1px #c0c0c0; 
+}
+.tdDetail2 { 
+font-size: 8pt; 
+font-weight: normal; 
+color: #000000; 
+text-align: left; 
+border-bottom-width: 1px; 
+border-bottom-style: solid; 
+border-bottom-color: #A7CBA7; 
+}
+.tdFormDetail {
+ font-size: 8pt;
+ font-weight: normal;
+ color: #000000;
+ text-align: left;
+ border-bottom-width: 1px;
+ border-bottom-style: solid;
+ border-bottom-color: #c0c0c0;
+}
+
+.full-table {
+border:solid 1px #000000;
+}
+
+thead tr {
+background:#0174c5 repeat-x bottom;
+color:#FFF;
+}
+
+thead tr td {
+background:#0174c5 repeat-x bottom;
+color:#FFF;
+font-size: 12px;
+padding: 5,0;
+}
+
+.TitleBar 
+{
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;	
+}
+
+.tdButton_lookup
+{
+	cursor: pointer;
+	BACKGROUND-COLOR: transparent;
+	border:0;
+	height: 17px;
+	width: 17px;
+	background-image: url(image/btn_lookup.gif);
+}
+
+TABLE.TableList{
+/*
+	BORDER-RIGHT: 0px; 
+	BORDER-TOP: 0px; 
+	MARGIN-TOP: -2px; 
+	BACKGROUND-IMAGE: url(../../Graphic/back.jpg); 
+	BORDER-LEFT: 0px; 
+	BORDER-BOTTOM: 0px; 
+	BORDER-COLLAPSE:collapse; 
+*/
+	border: 1pt solid;
+	border-style: solid solid solid solid;
+	border-color: #888888 #888888 #888888 #888888;
+	border-width: 1pt 1pt 1pt 1pt;
+	line-height: 18px;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #000000;
+	padding-left: 3px;
+	padding-right: 3px;
+	text-indent: 3px;
+	vertical-align: bottom;
+	background-color: #f5f5f5;
+
+}
+.ListHeader{
+	background-color: #cbd9ef;
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+	font-weight: bolder;
+	font-style: normal;
+	font-variant: normal;
+	vertical-align: middle;
+	border-width: 0px 1px 1px 0px;
+	border-color: #ffffff #ffffff #ffffff #ffffff;
+	border-style: none solid solid none;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.HeaderSrch{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-ALIGN: center;
+	background-image: url(image/bgheader.gif);
+	padding:0px;
+	font-size: 10pt;
+	font-weight: bold;
+	height: 20;
+	color: #002b1a;
+	border-top: 0px none;
+	border-right: 1px solid #cccccc;
+	border-bottom: 0px none;
+	border-left: 0px none;
+}
+TD.TdList{
+/*
+	border-bottom:1px #ffffff solid;
+	border-left:1px #e2f2e8 solid;
+	border-top:0px #ffffff solid;
+	border-right:0px #ffffff solid;
+*/
+	vertical-align: middle;
+	font-size: 8pt;
+	border-width: 0px 1px 1px 0px;
+	border-color: #ffffff #ffffff #ffffff #ffffff;
+	border-style: none solid solid none;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+INPUT.inputcell
+{
+    BACKGROUND-COLOR: Transparent;
+    BORDER-STYLE: solid;
+    border-width:0px 0px 0px 0px;
+    border-color:#ffffff;
+    HEIGHT:18px;
+    LEFT: 0px;
+    TOP: 0px;
+    font-size: 9pt;
+    VERTICAL-ALIGN: center;
+}
+
+.tdTitle { 
+background-color: #ffffff; 
+font-family: Arial, Sans-serif; 
+font-size: 8pt; 
+font-weight: bold; 
+color: #000000; 
+height: 18px; 
+margin: 0pt; 
+text-align: center;  
+}
+/* html report end */

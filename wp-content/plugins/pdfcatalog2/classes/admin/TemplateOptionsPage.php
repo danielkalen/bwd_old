@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Created by PhpStorm.
  * User: Kyriakos
@@ -68,14 +69,20 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 			'Show Prices', // Title
 			1, // Default Value
 			'field_price_checkbox', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)  );
 
 		$s->addField(
 			'pdfcat_showDescription', // Field ID
 			'Show Description', // Title
 			1, // Default Value
 			'field_description_checkbox', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)  );
 
 		$s->addField(
 			'pdfcat_renderShortcodes', // Field ID
@@ -96,21 +103,30 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 			'Show Category Title', // Title
 			1, // Default Value
 			'field_categorytitle_checkbox', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)  );
 
 		$s->addField(
 			'pdfcat_showCategoryProductCount', // Field ID
 			'Show Product Counts', // Title
 			0, // Default Value
 			'field_productcount_checkbox', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)  );
 
 		$s->addField(
 			'pdfcat_headLines', // Field ID
 			'Header Separator Line', // Title
 			1, // Default Value
 			'field_headlines_checkbox', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)  );
 
 
 		// PAGING SECTION ===================================================
@@ -122,7 +138,24 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 			'Description Character Limit', // Title
 			0, // Default Value
 			'field_characterlimit', // Method
-			'' );
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			) );
+
+
+		$s->addField(
+			'pdfcat_useShortDescription',
+			'Use Short Product Description',
+			0,
+			'field_useShortDescription',
+			array( // OnSave Callback
+			       "PDFCatalog",
+			       'invalidate_Cache'
+			)
+		);
+
+		register_setting( 'pdfgen-page1', 'pdfcat_useShortDescription' );
 
 		$s->addField(
 			'pdfcat_startOnNewPage', // Field ID
@@ -148,7 +181,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="text" id="pdfcat_purchasecode" name="pdfcat_purchasecode" size="24"
 		       value="<?php echo get_option( 'pdfcat_purchasecode' ); ?>">
 		<br><label for="pdfcat_purchasecode"></label>
-		<?php 
+		<?php
 	}
 
 
@@ -171,16 +204,20 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 				} ?>>
 				<label for="<?php echo $id ?>">
 					<?php
-					if (isset($t['child'])) echo '<em>';
+					if ( isset( $t['child'] ) ) {
+						echo '<em>';
+					}
 					echo $t[0];
-					if (isset($t['child'])) echo '</em>';
+					if ( isset( $t['child'] ) ) {
+						echo '</em>';
+					}
 					?>
 					<br>
 					<?php echo $t[1] ?>
 				</label>
 			</p>
 		<?php } ?>
-		<?php 
+		<?php
 	}
 
 	static function field_renderhtml_checkbox() {
@@ -188,7 +225,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="pdfcat_html" name="pdfcat_html"
 		       value="1" <?php echo ( get_option( 'pdfcat_html' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_html">output HTML instead of PDF (enable to debug your own templates)</label>
-		<?php 	}
+	<?php }
 
 
 	// ================================================================================================================
@@ -202,7 +239,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="show_sku" name="pdfcat_showSKU"
 		       value="1" <?php echo ( get_option( 'pdfcat_showSKU' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="show_sku">include product SKUs in PDF catalog.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_characterlimit() {
@@ -212,7 +249,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<br><label for="pdfcat_characterLimit">Truncate description to the specified number of characters (enter 0
 			for
 			the full description).</label>
-		<?php 
+		<?php
 	}
 
 
@@ -221,7 +258,16 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="pdfcat_startOnNewPage" name="pdfcat_startOnNewPage"
 		       value="1" <?php echo ( get_option( 'pdfcat_startOnNewPage' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_startOnNewPage">start categories on a fresh page in PDFs with multiple categories.</label>
-		<?php 
+		<?php
+	}
+
+	static function field_useShortDescription() {
+		?>
+		<input type="checkbox" id="pdfcat_useShortDescription" name="pdfcat_useShortDescription"
+		       value="1" <?php echo ( get_option( 'pdfcat_useShortDescription' ) == 1 ) ? 'checked' : ''; ?>>
+		<label for="pdfcat_useShortDescription">use Short Product Description instead of the default long
+			description.</label>
+		<?php
 	}
 
 
@@ -230,21 +276,21 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="pdfcat_headLines" name="pdfcat_headLines"
 		       value="1" <?php echo ( get_option( 'pdfcat_headLines' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_headLines">show separator lines between header/footer.</label>
-		<?php 	}
+	<?php }
 
 	static function field_description_checkbox() {
 		?>
 		<input type="checkbox" id="pdfcat_showDescription" name="pdfcat_showDescription"
 		       value="1" <?php echo ( get_option( 'pdfcat_showDescription' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_showDescription">show full product description..</label>
-		<?php 	}
+	<?php }
 
 	static function field_render_shortcodes() {
 		?>
 		<input type="checkbox" id="pdfcat_renderShortcodes" name="pdfcat_renderShortcodes"
 		       value="1" <?php echo ( get_option( 'pdfcat_renderShortcodes' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_renderShortcodes"> process shortcodes (will strip shortcodes if disabled).</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_price_checkbox() {
@@ -252,14 +298,14 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="show_price" name="pdfcat_showPrice"
 		       value="1" <?php echo ( get_option( 'pdfcat_showPrice' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="show_price">include product prices in PDF catalog.</label>
-		<?php 	}
+	<?php }
 
 	static function field_variations_checkbox() {
 		?>
 		<input type="checkbox" id="show_variations" name="pdfcat_showVariations"
 		       value="1" <?php echo ( get_option( 'pdfcat_showVariations' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="show_variations">show variation attributes for each product.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_productcount_checkbox() {
@@ -268,7 +314,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		       value="1" <?php echo ( get_option( 'pdfcat_showCategoryProductCount' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_showCategoryProductCount">show total number of products found under each
 			category.</label>
-		<?php 	}
+	<?php }
 
 
 	static function field_categorytitle_checkbox() {
@@ -276,7 +322,7 @@ class PDFTemplateOptionsPage extends PDFCatalogSettingsPage {
 		<input type="checkbox" id="pdfcat_showCategoryTitle" name="pdfcat_showCategoryTitle"
 		       value="1" <?php echo ( get_option( 'pdfcat_showCategoryTitle' ) == 1 ) ? 'checked' : ''; ?>>
 		<label for="pdfcat_showCategoryTitle">show category title in category-specific PDFs.</label>
-		<?php 	}
+	<?php }
 
 	static function paging_section() {
 

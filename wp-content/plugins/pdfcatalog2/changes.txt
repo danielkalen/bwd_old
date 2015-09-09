@@ -14,3 +14,7 @@
 - increased CURLHelper timeout.
 - fixed CurlHelper short opening tag.
 - fixed case when cached file is 0 bytes to force regenerate
+
+- order products by title
+- product order options
+- short description option

@@ -6,19 +6,19 @@
 		                                                         class="img-responsive"></a>
 	</div>
 	<div class="product_description col-xs-9">
-		<h2 class="product_title"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $post->post_title ?></a></h2>
+		<h2 class="product_title"><a
+				href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $post->post_title ?></a></h2>
 
 		<p style="color:<?php echo $textColor ?>">
-			<?php 			if ( $this->options->showDescription ) {
-				?>
-				<?php echo $this->prepare( $post->post_content ); ?>
+			<?php if ( $this->options->showDescription ) { ?>
+				<?php echo $this->prepare( ( $this->options->useShortDescription ) ? $post->post_excerpt : $post->post_content ); ?>
 			<?php } ?>
 
 		</p>
 		<?php if ( $this->options->showPrice ) { ?>
 			<div class="price">
 				<?php echo $product->get_price_html(); ?>
-				<?php if (( $this->options->showSKU ) && (strlen($product->get_sku())>0)) { ?>
+				<?php if ( ( $this->options->showSKU ) && ( strlen( $product->get_sku() ) > 0 ) ) { ?>
 					<span class="SKU">(<?php echo $product->get_sku(); ?>)</span>
 				<?php } ?>
 			</div>

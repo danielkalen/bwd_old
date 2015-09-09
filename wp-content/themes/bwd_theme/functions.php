@@ -382,6 +382,31 @@ function child_manage_woocommerce_styles() {
  
 }
 
+
+// ==== Backend scripts/styles enqueue =================================================================================
+
+function bwd_backend_scripts() {
+	global $wp_scripts;
+	$protocol = is_ssl() ? 'https' : 'http';
+	wp_enqueue_style( 'bwd_css', '/wp-content/themes/bwd_theme/css/admin.css' );
+	// wp_enqueue_script( 'bwd_js', plugins_url( '/wp-content/themes/bwd_theme/js/getvoip-campaign.js' ), array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker') );
+	if ( $_SERVER['SERVER_NAME'] === 'bwd.dev:8888' || $_SERVER['SERVER_NAME'] === 'bwd.dev' ) {
+	   echo'
+	   <script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+	   <script type="text/javascript">
+	     takanaClient.run({host: \'localhost:48626\'});
+	   </script>
+	   ';
+	}
+} add_action( 'admin_enqueue_scripts', 'bwd_backend_scripts' );
+
+
+
+
+
+
+
+
 // WooCommerce Display Empty Categories
 add_filter('woocommerce_product_subcategories_args', 'woocommerce_show_empty_categories');
 function woocommerce_show_empty_categories($cat_args){

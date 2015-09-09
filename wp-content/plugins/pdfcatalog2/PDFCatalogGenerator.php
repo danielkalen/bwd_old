@@ -47,14 +47,14 @@ class PDFCatalogGenerator {
 	static $templates = array();
 
 	function prepare( $s ) {
-
-		return $this->processShortcodes( $this->limit( $s ) );
+		return $this->processShortcodes( $this->limit( nl2br( $s ) ) );
 	}
 
 	static function toLog( $msg ) {
 		if ( PDF_LOG ) {
+			$bt = debug_backtrace();
 			$logfile = dirname( __FILE__ ) . '/logs/' . date( 'Y-m-d' ) . '.log';
-			file_put_contents( $logfile, date( 'Y-m-d H:i:s' ) . ' ' . $_SERVER['REMOTE_ADDR'] . ' ' . $msg . "\n\r", FILE_APPEND );
+			file_put_contents( $logfile, date( 'Y-m-d H:i:s' ) . ' ' . $_SERVER['REMOTE_ADDR'] . ' ' . $msg . "\n\r" . print_r( $bt, true ), FILE_APPEND );
 		}
 	}
 
@@ -98,6 +98,7 @@ class PDFCatalogGenerator {
 		$this->options->showSKU = ( get_option( 'pdfcat_showSKU' ) == 1 );
 		$this->options->showDescription = ( get_option( 'pdfcat_showDescription' ) == 1 );
 		$this->options->showPrice = ( get_option( 'pdfcat_showPrice' ) == 1 );
+		$this->options->useShortDescription = ( get_option( 'pdfcat_useShortDescription' ) == 1 );
 		PDFCatalogGenerator::$pdfOut = ( get_option( 'pdfcat_html' ) == 0 );
 
 
@@ -107,7 +108,7 @@ class PDFCatalogGenerator {
 		$vars = array( '#store#', '#dategenerated#', '#timegenerated#' );
 		$replace = array(
 			get_bloginfo(),
-			date( get_option( 'date_format' ) ),
+			date_i18n( get_option( 'date_format' ), time() ),
 			date( 'H:i' )
 		);
 
@@ -285,11 +286,9 @@ class PDFCatalogGenerator {
 	function getCategoryItems( $category, $includeExtras = false, $nochildren = true ) {
 
 
-		$order = get_option( 'pdfcat_order' );
-		$orderby = get_option( 'pdfcat_orderby' );
+		$order = get_option( 'pdfcat_order', 'desc' );
+		$orderby = get_option( 'pdfcat_orderby', 'date' );
 
-		//$order = 'title';
-		//$orderby ='asc';
 		$showHidden = get_option( 'pdfcat_showhidden' );
 		$hideOutOfStock = get_option( 'pdfcat_hideoutofstock' );
 
@@ -754,6 +753,10 @@ class PDFCatalogGenerator {
 
 				PDFCatalogGenerator::toLog( print_r( $r->getBody()->__toString(), true ) );
 				// @TODO need to catch possible exception here
+				PDFCatalogGenerator::toLog( $r->getBody() );
+				// echo '<pre>';
+				// print_r($r);
+				// echo '</pre>';
 				$result = (object) $r->json();
 
 				//echo($r->getBody());

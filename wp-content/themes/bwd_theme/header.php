@@ -94,9 +94,8 @@
 		<h6 class="menu-mega-title">Shop Categories</h6>
 		<ul class="menu-mega-list">
 			<?php 
-			$menu_object = wp_get_nav_menu_object( 'product-categories' );
-			$menu_items = wp_get_nav_menu_items($menu_object->term_id);
 			$menu_items = get_terms('product_cat', array('hide_empty' => 1, 'orderby' => 'ASC',  'parent' =>0));
+			// print_r($menu_items);
 			
 			foreach ($menu_items as $item) {
 					echo '

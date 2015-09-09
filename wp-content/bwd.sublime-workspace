@@ -460,10 +460,21 @@
 			}
 		},
 		{
-			"file": "themes/bwd_theme/sass/_parts/_elements.sass",
+			"contents": "<?php /*\nPlugin Name: PDF Product Catalog 2 (BETA4) for WooCommerce\nPlugin URI: http://www.brainvial.com/pdfcatalog\nDescription: Customizable and flexible PDF catalog generator for WooCommerce stores.\nAuthor: Kyriakos Ktorides\nVersion: 2.0.0 BETA-5\nAuthor URI: http://www.brainvial.com\n*/\n\ndefine( 'PDFCATALOG_VERSION', '2.0.0B5' );\n\ninclude_once \"widget.php\";\ninclude_once 'classes/admin/PDFCatalogAdminOptions.php';\n\nclass PDFCatalog {\n\n\n	/**\n	 * @var PDFCatalogAdminOptions\n	 */\n	public $options;\n\n	function __construct() {\n		$this->options = new PDFCatalogAdminOptions();\n	}\n\n	static function  canViewCatalog() {\n\n\n		$hiddenRoles = explode( ',', get_option( 'pdfcat_hiddenroles' ) );\n\n\n		if ( count( $hiddenRoles ) == 0 ) {\n			return true;\n		} else {\n			global $current_user;\n\n			$roles = $current_user->roles;\n\n			if ( ( count( $roles ) == 0 ) && ( array_search( 'PDF_SIGNED_OUT', $hiddenRoles ) !== false ) ) {\n				return false;\n			}\n\n			foreach ( $roles as $role ) {\n				if ( array_search( $role, $hiddenRoles ) !== false ) {\n					return false;\n				}\n			}\n		}\n\n		return true;\n\n	}\n\n	static function getCatalog() {\n		if ( isset( $_GET['pdfcat'] ) ) {\n\n			define( 'PDFCATALOG', true );\n			include dirname( __FILE__ ) . '/getcatalogex.php';\n			exit;\n		}\n\n	}\n\n	static function  enqueue_buttons_css() {\n		wp_register_style( 'pdf-buttons', plugins_url( 'pdfcatalog/buttons.css' ) );\n	}\n\n	static function enqueue_buttons_css2() {\n		wp_enqueue_style( 'pdf-buttons' );\n	}\n\n	static function widget_init() {\n		register_widget( 'PDFWidget' );\n	}\n\n	static function add_options_page_imp() {\n\n		$tabs = array( 'template' => 0, 'colors' => 0, 'headfoot' => 0, 'cache' => 0, 'categories' => 0 );\n\n		if ( isset( $_GET['tab'] ) ) {\n			$tab = $_GET['tab'];\n		} else {\n			$tab = 'template';\n		}\n\n		if ( ! isset( $tabs[ $tab ] ) ) { // validate before appending to filename\n			$tab = 'template';\n		}\n\n		include dirname( __FILE__ ) . '/adminpages/options_' . $tab . '.php';\n	}\n\n	static function admin_menu() {\n		add_options_page( 'PDF Catalog Generator Settings', 'PDF Catalog', 'manage_options', 'pdfgensettings', array(\n			'PDFCatalog',\n			'add_options_page_imp'\n		) );\n	}\n\n	public function init() {\n\n		include_once 'PDFCatalogGenerator.php';\n\n		PDFCatalogGenerator::$templates = PDFCatalogGenerator::getTemplates();\n\n		$plugin = plugin_basename( __FILE__ );\n		$imageSize = get_option( 'pdfcat_imagesize' );\n\n		if ( $imageSize != 'default' ) {\n			add_image_size( 'pdf_catalog', PDFCatalogGenerator::$imageSizes[ $imageSize ][1], PDFCatalogGenerator::$imageSizes[ $imageSize ][2], true );\n		}\n		// SET JPEG QUALITY FOR TCPDF TOO!!!\n\n		add_action( 'init', array( 'PDFCatalog', 'getCatalog' ) );\n\n		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css' ) );\n\n		add_action( 'widgets_init', array( 'PDFCatalog', 'widget_init' ) );\n\n		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css2' ) );\n\n		add_shortcode( 'pdfcatalog', array( 'PDFCatalog', 'shortCode' ) );\n\n		add_action( 'admin_menu', array( 'PDFCatalog', 'admin_menu' ) );\n\n		add_action( 'admin_enqueue_scripts', array( \"PDFCatalog\", 'load_admin_style' ) );\n\n\n		add_action( 'wp_ajax_pdf_delete_cache_file', array( \"PDFCatalog\", 'pdf_delete_cache_file' ) );\n\n		$this->options->initOptions();\n\n	}\n\n	function pdf_delete_cache_file() {\n\n\n		$file = $_POST['file'];\n		$file = basename( $file );\n\n		$g = new PDFCatalogGenerator();\n		echo $g->getCachePath() . \"categories\" . DIRECTORY_SEPARATOR . $file . '.pdf';\n		unlink( $g->getCachePath() . \"categories\" . DIRECTORY_SEPARATOR . $file . '.pdf' );\n		unlink( $g->getCachePath() . 'html' . DIRECTORY_SEPARATOR . $file . '.html' );\n\n		wp_die(); // this is required to terminate immediately and return a proper response\n	}\n\n\n	function getLogoURL() {\n		$src = wp_get_attachment_image_src( get_option( 'pdfcat_logo' ), 'full' );\n		if ( count( $src ) > 1 ) {\n			$url = $src[0];\n		} else {\n			$url = '';\n		}\n\n		return $url;\n\n	}\n\n	function getLogoFilePath() {\n\n\n		return get_attached_file( get_option( 'pdfcat_logo' ) );\n	}\n\n\n	static function load_admin_style() {\n		wp_enqueue_media();\n	}\n\n	static function getCurrentCategoryID() {\n		global $wp_query;\n		$cat = $wp_query->get_queried_object();\n		$class = get_class( $cat );\n\n		if ( 'WP_Post' == $class ) {\n			$post = $cat;\n			if ( $post->post_type == 'product' ) {\n\n				$cats = get_the_terms( $post->ID, 'product_cat' );\n				if ( count( $cats ) > 0 ) {\n					return end( $cats )->term_id;\n				}\n			}\n		} else {\n			if ( ( isset( $cat->taxonomy ) ) && ( $cat->taxonomy == 'product_cat' ) ) {\n				return $cat->term_id;\n			}\n		}\n\n		return null;\n	}\n\n\n	static function shortCode( $a, $title = null ) {\n		if ( ! PDFCatalog::canViewCatalog() ) {\n			return;\n		}\n		$a = shortcode_atts( array(\n			'slug'     => null,\n			'catids'   => null,\n			'catid'    => 'all',\n			'class'    => '',\n			'children' => false,\n			'template' => ''\n		), $a );\n\n		$c = new stdClass();\n		$c->name = '';\n\n		if ( $a['catids'] != null ) {\n			$catIDs = PDFCatalogGenerator::sanitizeCatIDs( explode( ',', $a['catids'] ) );\n			$categoryID = 'multiple';\n		}\n		if ( $a['slug'] != null ) {\n			// check if slug exists\n			$c = get_term_by( 'slug', $a['slug'], 'product_cat' );\n			if ( $c !== false ) {\n				$categoryID = $c->term_id;\n			}\n		} else if ( $a['catid'] != 'all' ) {\n\n\n			if ( $a['catid'] == 'current' ) {\n				$categoryID = static::getCurrentCategoryID();\n				$c = get_term_by( 'id', $categoryID, 'product_cat' );\n				if ( $categoryID == null ) {\n					$categoryID = 'none';\n				}\n			} else {\n				$c = get_term_by( 'id', $a['catid'], 'product_cat' );\n				$categoryID = $a['catid'];\n			}\n\n\n			if ( $a['children'] && ( $categoryID != 'none' ) ) {\n\n				$catIDs = get_term_children( (int) $categoryID, 'product_cat' );\n				$catIDs = array_merge( array( (int) $categoryID ), $catIDs );\n				$categoryID = 'multiple';\n				$c = get_term_by( 'id', $a['catid'], 'product_cat' );\n			}\n\n		} else {\n			$c->name = 'Full Catalog';\n			$categoryID = 'all';\n		}\n\n		$template = '';\n		if ($a['template']!='') {\n			$template = '&template='.$a['template'];\n		}\n\n		if ( $categoryID != 'none' ) {\n			ob_start();\n			switch ( $categoryID ) {\n\n				case 'all':\n					$url = get_site_url() . '?pdfcat&all';\n					break;\n				case 'multiple':\n					$url = get_site_url() . '?pdfcat&cm=' . implode( '-', $catIDs );\n					break;\n				default:\n					$url = get_site_url() . '?pdfcat&c=' . $categoryID;\n					break;\n			}\n\n			$url .= $template;\n\n			?>\n			<span class=\"PDFCatalogButtons<?php echo ' ' . $a['class']; ?>\">\n			<a href=\"<?php echo $url; ?>\">\n				<?php echo ( $title == null ) ? 'Download PDF Catalog' : str_replace( '%name%', $c->name, $title ); ?>\n			</a>\n		</span>\n\n			<?php return ob_get_clean();\n		} else {\n			return '';\n		}\n	}\n\n\n	static function headersettings_section() {\n		{\n			echo 'Customize your Catalog\\'s header. The following variables can be used in your text:';\n			echo \"<ul><li>#store# - The site title.</li>\n<li>#dategenerated# - The formatted date when the catalog was generated.</li>\n    <li>\n        #timegenerated# - The formatted time when the catalog was generated.\n    </li>\n</ul>\";\n		}\n	}\n\n\n	static function colors_section() {\n		echo '<div style=\"max-width: 60%\">You can use the following settings to change the PDF catalog colors. Keep in mind that some ';\n		echo 'of your store\\'s users might want to print your catalog, therefore you should ensure there is';\n		echo 'enough contrast between background and text.</div>';\n	}\n\n	static function images_section() {\n		echo '<div style=\"max-width: 60%\">Use the following settings to tweak the quality and size of product images in the PDF output. ';\n		echo 'Keep in mind that better quality means larger PDF files, more memory needed to render, and more processing time. ';\n		echo 'If your store is running on shared hosting with limited resources you might want to avoid increasing the values of these settings.';\n		echo '</div>';\n	}\n\n\n	static function invalidate_Cache( $inp ) {\n		$cachePath = dirname( __FILE__ ) . '/cache/categories/';\n\n		$files = glob( $cachePath . '/*.pdf' );\n\n		if ( is_array( $files ) ) {\n			foreach ( $files as $file ) {\n				if ( is_file( $file ) ) {\n					unlink( $file );\n				}\n			}\n		}\n\n		return $inp;\n\n	}\n\n	static function field_logo() {\n		$imgid = get_option( 'pdfcat_logo' );\n		$pdf = new PDFCatalog();\n		$url = $pdf->getLogoURL();\n		?>\n		<input type=\"hidden\" name=\"pdfcat_logo\" id=\"pdfcat_logo\" value=\"<?php echo get_option( 'pdfcat_logo' ); ?>\"/>\n		<img src=\"<?php echo $url; ?>\"\n		     style=\"max-width: 150px;max-height:150px; min-width: 80px; min-height: 80px; border:1px solid black; background: <?php echo get_option( 'pdfcat_headerColor' ); ?>\"\n		     id=\"pdfcat_logo_preview\">\n		<input class=\"button\" id=\"fld_pdflogo_button\" type=\"button\" value=\"Choose Image\"/>\n	<?php }\n\n\n	static function field_footer_text() {\n		?>\n		<p>\n			The following text will appear at the end of each PDF file. Enter here copyright information, contact\n			details etc.\n		</p>\n		<textarea id=\"headSubtitle\" name=\"pdfcat_footerText\"\n		          style=\"width: 400px\"><?php echo get_option( 'pdfcat_footerText' ); ?></textarea>\n\n	<?php }\n\n	static\n	function field_headsubtitle_text() {\n		?>\n		<input type=\"text\" id=\"headSubtitle\" name=\"pdfcat_headSubtitle\"\n		       value=\"<?php echo get_option( 'pdfcat_headSubtitle' ); ?>\" style=\"width: 400px\">\n\n	<?php }\n\n\n	static function field_headtitle_text() {\n		?>\n		<input type=\"text\" id=\"pdfcat_headTitle\" name=\"pdfcat_headTitle\"\n		       value=\"<?php echo get_option( 'pdfcat_headTitle' ); ?>\" style=\"width: 400px\">\n		<label for=\"pdfcat_headTitle\">The main header title.</label>\n	<?php }\n\n\n	static function field_header_title_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_headerTitle\" name=\"pdfcat_headerTitle\"\n		       value=\"<?php echo get_option( 'pdfcat_headerTitle' ); ?>\">\n		<label for=\"pdfcat_headerTitle\">used in header title.</label>\n	<?php }\n\n\n	static function field_category_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_categoryColor\" name=\"pdfcat_categoryColor\"\n		       value=\"<?php echo get_option( 'pdfcat_categoryColor' ); ?>\">\n		<label for=\"pdfcat_categoryColor\">used in category titles.</label>\n	<?php }\n\n\n	static function field_header_lines_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_headLinesColor\" name=\"pdfcat_headLinesColor\"\n		       value=\"<?php echo get_option( 'pdfcat_headLinesColor' ); ?>\">\n		<label for=\"pdfcat_headLinesColor\">used header & footer separator lines.</label>\n	<?php }\n\n\n	static function field_header_subtitle_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_headerSubTitle\" name=\"pdfcat_headerSubTitle\"\n		       value=\"<?php echo get_option( 'pdfcat_headerSubTitle' ); ?>\">\n		<label for=\"pdfcat_headerSubTitle\">used header subtitle and page numbers.</label>\n	<?php }\n\n	static function field_price_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_priceColor\" name=\"pdfcat_priceColor\"\n		       value=\"<?php echo get_option( 'pdfcat_priceColor' ); ?>\">\n		<label for=\"pdfcat_priceColor\">used in prices</label>\n	<?php }\n\n	static function field_light_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_lightText\" name=\"pdfcat_lightText\"\n		       value=\"<?php echo get_option( 'pdfcat_lightText' ); ?>\">\n		<label for=\"pdfcat_lightText\">used in product descriptions</label>\n	<?php }\n\n	static function field_header_color() {\n		?>\n		<input type=\"color\" id=\"pdfcat_headerColor\" name=\"pdfcat_headerColor\"\n		       value=\"<?php echo get_option( 'pdfcat_headerColor' ); ?>\">\n		<label for=\"pdfcat_headerColor\">header background color. Usually the same a paper color.</label>\n	<?php }\n\n	static function field_image_resolution() {\n		//pdfcat_imagesize\n		?>\n		<select id=\"pdfcat_imagesize\" name=\"pdfcat_imagesize\">\n			<?php foreach ( PDFCatalogGenerator::$imageSizes as $key => $size ) {\n				?>\n				<option value=\"<?php echo $key; ?>\"<?php if ( $key == get_option( 'pdfcat_imagesize' ) ) {\n					echo ' selected';\n				} ?>>\n					<?php echo $size[0]; ?>\n				</option>\n			<?php } ?>\n		</select>\n\n		<p style=\"max-width: 800px\">\n			By default PDF catalogs are using the same image resolution used by your current theme for product images.\n			This sometimes can be too low for PDF (especially if you want to pint out the catalog). You can use this\n			option to set it to a higher resolution. Keep in mind that, the higher the resolution the slower the\n			process, the larger the PDF output files will be, and the more memory it will require to generate them, so\n			be careful with this option.<br>\n		</p>\n		<p style=\"max-width: 800px\">\n			WordPress does not automatically resize old images, it only resizes them when they are firest uploaded, so\n			if you change this option you should also install an image rebuilding plugin. There are several free plugins\n			that do this job out there but we recommend <a href=\"https://wordpress.org/plugins/ajax-thumbnail-rebuild/\">AJAX\n				Thumbnail Rebuild</a> since we tested it and works well.\n		</p>\n\n\n	<?php }\n\n	static function field_jpeg_quality() {\n		?>\n		<input type=\"range\" id=\"pdfcat_jpegquality\" name=\"pdfcat_jpegquality\"\n		       style=\"vertical-align: middle; margin-right: 1em\" min=\"30\" max=\"100\" step=\"1\"\n		       value=\"<?php echo get_option( 'pdfcat_jpegquality' ); ?>\">\n		<span id=\"view_jpegquality\"><?php echo get_option( 'pdfcat_jpegquality' ); ?>%</span>\n\n		<p style=\"max-width: 800px\">\n			This option affects the way JPEG images are compressed. The lower the value the less emphasis is given on\n			the image quality.\n			Higher values means better quality but larger file size.\n		</p>\n		<script>\n			jQuery(function () {\n				var $ = jQuery;\n				var el = $('#view_jpegquality');\n				var inp = $('#pdfcat_jpegquality');\n				inp.change(function (e) {\n					el.text(inp.val() + '%');\n				});\n			});\n		</script>\n	<?php }\n\n	static function field_paper_color() {\n		?>\n		<input type=\"color\" id=\"paper_color\" name=\"pdfcat_paperColor\"\n		       value=\"<?php echo get_option( 'pdfcat_paperColor' ); ?>\">\n		<label for=\"paper_color\">catalog background color</label>\n	<?php }\n\n\n	static function field_text_color() {\n		?>\n		<input type=\"color\" id=\"mainTextColor\" name=\"pdfcat_mainText\"\n		       value=\"<?php echo get_option( 'pdfcat_mainText' ); ?>\">\n		<label for=\"mainTextColor\">used in titles and headings</label>\n	<?php }\n\n\n	static function field_order_select() {\n		?>\n		<select name=\"pdfcat_order\">\n			<option value=\"desc\">New to Old Products</option>\n			<option value=\"asc\">Old to New Products</option>\n		</select>\n	<?php }\n\n	static function field_orderby_select() {\n		$orderby = get_option( 'pdfcat_orderby' );\n		?>\n		<select name=\"pdfcat_orderby\">\n			<option value=\"date\">Date product was created</option>\n			<option value=\"price\">Price</option>\n		</select>\n	<?php }\n\n\n	public function getCategoryTree( $parent, $level = 0 ) {\n		$cats = get_categories( array(\n			'taxonomy'     => 'product_cat',\n			'hierarchical' => 1,\n			'parent'       => $parent\n		) );\n\n		foreach ( $cats as $k => $cat ) {\n			$cats[ $k ]->level = $level;\n			$cats[ $k ]->children = $this->getCategoryTree( $cat->term_id, $level + 1 );\n		}\n\n		return $cats;\n	}\n\n	public function renderCategoryTree( $cats, $preselected ) {\n		echo '<ul>';\n		foreach ( $cats as $cat ) {\n			echo '<li>';\n\n			echo '<input ';\n			if ( array_search( $cat->term_id, $preselected ) !== false ) {\n				echo 'checked ';\n			}\n			echo 'type=\"checkbox\" id=\"fchk' . $cat->term_id . '\" value=\"' . $cat->term_id . '\"><label for=\"fchk' . $cat->term_id . '\">' . $cat->name . '</label>';\n			if ( count( $cat->children ) > 0 ) {\n				$this->renderCategoryTree( $cat->children, $preselected );\n			}\n			echo '</li>';\n		}\n		echo '</ul>';\n	}\n\n\n	/**\n	 * @return PDFFileListEntry[]\n	 */\n	static function getCachedFilesList() {\n		$g = new PDFCatalogGenerator();\n		$path = $g->getCachePath() . DIRECTORY_SEPARATOR . 'categories' . DIRECTORY_SEPARATOR;\n		$files = scandir( $path );\n		$out = array();\n\n		foreach ( $files as $file ) {\n			if ( ( $file != '.' ) && ( $file != '..' ) ) {\n				$out[] = new PDFFileListEntry( $file, $path );\n			}\n		}\n\n		return $out;\n	}\n\n}\n\n$pdf = new PDFCatalog();\n$pdf->init();",
+			"file": "plugins/pdfcatalog2/pdfcatalog.php",
+			"file_size": 16596,
+			"file_write_time": 130834444590000000,
 			"settings":
 			{
-				"buffer_size": 4248,
+				"buffer_size": 16028,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Applications/MAMP/bwd/.gitignore",
+			"settings":
+			{
+				"buffer_size": 159,
 				"line_ending": "Unix"
 			}
 		},
@@ -471,7 +482,15 @@
 			"file": "themes/bwd_theme/functions.php",
 			"settings":
 			{
-				"buffer_size": 16190,
+				"buffer_size": 17024,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "themes/bwd_theme/sass/admin.sass",
+			"settings":
+			{
+				"buffer_size": 79,
 				"line_ending": "Unix"
 			}
 		},
@@ -480,6 +499,22 @@
 			"settings":
 			{
 				"buffer_size": 5800,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/gazelle/Desktop/gv_git.sh",
+			"settings":
+			{
+				"buffer_size": 608,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/MAMP/bwd/.htaccess",
+			"settings":
+			{
+				"buffer_size": 1398,
 				"line_ending": "Unix"
 			}
 		}
@@ -570,10 +605,11 @@
 	[
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme",
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/sass",
-		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/sass/_parts"
+		"/Applications/MAMP/bwd/wp-content/themes"
 	],
 	"file_history":
 	[
+		"/Applications/MAMP/bwd/wp-content/plugins/wordpress-seo-premiuma/admin/pages/files.php",
 		"/Applications/MAMP/bwd/.htaccess",
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/sass/coming-soon.sass",
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/page-home.php",
@@ -700,8 +736,7 @@
 		"/Applications/MAMP/bwd/wp-content/plugins/userpro/templates/register.php",
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/js/_parts/sidebar.js",
 		"/Applications/MAMP/bwd/wp-content/themes/bwd_theme/sass/_parts/_elements.sass",
-		"/Applications/MAMP/bwd/wp-content/plugins/userpro/functions/terms-agreement.php",
-		"/Applications/MAMP/bwd/wp-content/plugins/userpro/functions/fields-hooks.php"
+		"/Applications/MAMP/bwd/wp-content/plugins/userpro/functions/terms-agreement.php"
 	],
 	"find":
 	{
@@ -712,6 +747,7 @@
 		"height": 100.0,
 		"where_history":
 		[
+			"/Applications/MAMP/bwd/wp-content/plugins/wordpress-seo-premiuma",
 			"/Applications/MAMP/bwd/wp-content/plugins/userpro",
 			"/Applications/MAMP/bwd/wp-content/plugins/ultra-wp-admin",
 			"/Applications/MAMP/bwd/wp-content/plugins/pdfcatalog2",
@@ -766,6 +802,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getvoip-campaign/assets/",
+			"getvoip_campaign",
+			"file_exists",
+			"ht_access_file",
+			"$ht_access_file",
+			"htaccess",
+			"redirect",
+			"rewrite",
+			"enqueue",
 			"3000",
 			"&",
 			"login_classes",
@@ -884,16 +929,7 @@
 			"Previous Step",
 			"Previous",
 			"added",
-			"		<div class=\"add-button add-owner first-add\"><span>Add Another Owner</span>\n",
-			"section",
-			"div",
-			"</div>",
-			"<label class=\"field-title\">",
-			"<label",
-			"<div class=\"field-set\">",
-			"ount-",
-			"account",
-			"span"
+			"		<div class=\"add-button add-owner first-add\"><span>Add Another Owner</span>\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1005,24 +1041,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "themes/bwd_theme/sass/_parts/_elements.sass",
-					"semi_transient": true,
+					"file": "plugins/pdfcatalog2/pdfcatalog.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4248,
+						"buffer_size": 16028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3561,
-								3561
+								2147,
+								2147
 							]
 						],
 						"settings":
@@ -1090,41 +1126,31 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2147.0,
+						"translation.y": 1114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 2,
-					"file": "themes/bwd_theme/functions.php",
+					"file": "/Applications/MAMP/bwd/.gitignore",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16190,
+						"buffer_size": 159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3406,
-								3406
-							],
-							[
-								3520,
-								3520
+								159,
+								159
 							]
 						],
 						"settings":
@@ -1189,7 +1215,105 @@
 								"bh_round_content"
 							],
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"expand_region_settings": "{\"stack\": [{\"end\": 3454, \"start\": 3449}, {\"end\": 3460, \"start\": 3446}], \"hash\": \"9ab2699695e502fc0f9d6342822bb72f\"}",
+							"expand_region_settings": "{\"stack\": [{\"end\": 115, \"start\": 110}], \"hash\": \"dd66527b961a65f0cc9718579d1c11a4\"}",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "themes/bwd_theme/functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11698,
+								11698
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"expand_region_settings": "{\"hash\": \"5a8a376552b84bfb1c06225da2c9bf05\", \"stack\": [{\"end\": 11760, \"start\": 11752}]}",
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -1198,14 +1322,103 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1249.0,
+						"translation.y": 4962.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
+					"file": "themes/bwd_theme/sass/admin.sass",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 79,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "themes/bwd_theme/header.php",
 					"semi_transient": false,
 					"settings":
@@ -1217,8 +1430,8 @@
 						"selection":
 						[
 							[
-								41,
-								41
+								4501,
+								4586
 							]
 						],
 						"settings":
@@ -1226,61 +1439,61 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_round_content"
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"expand_region_settings": "{\"hash\": \"5f913ae52579d06c6e22730e511231cd\", \"stack\": [{\"end\": 1397, \"start\": 1393}]}",
@@ -1289,6 +1502,181 @@
 							"synced": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/gazelle/Desktop/gv_git.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								87
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"expand_region_settings": "{\"hash\": \"38e357dae7465942e93cd266bdadb4ce\", \"stack\": [{\"end\": 80, \"start\": 75}, {\"end\": 87, \"start\": 75}]}",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Applications/MAMP/bwd/.htaccess",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								904,
+								904
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1328,7 +1716,7 @@
 		"cols":
 		[
 			0.0,
-			0.95287464656,
+			0.0471253534402,
 			1.0
 		],
 		"rows":
@@ -1338,6 +1726,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -1370,7 +1762,7 @@
 		[
 			[
 				"",
-				"/Applications/MAMP/getvoip/gv_main/sites/all/gv_sky.sublime-project"
+				"/Applications/MAMP/getvoip/gv_main_wp/wp-content/themes/getvoip/getvoip.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1384,7 +1776,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

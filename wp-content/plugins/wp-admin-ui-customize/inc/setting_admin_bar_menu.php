@@ -194,6 +194,9 @@ body.wp-admin-ui-customize_page_wp_admin_ui_customize_admin_bar .postbox .inside
 .widget h4 {
     padding: 10px 15px;
 }
+.widget-top a.widget-action {
+    cursor: pointer;
+}
 .widget-top a.widget-action:after {
     padding: 9px 12px;
 }
@@ -242,9 +245,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$(document).on('click', '.widget .widget-top .widget-title-action a[href=#available]', function() {
+	$(document).on('click', '.widget .widget-top .widget-title-action', function() {
 		
-		$(this).parent().parent().parent().children('.widget-inside').slideToggle();
+		$(this).parent().parent().children('.widget-inside').slideToggle( 300 );
 		return false;
 
 	});

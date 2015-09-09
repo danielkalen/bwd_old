@@ -92,6 +92,7 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 
 									<p>
 										<a href="<?php echo $load_link; ?>" class="button button-primary column_load">
+											<span class="dashicons dashicons-update"></span>
 											<?php echo sprintf( __( 'Metaboxes loading for %s', $this->ltd ) , __( 'Dashboard' ) ); ?>
 										</a>
 									</p>
@@ -156,6 +157,9 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 .inside .loading .spinner {
 	float: left;
     visibility: visible;
+}
+.button.column_load .dashicons {
+    margin-top: 3px;
 }
 </style>
 <script type="text/javascript">

@@ -3,11 +3,11 @@ Plugin Name: PDF Product Catalog 2 (BETA4) for WooCommerce
 Plugin URI: http://www.brainvial.com/pdfcatalog
 Description: Customizable and flexible PDF catalog generator for WooCommerce stores.
 Author: Kyriakos Ktorides
-Version: 2.0.0 BETA-5
+Version: 2.0.0 BETA-6
 Author URI: http://www.brainvial.com
 */
 
-define( 'PDFCATALOG_VERSION', '2.0.0B5' );
+define( 'PDFCATALOG_VERSION', '2.0.0B6' );
 
 include_once "widget.php";
 include_once 'classes/admin/PDFCatalogAdminOptions.php';
@@ -63,7 +63,7 @@ class PDFCatalog {
 	}
 
 	static function  enqueue_buttons_css() {
-		wp_register_style( 'pdf-buttons', plugins_url( 'pdfcatalog/buttons.css' ) );
+		wp_register_style( 'pdf-buttons', plugins_url( 'pdfcatalog2/buttons.css' ) );
 	}
 
 	static function enqueue_buttons_css2() {
@@ -114,11 +114,11 @@ class PDFCatalog {
 
 		add_action( 'init', array( 'PDFCatalog', 'getCatalog' ) );
 
-		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css' ) );
+		add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css' ) );
 
 		add_action( 'widgets_init', array( 'PDFCatalog', 'widget_init' ) );
 
-		// add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css2' ) );
+		add_action( 'wp_enqueue_scripts', array( 'PDFCatalog', 'enqueue_buttons_css2' ) );
 
 		add_shortcode( 'pdfcatalog', array( 'PDFCatalog', 'shortCode' ) );
 
@@ -250,8 +250,8 @@ class PDFCatalog {
 		}
 
 		$template = '';
-		if ($a['template']!='') {
-			$template = '&template='.$a['template'];
+		if ( $a['template'] != '' ) {
+			$template = '&template=' . $a['template'];
 		}
 
 		if ( $categoryID != 'none' ) {
@@ -330,7 +330,6 @@ class PDFCatalog {
 	}
 
 	static function field_logo() {
-		$imgid = get_option( 'pdfcat_logo' );
 		$pdf = new PDFCatalog();
 		$url = $pdf->getLogoURL();
 		?>
@@ -494,19 +493,20 @@ class PDFCatalog {
 
 
 	static function field_order_select() {
+		$order= get_option( 'pdfcat_order', 'desc' );
 		?>
 		<select name="pdfcat_order">
-			<option value="desc">New to Old Products</option>
-			<option value="asc">Old to New Products</option>
+			<option value="asc" <?=($order == 'asc') ? 'selected' :''; ?>>Ascending</option>
+			<option value="desc" <?=($order == 'desc') ? 'selected' :''; ?>>Descending</option>
 		</select>
 	<?php }
 
 	static function field_orderby_select() {
-		$orderby = get_option( 'pdfcat_orderby' );
+		$orderby = get_option( 'pdfcat_orderby', 'date' );
 		?>
 		<select name="pdfcat_orderby">
-			<option value="date">Date product was created</option>
-			<option value="price">Price</option>
+			<option value="date" <?=($orderby == 'date') ? 'selected' :''; ?>>Product creation date</option>
+			<option value="title" <?=($orderby == 'title') ? 'selected' :''; ?>>Title</option>
 		</select>
 	<?php }
 

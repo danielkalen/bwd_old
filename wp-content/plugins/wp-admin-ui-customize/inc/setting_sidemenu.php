@@ -167,16 +167,21 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 										
 											<?php if( !empty( $mm["title"] ) ) : ?>
 		
+												<?php $mm_slug = htmlspecialchars_decode( $mm["slug"] ); ?>
+												
 												<?php $mwsm = array(); ?>
 												<?php if( !empty( $Data["sub"] ) ) : ?>
 													<?php foreach($Data["sub"] as $sm) : ?>
+													
+														<?php $sm_slug = htmlspecialchars_decode( $sm["slug"] ); ?>
+														<?php $sm_parent_slug = htmlspecialchars_decode( $sm["parent_slug"] ); ?>
 				
-														<?php if( $mm["slug"] == $sm["parent_slug"] ) : ?>
+														<?php if( $mm_slug == $sm_parent_slug ) : ?>
 
 															<?php $cap = ""; ?>
-															<?php if( !empty( $submenu[$mm["slug"]] ) ) : ?>
-																<?php foreach( $submenu[$mm["slug"]] as $k => $tmp_sm ) : ?>
-																	<?php if( $tmp_sm[2] == $sm["slug"] ) : ?>
+															<?php if( !empty( $this->SubMenu[$mm_slug] ) ) : ?>
+																<?php foreach( $this->SubMenu[$mm_slug] as $k => $tmp_sm ) : ?>
+																	<?php if( $tmp_sm[2] == $sm_slug ) : ?>
 																		<?php $cap = $tmp_sm[1]; ?>
 																		<?php break; ?>
 																	<?php endif; ?>
@@ -192,12 +197,12 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 												
 												<?php $cap = ""; ?>
 												<?php foreach( $this->Menu as $tmp_m ) : ?>
-													<?php if( $tmp_m[2] == $mm["slug"] ) : ?>
+													<?php if( $tmp_m[2] == $mm_slug ) : ?>
 														<?php $cap = $tmp_m[1]; ?>
 														<?php break; ?>
 													<?php endif; ?>
 												<?php endforeach; ?>
-		
+
 												<?php $menu_widget = array( 'title' => $mm["title"] , 'slug' => $mm["slug"] , 'parent_slug' => '' , 'new' => false , 'cap' =>$cap , 'submenu' => $mwsm ); ?>
 												<?php $this->sidebar_menu_widget( $menu_widget ); ?>
 		
@@ -243,6 +248,9 @@ wp_enqueue_style( $this->PageSlug , $this->Url . $this->PluginSlug . '.css', arr
 .widget h4 {
     padding: 12px 15px;
 }
+.widget-top a.widget-action {
+    cursor: pointer;
+}
 .widget-top a.widget-action:after {
     padding: 7px 12px;
 }
@@ -287,9 +295,9 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-	$(document).on('click', '.widget .widget-top .widget-title-action a[href=#available]', function() {
+	$(document).on('click', '.widget .widget-top .widget-title-action', function() {
 		
-		$(this).parent().parent().parent().children(".widget-inside").slideToggle();
+		$(this).parent().parent().children(".widget-inside").slideToggle();
 		return false;
 		
 	});

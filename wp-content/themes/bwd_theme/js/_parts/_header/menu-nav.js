@@ -5,7 +5,12 @@
 
 // ==== Mega Menu replacement =================================================================================
 $megaMenu = $$('.menu-mega');
-$$('#site-navigation').find('.sub-menu').first().replaceWith($megaMenu);
+$megaMenu = $megaMenu.wrap('<div id="menu-mega" class="menu-mega hover-box_menu" />');
+
+$$('#menu-item-7255').addClass('menu-item-has-children')
+						.append($megaMenu);
+
+
 
 
 // ==== Menu Bar Links =================================================================================

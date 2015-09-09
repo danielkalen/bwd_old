@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Created by PhpStorm.
  * User: Kyriakos
@@ -195,27 +196,25 @@ class PDFCatalogAdminOptions {
 			// ---- Template ----------------------------
 
 
-			/*
-						add_settings_field(
-							'pdfcat_orderby', // ID
-							'Sort products by', // Title
-							array($this, 'field_orderby_select'),
-							'pdfgensettings', // Page
-							'theme_section' // Section
-						);
+			add_settings_field(
+				'pdfcat_orderby', // ID
+				'Sort products by', // Title
+				array( "PDFCatalog", 'field_orderby_select' ),
+				'pdfgensettings', // Page
+				'theme_section' // Section
+			);
 
-						register_setting('pdfgen-page1', 'pdfcat_orderby');
+			register_setting( 'pdfgen-page1', 'pdfcat_orderby', array( "PDFCatalog", 'invalidate_Cache' ) );
 
-						add_settings_field(
-							'pdfcat_order', // ID
-							'Sort direction', // Title
-							array($this, 'field_order_select'),
-							'pdfgensettings', // Page
-							'theme_section' // Section
-						);
+			add_settings_field(
+				'pdfcat_order', // ID
+				'Sort direction', // Title
+				array( "PDFCatalog", 'field_order_select' ),
+				'pdfgensettings', // Page
+				'theme_section' // Section
+			);
 
-						register_setting('pdfgen-page1', 'pdfcat_order');
-			*/
+			register_setting( 'pdfgen-page1', 'pdfcat_order', array( "PDFCatalog", 'invalidate_Cache' ) );
 
 
 			// --- COLORS ----------------------------------------------------------
@@ -266,10 +265,10 @@ class PDFCatalogAdminOptions {
 				'colors_section' // Section
 			);
 
-			*/
+
 
 			register_setting( 'pdfgen-page2', 'pdfcat_paperColor', array( "PDFCatalog", 'invalidate_Cache' ) );
-
+			*/
 			add_settings_field(
 				'pdfcat_headerColor', // ID
 				'Header Background', // Title
