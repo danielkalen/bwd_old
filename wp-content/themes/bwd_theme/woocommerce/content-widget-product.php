@@ -2,6 +2,7 @@
 global $post, $product; 
 $product_size = get_post_meta( get_the_ID(), '_size', true ) . ' size, ';
 $product_pack = get_post_meta( get_the_ID(), '_pack', true ) . ' per pack';
+
  ?>
 <li class="sidebar-product-list-item">
 	<a href="<?php echo esc_url( get_permalink( $product->id ) ); ?>" title="<?php echo esc_attr( $product->get_title() ); ?>">
