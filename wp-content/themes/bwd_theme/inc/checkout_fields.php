@@ -6,6 +6,7 @@ function custom_override_checkout_fields( $fields ) {
 	// $fields_shipping = $fields['shipping'];
 	// $fields_account = $fields['account'];
 	// $fields_order = $fields['order'];
+	// 
 
 	// ==== Billing =================================================================================
 		$fields['billing']['billing_first_name'] = array(
