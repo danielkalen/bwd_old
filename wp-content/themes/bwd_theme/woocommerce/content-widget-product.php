@@ -19,5 +19,5 @@ $product_pack = get_post_meta( get_the_ID(), '_pack', true ) . ' per pack';
 			</div>
 		</div>
 	</a>
-	<?php// echo $product->get_price_html(); ?>
+	<?php // echo $product->get_price_html(); ?>
 </li>

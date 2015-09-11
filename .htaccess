@@ -46,10 +46,10 @@ RewriteRule . /index.php [L]
 
 
 
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /
 # RewriteRule ^admin.bwd.dev:8888$ bwd.dev:8888/wp-login.php
 # RewriteCond %{HTTP_HOST} ^(www\.)?admin\.pureaesthetics\.net$ [NC]
 # RewriteRule ^ http://www.pureaesthetics.net/wp-login.php?login=1 [NE,R=301,L]
-</IfModule>
+# </IfModule>
