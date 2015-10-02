@@ -3,8 +3,8 @@ wp-content/plugins/all-in-one-schemaorg-rich-snippets/
 
 wp-content/uploads
 wp-content/uploads/*
-wp-admin/*
-wp-includes/*
+# wp-admin/*
+# wp-includes/*
 
 wp-config.php
 
